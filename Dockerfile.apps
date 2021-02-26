@@ -12,7 +12,7 @@ RUN set -e; \
     rm -rf lnls-ansible; \
     git clone https://github.com/lnls-sirius/lnls-ansible.git; \
     cd lnls-ansible; \
-    git checkout fac-test; \
+    git checkout master; \
     \
     ansible-playbook --connection=local playbook-servers-ioc-docker-sirius-apps.yml
 

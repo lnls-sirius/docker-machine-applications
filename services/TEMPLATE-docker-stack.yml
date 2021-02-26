@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   li-ps:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-02-19
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-02-26
     command: bash -c 'source /etc/profile && /iocs-service/li-ps.bash'
     deploy:
       placement:
@@ -29,7 +29,7 @@ services:
       - ioc-network
 
   tb-ps:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-02-19
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-02-26
     command: bash -c 'source /etc/profile && /iocs-service/tb-ps.bash'
     deploy:
       placement:
