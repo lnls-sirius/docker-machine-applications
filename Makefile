@@ -4,21 +4,23 @@ FAC_APPS_TAG:=$(shell cat .env | grep FAC_APPS_TAG= | sed s/FAC_APPS_TAG=//g)
 FAC_IOCS_TAG:=$(shell cat .env | grep FAC_IOCS_TAG= | sed s/FAC_IOCS_TAG=//g)
 
 
+# --- images ---
+
 build-fac-iocs: cleanup pull-fac-apps
-	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-iocs
+	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-iocs
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IOCS_TAG)
 
 build-fac-apps: cleanup pull-fac-epics
-	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-apps
-	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IOCS_TAG)
+	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-apps
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(FAC_IOCS_TAG)
 
 build-fac-epics: cleanup pull-fac-base
-	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-epics
-	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_EPICS_TAG)
+	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-epics
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(FAC_EPICS_TAG)
 
-build-fac-base: cleanup pull-fac-epics
-	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-base
-	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_BASE_TAG)
+build-fac-base: cleanup
+	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-base
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-base:$(FAC_BASE_TAG)
 
 pull-fac-iocs: pull-fac-apps
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IOCS_TAG)
@@ -34,6 +36,7 @@ pull-fac-base:
 
 cleanup:
 	docker system prune --filter "label=br.com.lnls-sirius.department=FAC" --all --force
+
 
 # --- services ---
 

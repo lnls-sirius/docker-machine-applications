@@ -6,8 +6,10 @@ SHELL ["bash", "-c"]
 
 WORKDIR /opt
 
-# copy all entry-points to image
-COPY ./iocs-log /
+RUN mkdir -p /ioc-apps
+RUN mkdir -p /ioc-logs
+
+COPY ../applications/* /ioc-apps/
 
 RUN source /etc/profile
 
