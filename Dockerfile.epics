@@ -1,0 +1,20 @@
+ARG BASE_IMAGE_TAG
+ARG ANSIBLE_TAG
+FROM dockerregistry.lnls-sirius.com.br/fac/fac-debian:${BASE_IMAGE_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+RUN set -e; \
+    set -x; \
+    rm -rf lnls-ansible; \
+    git clone https://github.com/lnls-sirius/lnls-ansible.git; \
+    cd lnls-ansible; \
+    git checkout fac-test; \
+    \
+    ansible-playbook --connection=local playbook-servers-ioc-docker-epics.yml
+
+RUN source /etc/profile
+
+CMD ["/bin/bash"]

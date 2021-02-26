@@ -1,0 +1,14 @@
+FROM dockerregistry.lnls-sirius.com.br/debian:9.13
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+RUN set -e; \
+    set -x; \
+    \
+    apt update; \
+    apt -y install git python python-pip sudo systemd wget nano; \
+    pip install ansible==2.9.13
+
+CMD ["/bin/bash"]
