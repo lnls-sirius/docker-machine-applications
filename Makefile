@@ -100,11 +100,11 @@ service-facs-si-ps-trims-m12-stop:
 service-facs-si-ps-trims-m12-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-m12.yml facs-si-ps-trims-m12
 
-service-facs-si-ps-trims-c134-stop:
-	cd services; docker stack rm facs-si-ps-trims-c134
+service-facs-si-ps-trims-c1234-stop:
+	cd services; docker stack rm facs-si-ps-trims-c1234
 
-service-facs-si-ps-trims-c134-start:
-	cd services; docker stack deploy -c docker-stack-si-ps-trims-c134.yml facs-si-ps-trims-c134
+service-facs-si-ps-trims-c1234-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234.yml facs-si-ps-trims-c1234
 
 service-facs-as-ap-1-stop:
 	cd services; docker stack rm facs-as-ap-1
