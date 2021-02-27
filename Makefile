@@ -62,7 +62,7 @@ service-facs-ts-ps-stop:
 	cd services; docker stack rm facs-ts-ps
 
 service-facs-ts-ps-start:
-	cd services; docker stack deploy -c docker-stack-ts-ps.yml facs-tb-ps
+	cd services; docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps
 
 service-facs-bo-ps-fams-stop:
 	cd services; docker stack rm facs-ts-ps-fams
