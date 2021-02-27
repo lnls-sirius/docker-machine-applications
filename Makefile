@@ -76,6 +76,24 @@ service-facs-bo-ps-corrs-stop:
 service-facs-bo-ps-corrs-start:
 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs.yml facs-bo-ps-corrs
 
+service-facs-si-ps-fams-stop:
+	cd services; docker stack rm facs-si-ps-fams
+
+service-facs-si-ps-fams-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-fams.yml facs-si-ps-fams
+
+service-facs-si-ps-corrs-c2m12-stop:
+	cd services; docker stack rm facs-si-ps-corrs-c2m12
+
+service-facs-si-ps-corrs-c2m12-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12.yml facs-si-ps-corrs-c2m12
+
+service-facs-si-ps-corrs-c134-stop:
+	cd services; docker stack rm facs-si-ps-corrs-c134
+
+service-facs-si-ps-corrs-c134-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134.yml facs-si-ps-corrs-c134
+
 service-facs-si-ps-trims-m12-stop:
 	cd services; docker stack rm facs-si-ps-trims-m12
 
