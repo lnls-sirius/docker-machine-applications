@@ -9,7 +9,7 @@ WORKDIR /opt
 RUN mkdir -p /ioc-apps
 RUN mkdir -p /ioc-logs
 
-COPY ../applications/* /ioc-apps/
+COPY applications/*.bash /ioc-apps/
 
 RUN source /etc/profile
 

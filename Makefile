@@ -1,7 +1,7 @@
-FAC_BASE_TAG:=$(shell cat .env | grep FAC_BASE_TAG= | sed s/FAC_BASE_TAG=//g)
-FAC_EPICS_TAG:=$(shell cat .env | grep FAC_EPICS_TAG= | sed s/FAC_EPICS_TAG=//g)
-FAC_APPS_TAG:=$(shell cat .env | grep FAC_APPS_TAG= | sed s/FAC_APPS_TAG=//g)
-FAC_IOCS_TAG:=$(shell cat .env | grep FAC_IOCS_TAG= | sed s/FAC_IOCS_TAG=//g)
+FAC_BASE_TAG:=$(shell cat ./images/.env | grep FAC_BASE_TAG= | sed s/FAC_BASE_TAG=//g)
+FAC_EPICS_TAG:=$(shell cat ./images/.env | grep FAC_EPICS_TAG= | sed s/FAC_EPICS_TAG=//g)
+FAC_APPS_TAG:=$(shell cat ./images/.env | grep FAC_APPS_TAG= | sed s/FAC_APPS_TAG=//g)
+FAC_IOCS_TAG:=$(shell cat ./images/.env | grep FAC_IOCS_TAG= | sed s/FAC_IOCS_TAG=//g)
 
 
 # --- images ---
