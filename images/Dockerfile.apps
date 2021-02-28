@@ -14,7 +14,7 @@ RUN set -e; \
     cd lnls-ansible; \
     git checkout master; \
     \
-    ansible-playbook --connection=local playbook-servers-ioc-docker-sirius-apps.yml
+    ansible-playbook --connection=local playbook-fac-services-apps.yml
 
 RUN source /etc/profile
 

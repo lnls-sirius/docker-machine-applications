@@ -13,7 +13,7 @@ RUN set -e; \
     cd lnls-ansible; \
     git checkout master; \
     \
-    ansible-playbook --connection=local playbook-servers-ioc-docker-epics.yml
+    ansible-playbook --connection=local playbook-fac-services-epics.yml
 
 RUN source /etc/profile
 
