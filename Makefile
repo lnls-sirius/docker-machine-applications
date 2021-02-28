@@ -40,11 +40,11 @@ cleanup:
 
 # --- services ---
 
-service-facs-as-ps-dclinks-stop:
-	cd services; docker stack rm facs-as-ps-dclinks
+service-facs-li-ap-energy-stop:
+	cd services; docker stack rm facs-li-ap-energy
 
-service-facs-as-ps-dclinks-start:
-	cd services; docker stack deploy -c docker-stack-as-ps-dclinks facs-as-ps-dclinks
+service-facs-li-ap-energy-start:
+	cd services; docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy
 
 service-facs-li-ps-stop:
 	cd services; docker stack rm facs-li-ps
@@ -106,17 +106,35 @@ service-facs-si-ps-trims-c1234-stop:
 service-facs-si-ps-trims-c1234-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234.yml facs-si-ps-trims-c1234
 
-service-facs-as-ap-1-stop:
-	cd services; docker stack rm facs-as-ap-1
+service-facs-si-ap-sofb-stop:
+	cd services; docker stack rm facs-si-ap-sofb
 
-service-facs-as-ap-1-start:
-	cd services; docker stack deploy -c docker-stack-as-ap-1.yml facs-as-ap-1
+service-facs-si-ap-sofb-start:
+	cd services; docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb
 
-service-facs-as-ap-2-stop:
-	cd services; docker stack rm facs-as-ap-2
+service-facs-as-ap-posang-stop:
+	cd services; docker stack rm facs-as-ap-posang
 
-service-facs-as-ap-2-start:
-	cd services; docker stack deploy -c docker-stack-as-ap-2.yml facs-as-ap-2
+service-facs-as-ap-posang-start:
+	cd services; docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang
+
+service-facs-as-ap-opticscorr-stop:
+	cd services; docker stack rm facs-as-ap-opticscorr
+
+service-facs-as-ap-opticscorr-start:
+	cd services; docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr
+
+service-facs-as-ap-machshift-stop:
+	cd services; docker stack rm facs-as-ap-machshift
+
+service-facs-as-ap-machshift-start:
+	cd services; docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift
+
+service-facs-as-ap-currinfo-stop:
+	cd services; docker stack rm facs-as-ap-currinfo
+
+service-facs-as-ap-currinfo-start:
+	cd services; docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo
 
 service-facs-as-ap-bl-stop:
 	cd services; docker stack rm facs-as-ap-bl
@@ -136,6 +154,12 @@ service-facs-as-ap-sofb-stop:
 service-facs-as-ap-sofb-start:
 	cd services; docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb
 
+service-facs-as-ps-dclinks-stop:
+	cd services; docker stack rm facs-as-ps-dclinks
+
+service-facs-as-ps-dclinks-start:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks facs-as-ps-dclinks
+
 service-facs-as-pu-conv-stop:
 	cd services; docker stack rm facs-as-pu-conv
 
@@ -147,3 +171,53 @@ service-facs-as-ti-stop:
 
 service-facs-as-ti-start:
 	cd services; docker stack deploy -c docker-stack-as-ti.yml facs-as-ti
+
+service-facs-all-stop:
+	cd services; \
+	docker stack rm facs-li-ap-energy; \
+	docker stack rm facs-li-ps; \
+	docker stack rm facs-tb-ps; \
+	docker stack rm facs-ts-ps; \
+	docker stack rm facs-bo-ps-fams; \
+	docker stack rm facs-bo-ps-corrs; \
+	docker stack rm facs-si-ps-fams; \
+	docker stack rm facs-si-ps-corrs-c2m12; \
+	docker stack rm facs-si-ps-corrs-c134; \
+	docker stack rm facs-si-ps-trims-m12; \
+	docker stack rm facs-si-ps-trims-c1234; \
+	docker stack rm facs-si-ap-sofb; \
+	docker stack rm facs-as-ap-posang; \
+	docker stack rm facs-as-ap-opticscorr; \
+	docker stack rm facs-as-ap-machshift; \
+	docker stack rm facs-as-ap-currinfo; \
+	docker stack rm facs-as-ap-bl; \
+	docker stack rm facs-as-ap-diag; \
+	docker stack rm facs-as-ap-sofb; \
+	docker stack rm facs-as-ps-dclinks; \
+	docker stack rm facs-as-pu-conv; \
+	docker stack rm facs-as-ti
+
+service-facs-all-start:
+	cd services; \
+	docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy; \
+	docker stack deploy -c docker-stack-li-ps.yml facs-li-ps; \
+	docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps; \
+	docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps; \
+	docker stack deploy -c docker-stack-bo-ps-fams.yml facs-bo-ps-fams; \
+	docker stack deploy -c docker-stack-bo-ps-corrs.yml facs-bo-ps-corrs; \
+	docker stack deploy -c docker-stack-si-ps-fams.yml facs-si-ps-fams; \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12.yml facs-si-ps-corrs-c2m12; \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134.yml facs-si-ps-corrs-c134; \
+	docker stack deploy -c docker-stack-si-ps-trims-m12.yml facs-si-ps-trims-m12; \
+	docker stack deploy -c docker-stack-si-ps-trims-c1234.yml facs-si-ps-trims-c1234; \
+	docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb; \
+	docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang; \
+	docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr; \
+	docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift; \
+	docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo; \
+	docker stack deploy -c docker-stack-as-ap-bl.yml facs-as-ap-bl; \
+	docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag; \
+	docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb; \
+	docker stack deploy -c docker-stack-as-ps-dclinks.yml facs-as-ps-dclinks; \
+	docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv; \
+	docker stack deploy -c docker-stack-as-ti.yml facs-as-ti
