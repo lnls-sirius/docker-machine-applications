@@ -22,13 +22,13 @@ build-fac-base: cleanup
 	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-base
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-base:$(FAC_BASE_TAG)
 
-pull-fac-iocs: pull-fac-apps
+pull-fac-iocs:
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IOCS_TAG)
 
-pull-fac-apps: pull-fac-epics
+pull-fac-apps:
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(FAC_APPS_TAG)
 
-pull-fac-epics: pull-fac-base
+pull-fac-epics:
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(FAC_EPICS_TAG)
 
 pull-fac-base:
