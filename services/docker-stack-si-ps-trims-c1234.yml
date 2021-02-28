@@ -1,8 +1,8 @@
 version: "3.7"
 services:
   ts-ps:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-02-19
-    command: bash -c 'source /etc/profile && /iocs-service/si-ps-trims-c134.bash'
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-02-26
+    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-c1234.bash'
     deploy:
       placement:
         constraints:

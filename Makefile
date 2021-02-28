@@ -1,24 +1,26 @@
-FAC_DEBIAN_TAG:=$(shell cat .env | grep FAC_DEBIAN_TAG= | sed s/FAC_DEBIAN_TAG=//g)
-FAC_EPICS_TAG:=$(shell cat .env | grep FAC_EPICS_TAG= | sed s/FAC_EPICS_TAG=//g)
-FAC_APPS_TAG:=$(shell cat .env | grep FAC_APPS_TAG= | sed s/FAC_APPS_TAG=//g)
-FAC_IOCS_TAG:=$(shell cat .env | grep FAC_IOCS_TAG= | sed s/FAC_IOCS_TAG=//g)
+FAC_BASE_TAG:=$(shell cat ./images/.env | grep FAC_BASE_TAG= | sed s/FAC_BASE_TAG=//g)
+FAC_EPICS_TAG:=$(shell cat ./images/.env | grep FAC_EPICS_TAG= | sed s/FAC_EPICS_TAG=//g)
+FAC_APPS_TAG:=$(shell cat ./images/.env | grep FAC_APPS_TAG= | sed s/FAC_APPS_TAG=//g)
+FAC_IOCS_TAG:=$(shell cat ./images/.env | grep FAC_IOCS_TAG= | sed s/FAC_IOCS_TAG=//g)
 
+
+# --- images ---
 
 build-fac-iocs: cleanup pull-fac-apps
-	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-iocs
+	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-iocs
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IOCS_TAG)
 
 build-fac-apps: cleanup pull-fac-epics
-	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-apps
-	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IOCS_TAG)
+	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-apps
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(FAC_IOCS_TAG)
 
-build-fac-epics: cleanup pull-fac-debian
-	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-epics
-	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_EPICS_TAG)
+build-fac-epics: cleanup pull-fac-base
+	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-epics
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(FAC_EPICS_TAG)
 
-build-fac-debian: cleanup pull-fac-epics
-	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-debian
-	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_DEBIAN_TAG)
+build-fac-base: cleanup
+	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-base
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-base:$(FAC_BASE_TAG)
 
 pull-fac-iocs: pull-fac-apps
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IOCS_TAG)
@@ -26,14 +28,15 @@ pull-fac-iocs: pull-fac-apps
 pull-fac-apps: pull-fac-epics
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(FAC_APPS_TAG)
 
-pull-fac-epics: pull-fac-debian
+pull-fac-epics: pull-fac-base
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(FAC_EPICS_TAG)
 
-pull-fac-debian:
-	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-debian:$(FAC_DEBIAN_TAG)
+pull-fac-base:
+	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-base:$(FAC_BASE_TAG)
 
 cleanup:
 	docker system prune --filter "label=br.com.lnls-sirius.department=FAC" --all --force
+
 
 # --- services ---
 
@@ -59,7 +62,7 @@ service-facs-ts-ps-stop:
 	cd services; docker stack rm facs-ts-ps
 
 service-facs-ts-ps-start:
-	cd services; docker stack deploy -c docker-stack-ts-ps.yml facs-tb-ps
+	cd services; docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps
 
 service-facs-bo-ps-fams-stop:
 	cd services; docker stack rm facs-ts-ps-fams
@@ -73,17 +76,35 @@ service-facs-bo-ps-corrs-stop:
 service-facs-bo-ps-corrs-start:
 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs.yml facs-bo-ps-corrs
 
+service-facs-si-ps-fams-stop:
+	cd services; docker stack rm facs-si-ps-fams
+
+service-facs-si-ps-fams-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-fams.yml facs-si-ps-fams
+
+service-facs-si-ps-corrs-c2m12-stop:
+	cd services; docker stack rm facs-si-ps-corrs-c2m12
+
+service-facs-si-ps-corrs-c2m12-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12.yml facs-si-ps-corrs-c2m12
+
+service-facs-si-ps-corrs-c134-stop:
+	cd services; docker stack rm facs-si-ps-corrs-c134
+
+service-facs-si-ps-corrs-c134-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134.yml facs-si-ps-corrs-c134
+
 service-facs-si-ps-trims-m12-stop:
 	cd services; docker stack rm facs-si-ps-trims-m12
 
 service-facs-si-ps-trims-m12-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-m12.yml facs-si-ps-trims-m12
 
-service-facs-si-ps-trims-c134-stop:
-	cd services; docker stack rm facs-si-ps-trims-c134
+service-facs-si-ps-trims-c1234-stop:
+	cd services; docker stack rm facs-si-ps-trims-c1234
 
-service-facs-si-ps-trims-c134-start:
-	cd services; docker stack deploy -c docker-stack-si-ps-trims-c134.yml facs-si-ps-trims-c134
+service-facs-si-ps-trims-c1234-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234.yml facs-si-ps-trims-c1234
 
 service-facs-as-ap-1-stop:
 	cd services; docker stack rm facs-as-ap-1

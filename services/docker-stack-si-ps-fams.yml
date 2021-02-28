@@ -1,8 +1,8 @@
 version: "3.7"
 services:
-  tb-ps:
+  ts-ps:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-02-26
-    command: bash -c 'source /etc/profile && /ioc-apps/tb-ps.bash'
+    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-fams.bash'
     deploy:
       placement:
         constraints:

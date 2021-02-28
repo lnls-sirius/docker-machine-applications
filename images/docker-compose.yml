@@ -1,11 +1,13 @@
 version: "3.7"
 services:
 
-  fac-debian:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-debian:${FAC_DEBIAN_TAG}
+  fac-base:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-base:${FAC_BASE_TAG}
     build:
       context: "."
-      dockerfile: "Dockerfile.debian"
+      dockerfile: "Dockerfile.base"
+      args:
+        - BASE_IMAGE_TAG=${DEBIAN_TAG}
       labels:
         - "br.com.lnls-sirius.department=FAC"
     command: "sleep infinity"
@@ -16,7 +18,7 @@ services:
       context: "."
       dockerfile: "Dockerfile.epics"
       args:
-        - BASE_IMAGE_TAG=${FAC_DEBIAN_TAG}
+        - BASE_IMAGE_TAG=${FAC_BASE_TAG}
         - ANSIBLE_TAG=${FAC_ANSIBLE_TAG}
       labels:
         - "br.com.lnls-sirius.department=FAC"

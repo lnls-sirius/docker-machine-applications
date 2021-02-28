@@ -13,7 +13,7 @@ TS-04:PU-InjSeptF \
 SI-01SA:PU-InjDpKckr \
 SI-01SA:PU-InjNLKckr \
 SI-01SA:PU-PingH \
-SI-19C4:PU-PingV &> /iocs-log/sirius-ioc-as-pu-conv &
+SI-19C4:PU-PingV &> /ioc-logs/sirius-ioc-as-pu-conv &
 
 # sirius-ioc-si-id-conv.service
 /usr/local/bin/sirius-ioc-si-id-conv.py \
@@ -21,7 +21,7 @@ SI-06SB:ID-APU22 \
 SI-07SP:ID-APU22 \
 SI-08SB:ID-APU22 \
 SI-09SA:ID-APU22 \
-SI-11SP:ID-APU58 &> /iocs-log/sirius-ioc-si-id-conv &
+SI-11SP:ID-APU58 &> /ioc-logs/sirius-ioc-si-id-conv &
 
 
 # keep entry point running
