@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  tb-ps:
+  iocs:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-02-26
     command: bash -c 'source /etc/profile && /ioc-apps/as-ap-posang.bash'
     deploy:
