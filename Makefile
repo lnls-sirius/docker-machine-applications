@@ -130,23 +130,23 @@ service-facs-ts-ps-stop:
 service-facs-ts-ps-start:
 	cd services; docker stack deploy -c docker-stack-service-facs-ts-ps.yml facs-ts-ps
 
-service-facs-si-ps-fams-dips-stop:
-	cd services; docker stack rm fac-facs-si-ps-fams-dips
+service-facs-si-ps-dips-stop:
+	cd services; docker stack rm fac-facs-si-ps-dips
 
-service-facs-si-ps-fams-dips-start:
-	cd services; docker stack deploy -c docker-stack-service-facs-si-ps-fams-dips.yml facs-si-ps-fams-dips
+service-facs-si-ps-dips-start:
+	cd services; docker stack deploy -c docker-stack-service-facs-si-ps-dips.yml facs-si-ps-dips
 
-service-facs-si-ps-fams-quads-stop:
-	cd services; docker stack rm fac-facs-si-ps-fams-quads
+service-facs-si-ps-quads-stop:
+	cd services; docker stack rm fac-facs-si-ps-quads
 
-service-facs-si-ps-fams-quads-start:
-	cd services; docker stack deploy -c docker-stack-service-facs-si-ps-fams-quads.yml facs-si-ps-fams-quads
+service-facs-si-ps-quads-start:
+	cd services; docker stack deploy -c docker-stack-service-facs-si-ps-quads.yml facs-si-ps-quads
 
-service-facs-si-ps-fams-sexts-stop:
-	cd services; docker stack rm fac-facs-si-ps-fams-sexts
+service-facs-si-ps-sexts-stop:
+	cd services; docker stack rm fac-facs-si-ps-sexts
 
-service-facs-si-ps-fams-sexts-start:
-	cd services; docker stack deploy -c docker-stack-service-facs-si-ps-fams-sexts.yml facs-si-ps-fams-sexts
+service-facs-si-ps-sexts-start:
+	cd services; docker stack deploy -c docker-stack-service-facs-si-ps-sexts.yml facs-si-ps-sexts
 
 service-facs-si-ps-corrs-c2m12-ia01t10-stop:
 	cd services; docker stack rm fac-facs-si-ps-corrs-c2m12-ia01t10
@@ -303,9 +303,9 @@ service-facs-all-stop:
 	docker stack rm facs-bo-ps-corrs-ia01t10 \
 	docker stack rm facs-bo-ps-corrs-ia11t20 \
 	docker stack rm facs-ts-ps \
-	docker stack rm facs-si-ps-fams-dips \
-	docker stack rm facs-si-ps-fams-quads \
-	docker stack rm facs-si-ps-fams-sexts \
+	docker stack rm facs-si-ps-dips \
+	docker stack rm facs-si-ps-quads \
+	docker stack rm facs-si-ps-sexts \
 	docker stack rm facs-si-ps-corrs-c2m12-ia01t10 \
 	docker stack rm facs-si-ps-corrs-c2m12-ia11t20 \
 	docker stack rm facs-si-ps-corrs-c134-ia01t10 \
@@ -347,9 +347,9 @@ service-facs-all-start:
 	docker stack deploy -c docker-stack-service-facs-bo-ps-corrs-ia01t10.yml facs-bo-ps-corrs-ia01t10 \
 	docker stack deploy -c docker-stack-service-facs-bo-ps-corrs-ia11t20.yml facs-bo-ps-corrs-ia11t20 \
 	docker stack deploy -c docker-stack-service-facs-ts-ps.yml facs-ts-ps \
-	docker stack deploy -c docker-stack-service-facs-si-ps-fams-dips.yml facs-si-ps-fams-dips \
-	docker stack deploy -c docker-stack-service-facs-si-ps-fams-quads.yml facs-si-ps-fams-quads \
-	docker stack deploy -c docker-stack-service-facs-si-ps-fams-sexts.yml facs-si-ps-fams-sexts \
+	docker stack deploy -c docker-stack-service-facs-si-ps-dips.yml facs-si-ps-dips \
+	docker stack deploy -c docker-stack-service-facs-si-ps-quads.yml facs-si-ps-quads \
+	docker stack deploy -c docker-stack-service-facs-si-ps-sexts.yml facs-si-ps-sexts \
 	docker stack deploy -c docker-stack-service-facs-si-ps-corrs-c2m12-ia01t10.yml facs-si-ps-corrs-c2m12-ia01t10 \
 	docker stack deploy -c docker-stack-service-facs-si-ps-corrs-c2m12-ia11t20.yml facs-si-ps-corrs-c2m12-ia11t20 \
 	docker stack deploy -c docker-stack-service-facs-si-ps-corrs-c134-ia01t10.yml facs-si-ps-corrs-c134-ia01t10 \

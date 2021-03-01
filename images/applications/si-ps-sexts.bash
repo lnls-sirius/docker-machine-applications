@@ -19,7 +19,7 @@
 /usr/local/bin/sirius-ioc-as-ps.py PA-RaPSB09:CO-PSCtrl-SI2 &> /ioc-logs/sirius-ioc-si-ps-sfp12-sdp23  &
 
 # Diag
-/usr/local/bin/sirius-ioc-as-ps-diag.py SI Fam "S.*" &> /ioc-logs/sirius-ioc-si-ps-diag-fams-sexts  &
+/usr/local/bin/sirius-ioc-as-ps-diag.py SI Fam "S.*" &> /ioc-logs/sirius-ioc-si-ps-diag-sexts  &
 
 
 # keep entry point running
