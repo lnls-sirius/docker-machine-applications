@@ -2,7 +2,7 @@ version: "3.7"
 services:
   iocs:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-02-26
-    command: bash -c 'source /etc/profile && /ioc-apps/si-bo-bpms-corrs.bash'
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ti-bpms-corrs.bash'
     deploy:
       placement:
         constraints:
