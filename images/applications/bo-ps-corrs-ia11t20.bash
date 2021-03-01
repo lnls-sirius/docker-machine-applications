@@ -10,8 +10,7 @@
 /usr/local/bin/sirius-ioc-as-ps.py IA-20RaCtrl:CO-PSCtrl-BO &> /ioc-logs/sirius-ioc-bo-ps-correctors-ia20 &
 
 # Diagnostics
-/usr/local/bin/sirius-ioc-as-ps-diag.py BO "(1[1-9]|20).*" "(CH|CV|QS)" &> /ioc-logs/sirius-ioc-bo-ps-correctors-diag-ia11t20 &
-
+/usr/local/bin/sirius-ioc-as-ps-diag.py BO "(2[7-9]|3[0-9]|4[0-9]).*" "(CH|CV|QS)" &> /ioc-logs/sirius-ioc-bo-ps-correctors-diag-ia01t10 &
 
 # keep entry point running
 sleep infinity

@@ -11,7 +11,7 @@
 /usr/local/bin/sirius-ioc-as-ps.py IA-10RaCtrl:CO-PSCtrl-BO &> /ioc-logs/sirius-ioc-bo-ps-correctors-ia10 &
 
 # Diagnostics
-/usr/local/bin/sirius-ioc-as-ps-diag.py BO "(0[1-9]|10).*" "(CH|CV|QS)" &> /ioc-logs/sirius-ioc-bo-ps-correctors-diag-ia01t10 &
+/usr/local/bin/sirius-ioc-as-ps-diag.py BO "(0[1-9]|1[0-9]|2[0-5]).*" "(CH|CV|QS)" &> /ioc-logs/sirius-ioc-bo-ps-correctors-diag-ia01t10 &
 
 
 # keep entry point running
