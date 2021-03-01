@@ -7,7 +7,8 @@ services:
       context: "."
       dockerfile: "Dockerfile.base"
       args:
-        - BASE_IMAGE_TAG=${DEBIAN_TAG}
+        - DEBIAN_TAG=${FAC_DEBIAN_TAG}
+        - ANSIBLE_VERSION=${FAC_ANSIBLE_VERSION}
       labels:
         - "br.com.lnls-sirius.department=FAC"
     command: "sleep infinity"

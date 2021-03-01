@@ -1,14 +1,16 @@
-FROM dockerregistry.lnls-sirius.com.br/debian:9.13
+ARG DEBIAN_TAG
+FROM dockerregistry.lnls-sirius.com.br/debian:${DEBIAN_TAG}
 
 SHELL ["bash", "-c"]
 
 WORKDIR /opt
 
+ARG ANSIBLE_VERSION
 RUN set -e; \
     set -x; \
     \
     apt update; \
     apt -y install git python python-pip sudo systemd wget nano; \
-    pip install ansible==2.9.13
+    pip install ansible==${ANSIBLE_VERSION}
 
 CMD ["/bin/bash"]

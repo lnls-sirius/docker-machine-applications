@@ -1,5 +1,4 @@
 ARG BASE_IMAGE_TAG
-ARG ANSIBLE_TAG
 FROM dockerregistry.lnls-sirius.com.br/fac/fac-apps:${BASE_IMAGE_TAG}
 
 SHELL ["bash", "-c"]
