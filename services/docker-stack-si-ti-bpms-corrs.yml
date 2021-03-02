@@ -6,7 +6,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != CA-RaTim-CO-IOCSrv
           # - node.hostname != IA-14RaDiag03-CO-IOCSrv
           # - node.hostname != IA-16RaBbB-CO-IOCSrv
           # - node.hostname != IA-18RaDiag04-CO-IOCSrv
