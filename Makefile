@@ -41,247 +41,247 @@ cleanup:
 # --- services ---
 
 service-facs-as-ps-dclinks-tbts-bodip-stop:
-	cd services; docker stack rm fac-facs-as-ps-dclinks-tbts-bodip
+	cd services; docker stack rm facs-as-ps-dclinks-tbts-bodip
 
 service-facs-as-ps-dclinks-tbts-bodip-start:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-tbts-bodip.yml facs-as-ps-dclinks-tbts-bodip
 
 service-facs-as-ps-dclinks-ia01t10-stop:
-	cd services; docker stack rm fac-facs-as-ps-dclinks-ia01t10
+	cd services; docker stack rm facs-as-ps-dclinks-ia01t10
 
 service-facs-as-ps-dclinks-ia01t10-start:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia01t10.yml facs-as-ps-dclinks-ia01t10
 
 service-facs-as-ps-dclinks-ia11t20-stop:
-	cd services; docker stack rm fac-facs-as-ps-dclinks-ia11t20
+	cd services; docker stack rm facs-as-ps-dclinks-ia11t20
 
 service-facs-as-ps-dclinks-ia11t20-start:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia11t20.yml facs-as-ps-dclinks-ia11t20
 
 service-facs-li-ps-spect-quads-lens-stop:
-	cd services; docker stack rm fac-facs-li-ps-spect-quads-lens
+	cd services; docker stack rm facs-li-ps-spect-quads-lens
 
 service-facs-li-ps-spect-quads-lens-start:
 	cd services; docker stack deploy -c docker-stack-li-ps-spect-quads-lens.yml facs-li-ps-spect-quads-lens
 
 service-facs-li-ps-corrs-stop:
-	cd services; docker stack rm fac-facs-li-ps-corrs
+	cd services; docker stack rm facs-li-ps-corrs
 
 service-facs-li-ps-corrs-start:
 	cd services; docker stack deploy -c docker-stack-li-ps-corrs.yml facs-li-ps-corrs
 
 service-facs-li-ps-slnds-stop:
-	cd services; docker stack rm fac-facs-li-ps-slnds
+	cd services; docker stack rm facs-li-ps-slnds
 
 service-facs-li-ps-slnds-start:
 	cd services; docker stack deploy -c docker-stack-li-ps-slnds.yml facs-li-ps-slnds
 
 service-facs-li-ps-conv-stop:
-	cd services; docker stack rm fac-facs-li-ps-conv
+	cd services; docker stack rm facs-li-ps-conv
 
 service-facs-li-ps-conv-start:
 	cd services; docker stack deploy -c docker-stack-li-ps-conv.yml facs-li-ps-conv
 
 service-facs-li-ps-diag-stop:
-	cd services; docker stack rm fac-facs-li-ps-diag
+	cd services; docker stack rm facs-li-ps-diag
 
 service-facs-li-ps-diag-start:
 	cd services; docker stack deploy -c docker-stack-li-ps-diag.yml facs-li-ps-diag
 
 service-facs-tb-ps-stop:
-	cd services; docker stack rm fac-facs-tb-ps
+	cd services; docker stack rm facs-tb-ps
 
 service-facs-tb-ps-start:
 	cd services; docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps
 
 service-facs-bo-ps-dips-stop:
-	cd services; docker stack rm fac-facs-bo-ps-dips
+	cd services; docker stack rm facs-bo-ps-dips
 
 service-facs-bo-ps-dips-start:
 	cd services; docker stack deploy -c docker-stack-bo-ps-dips.yml facs-bo-ps-dips
 
 service-facs-bo-ps-quads-stop:
-	cd services; docker stack rm fac-facs-bo-ps-quads
+	cd services; docker stack rm facs-bo-ps-quads
 
 service-facs-bo-ps-quads-start:
 	cd services; docker stack deploy -c docker-stack-bo-ps-quads.yml facs-bo-ps-quads
 
 service-facs-bo-ps-sexts-stop:
-	cd services; docker stack rm fac-facs-bo-ps-sexts
+	cd services; docker stack rm facs-bo-ps-sexts
 
 service-facs-bo-ps-sexts-start:
 	cd services; docker stack deploy -c docker-stack-bo-ps-sexts.yml facs-bo-ps-sexts
 
 service-facs-bo-ps-corrs-ia01t10-stop:
-	cd services; docker stack rm fac-facs-bo-ps-corrs-ia01t10
+	cd services; docker stack rm facs-bo-ps-corrs-ia01t10
 
 service-facs-bo-ps-corrs-ia01t10-start:
 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia01t10.yml facs-bo-ps-corrs-ia01t10
 
 service-facs-bo-ps-corrs-ia11t20-stop:
-	cd services; docker stack rm fac-facs-bo-ps-corrs-ia11t20
+	cd services; docker stack rm facs-bo-ps-corrs-ia11t20
 
 service-facs-bo-ps-corrs-ia11t20-start:
 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia11t20.yml facs-bo-ps-corrs-ia11t20
 
 service-facs-ts-ps-stop:
-	cd services; docker stack rm fac-facs-ts-ps
+	cd services; docker stack rm facs-ts-ps
 
 service-facs-ts-ps-start:
 	cd services; docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps
 
 service-facs-si-ps-dips-stop:
-	cd services; docker stack rm fac-facs-si-ps-dips
+	cd services; docker stack rm facs-si-ps-dips
 
 service-facs-si-ps-dips-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-dips.yml facs-si-ps-dips
 
 service-facs-si-ps-quads-stop:
-	cd services; docker stack rm fac-facs-si-ps-quads
+	cd services; docker stack rm facs-si-ps-quads
 
 service-facs-si-ps-quads-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-quads.yml facs-si-ps-quads
 
 service-facs-si-ps-sexts-stop:
-	cd services; docker stack rm fac-facs-si-ps-sexts
+	cd services; docker stack rm facs-si-ps-sexts
 
 service-facs-si-ps-sexts-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-sexts.yml facs-si-ps-sexts
 
 service-facs-si-ps-corrs-c2m12-ia01t10-stop:
-	cd services; docker stack rm fac-facs-si-ps-corrs-c2m12-ia01t10
+	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia01t10
 
 service-facs-si-ps-corrs-c2m12-ia01t10-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia01t10.yml facs-si-ps-corrs-c2m12-ia01t10
 
 service-facs-si-ps-corrs-c2m12-ia11t20-stop:
-	cd services; docker stack rm fac-facs-si-ps-corrs-c2m12-ia11t20
+	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia11t20
 
 service-facs-si-ps-corrs-c2m12-ia11t20-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia11t20.yml facs-si-ps-corrs-c2m12-ia11t20
 
 service-facs-si-ps-corrs-c134-ia01t10-stop:
-	cd services; docker stack rm fac-facs-si-ps-corrs-c134-ia01t10
+	cd services; docker stack rm facs-si-ps-corrs-c134-ia01t10
 
 service-facs-si-ps-corrs-c134-ia01t10-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia01t10.yml facs-si-ps-corrs-c134-ia01t10
 
 service-facs-si-ps-corrs-c134-ia11t20-stop:
-	cd services; docker stack rm fac-facs-si-ps-corrs-c134-ia11t20
+	cd services; docker stack rm facs-si-ps-corrs-c134-ia11t20
 
 service-facs-si-ps-corrs-c134-ia11t20-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia11t20.yml facs-si-ps-corrs-c134-ia11t20
 
 service-facs-si-ps-trims-m12-ia01t10-stop:
-	cd services; docker stack rm fac-facs-si-ps-trims-m12-ia01t10
+	cd services; docker stack rm facs-si-ps-trims-m12-ia01t10
 
 service-facs-si-ps-trims-m12-ia01t10-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-m12-ia01t10.yml facs-si-ps-trims-m12-ia01t10
 
 service-facs-si-ps-trims-m12-ia11t20-stop:
-	cd services; docker stack rm fac-facs-si-ps-trims-m12-ia11t20
+	cd services; docker stack rm facs-si-ps-trims-m12-ia11t20
 
 service-facs-si-ps-trims-m12-ia11t20-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-m12-ia11t20.yml facs-si-ps-trims-m12-ia11t20
 
 service-facs-si-ps-trims-c1234-ia01t10-stop:
-	cd services; docker stack rm fac-facs-si-ps-trims-c1234-ia01t10
+	cd services; docker stack rm facs-si-ps-trims-c1234-ia01t10
 
 service-facs-si-ps-trims-c1234-ia01t10-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234-ia01t10.yml facs-si-ps-trims-c1234-ia01t10
 
 service-facs-si-ps-trims-c1234-ia11t20-stop:
-	cd services; docker stack rm fac-facs-si-ps-trims-c1234-ia11t20
+	cd services; docker stack rm facs-si-ps-trims-c1234-ia11t20
 
 service-facs-si-ps-trims-c1234-ia11t20-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234-ia11t20.yml facs-si-ps-trims-c1234-ia11t20
 
 service-facs-as-pu-conv-stop:
-	cd services; docker stack rm fac-facs-as-pu-conv
+	cd services; docker stack rm facs-as-pu-conv
 
 service-facs-as-pu-conv-start:
 	cd services; docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv
 
 service-facs-as-ti-stop:
-	cd services; docker stack rm fac-facs-as-ti
+	cd services; docker stack rm facs-as-ti
 
 service-facs-as-ti-start:
 	cd services; docker stack deploy -c docker-stack-as-ti.yml facs-as-ti
 
 service-facs-bo-ti-bpms-corrs-stop:
-	cd services; docker stack rm fac-facs-bo-ti-bpms-corrs
+	cd services; docker stack rm facs-bo-ti-bpms-corrs
 
 service-facs-bo-ti-bpms-corrs-start:
 	cd services; docker stack deploy -c docker-stack-bo-ti-bpms-corrs.yml facs-bo-ti-bpms-corrs
 
 service-facs-si-ti-bpms-corrs-stop:
-	cd services; docker stack rm fac-facs-si-ti-bpms-corrs
+	cd services; docker stack rm facs-si-ti-bpms-corrs
 
 service-facs-si-ti-bpms-corrs-start:
 	cd services; docker stack deploy -c docker-stack-si-ti-bpms-corrs.yml facs-si-ti-bpms-corrs
 
 service-facs-si-ti-trims-skews-stop:
-	cd services; docker stack rm fac-facs-si-ti-trims-skews
+	cd services; docker stack rm facs-si-ti-trims-skews
 
 service-facs-si-ti-trims-skews-start:
 	cd services; docker stack deploy -c docker-stack-si-ti-trims-skews.yml facs-si-ti-trims-skews
 
 service-facs-as-ap-posang-stop:
-	cd services; docker stack rm fac-facs-as-ap-posang
+	cd services; docker stack rm facs-as-ap-posang
 
 service-facs-as-ap-posang-start:
 	cd services; docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang
 
 service-facs-as-ap-opticscorr-stop:
-	cd services; docker stack rm fac-facs-as-ap-opticscorr
+	cd services; docker stack rm facs-as-ap-opticscorr
 
 service-facs-as-ap-opticscorr-start:
 	cd services; docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr
 
 service-facs-as-ap-currinfo-stop:
-	cd services; docker stack rm fac-facs-as-ap-currinfo
+	cd services; docker stack rm facs-as-ap-currinfo
 
 service-facs-as-ap-currinfo-start:
 	cd services; docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo
 
 service-facs-as-ap-sofb-stop:
-	cd services; docker stack rm fac-facs-as-ap-sofb
+	cd services; docker stack rm facs-as-ap-sofb
 
 service-facs-as-ap-sofb-start:
 	cd services; docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb
 
 service-facs-si-ap-sofb-stop:
-	cd services; docker stack rm fac-facs-si-ap-sofb
+	cd services; docker stack rm facs-si-ap-sofb
 
 service-facs-si-ap-sofb-start:
 	cd services; docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb
 
 service-facs-as-ap-diag-stop:
-	cd services; docker stack rm fac-facs-as-ap-diag
+	cd services; docker stack rm facs-as-ap-diag
 
 service-facs-as-ap-diag-start:
 	cd services; docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag
 
 service-facs-li-ap-energy-stop:
-	cd services; docker stack rm fac-facs-li-ap-energy
+	cd services; docker stack rm facs-li-ap-energy
 
 service-facs-li-ap-energy-start:
 	cd services; docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy
 
 service-facs-si-ap-bl-stop:
-	cd services; docker stack rm fac-facs-si-ap-bl
+	cd services; docker stack rm facs-si-ap-bl
 
 service-facs-si-ap-bl-start:
 	cd services; docker stack deploy -c docker-stack-si-ap-bl.yml facs-si-ap-bl
 
 service-facs-si-id-conv-stop:
-	cd services; docker stack rm fac-facs-si-id-conv
+	cd services; docker stack rm facs-si-id-conv
 
 service-facs-si-id-conv-start:
 	cd services; docker stack deploy -c docker-stack-si-id-conv.yml facs-si-id-conv
 
 service-facs-as-ap-machshift-stop:
-	cd services; docker stack rm fac-facs-as-ap-machshift
+	cd services; docker stack rm facs-as-ap-machshift
 
 service-facs-as-ap-machshift-start:
 	cd services; docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift
