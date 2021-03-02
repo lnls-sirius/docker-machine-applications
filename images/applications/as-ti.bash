@@ -19,24 +19,6 @@
 # sirius-ioc-si-ti-trig.service
 /usr/local/bin/sirius-ioc-as-ti-control.py -s si >& /ioc-logs/sirius-ioc-si-ti-trig &
 
-# sirius-ioc-bo-ti-trig-bpms.service
-/usr/local/bin/sirius-ioc-as-ti-control.py -s bo-bpms >& /ioc-logs/sirius-ioc-bo-ti-trig-bpms &
-
-# sirius-ioc-bo-ti-trig-corrs.service
-/usr/local/bin/sirius-ioc-as-ti-control.py -s bo-corrs >& /ioc-logs/sirius-ioc-bo-ti-trig-corrs &
-
-# sirius-ioc-si-ti-trig-bpms.service
-/usr/local/bin/sirius-ioc-as-ti-control.py -s si-bpms >& /ioc-logs/sirius-ioc-si-ti-trig-bpms &
-
-# sirius-ioc-si-ti-trig-corrs.service
-/usr/local/bin/sirius-ioc-as-ti-control.py -s si-corrs >& /ioc-logs/sirius-ioc-si-ti-trig-corrs &
-
-# sirius-ioc-si-ti-trig-qtrims.service
-/usr/local/bin/sirius-ioc-as-ti-control.py -s si-qtrims >& /ioc-logs/sirius-ioc-si-ti-trig-qtrims &
-
-# sirius-ioc-si-ti-trig-skews.service
-/usr/local/bin/sirius-ioc-as-ti-control.py -s si-skews >& /ioc-logs/sirius-ioc-si-ti-trig-skews &
-
 
 # keep entry point running
 sleep infinity

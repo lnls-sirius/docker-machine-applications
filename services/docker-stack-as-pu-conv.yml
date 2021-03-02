@@ -1,12 +1,12 @@
 version: "3.7"
 services:
-  ts-ps:
+  iocs:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-02-26
     command: bash -c 'source /etc/profile && /ioc-apps/as-pu-conv.bash'
     deploy:
       placement:
         constraints:
-          - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != CA-RaTim-CO-IOCSrv
           # - node.hostname != IA-14RaDiag03-CO-IOCSrv
           # - node.hostname != IA-16RaBbB-CO-IOCSrv
           # - node.hostname != IA-18RaDiag04-CO-IOCSrv
