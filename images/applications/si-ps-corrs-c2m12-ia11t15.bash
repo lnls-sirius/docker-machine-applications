@@ -7,7 +7,7 @@
 /usr/local/bin/sirius-ioc-as-ps.py IA-15RaCtrl:CO-PSCtrl-SI2 &> /ioc-logs/sirius-ioc-si-ps-correctors-c2m12-ia15 &
 
 # Diag
-/usr/local/bin/sirius-ioc-as-ps-diag.py SI "(1[1-9]|20)(C2|M1|M2)" "C(H|V).*" &> /ioc-logs/sirius-ioc-si-ps-diag-corrs-c2m12-ia11t20 &
+/usr/local/bin/sirius-ioc-as-ps-diag.py SI "1[1-5](C2|M1|M2)" "C(H|V).*" &> /ioc-logs/sirius-ioc-si-ps-diag-corrs-c2m12-ia11t15 &
 
 
 # keep entry point running
