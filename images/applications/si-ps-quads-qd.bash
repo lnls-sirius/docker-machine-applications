@@ -9,7 +9,7 @@
 /usr/local/bin/sirius-ioc-as-ps.py PA-RaPSA05:CO-PSCtrl-SI1 &> /ioc-logs/sirius-ioc-si-ps-quadrupoles-qd2 & # 11.6%
 
 # Diag
-/usr/local/bin/sirius-ioc-as-ps-diag.py SI Fam "QD(A|B|P)(1|2)" &> /ioc-logs/sirius-ioc-si-ps-diag-quads-qd & # 2.7%
+/usr/local/bin/sirius-ioc-as-ps-diag.py SI Fam "QD.*" &> /ioc-logs/sirius-ioc-si-ps-diag-quads-qd & # 2.7%
 
 
 # keep entry point running
