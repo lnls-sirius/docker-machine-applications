@@ -46,17 +46,29 @@ service-facs-as-ps-dclinks-tbts-bodip-stop:
 service-facs-as-ps-dclinks-tbts-bodip-start:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-tbts-bodip.yml facs-as-ps-dclinks-tbts-bodip
 
-service-facs-as-ps-dclinks-ia01t10-stop:
-	cd services; docker stack rm facs-as-ps-dclinks-ia01t10
+service-facs-as-ps-dclinks-ia01t05-stop:
+	cd services; docker stack rm facs-as-ps-dclinks-ia01t05
 
-service-facs-as-ps-dclinks-ia01t10-start:
-	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia01t10.yml facs-as-ps-dclinks-ia01t10
+service-facs-as-ps-dclinks-ia01t05-start:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia01t05.yml facs-as-ps-dclinks-ia01t05
 
-service-facs-as-ps-dclinks-ia11t20-stop:
-	cd services; docker stack rm facs-as-ps-dclinks-ia11t20
+service-facs-as-ps-dclinks-ia06t10-stop:
+	cd services; docker stack rm facs-as-ps-dclinks-ia06t10
 
-service-facs-as-ps-dclinks-ia11t20-start:
-	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia11t20.yml facs-as-ps-dclinks-ia11t20
+service-facs-as-ps-dclinks-ia06t10-start:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia06t10.yml facs-as-ps-dclinks-ia06t10
+
+service-facs-as-ps-dclinks-ia11t15-stop:
+	cd services; docker stack rm facs-as-ps-dclinks-ia11t15
+
+service-facs-as-ps-dclinks-ia11t15-start:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia11t15.yml facs-as-ps-dclinks-ia11t15
+
+service-facs-as-ps-dclinks-ia16t20-stop:
+	cd services; docker stack rm facs-as-ps-dclinks-ia16t20
+
+service-facs-as-ps-dclinks-ia16t20-start:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia16t20.yml facs-as-ps-dclinks-ia16t20
 
 service-facs-li-ps-spect-quads-lens-stop:
 	cd services; docker stack rm facs-li-ps-spect-quads-lens

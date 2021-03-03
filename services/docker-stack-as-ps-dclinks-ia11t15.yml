@@ -2,7 +2,7 @@ version: "3.7"
 services:
   iocs:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
-    command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia01t10.bash'
+    command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia11t15.bash'
     deploy:
       placement:
         constraints:
