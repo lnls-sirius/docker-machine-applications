@@ -194,121 +194,121 @@ service-facs-si-ps-corrs-c2m12-ia01-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia01
 
 service-facs-si-ps-corrs-c2m12-ia01-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia01.yml facs-si-ps-corrs-c2m12-ia01
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia01.yml facs-si-ps-corrs-c2m12-ia01
 
 service-facs-si-ps-corrs-c2m12-ia02-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia02
 
 service-facs-si-ps-corrs-c2m12-ia02-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia02.yml facs-si-ps-corrs-c2m12-ia02
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia02.yml facs-si-ps-corrs-c2m12-ia02
 
 service-facs-si-ps-corrs-c2m12-ia03-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia03
 
 service-facs-si-ps-corrs-c2m12-ia03-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia03.yml facs-si-ps-corrs-c2m12-ia03
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia03.yml facs-si-ps-corrs-c2m12-ia03
 
 service-facs-si-ps-corrs-c2m12-ia04-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia04
 
 service-facs-si-ps-corrs-c2m12-ia04-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia04.yml facs-si-ps-corrs-c2m12-ia04
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia04.yml facs-si-ps-corrs-c2m12-ia04
 
 service-facs-si-ps-corrs-c2m12-ia05-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia05
 
 service-facs-si-ps-corrs-c2m12-ia05-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia05.yml facs-si-ps-corrs-c2m12-ia05
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia05.yml facs-si-ps-corrs-c2m12-ia05
 
 service-facs-si-ps-corrs-c2m12-ia06-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia06
 
 service-facs-si-ps-corrs-c2m12-ia06-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia06.yml facs-si-ps-corrs-c2m12-ia06
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia06.yml facs-si-ps-corrs-c2m12-ia06
 
 service-facs-si-ps-corrs-c2m12-ia07-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia07
 
 service-facs-si-ps-corrs-c2m12-ia07-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia07.yml facs-si-ps-corrs-c2m12-ia07
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia07.yml facs-si-ps-corrs-c2m12-ia07
 
 service-facs-si-ps-corrs-c2m12-ia08-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia08
 
 service-facs-si-ps-corrs-c2m12-ia08-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia08.yml facs-si-ps-corrs-c2m12-ia08
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia08.yml facs-si-ps-corrs-c2m12-ia08
 
 service-facs-si-ps-corrs-c2m12-ia09-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia09
 
 service-facs-si-ps-corrs-c2m12-ia09-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia09.yml facs-si-ps-corrs-c2m12-ia09
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia09.yml facs-si-ps-corrs-c2m12-ia09
 
 service-facs-si-ps-corrs-c2m12-ia10-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia10
 
 service-facs-si-ps-corrs-c2m12-ia10-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia10.yml facs-si-ps-corrs-c2m12-ia10
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia10.yml facs-si-ps-corrs-c2m12-ia10
 
 service-facs-si-ps-corrs-c2m12-ia11-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia11
 
 service-facs-si-ps-corrs-c2m12-ia11-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia11.yml facs-si-ps-corrs-c2m12-ia11
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia11.yml facs-si-ps-corrs-c2m12-ia11
 
 service-facs-si-ps-corrs-c2m12-ia12-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia12
 
 service-facs-si-ps-corrs-c2m12-ia12-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia12.yml facs-si-ps-corrs-c2m12-ia12
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia12.yml facs-si-ps-corrs-c2m12-ia12
 
 service-facs-si-ps-corrs-c2m12-ia13-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia13
 
 service-facs-si-ps-corrs-c2m12-ia13-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia13.yml facs-si-ps-corrs-c2m12-ia13
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia13.yml facs-si-ps-corrs-c2m12-ia13
 
 service-facs-si-ps-corrs-c2m12-ia14-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia14
 
 service-facs-si-ps-corrs-c2m12-ia14-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia14.yml facs-si-ps-corrs-c2m12-ia14
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia14.yml facs-si-ps-corrs-c2m12-ia14
 
 service-facs-si-ps-corrs-c2m12-ia15-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia15
 
 service-facs-si-ps-corrs-c2m12-ia15-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia15.yml facs-si-ps-corrs-c2m12-ia15
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia15.yml facs-si-ps-corrs-c2m12-ia15
 
 service-facs-si-ps-corrs-c2m12-ia16-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia16
 
 service-facs-si-ps-corrs-c2m12-ia16-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia16.yml facs-si-ps-corrs-c2m12-ia16
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia16.yml facs-si-ps-corrs-c2m12-ia16
 
 service-facs-si-ps-corrs-c2m12-ia17-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia17
 
 service-facs-si-ps-corrs-c2m12-ia17-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia17.yml facs-si-ps-corrs-c2m12-ia17
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia17.yml facs-si-ps-corrs-c2m12-ia17
 
 service-facs-si-ps-corrs-c2m12-ia18-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia18
 
 service-facs-si-ps-corrs-c2m12-ia18-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia18.yml facs-si-ps-corrs-c2m12-ia18
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia18.yml facs-si-ps-corrs-c2m12-ia18
 
 service-facs-si-ps-corrs-c2m12-ia19-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia19
 
 service-facs-si-ps-corrs-c2m12-ia19-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia19.yml facs-si-ps-corrs-c2m12-ia19
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia19.yml facs-si-ps-corrs-c2m12-ia19
 
 service-facs-si-ps-corrs-c2m12-ia20-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia20
 
 service-facs-si-ps-corrs-c2m12-ia20-start:
-	cd sevices; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia20.yml facs-si-ps-corrs-c2m12-ia20
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia20.yml facs-si-ps-corrs-c2m12-ia20
 
 service-facs-si-ps-corrs-c134-ia01-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia01
