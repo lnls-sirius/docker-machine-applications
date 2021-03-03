@@ -166,17 +166,17 @@ service-facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0-stop:
 service-facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-sexts-sda12b2-sfa0p0-sda0p0.yml facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0
 
-service-facs-si-ps-sexts-sda3p1-sfb0-sdb01-stop:
-	cd services; docker stack rm facs-si-ps-sexts-sda3p1-sfb0-sdb01
+service-facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01-stop:
+	cd services; docker stack rm facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01
 
-service-facs-si-ps-sexts-sda3p1-sfb0-sdb01-start:
-	cd services; docker stack deploy -c docker-stack-si-ps-sexts-sda3p1-sfb0-sdb01.yml facs-si-ps-sexts-sda3p1-sfb0-sdb01
+service-facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01.yml facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01
 
-service-facs-si-ps-sexts-sdb3-sfp12-sdp23-stop:
+service-facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23-stop:
 	cd services; docker stack rm facs-si-ps-sextssdb3-sfp12-sdp23
 
-service-facs-si-ps-sexts-sdb3-sfp12-sdp23-start:
-	cd services; docker stack deploy -c docker-stack-si-ps-sexts-sdb3-sfp12-sdp23.yml facs-si-ps-sexts-sdb3-sfp12-sdp23
+service-facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-sexts-sfb12-sdb3-sfp12-sdp23.yml facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23
 
 service-facs-si-ps-corrs-c2m12-ia01t05-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia01t05
