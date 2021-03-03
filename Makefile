@@ -314,121 +314,121 @@ service-facs-si-ps-corrs-c134-ia01-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia01
 
 service-facs-si-ps-corrs-c134-ia01-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia01,yml facs-si-ps-corrs-c134-ia01
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia01.yml facs-si-ps-corrs-c134-ia01 \
 
 service-facs-si-ps-corrs-c134-ia02-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia02
 
 service-facs-si-ps-corrs-c134-ia02-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia02,yml facs-si-ps-corrs-c134-ia02
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia02.yml facs-si-ps-corrs-c134-ia02 \
 
 service-facs-si-ps-corrs-c134-ia03-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia03
 
 service-facs-si-ps-corrs-c134-ia03-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia03,yml facs-si-ps-corrs-c134-ia03
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia03.yml facs-si-ps-corrs-c134-ia03 \
 
 service-facs-si-ps-corrs-c134-ia04-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia04
 
 service-facs-si-ps-corrs-c134-ia04-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia04,yml facs-si-ps-corrs-c134-ia04
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia04.yml facs-si-ps-corrs-c134-ia04 \
 
 service-facs-si-ps-corrs-c134-ia05-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia05
 
 service-facs-si-ps-corrs-c134-ia05-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia05,yml facs-si-ps-corrs-c134-ia05
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia05.yml facs-si-ps-corrs-c134-ia05 \
 
 service-facs-si-ps-corrs-c134-ia06-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia06
 
 service-facs-si-ps-corrs-c134-ia06-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia06,yml facs-si-ps-corrs-c134-ia06
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia06.yml facs-si-ps-corrs-c134-ia06 \
 
 service-facs-si-ps-corrs-c134-ia07-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia07
 
 service-facs-si-ps-corrs-c134-ia07-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia07,yml facs-si-ps-corrs-c134-ia07
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia07.yml facs-si-ps-corrs-c134-ia07 \
 
 service-facs-si-ps-corrs-c134-ia08-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia08
 
 service-facs-si-ps-corrs-c134-ia08-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia08,yml facs-si-ps-corrs-c134-ia08
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia08.yml facs-si-ps-corrs-c134-ia08 \
 
 service-facs-si-ps-corrs-c134-ia09-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia09
 
 service-facs-si-ps-corrs-c134-ia09-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia09,yml facs-si-ps-corrs-c134-ia09
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia09.yml facs-si-ps-corrs-c134-ia09 \
 
 service-facs-si-ps-corrs-c134-ia10-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia10
 
 service-facs-si-ps-corrs-c134-ia10-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia10,yml facs-si-ps-corrs-c134-ia10
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia10.yml facs-si-ps-corrs-c134-ia10 \
 
 service-facs-si-ps-corrs-c134-ia11-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia11
 
 service-facs-si-ps-corrs-c134-ia11-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia11,yml facs-si-ps-corrs-c134-ia11
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia11.yml facs-si-ps-corrs-c134-ia11 \
 
 service-facs-si-ps-corrs-c134-ia12-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia12
 
 service-facs-si-ps-corrs-c134-ia12-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia12,yml facs-si-ps-corrs-c134-ia12
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia12.yml facs-si-ps-corrs-c134-ia12 \
 
 service-facs-si-ps-corrs-c134-ia13-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia13
 
 service-facs-si-ps-corrs-c134-ia13-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia13,yml facs-si-ps-corrs-c134-ia13
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia13.yml facs-si-ps-corrs-c134-ia13 \
 
 service-facs-si-ps-corrs-c134-ia14-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia14
 
 service-facs-si-ps-corrs-c134-ia14-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia14,yml facs-si-ps-corrs-c134-ia14
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia14.yml facs-si-ps-corrs-c134-ia14 \
 
 service-facs-si-ps-corrs-c134-ia15-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia15
 
 service-facs-si-ps-corrs-c134-ia15-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia15,yml facs-si-ps-corrs-c134-ia15
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia15.yml facs-si-ps-corrs-c134-ia15 \
 
 service-facs-si-ps-corrs-c134-ia16-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia16
 
 service-facs-si-ps-corrs-c134-ia16-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia16,yml facs-si-ps-corrs-c134-ia16
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia16.yml facs-si-ps-corrs-c134-ia16 \
 
 service-facs-si-ps-corrs-c134-ia17-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia17
 
 service-facs-si-ps-corrs-c134-ia17-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia17,yml facs-si-ps-corrs-c134-ia17
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia17.yml facs-si-ps-corrs-c134-ia17 \
 
 service-facs-si-ps-corrs-c134-ia18-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia18
 
 service-facs-si-ps-corrs-c134-ia18-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia18,yml facs-si-ps-corrs-c134-ia18
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia18.yml facs-si-ps-corrs-c134-ia18 \
 
 service-facs-si-ps-corrs-c134-ia19-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia19
 
 service-facs-si-ps-corrs-c134-ia19-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia19,yml facs-si-ps-corrs-c134-ia19
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia19.yml facs-si-ps-corrs-c134-ia19 \
 
 service-facs-si-ps-corrs-c134-ia20-stop:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia20
 
 service-facs-si-ps-corrs-c134-ia20-start:
-	cd services; docker stack -c facs-si-ps-corrs-c134-ia20,yml facs-si-ps-corrs-c134-ia20
+	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia20.yml facs-si-ps-corrs-c134-ia20 \
 
 service-facs-si-ps-trims-qs-m12-ia01-stop:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia01
@@ -782,14 +782,46 @@ service-facs-all-stop:
 	docker stack rm facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0 \
 	docker stack rm facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01 \
 	docker stack rm facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia01t05 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia06t10 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia11t15 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia16t20 \
-	docker stack rm facs-si-ps-corrs-c134-ia01t05 \
-	docker stack rm facs-si-ps-corrs-c134-ia05t10 \
-	docker stack rm facs-si-ps-corrs-c134-ia11t15 \
-	docker stack rm facs-si-ps-corrs-c134-ia16t20 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia01 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia02 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia03 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia04 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia05 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia06 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia07 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia08 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia09 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia10 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia11 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia12 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia13 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia14 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia15 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia16 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia17 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia18 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia19 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia20 \
+	docker stack rm facs-si-ps-corrs-c134-ia01 \
+	docker stack rm facs-si-ps-corrs-c134-ia02 \
+	docker stack rm facs-si-ps-corrs-c134-ia03 \
+	docker stack rm facs-si-ps-corrs-c134-ia04 \
+	docker stack rm facs-si-ps-corrs-c134-ia05 \
+	docker stack rm facs-si-ps-corrs-c134-ia06 \
+	docker stack rm facs-si-ps-corrs-c134-ia07 \
+	docker stack rm facs-si-ps-corrs-c134-ia08 \
+	docker stack rm facs-si-ps-corrs-c134-ia09 \
+	docker stack rm facs-si-ps-corrs-c134-ia10 \
+	docker stack rm facs-si-ps-corrs-c134-ia11 \
+	docker stack rm facs-si-ps-corrs-c134-ia12 \
+	docker stack rm facs-si-ps-corrs-c134-ia13 \
+	docker stack rm facs-si-ps-corrs-c134-ia14 \
+	docker stack rm facs-si-ps-corrs-c134-ia15 \
+	docker stack rm facs-si-ps-corrs-c134-ia16 \
+	docker stack rm facs-si-ps-corrs-c134-ia17 \
+	docker stack rm facs-si-ps-corrs-c134-ia18 \
+	docker stack rm facs-si-ps-corrs-c134-ia19 \
+	docker stack rm facs-si-ps-corrs-c134-ia20 \
 	docker stack rm facs-si-ps-trims-qs-m12-ia01 \
 	docker stack rm facs-si-ps-trims-qs-m12-ia02 \
 	docker stack rm facs-si-ps-trims-qs-m12-ia03 \
@@ -868,18 +900,46 @@ service-facs-all-start:
 	docker stack deploy -c docker-stack-si-ps-sexts-sda12b2-sfa0p0-sda0p0 facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0 \
 	docker stack deploy -c docker-stack-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01 facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01 \
 	docker stack deploy -c docker-stack-si-ps-sexts-sfb12-sdb3-sfp12-sdp23 facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia01t05.yml facs-si-ps-corrs-c2m12-ia01t05 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia06t10.yml facs-si-ps-corrs-c2m12-ia06t10 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia11t15.yml facs-si-ps-corrs-c2m12-ia11t15 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia16t20.yml facs-si-ps-corrs-c2m12-ia16t20 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia01t05.yml facs-si-ps-corrs-c134-ia01t05 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia06t10.yml facs-si-ps-corrs-c134-ia06t10 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia11t15.yml facs-si-ps-corrs-c134-ia11t15 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia16t20.yml facs-si-ps-corrs-c134-ia16t20 \
-	docker stack deploy -c docker-stack-si-ps-trims-m12-ia01t05.yml facs-si-ps-trims-m12-ia01t05 \
-	docker stack deploy -c docker-stack-si-ps-trims-m12-ia06t10.yml facs-si-ps-trims-m12-ia06t10 \
-	docker stack deploy -c docker-stack-si-ps-trims-m12-ia11t15.yml facs-si-ps-trims-m12-ia11t15 \
-	docker stack deploy -c docker-stack-si-ps-trims-m12-ia16t20.yml facs-si-ps-trims-m12-ia16t20 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia01.yml facs-si-ps-corrs-c2m12-ia01 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia02.yml facs-si-ps-corrs-c2m12-ia02 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia03.yml facs-si-ps-corrs-c2m12-ia03 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia04.yml facs-si-ps-corrs-c2m12-ia04 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia05.yml facs-si-ps-corrs-c2m12-ia05 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia06.yml facs-si-ps-corrs-c2m12-ia06 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia07.yml facs-si-ps-corrs-c2m12-ia07 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia08.yml facs-si-ps-corrs-c2m12-ia08 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia09.yml facs-si-ps-corrs-c2m12-ia09 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia10.yml facs-si-ps-corrs-c2m12-ia10 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia11.yml facs-si-ps-corrs-c2m12-ia11 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia12.yml facs-si-ps-corrs-c2m12-ia12 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia13.yml facs-si-ps-corrs-c2m12-ia13 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia14.yml facs-si-ps-corrs-c2m12-ia14 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia15.yml facs-si-ps-corrs-c2m12-ia15 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia16.yml facs-si-ps-corrs-c2m12-ia16 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia17.yml facs-si-ps-corrs-c2m12-ia17 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia18.yml facs-si-ps-corrs-c2m12-ia18 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia19.yml facs-si-ps-corrs-c2m12-ia19 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia20.yml facs-si-ps-corrs-c2m12-ia20 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia01.yml facs-si-ps-corrs-c134-ia01 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia02.yml facs-si-ps-corrs-c134-ia02 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia03.yml facs-si-ps-corrs-c134-ia03 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia04.yml facs-si-ps-corrs-c134-ia04 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia05.yml facs-si-ps-corrs-c134-ia05 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia06.yml facs-si-ps-corrs-c134-ia06 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia07.yml facs-si-ps-corrs-c134-ia07 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia08.yml facs-si-ps-corrs-c134-ia08 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia09.yml facs-si-ps-corrs-c134-ia09 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia10.yml facs-si-ps-corrs-c134-ia10 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia11.yml facs-si-ps-corrs-c134-ia11 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia12.yml facs-si-ps-corrs-c134-ia12 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia13.yml facs-si-ps-corrs-c134-ia13 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia14.yml facs-si-ps-corrs-c134-ia14 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia15.yml facs-si-ps-corrs-c134-ia15 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia16.yml facs-si-ps-corrs-c134-ia16 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia17.yml facs-si-ps-corrs-c134-ia17 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia18.yml facs-si-ps-corrs-c134-ia18 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia19.yml facs-si-ps-corrs-c134-ia19 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia20.yml facs-si-ps-corrs-c134-ia20 \
 	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia01.yml facs-si-ps-trims-qs-m12-ia01 \
 	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia02.yml facs-si-ps-trims-qs-m12-ia02 \
 	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia03.yml facs-si-ps-trims-qs-m12-ia03 \
