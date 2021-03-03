@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 74.5%
+
 # sirius-ioc-si-ps-sextupoles-sda12b2.service
 /usr/local/bin/sirius-ioc-as-ps.py PA-RaPSB06:CO-PSCtrl-SI1 &> /ioc-logs/sirius-ioc-si-ps-sda12b2  & # 11.9%
 

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 70.1%
+
 # Dipole
 /usr/local/bin/sirius-ioc-as-ps.py LA-RaPS02:CO-PSCtrl-TB &> /ioc-logs/sirius-ioc-tb-ps-dipoles & # 8.1%
 sleep 2 # before starting other IOCs

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 32.2%
 
 # CHs
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-01:PS-CH-1 &> /ioc-logs/sirius-ioc-li-ps-ch1 & # 2.3%

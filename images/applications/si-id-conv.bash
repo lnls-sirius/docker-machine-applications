@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 8.8%
 
 # sirius-ioc-si-id-conv.service
 /usr/local/bin/sirius-ioc-si-id-conv.py \

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 26.8%
 
 # sirius-ioc-as-ti-trig.service
 /usr/local/bin/sirius-ioc-as-ti-control.py -s as >& /ioc-logs/sirius-ioc-as-ti-trig & # 3.7%

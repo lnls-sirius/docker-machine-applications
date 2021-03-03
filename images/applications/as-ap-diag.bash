@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 19.3%
 
 # sirius-ioc-as-pu-diag.service
 /usr/local/bin/sirius-ioc-as-pu-diag.py &> /ioc-logs/sirius-ioc-as-pu-diag & # 8.2%

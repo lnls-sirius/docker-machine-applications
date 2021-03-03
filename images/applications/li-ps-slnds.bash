@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 39.9%
 
 # Solenoids
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-01:PS-Slnd-1  &> /ioc-logs/sirius-ioc-li-ps-solenoid-1 & # 1.9%

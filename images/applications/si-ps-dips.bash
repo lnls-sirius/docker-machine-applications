@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 70.7%
+
 # sirius-ioc-si-ps-dipoles.service
 /usr/local/bin/sirius-ioc-as-ps.py PA-RaPSD04:CO-PSCtrl-SI &> /ioc-logs/sirius-ioc-si-ps-dipoles & # 66.6%
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 17.8%
 
 # TB and TS DClinks
 /usr/local/bin/sirius-ioc-as-ps.py LA-RaCtrl:CO-DCLinkCtrl &> /ioc-logs/sirius-ioc-as-ps-dclink-tbts & # 4.8%

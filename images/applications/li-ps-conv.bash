@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 14.5%
 
 # Conv
 /usr/local/bin/sirius-ioc-li-ps-conv.py \

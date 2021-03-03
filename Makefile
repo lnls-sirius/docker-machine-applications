@@ -112,17 +112,29 @@ service-facs-bo-ps-sexts-stop:
 service-facs-bo-ps-sexts-start:
 	cd services; docker stack deploy -c docker-stack-bo-ps-sexts.yml facs-bo-ps-sexts
 
-service-facs-bo-ps-corrs-ia01t10-stop:
-	cd services; docker stack rm facs-bo-ps-corrs-ia01t10
+service-facs-bo-ps-corrs-ia01t05-stop:
+	cd services; docker stack rm facs-bo-ps-corrs-ia01t05
 
-service-facs-bo-ps-corrs-ia01t10-start:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia01t10.yml facs-bo-ps-corrs-ia01t10
+service-facs-bo-ps-corrs-ia01t05-start:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia01t05.yml facs-bo-ps-corrs-ia01t05
 
-service-facs-bo-ps-corrs-ia11t20-stop:
-	cd services; docker stack rm facs-bo-ps-corrs-ia11t20
+service-facs-bo-ps-corrs-ia06t10-stop:
+	cd services; docker stack rm facs-bo-ps-corrs-ia06t10
 
-service-facs-bo-ps-corrs-ia11t20-start:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia11t20.yml facs-bo-ps-corrs-ia11t20
+service-facs-bo-ps-corrs-ia06t10-start:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia06t10.yml facs-bo-ps-corrs-ia06t10
+
+service-facs-bo-ps-corrs-ia11t15-stop:
+	cd services; docker stack rm facs-bo-ps-corrs-ia11t15
+
+service-facs-bo-ps-corrs-ia11t15-start:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia11t15.yml facs-bo-ps-corrs-ia11t15
+
+service-facs-bo-ps-corrs-ia16t20-stop:
+	cd services; docker stack rm facs-bo-ps-corrs-ia16t20
+
+service-facs-bo-ps-corrs-ia16t20-start:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia16t20.yml facs-bo-ps-corrs-ia16t20
 
 service-facs-ts-ps-stop:
 	cd services; docker stack rm facs-ts-ps
@@ -136,11 +148,17 @@ service-facs-si-ps-dips-stop:
 service-facs-si-ps-dips-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-dips.yml facs-si-ps-dips
 
-service-facs-si-ps-quads-stop:
-	cd services; docker stack rm facs-si-ps-quads
+service-facs-si-ps-quads-qd-stop:
+	cd services; docker stack rm facs-si-ps-quads-qd
 
-service-facs-si-ps-quads-start:
-	cd services; docker stack deploy -c docker-stack-si-ps-quads.yml facs-si-ps-quads
+service-facs-si-ps-quads-qd-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-quads-qd.yml facs-si-ps-quads-qd
+
+service-facs-si-ps-quads-qfq-stop:
+	cd services; docker stack rm facs-si-ps-quads-qfq
+
+service-facs-si-ps-quads-qfq-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-quads-qfq.yml facs-si-ps-quads-qfq
 
 service-facs-si-ps-sexts-stop:
 	cd services; docker stack rm facs-si-ps-sexts
