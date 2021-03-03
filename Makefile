@@ -196,29 +196,56 @@ service-facs-si-ps-corrs-c134-ia16t20-stop:
 service-facs-si-ps-corrs-c134-ia16t20-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia16t20.yml facs-si-ps-corrs-c134-ia16t20
 
-service-facs-si-ps-trims-m12-ia01t10-stop:
-	cd services; docker stack rm facs-si-ps-trims-m12-ia01t10
+service-facs-si-ps-trims-m12-ia01t05-stop:
+	cd services; docker stack rm facs-si-ps-trims-m12-ia01t05
 
-service-facs-si-ps-trims-m12-ia01t10-start:
-	cd services; docker stack deploy -c docker-stack-si-ps-trims-m12-ia01t10.yml facs-si-ps-trims-m12-ia01t10
+service-facs-si-ps-trims-m12-ia01t05-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-trims-m12-ia01t05.yml facs-si-ps-trims-m12-ia01t05
 
-service-facs-si-ps-trims-m12-ia11t20-stop:
-	cd services; docker stack rm facs-si-ps-trims-m12-ia11t20
+service-facs-si-ps-trims-m12-ia06t10-stop:
+	cd services; docker stack rm facs-si-ps-trims-m12-ia06t10
 
-service-facs-si-ps-trims-m12-ia11t20-start:
-	cd services; docker stack deploy -c docker-stack-si-ps-trims-m12-ia11t20.yml facs-si-ps-trims-m12-ia11t20
+service-facs-si-ps-trims-m12-ia06t10-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-trims-m12-ia06t10.yml facs-si-ps-trims-m12-ia06t10
 
-service-facs-si-ps-trims-c1234-ia01t10-stop:
-	cd services; docker stack rm facs-si-ps-trims-c1234-ia01t10
+service-facs-si-ps-trims-m12-ia11t15-stop:
+	cd services; docker stack rm facs-si-ps-trims-m12-ia11t15
 
-service-facs-si-ps-trims-c1234-ia01t10-start:
-	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234-ia01t10.yml facs-si-ps-trims-c1234-ia01t10
+service-facs-si-ps-trims-m12-ia11t15-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-trims-m12-ia11t15.yml facs-si-ps-trims-m12-ia11t15
 
-service-facs-si-ps-trims-c1234-ia11t20-stop:
-	cd services; docker stack rm facs-si-ps-trims-c1234-ia11t20
+service-facs-si-ps-trims-m12-ia16t20-stop:
+	cd services; docker stack rm facs-si-ps-trims-m12-ia16t20
 
-service-facs-si-ps-trims-c1234-ia11t20-start:
-	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234-ia11t20.yml facs-si-ps-trims-c1234-ia11t20
+service-facs-si-ps-trims-m12-ia16t20-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-trims-m12-ia16t20.yml facs-si-ps-trims-m12-ia16t20
+
+service-facs-si-ps-trims-c1234-ia01t05-stop:
+	cd services; docker stack rm facs-si-ps-trims-c1234-ia01t05
+
+service-facs-si-ps-trims-c1234-ia01t05-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234-ia01t05.yml facs-si-ps-trims-c1234-ia01t05
+
+service-facs-si-ps-trims-c1234-ia06t10-stop:
+	cd services; docker stack rm facs-si-ps-trims-c1234-ia06t10
+
+service-facs-si-ps-trims-c1234-ia06t10-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234-ia06t10.yml facs-si-ps-trims-c1234-ia06t10
+
+service-facs-si-ps-trims-c1234-ia11t15-stop:
+	cd services; docker stack rm facs-si-ps-trims-c1234-ia11t15
+
+service-facs-si-ps-trims-c1234-ia11t15-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234-ia11t15.yml facs-si-ps-trims-c1234-ia11t15
+
+service-facs-si-ps-trims-c1234-ia16t20-stop:
+	cd services; docker stack rm facs-si-ps-trims-c1234-ia16t20
+
+service-facs-si-ps-trims-c1234-ia16t20-start:
+	cd services; docker stack deploy -c docker-stack-si-ps-trims-c1234-ia16t20.yml facs-si-ps-trims-c1234-ia16t20
+
+
+
 
 service-facs-as-pu-conv-stop:
 	cd services; docker stack rm facs-as-pu-conv
@@ -330,14 +357,22 @@ service-facs-all-stop:
 	docker stack rm facs-si-ps-dips \
 	docker stack rm facs-si-ps-quads \
 	docker stack rm facs-si-ps-sexts \
-	docker stack rm facs-si-ps-corrs-c2m12-ia01t10 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia11t20 \
-	docker stack rm facs-si-ps-corrs-c134-ia01t10 \
-	docker stack rm facs-si-ps-corrs-c134-ia11t20 \
-	docker stack rm facs-si-ps-trims-m12-ia01t10 \
-	docker stack rm facs-si-ps-trims-m12-ia11t20 \
-	docker stack rm facs-si-ps-trims-c1234-ia01t10 \
-	docker stack rm facs-si-ps-trims-c1234-ia11t20 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia01t05 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia06t10 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia11t15 \
+	docker stack rm facs-si-ps-corrs-c2m12-ia16t20 \
+	docker stack rm facs-si-ps-corrs-c134-ia01t05 \
+	docker stack rm facs-si-ps-corrs-c134-ia05t10 \
+	docker stack rm facs-si-ps-corrs-c134-ia11t15 \
+	docker stack rm facs-si-ps-corrs-c134-ia16t20 \
+	docker stack rm facs-si-ps-trims-m12-ia01t05 \
+	docker stack rm facs-si-ps-trims-m12-ia06t10 \
+	docker stack rm facs-si-ps-trims-m12-ia11t15 \
+	docker stack rm facs-si-ps-trims-m12-ia16t20 \
+	docker stack rm facs-si-ps-trims-c1234-ia01t05 \
+	docker stack rm facs-si-ps-trims-c1234-ia05t10 \
+	docker stack rm facs-si-ps-trims-c1234-ia11t15 \
+	docker stack rm facs-si-ps-trims-c1234-ia16t20 \
 	docker stack rm facs-as-pu-conv \
 	docker stack rm facs-as-ti \
 	docker stack rm facs-bo-ti-bpms-corrs \
@@ -374,14 +409,22 @@ service-facs-all-start:
 	docker stack deploy -c docker-stack-si-ps-dips.yml facs-si-ps-dips \
 	docker stack deploy -c docker-stack-si-ps-quads.yml facs-si-ps-quads \
 	docker stack deploy -c docker-stack-si-ps-sexts.yml facs-si-ps-sexts \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia01t10.yml facs-si-ps-corrs-c2m12-ia01t10 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia11t20.yml facs-si-ps-corrs-c2m12-ia11t20 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia01t10.yml facs-si-ps-corrs-c134-ia01t10 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia11t20.yml facs-si-ps-corrs-c134-ia11t20 \
-	docker stack deploy -c docker-stack-si-ps-trims-m12-ia01t10.yml facs-si-ps-trims-m12-ia01t10 \
-	docker stack deploy -c docker-stack-si-ps-trims-m12-ia11t20.yml facs-si-ps-trims-m12-ia11t20 \
-	docker stack deploy -c docker-stack-si-ps-trims-c1234-ia01t10.yml facs-si-ps-trims-c1234-ia01t10 \
-	docker stack deploy -c docker-stack-si-ps-trims-c1234-ia11t20.yml facs-si-ps-trims-c1234-ia11t20 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia01t05.yml facs-si-ps-corrs-c2m12-ia01t05 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia06t10.yml facs-si-ps-corrs-c2m12-ia06t10 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia11t15.yml facs-si-ps-corrs-c2m12-ia11t15 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia16t20.yml facs-si-ps-corrs-c2m12-ia16t20 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia01t05.yml facs-si-ps-corrs-c134-ia01t05 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia06t10.yml facs-si-ps-corrs-c134-ia06t10 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia11t15.yml facs-si-ps-corrs-c134-ia11t15 \
+	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia16t20.yml facs-si-ps-corrs-c134-ia16t20 \
+	docker stack deploy -c docker-stack-si-ps-trims-m12-ia01t05.yml facs-si-ps-trims-m12-ia01t05 \
+	docker stack deploy -c docker-stack-si-ps-trims-m12-ia06t10.yml facs-si-ps-trims-m12-ia06t10 \
+	docker stack deploy -c docker-stack-si-ps-trims-m12-ia11t15.yml facs-si-ps-trims-m12-ia11t15 \
+	docker stack deploy -c docker-stack-si-ps-trims-m12-ia16t20.yml facs-si-ps-trims-m12-ia16t20 \
+	docker stack deploy -c docker-stack-si-ps-trims-c1234-ia01t05.yml facs-si-ps-trims-c1234-ia01t05 \
+	docker stack deploy -c docker-stack-si-ps-trims-c1234-ia06t10.yml facs-si-ps-trims-c1234-ia06t10 \
+	docker stack deploy -c docker-stack-si-ps-trims-c1234-ia11t15.yml facs-si-ps-trims-c1234-ia11t15 \
+	docker stack deploy -c docker-stack-si-ps-trims-c1234-ia16t20.yml facs-si-ps-trims-c1234-ia16t20 \
 	docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv \
 	docker stack deploy -c docker-stack-as-ti.yml facs-as-ti \
 	docker stack deploy -c docker-stack-bo-ti-bpms-corrs.yml facs-bo-ti-bpms-corrs \
