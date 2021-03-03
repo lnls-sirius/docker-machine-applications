@@ -16,7 +16,7 @@
 /usr/local/bin/sirius-ioc-as-ps.py PA-RaPSB09:CO-PSCtrl-SI2 &> /ioc-logs/sirius-ioc-si-ps-sfp12-sdp23 & # 14.6%
 
 # Diag
-/usr/local/bin/sirius-ioc-as-ps-diag.py SI Fam "S(DB3|FB1|FB2|FP2|FP1|DP3|DP2)" &> /ioc-logs/sirius-ioc-si-ps-diag-sexts-sdb3-sfp12-sdp23 & # 1.9%
+/usr/local/bin/sirius-ioc-as-ps-diag.py SI Fam "S(DB3|FB1|FB2|FP2|FP1|DP3|DP2)" &> /ioc-logs/sirius-ioc-si-ps-diag-sexts-sfb12-sdb3-sfp12-sdp23 & # 1.9%
 
 
 # keep entry point running
