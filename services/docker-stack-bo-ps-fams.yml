@@ -1,10 +1,10 @@
 version: "3.7"
 
 services:
-  
-  general:
+
+  dips:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
-    command: bash -c 'source /etc/profile && /ioc-apps/as-ti-general.bash'
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-dips.bash'
     deploy:
       placement:
         constraints:
@@ -30,9 +30,9 @@ services:
     networks:
       - ioc-network
 
-  bo-bpms-corrs:
+  quads:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ti-bpms-corrs.bash'
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-quads.bash'
     deploy:
       placement:
         constraints:
@@ -58,37 +58,9 @@ services:
     networks:
       - ioc-network
 
-  si-bpms-corrs:
+  sexts:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ti-bpms-corrs.bash'
-    deploy:
-      placement:
-        constraints:
-          # - node.hostname != CA-RaTim-CO-IOCSrv
-          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
-          # - node.hostname != IA-16RaBbB-CO-IOCSrv
-          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
-          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
-          - node.hostname != CA-RaCtrl-CO-Srv-1
-          - node.hostname != LA-RaCtrl-CO-Srv-1
-          - node.hostname != TA-TiRack-CO-FWSrv-1
-      replicas: 1
-      restart_policy:
-        condition: any
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "10"
-        max-size: "10m"
-    networks:
-      - ioc-network
-
-  si-trims-skews:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ti-trims-skews.bash'
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-sexts.bash'
     deploy:
       placement:
         constraints:

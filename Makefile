@@ -6,39 +6,213 @@ FAC_IOCS_TAG:=$(shell cat ./images/.env | grep FAC_IOCS_TAG= | sed s/FAC_IOCS_TA
 
 # --- images ---
 
-build-fac-iocs: cleanup pull-fac-apps
+image-build-fac-iocs: image-cleanup image-pull-fac-apps
 	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-iocs
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IOCS_TAG)
 
-build-fac-apps: cleanup pull-fac-epics
+image-build-fac-apps: image-cleanup image-pull-fac-epics
 	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-apps
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(FAC_IOCS_TAG)
 
-build-fac-epics: cleanup pull-fac-base
+image-build-fac-epics: image-cleanup image-pull-fac-base
 	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-epics
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(FAC_EPICS_TAG)
 
-build-fac-base: cleanup
+image-build-fac-base: image-cleanup
 	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-base
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-base:$(FAC_BASE_TAG)
 
-pull-fac-iocs:
+image-pull-fac-iocs:
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IOCS_TAG)
 
-pull-fac-apps:
+image-pull-fac-apps:
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(FAC_APPS_TAG)
 
-pull-fac-epics:
+image-pull-fac-epics:
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(FAC_EPICS_TAG)
 
-pull-fac-base:
+image-pull-fac-base:
 	docker pull dockerregistry.lnls-sirius.com.br/fac/fac-base:$(FAC_BASE_TAG)
 
-cleanup:
+image-cleanup:
 	docker system prune --filter "label=br.com.lnls-sirius.department=FAC" --all --force
 
+# --- services set1 ---
 
-# --- services ---
+service-stop-set1-as-ps-dclinks:
+	cd services; docker stack rm facs-as-ps-dclinks
+
+service-start-set1-as-ps-dclinks:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks.yml facs-as-ps-dclinks
+
+service-stop-set1-li-ps:
+	cd services; docker stack rm facs-li-ps
+
+service-start-set1-li-ps:
+	cd services; docker stack deploy -c docker-stack-li-ps.yml facs-li-ps
+
+service-stop-set1-tb-ps:
+	cd services; docker stack rm facs-tb-ps
+
+service-start-set1-tb-ps:
+	cd services; docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps
+
+service-stop-set1-bo-ps:
+	cd services; docker stack rm facs-bo-ps
+
+service-start-set1-bo-ps:
+	cd services; docker stack deploy -c docker-stack-bo-ps.yml facs-bo-ps
+
+service-stop-set1-ts-ps:
+	cd services; docker stack rm facs-ts-ps
+
+service-start-set1-ts-ps:
+	cd services; docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps
+
+service-stop-set1-si-ps:
+	cd services; docker stack rm facs-si-ps
+
+service-start-set1-si-ps:
+	cd services; docker stack deploy -c docker-stack-si-ps.yml facs-si-ps
+
+service-stop-set1-as-ti-conv:
+	cd services; docker stack rm facs-as-ti
+
+service-start-set1-as-ti-conv:
+	cd services; docker stack deploy -c docker-stack-as-ti.yml facs-as-ti
+
+service-stop-set1-as-pu-conv:
+	cd services; docker stack rm facs-as-pu-conv
+
+service-start-set1-as-pu-conv:
+	cd services; docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv
+
+service-stop-set1-as-ap-posang:
+	cd services; docker stack rm facs-as-ap-posang
+
+service-start-set1-as-ap-posang:
+	cd services; docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang
+
+service-stop-set1-as-ap-opticscorr:
+	cd services; docker stack rm facs-as-ap-opticscorr
+
+service-start-set1-as-ap-opticscorr:
+	cd services; docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr
+
+service-stop-set1-as-ap-currinfo:
+	cd services; docker stack rm facs-as-ap-currinfo
+
+service-start-set1-as-ap-currinfo:
+	cd services; docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo
+
+service-stop-set1-as-ap-sofb:
+	cd services; docker stack rm facs-as-ap-sofb
+
+service-start-set1-as-ap-sofb:
+	cd services; docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb
+
+service-stop-set1-si-ap-sofb:
+	cd services; docker stack rm facs-si-ap-sofb
+
+service-start-set1-si-ap-sofb:
+	cd services; docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb
+
+service-stop-set1-as-ap-diag:
+	cd services; docker stack rm facs-as-ap-diag
+
+service-start-set1-as-ap-diag:
+	cd services; docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag
+
+service-stop-set1-li-ap-energy:
+	cd services; docker stack rm facs-li-ap-energy
+
+service-start-set1-li-ap-energy:
+	cd services; docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy
+
+service-stop-set1-si-ap-bl:
+	cd services; docker stack rm facs-si-ap-bl
+
+service-start-set1-si-ap-bl:
+	cd services; docker stack deploy -c docker-stack-si-ap-bl.yml facs-si-ap-bl
+
+service-stop-set1-si-id-conv:
+	cd services; docker stack rm facs-si-id-conv
+
+service-start-set1-si-id-conv:
+	cd services; docker stack deploy -c docker-stack-si-id-conv.yml facs-si-id-conv
+
+service-stop-set1-as-ap-machshift:
+	cd services; docker stack rm facs-as-ap-machshift
+
+service-start-set1-as-ap-machshift:
+	cd services; docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift
+
+
+TARGET_SET1_DEPS_STOP := service-stop-set1-as-ps-dclinks
+TARGET_SET1_DEPS_STOP += service-stop-set1-li-ps
+TARGET_SET1_DEPS_STOP += service-stop-set1-tb-ps
+TARGET_SET1_DEPS_STOP += service-stop-set1-bo-ps
+TARGET_SET1_DEPS_STOP += service-stop-set1-si-ps
+TARGET_SET1_DEPS_STOP += service-stop-set1-as-ti
+TARGET_SET1_DEPS_STOP += service-stop-set1-as-pu-conv
+TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-posang
+TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-opticscorr
+TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-currinfo
+TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-sofb
+TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-diag
+TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-machshift
+TARGET_SET1_DEPS_STOP += service-stop-set1-li-ap-energy
+TARGET_SET1_DEPS_STOP += service-stop-set1-si-ap-sofb
+TARGET_SET1_DEPS_STOP += service-stop-set1-si-ap-bl
+TARGET_SET1_DEPS_STOP += service-stop-set1-si-id-conv
+service-stop-set1-all: $(TARGET_SET1_DEPS_STOP)
+	
+TARGET_SET1_DEPS_START := service-start-set1-as-ps-dclinks
+TARGET_SET1_DEPS_START += service-start-set1-li-ps
+TARGET_SET1_DEPS_START += service-start-set1-tb-ps
+TARGET_SET1_DEPS_START += service-start-set1-bo-ps
+TARGET_SET1_DEPS_START += service-start-set1-si-ps
+TARGET_SET1_DEPS_START += service-start-set1-as-ti
+TARGET_SET1_DEPS_START += service-start-set1-as-pu-conv
+TARGET_SET1_DEPS_START += service-start-set1-as-ap-posang
+TARGET_SET1_DEPS_START += service-start-set1-as-ap-opticscorr
+TARGET_SET1_DEPS_START += service-start-set1-as-ap-currinfo
+TARGET_SET1_DEPS_START += service-start-set1-as-ap-sofb
+TARGET_SET1_DEPS_START += service-start-set1-as-ap-diag
+TARGET_SET1_DEPS_START += service-start-set1-as-ap-machshift
+TARGET_SET1_DEPS_START += service-start-set1-li-ap-energy
+TARGET_SET1_DEPS_START += service-start-set1-si-ap-sofb
+TARGET_SET1_DEPS_START += service-start-set1-si-ap-bl
+TARGET_SET1_DEPS_START += service-start-set1-si-id-conv
+service-start-set1-all: $(TARGET_SET1_DEPS_START)
+
+
+# --- services set2 ---
+
+
+service-facs-as-ti-general-stop:
+	cd services; docker stack rm facs-as-ti-general
+
+service-facs-as-ti-general-start:
+	cd services; docker stack deploy -c docker-stack-as-ti-general.yml facs-as-ti-general
+
+service-facs-bo-ti-bpms-corrs-stop:
+	cd services; docker stack rm facs-bo-ti-bpms-corrs
+
+service-facs-bo-ti-bpms-corrs-start:
+	cd services; docker stack deploy -c docker-stack-bo-ti-bpms-corrs.yml facs-bo-ti-bpms-corrs
+
+service-facs-si-ti-bpms-corrs-stop:
+	cd services; docker stack rm facs-si-ti-bpms-corrs
+
+service-facs-si-ti-bpms-corrs-start:
+	cd services; docker stack deploy -c docker-stack-si-ti-bpms-corrs.yml facs-si-ti-bpms-corrs
+
+service-facs-si-ti-trims-skews-stop:
+	cd services; docker stack rm facs-si-ti-trims-skews
+
+service-facs-si-ti-trims-skews-start:
+	cd services; docker stack deploy -c docker-stack-si-ti-trims-skews.yml facs-si-ti-trims-skews
 
 service-facs-as-ps-dclinks-tbts-bodip-stop:
 	cd services; docker stack rm facs-as-ps-dclinks-tbts-bodip
@@ -100,12 +274,6 @@ service-facs-li-ps-diag-stop:
 service-facs-li-ps-diag-start:
 	cd services; docker stack deploy -c docker-stack-li-ps-diag.yml facs-li-ps-diag
 
-service-facs-tb-ps-stop:
-	cd services; docker stack rm facs-tb-ps
-
-service-facs-tb-ps-start:
-	cd services; docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps
-
 service-facs-bo-ps-dips-stop:
 	cd services; docker stack rm facs-bo-ps-dips
 
@@ -123,6 +291,12 @@ service-facs-bo-ps-sexts-stop:
 
 service-facs-bo-ps-sexts-start:
 	cd services; docker stack deploy -c docker-stack-bo-ps-sexts.yml facs-bo-ps-sexts
+
+service-facs-bo-ps-fams-stop:
+	cd services; docker stack rm facs-bo-ps-fams
+
+service-facs-bo-ps-fams-start:
+	cd services; docker stack deploy -c docker-stack-bo-ps-fams.yml facs-bo-ps-fams
 
 service-facs-bo-ps-corrs-ia01t05-stop:
 	cd services; docker stack rm facs-bo-ps-corrs-ia01t05
@@ -148,11 +322,11 @@ service-facs-bo-ps-corrs-ia16t20-stop:
 service-facs-bo-ps-corrs-ia16t20-start:
 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia16t20.yml facs-bo-ps-corrs-ia16t20
 
-service-facs-ts-ps-stop:
-	cd services; docker stack rm facs-ts-ps
+service-facs-bo-ps-corrs-stop:
+	cd services; docker stack rm facs-bo-ps-corrs
 
-service-facs-ts-ps-start:
-	cd services; docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps
+service-facs-bo-ps-corrs-start:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs.yml facs-bo-ps-corrs
 
 service-facs-si-ps-dips-stop:
 	cd services; docker stack rm facs-si-ps-dips
@@ -670,95 +844,6 @@ service-facs-si-ps-trims-qs-c1234-ia20-stop:
 service-facs-si-ps-trims-qs-c1234-ia20-start:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia20.yml facs-si-ps-trims-qs-c1234-ia20
 
-service-facs-as-pu-conv-stop:
-	cd services; docker stack rm facs-as-pu-conv
-
-service-facs-as-pu-conv-start:
-	cd services; docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv
-
-service-facs-as-ti-stop:
-	cd services; docker stack rm facs-as-ti
-
-service-facs-as-ti-start:
-	cd services; docker stack deploy -c docker-stack-as-ti.yml facs-as-ti
-
-service-facs-bo-ti-bpms-corrs-stop:
-	cd services; docker stack rm facs-bo-ti-bpms-corrs
-
-service-facs-bo-ti-bpms-corrs-start:
-	cd services; docker stack deploy -c docker-stack-bo-ti-bpms-corrs.yml facs-bo-ti-bpms-corrs
-
-service-facs-si-ti-bpms-corrs-stop:
-	cd services; docker stack rm facs-si-ti-bpms-corrs
-
-service-facs-si-ti-bpms-corrs-start:
-	cd services; docker stack deploy -c docker-stack-si-ti-bpms-corrs.yml facs-si-ti-bpms-corrs
-
-service-facs-si-ti-trims-skews-stop:
-	cd services; docker stack rm facs-si-ti-trims-skews
-
-service-facs-si-ti-trims-skews-start:
-	cd services; docker stack deploy -c docker-stack-si-ti-trims-skews.yml facs-si-ti-trims-skews
-
-service-facs-as-ap-posang-stop:
-	cd services; docker stack rm facs-as-ap-posang
-
-service-facs-as-ap-posang-start:
-	cd services; docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang
-
-service-facs-as-ap-opticscorr-stop:
-	cd services; docker stack rm facs-as-ap-opticscorr
-
-service-facs-as-ap-opticscorr-start:
-	cd services; docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr
-
-service-facs-as-ap-currinfo-stop:
-	cd services; docker stack rm facs-as-ap-currinfo
-
-service-facs-as-ap-currinfo-start:
-	cd services; docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo
-
-service-facs-as-ap-sofb-stop:
-	cd services; docker stack rm facs-as-ap-sofb
-
-service-facs-as-ap-sofb-start:
-	cd services; docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb
-
-service-facs-si-ap-sofb-stop:
-	cd services; docker stack rm facs-si-ap-sofb
-
-service-facs-si-ap-sofb-start:
-	cd services; docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb
-
-service-facs-as-ap-diag-stop:
-	cd services; docker stack rm facs-as-ap-diag
-
-service-facs-as-ap-diag-start:
-	cd services; docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag
-
-service-facs-li-ap-energy-stop:
-	cd services; docker stack rm facs-li-ap-energy
-
-service-facs-li-ap-energy-start:
-	cd services; docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy
-
-service-facs-si-ap-bl-stop:
-	cd services; docker stack rm facs-si-ap-bl
-
-service-facs-si-ap-bl-start:
-	cd services; docker stack deploy -c docker-stack-si-ap-bl.yml facs-si-ap-bl
-
-service-facs-si-id-conv-stop:
-	cd services; docker stack rm facs-si-id-conv
-
-service-facs-si-id-conv-start:
-	cd services; docker stack deploy -c docker-stack-si-id-conv.yml facs-si-id-conv
-
-service-facs-as-ap-machshift-stop:
-	cd services; docker stack rm facs-as-ap-machshift
-
-service-facs-as-ap-machshift-start:
-	cd services; docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift
 
 service-facs-all-stop:
 	cd services; \

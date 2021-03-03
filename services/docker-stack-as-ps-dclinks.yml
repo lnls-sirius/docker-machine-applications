@@ -1,8 +1,122 @@
 version: "3.7"
+
 services:
-  iocs:
+
+  tbts-bpdip:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
-    command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks.bash'
+    command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-tbts-bodip.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia01t05:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia01t05.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia06t10:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia06t10.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia11t15:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia11t15.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia16t20:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia16t20.bash'
     deploy:
       placement:
         constraints:
