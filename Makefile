@@ -3,7 +3,6 @@ FAC_EPICS_TAG:=$(shell cat ./images/.env | grep FAC_EPICS_TAG= | sed s/FAC_EPICS
 FAC_APPS_TAG:=$(shell cat ./images/.env | grep FAC_APPS_TAG= | sed s/FAC_APPS_TAG=//g)
 FAC_IOCS_TAG:=$(shell cat ./images/.env | grep FAC_IOCS_TAG= | sed s/FAC_IOCS_TAG=//g)
 
-
 # --- images ---
 
 image-build-fac-iocs: image-cleanup image-pull-fac-apps
@@ -37,1046 +36,1158 @@ image-pull-fac-base:
 image-cleanup:
 	docker system prune --filter "label=br.com.lnls-sirius.department=FAC" --all --force
 
-# --- services set1 ---
 
-service-stop-set1-as-ps-dclinks:
+# --- higher stacking level services ---
+service-stop-highstack-as-ps-dclinks:
 	cd services; docker stack rm facs-as-ps-dclinks
 
-service-start-set1-as-ps-dclinks:
+service-start-highstack-as-ps-dclinks:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks.yml facs-as-ps-dclinks
 
-service-stop-set1-li-ps:
+service-stop-highstack-li-ps:
 	cd services; docker stack rm facs-li-ps
 
-service-start-set1-li-ps:
+service-start-highstack-li-ps:
 	cd services; docker stack deploy -c docker-stack-li-ps.yml facs-li-ps
 
-service-stop-set1-tb-ps:
+service-stop-highstack-tb-ps:
 	cd services; docker stack rm facs-tb-ps
 
-service-start-set1-tb-ps:
+service-start-highstack-tb-ps:
 	cd services; docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps
 
-service-stop-set1-bo-ps:
+service-stop-highstack-bo-ps:
 	cd services; docker stack rm facs-bo-ps
 
-service-start-set1-bo-ps:
+service-start-highstack-bo-ps:
 	cd services; docker stack deploy -c docker-stack-bo-ps.yml facs-bo-ps
 
-service-stop-set1-ts-ps:
+service-stop-highstack-ts-ps:
 	cd services; docker stack rm facs-ts-ps
 
-service-start-set1-ts-ps:
+service-start-highstack-ts-ps:
 	cd services; docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps
 
-service-stop-set1-si-ps:
+service-stop-highstack-si-ps:
 	cd services; docker stack rm facs-si-ps
 
-service-start-set1-si-ps:
+service-start-highstack-si-ps:
 	cd services; docker stack deploy -c docker-stack-si-ps.yml facs-si-ps
 
-service-stop-set1-as-ti-conv:
+service-stop-highstack-as-ti-conv:
 	cd services; docker stack rm facs-as-ti
 
-service-start-set1-as-ti-conv:
+service-start-highstack-as-ti-conv:
 	cd services; docker stack deploy -c docker-stack-as-ti.yml facs-as-ti
 
-service-stop-set1-as-pu-conv:
+service-stop-highstack-as-pu-conv:
 	cd services; docker stack rm facs-as-pu-conv
 
-service-start-set1-as-pu-conv:
+service-start-highstack-as-pu-conv:
 	cd services; docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv
 
-service-stop-set1-as-ap-posang:
+service-stop-highstack-as-ap-posang:
 	cd services; docker stack rm facs-as-ap-posang
 
-service-start-set1-as-ap-posang:
+service-start-highstack-as-ap-posang:
 	cd services; docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang
 
-service-stop-set1-as-ap-opticscorr:
+service-stop-highstack-as-ap-opticscorr:
 	cd services; docker stack rm facs-as-ap-opticscorr
 
-service-start-set1-as-ap-opticscorr:
+service-start-highstack-as-ap-opticscorr:
 	cd services; docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr
 
-service-stop-set1-as-ap-currinfo:
+service-stop-highstack-as-ap-currinfo:
 	cd services; docker stack rm facs-as-ap-currinfo
 
-service-start-set1-as-ap-currinfo:
+service-start-highstack-as-ap-currinfo:
 	cd services; docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo
 
-service-stop-set1-as-ap-sofb:
+service-stop-highstack-as-ap-sofb:
 	cd services; docker stack rm facs-as-ap-sofb
 
-service-start-set1-as-ap-sofb:
+service-start-highstack-as-ap-sofb:
 	cd services; docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb
 
-service-stop-set1-si-ap-sofb:
+service-stop-highstack-si-ap-sofb:
 	cd services; docker stack rm facs-si-ap-sofb
 
-service-start-set1-si-ap-sofb:
+service-start-highstack-si-ap-sofb:
 	cd services; docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb
 
-service-stop-set1-as-ap-diag:
+service-stop-highstack-as-ap-diag:
 	cd services; docker stack rm facs-as-ap-diag
 
-service-start-set1-as-ap-diag:
+service-start-highstack-as-ap-diag:
 	cd services; docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag
 
-service-stop-set1-li-ap-energy:
+service-stop-highstack-li-ap-energy:
 	cd services; docker stack rm facs-li-ap-energy
 
-service-start-set1-li-ap-energy:
+service-start-highstack-li-ap-energy:
 	cd services; docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy
 
-service-stop-set1-si-ap-bl:
+service-stop-highstack-si-ap-bl:
 	cd services; docker stack rm facs-si-ap-bl
 
-service-start-set1-si-ap-bl:
+service-start-highstack-si-ap-bl:
 	cd services; docker stack deploy -c docker-stack-si-ap-bl.yml facs-si-ap-bl
 
-service-stop-set1-si-id-conv:
+service-stop-highstack-si-id-conv:
 	cd services; docker stack rm facs-si-id-conv
 
-service-start-set1-si-id-conv:
+service-start-highstack-si-id-conv:
 	cd services; docker stack deploy -c docker-stack-si-id-conv.yml facs-si-id-conv
 
-service-stop-set1-as-ap-machshift:
+service-stop-highstack-as-ap-machshift:
 	cd services; docker stack rm facs-as-ap-machshift
 
-service-start-set1-as-ap-machshift:
+service-start-highstack-as-ap-machshift:
 	cd services; docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift
 
 
-TARGET_SET1_DEPS_STOP := service-stop-set1-as-ps-dclinks
-TARGET_SET1_DEPS_STOP += service-stop-set1-li-ps
-TARGET_SET1_DEPS_STOP += service-stop-set1-tb-ps
-TARGET_SET1_DEPS_STOP += service-stop-set1-bo-ps
-TARGET_SET1_DEPS_STOP += service-stop-set1-si-ps
-TARGET_SET1_DEPS_STOP += service-stop-set1-as-ti
-TARGET_SET1_DEPS_STOP += service-stop-set1-as-pu-conv
-TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-posang
-TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-opticscorr
-TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-currinfo
-TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-sofb
-TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-diag
-TARGET_SET1_DEPS_STOP += service-stop-set1-as-ap-machshift
-TARGET_SET1_DEPS_STOP += service-stop-set1-li-ap-energy
-TARGET_SET1_DEPS_STOP += service-stop-set1-si-ap-sofb
-TARGET_SET1_DEPS_STOP += service-stop-set1-si-ap-bl
-TARGET_SET1_DEPS_STOP += service-stop-set1-si-id-conv
-service-stop-set1-all: $(TARGET_SET1_DEPS_STOP)
-	
-TARGET_SET1_DEPS_START := service-start-set1-as-ps-dclinks
-TARGET_SET1_DEPS_START += service-start-set1-li-ps
-TARGET_SET1_DEPS_START += service-start-set1-tb-ps
-TARGET_SET1_DEPS_START += service-start-set1-bo-ps
-TARGET_SET1_DEPS_START += service-start-set1-si-ps
-TARGET_SET1_DEPS_START += service-start-set1-as-ti
-TARGET_SET1_DEPS_START += service-start-set1-as-pu-conv
-TARGET_SET1_DEPS_START += service-start-set1-as-ap-posang
-TARGET_SET1_DEPS_START += service-start-set1-as-ap-opticscorr
-TARGET_SET1_DEPS_START += service-start-set1-as-ap-currinfo
-TARGET_SET1_DEPS_START += service-start-set1-as-ap-sofb
-TARGET_SET1_DEPS_START += service-start-set1-as-ap-diag
-TARGET_SET1_DEPS_START += service-start-set1-as-ap-machshift
-TARGET_SET1_DEPS_START += service-start-set1-li-ap-energy
-TARGET_SET1_DEPS_START += service-start-set1-si-ap-sofb
-TARGET_SET1_DEPS_START += service-start-set1-si-ap-bl
-TARGET_SET1_DEPS_START += service-start-set1-si-id-conv
-service-start-set1-all: $(TARGET_SET1_DEPS_START)
+TARGET_HIGHSTACK_DEPS_STOP := service-stop-highstack-as-ps-dclinks
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-li-ps
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-tb-ps
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-bo-ps
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-si-ps
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-as-ti
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-as-pu-conv
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-as-ap-posang
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-as-ap-opticscorr
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-as-ap-currinfo
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-as-ap-sofb
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-as-ap-diag
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-as-ap-machshift
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-li-ap-energy
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-si-ap-sofb
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-si-ap-bl
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-si-id-conv
+service-stop-highstack-all: $(TARGET_HIGHSTACK_DEPS_STOP)
 
+TARGET_HIGHSTACK_DEPS_START := service-start-highstack-as-ps-dclinks
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-li-ps
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-tb-ps
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-bo-ps
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-si-ps
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-as-ti
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-as-pu-conv
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-as-ap-posang
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-as-ap-opticscorr
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-as-ap-currinfo
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-as-ap-sofb
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-as-ap-diag
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-as-ap-machshift
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-li-ap-energy
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-si-ap-sofb
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-si-ap-bl
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-si-id-conv
+service-start-highstack-all: $(TARGET_HIGHSTACK_DEPS_START)
 
-# --- services set2 ---
-
-
-service-facs-as-ti-general-stop:
-	cd services; docker stack rm facs-as-ti-general
-
-service-facs-as-ti-general-start:
-	cd services; docker stack deploy -c docker-stack-as-ti-general.yml facs-as-ti-general
-
-service-facs-bo-ti-bpms-corrs-stop:
-	cd services; docker stack rm facs-bo-ti-bpms-corrs
-
-service-facs-bo-ti-bpms-corrs-start:
-	cd services; docker stack deploy -c docker-stack-bo-ti-bpms-corrs.yml facs-bo-ti-bpms-corrs
-
-service-facs-si-ti-bpms-corrs-stop:
-	cd services; docker stack rm facs-si-ti-bpms-corrs
-
-service-facs-si-ti-bpms-corrs-start:
-	cd services; docker stack deploy -c docker-stack-si-ti-bpms-corrs.yml facs-si-ti-bpms-corrs
-
-service-facs-si-ti-trims-skews-stop:
-	cd services; docker stack rm facs-si-ti-trims-skews
-
-service-facs-si-ti-trims-skews-start:
-	cd services; docker stack deploy -c docker-stack-si-ti-trims-skews.yml facs-si-ti-trims-skews
-
-service-facs-as-ps-dclinks-tbts-bodip-stop:
+# --- lower stacking level services ---
+service-stop-lowstack-as-ps-dclinks-tbts-bodip:
 	cd services; docker stack rm facs-as-ps-dclinks-tbts-bodip
 
-service-facs-as-ps-dclinks-tbts-bodip-start:
+service-start-lowstack-as-ps-dclinks-tbts-bodip:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-tbts-bodip.yml facs-as-ps-dclinks-tbts-bodip
 
-service-facs-as-ps-dclinks-ia01t05-stop:
+service-stop-lowstack-as-ps-dclinks-ia01t05:
 	cd services; docker stack rm facs-as-ps-dclinks-ia01t05
 
-service-facs-as-ps-dclinks-ia01t05-start:
+service-start-lowstack-as-ps-dclinks-ia01t05:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia01t05.yml facs-as-ps-dclinks-ia01t05
 
-service-facs-as-ps-dclinks-ia06t10-stop:
+service-stop-lowstack-as-ps-dclinks-ia06t10:
 	cd services; docker stack rm facs-as-ps-dclinks-ia06t10
 
-service-facs-as-ps-dclinks-ia06t10-start:
+service-start-lowstack-as-ps-dclinks-ia06t10:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia06t10.yml facs-as-ps-dclinks-ia06t10
 
-service-facs-as-ps-dclinks-ia11t15-stop:
+service-stop-lowstack-as-ps-dclinks-ia11t15:
 	cd services; docker stack rm facs-as-ps-dclinks-ia11t15
 
-service-facs-as-ps-dclinks-ia11t15-start:
+service-start-lowstack-as-ps-dclinks-ia11t15:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia11t15.yml facs-as-ps-dclinks-ia11t15
 
-service-facs-as-ps-dclinks-ia16t20-stop:
+service-stop-lowstack-as-ps-dclinks-ia16t20:
 	cd services; docker stack rm facs-as-ps-dclinks-ia16t20
 
-service-facs-as-ps-dclinks-ia16t20-start:
+service-start-lowstack-as-ps-dclinks-ia16t20:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia16t20.yml facs-as-ps-dclinks-ia16t20
 
-service-facs-li-ps-spect-quads-lens-stop:
+service-stop-lowstack-li-ps-spect-quads-lens:
 	cd services; docker stack rm facs-li-ps-spect-quads-lens
 
-service-facs-li-ps-spect-quads-lens-start:
+service-start-lowstack-li-ps-spect-quads-lens:
 	cd services; docker stack deploy -c docker-stack-li-ps-spect-quads-lens.yml facs-li-ps-spect-quads-lens
 
-service-facs-li-ps-corrs-stop:
+service-stop-lowstack-li-ps-corrs:
 	cd services; docker stack rm facs-li-ps-corrs
 
-service-facs-li-ps-corrs-start:
+service-start-lowstack-li-ps-corrs:
 	cd services; docker stack deploy -c docker-stack-li-ps-corrs.yml facs-li-ps-corrs
 
-service-facs-li-ps-slnds-stop:
+service-stop-lowstack-li-ps-slnds:
 	cd services; docker stack rm facs-li-ps-slnds
 
-service-facs-li-ps-slnds-start:
+service-start-lowstack-li-ps-slnds:
 	cd services; docker stack deploy -c docker-stack-li-ps-slnds.yml facs-li-ps-slnds
 
-service-facs-li-ps-conv-stop:
+service-stop-lowstack-li-ps-conv:
 	cd services; docker stack rm facs-li-ps-conv
 
-service-facs-li-ps-conv-start:
+service-start-lowstack-li-ps-conv:
 	cd services; docker stack deploy -c docker-stack-li-ps-conv.yml facs-li-ps-conv
 
-service-facs-li-ps-diag-stop:
+service-stop-lowstack-li-ps-diag:
 	cd services; docker stack rm facs-li-ps-diag
 
-service-facs-li-ps-diag-start:
+service-start-lowstack-li-ps-diag:
 	cd services; docker stack deploy -c docker-stack-li-ps-diag.yml facs-li-ps-diag
 
-service-facs-bo-ps-dips-stop:
+
+
+
+
+
+
+
+
+
+
+
+
+
+service-stop-lowstack-tb-ps:
+	cd services; docker stack rm facs-tb-ps
+
+service-start-lowstack-tb-ps:
+	cd services; docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps
+
+service-stop-lowstack-bo-ps-dips:
 	cd services; docker stack rm facs-bo-ps-dips
 
-service-facs-bo-ps-dips-start:
+service-start-lowstack-bo-ps-dips:
 	cd services; docker stack deploy -c docker-stack-bo-ps-dips.yml facs-bo-ps-dips
 
-service-facs-bo-ps-quads-stop:
+service-stop-lowstack-bo-ps-quads:
 	cd services; docker stack rm facs-bo-ps-quads
 
-service-facs-bo-ps-quads-start:
+service-start-lowstack-bo-ps-quads:
 	cd services; docker stack deploy -c docker-stack-bo-ps-quads.yml facs-bo-ps-quads
 
-service-facs-bo-ps-sexts-stop:
+service-stop-lowstack-bo-ps-sexts:
 	cd services; docker stack rm facs-bo-ps-sexts
 
-service-facs-bo-ps-sexts-start:
+service-start-lowstack-bo-ps-sexts:
 	cd services; docker stack deploy -c docker-stack-bo-ps-sexts.yml facs-bo-ps-sexts
 
-service-facs-bo-ps-fams-stop:
+service-stop-lowstack-bo-ps-fams:
 	cd services; docker stack rm facs-bo-ps-fams
 
-service-facs-bo-ps-fams-start:
+service-start-lowstack-bo-ps-fams:
 	cd services; docker stack deploy -c docker-stack-bo-ps-fams.yml facs-bo-ps-fams
 
-service-facs-bo-ps-corrs-ia01t05-stop:
+service-stop-lowstack-bo-ps-corrs-ia01t05:
 	cd services; docker stack rm facs-bo-ps-corrs-ia01t05
 
-service-facs-bo-ps-corrs-ia01t05-start:
+service-start-lowstack-bo-ps-corrs-ia01t05:
 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia01t05.yml facs-bo-ps-corrs-ia01t05
 
-service-facs-bo-ps-corrs-ia06t10-stop:
+service-stop-lowstack-bo-ps-corrs-ia06t10:
 	cd services; docker stack rm facs-bo-ps-corrs-ia06t10
 
-service-facs-bo-ps-corrs-ia06t10-start:
+service-start-lowstack-bo-ps-corrs-ia06t10:
 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia06t10.yml facs-bo-ps-corrs-ia06t10
 
-service-facs-bo-ps-corrs-ia11t15-stop:
+service-stop-lowstack-bo-ps-corrs-ia11t15:
 	cd services; docker stack rm facs-bo-ps-corrs-ia11t15
 
-service-facs-bo-ps-corrs-ia11t15-start:
+service-start-lowstack-bo-ps-corrs-ia11t15:
 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia11t15.yml facs-bo-ps-corrs-ia11t15
 
-service-facs-bo-ps-corrs-ia16t20-stop:
+service-stop-lowstack-bo-ps-corrs-ia16t20:
 	cd services; docker stack rm facs-bo-ps-corrs-ia16t20
 
-service-facs-bo-ps-corrs-ia16t20-start:
+service-start-lowstack-bo-ps-corrs-ia16t20:
 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia16t20.yml facs-bo-ps-corrs-ia16t20
 
-service-facs-bo-ps-corrs-stop:
+service-stop-lowstack-bo-ps-corrs:
 	cd services; docker stack rm facs-bo-ps-corrs
 
-service-facs-bo-ps-corrs-start:
+service-start-lowstack-bo-ps-corrs:
 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs.yml facs-bo-ps-corrs
 
-service-facs-si-ps-dips-stop:
+service-stop-lowstack-ts-ps:
+	cd services; docker stack rm facs-ts-ps
+
+service-start-lowstack-ts-ps:
+	cd services; docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps
+
+service-stop-lowstack-si-ps-dips:
 	cd services; docker stack rm facs-si-ps-dips
 
-service-facs-si-ps-dips-start:
+service-start-lowstack-si-ps-dips:
 	cd services; docker stack deploy -c docker-stack-si-ps-dips.yml facs-si-ps-dips
 
-service-facs-si-ps-quads-qd-stop:
+service-stop-lowstack-si-ps-quads-qd:
 	cd services; docker stack rm facs-si-ps-quads-qd
 
-service-facs-si-ps-quads-qd-start:
+service-start-lowstack-si-ps-quads-qd:
 	cd services; docker stack deploy -c docker-stack-si-ps-quads-qd.yml facs-si-ps-quads-qd
 
-service-facs-si-ps-quads-qfq-stop:
+service-stop-lowstack-si-ps-quads-qfq:
 	cd services; docker stack rm facs-si-ps-quads-qfq
 
-service-facs-si-ps-quads-qfq-start:
+service-start-lowstack-si-ps-quads-qfq:
 	cd services; docker stack deploy -c docker-stack-si-ps-quads-qfq.yml facs-si-ps-quads-qfq
 
-service-facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0-stop:
+service-stop-lowstack-si-ps-sexts-sda12b2-sfa0p0-sda0p0:
 	cd services; docker stack rm facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0
 
-service-facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0-start:
+service-start-lowstack-si-ps-sexts-sda12b2-sfa0p0-sda0p0:
 	cd services; docker stack deploy -c docker-stack-si-ps-sexts-sda12b2-sfa0p0-sda0p0.yml facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0
 
-service-facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01-stop:
+service-stop-lowstack-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01:
 	cd services; docker stack rm facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01
 
-service-facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01-start:
+service-start-lowstack-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01:
 	cd services; docker stack deploy -c docker-stack-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01.yml facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01
 
-service-facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23-stop:
+service-stop-lowstack-si-ps-sexts-sfb12-sdb3-sfp12-sdp23:
 	cd services; docker stack rm facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23
 
-service-facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23-start:
+service-start-lowstack-si-ps-sexts-sfb12-sdb3-sfp12-sdp23:
 	cd services; docker stack deploy -c docker-stack-si-ps-sexts-sfb12-sdb3-sfp12-sdp23.yml facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23
 
-service-facs-si-ps-corrs-c2m12-ia01-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia01:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia01
 
-service-facs-si-ps-corrs-c2m12-ia01-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia01:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia01.yml facs-si-ps-corrs-c2m12-ia01
 
-service-facs-si-ps-corrs-c2m12-ia02-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia02:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia02
 
-service-facs-si-ps-corrs-c2m12-ia02-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia02:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia02.yml facs-si-ps-corrs-c2m12-ia02
 
-service-facs-si-ps-corrs-c2m12-ia03-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia03:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia03
 
-service-facs-si-ps-corrs-c2m12-ia03-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia03:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia03.yml facs-si-ps-corrs-c2m12-ia03
 
-service-facs-si-ps-corrs-c2m12-ia04-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia04:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia04
 
-service-facs-si-ps-corrs-c2m12-ia04-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia04:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia04.yml facs-si-ps-corrs-c2m12-ia04
 
-service-facs-si-ps-corrs-c2m12-ia05-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia05:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia05
 
-service-facs-si-ps-corrs-c2m12-ia05-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia05:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia05.yml facs-si-ps-corrs-c2m12-ia05
 
-service-facs-si-ps-corrs-c2m12-ia06-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia06:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia06
 
-service-facs-si-ps-corrs-c2m12-ia06-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia06:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia06.yml facs-si-ps-corrs-c2m12-ia06
 
-service-facs-si-ps-corrs-c2m12-ia07-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia07:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia07
 
-service-facs-si-ps-corrs-c2m12-ia07-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia07:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia07.yml facs-si-ps-corrs-c2m12-ia07
 
-service-facs-si-ps-corrs-c2m12-ia08-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia08:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia08
 
-service-facs-si-ps-corrs-c2m12-ia08-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia08:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia08.yml facs-si-ps-corrs-c2m12-ia08
 
-service-facs-si-ps-corrs-c2m12-ia09-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia09:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia09
 
-service-facs-si-ps-corrs-c2m12-ia09-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia09:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia09.yml facs-si-ps-corrs-c2m12-ia09
 
-service-facs-si-ps-corrs-c2m12-ia10-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia10:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia10
 
-service-facs-si-ps-corrs-c2m12-ia10-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia10:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia10.yml facs-si-ps-corrs-c2m12-ia10
 
-service-facs-si-ps-corrs-c2m12-ia11-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia11:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia11
 
-service-facs-si-ps-corrs-c2m12-ia11-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia11:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia11.yml facs-si-ps-corrs-c2m12-ia11
 
-service-facs-si-ps-corrs-c2m12-ia12-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia12:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia12
 
-service-facs-si-ps-corrs-c2m12-ia12-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia12:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia12.yml facs-si-ps-corrs-c2m12-ia12
 
-service-facs-si-ps-corrs-c2m12-ia13-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia13:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia13
 
-service-facs-si-ps-corrs-c2m12-ia13-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia13:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia13.yml facs-si-ps-corrs-c2m12-ia13
 
-service-facs-si-ps-corrs-c2m12-ia14-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia14:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia14
 
-service-facs-si-ps-corrs-c2m12-ia14-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia14:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia14.yml facs-si-ps-corrs-c2m12-ia14
 
-service-facs-si-ps-corrs-c2m12-ia15-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia15:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia15
 
-service-facs-si-ps-corrs-c2m12-ia15-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia15:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia15.yml facs-si-ps-corrs-c2m12-ia15
 
-service-facs-si-ps-corrs-c2m12-ia16-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia16:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia16
 
-service-facs-si-ps-corrs-c2m12-ia16-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia16:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia16.yml facs-si-ps-corrs-c2m12-ia16
 
-service-facs-si-ps-corrs-c2m12-ia17-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia17:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia17
 
-service-facs-si-ps-corrs-c2m12-ia17-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia17:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia17.yml facs-si-ps-corrs-c2m12-ia17
 
-service-facs-si-ps-corrs-c2m12-ia18-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia18:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia18
 
-service-facs-si-ps-corrs-c2m12-ia18-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia18:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia18.yml facs-si-ps-corrs-c2m12-ia18
 
-service-facs-si-ps-corrs-c2m12-ia19-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia19:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia19
 
-service-facs-si-ps-corrs-c2m12-ia19-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia19:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia19.yml facs-si-ps-corrs-c2m12-ia19
 
-service-facs-si-ps-corrs-c2m12-ia20-stop:
+service-stop-lowstack-si-ps-corrs-c2m12-ia20:
 	cd services; docker stack rm facs-si-ps-corrs-c2m12-ia20
 
-service-facs-si-ps-corrs-c2m12-ia20-start:
+service-start-lowstack-si-ps-corrs-c2m12-ia20:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia20.yml facs-si-ps-corrs-c2m12-ia20
 
-service-facs-si-ps-corrs-c134-ia01-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia01:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia01
 
-service-facs-si-ps-corrs-c134-ia01-start:
+service-start-lowstack-si-ps-corrs-c134-ia01:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia01.yml facs-si-ps-corrs-c134-ia01
 
-service-facs-si-ps-corrs-c134-ia02-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia02:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia02
 
-service-facs-si-ps-corrs-c134-ia02-start:
+service-start-lowstack-si-ps-corrs-c134-ia02:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia02.yml facs-si-ps-corrs-c134-ia02
 
-service-facs-si-ps-corrs-c134-ia03-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia03:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia03
 
-service-facs-si-ps-corrs-c134-ia03-start:
+service-start-lowstack-si-ps-corrs-c134-ia03:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia03.yml facs-si-ps-corrs-c134-ia03
 
-service-facs-si-ps-corrs-c134-ia04-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia04:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia04
 
-service-facs-si-ps-corrs-c134-ia04-start:
+service-start-lowstack-si-ps-corrs-c134-ia04:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia04.yml facs-si-ps-corrs-c134-ia04
 
-service-facs-si-ps-corrs-c134-ia05-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia05:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia05
 
-service-facs-si-ps-corrs-c134-ia05-start:
+service-start-lowstack-si-ps-corrs-c134-ia05:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia05.yml facs-si-ps-corrs-c134-ia05
 
-service-facs-si-ps-corrs-c134-ia06-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia06:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia06
 
-service-facs-si-ps-corrs-c134-ia06-start:
+service-start-lowstack-si-ps-corrs-c134-ia06:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia06.yml facs-si-ps-corrs-c134-ia06
 
-service-facs-si-ps-corrs-c134-ia07-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia07:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia07
 
-service-facs-si-ps-corrs-c134-ia07-start:
+service-start-lowstack-si-ps-corrs-c134-ia07:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia07.yml facs-si-ps-corrs-c134-ia07
 
-service-facs-si-ps-corrs-c134-ia08-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia08:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia08
 
-service-facs-si-ps-corrs-c134-ia08-start:
+service-start-lowstack-si-ps-corrs-c134-ia08:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia08.yml facs-si-ps-corrs-c134-ia08
 
-service-facs-si-ps-corrs-c134-ia09-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia09:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia09
 
-service-facs-si-ps-corrs-c134-ia09-start:
+service-start-lowstack-si-ps-corrs-c134-ia09:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia09.yml facs-si-ps-corrs-c134-ia09
 
-service-facs-si-ps-corrs-c134-ia10-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia10:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia10
 
-service-facs-si-ps-corrs-c134-ia10-start:
+service-start-lowstack-si-ps-corrs-c134-ia10:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia10.yml facs-si-ps-corrs-c134-ia10
 
-service-facs-si-ps-corrs-c134-ia11-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia11:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia11
 
-service-facs-si-ps-corrs-c134-ia11-start:
+service-start-lowstack-si-ps-corrs-c134-ia11:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia11.yml facs-si-ps-corrs-c134-ia11
 
-service-facs-si-ps-corrs-c134-ia12-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia12:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia12
 
-service-facs-si-ps-corrs-c134-ia12-start:
+service-start-lowstack-si-ps-corrs-c134-ia12:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia12.yml facs-si-ps-corrs-c134-ia12
 
-service-facs-si-ps-corrs-c134-ia13-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia13:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia13
 
-service-facs-si-ps-corrs-c134-ia13-start:
+service-start-lowstack-si-ps-corrs-c134-ia13:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia13.yml facs-si-ps-corrs-c134-ia13
 
-service-facs-si-ps-corrs-c134-ia14-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia14:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia14
 
-service-facs-si-ps-corrs-c134-ia14-start:
+service-start-lowstack-si-ps-corrs-c134-ia14:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia14.yml facs-si-ps-corrs-c134-ia14
 
-service-facs-si-ps-corrs-c134-ia15-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia15:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia15
 
-service-facs-si-ps-corrs-c134-ia15-start:
+service-start-lowstack-si-ps-corrs-c134-ia15:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia15.yml facs-si-ps-corrs-c134-ia15
 
-service-facs-si-ps-corrs-c134-ia16-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia16:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia16
 
-service-facs-si-ps-corrs-c134-ia16-start:
+service-start-lowstack-si-ps-corrs-c134-ia16:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia16.yml facs-si-ps-corrs-c134-ia16
 
-service-facs-si-ps-corrs-c134-ia17-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia17:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia17
 
-service-facs-si-ps-corrs-c134-ia17-start:
+service-start-lowstack-si-ps-corrs-c134-ia17:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia17.yml facs-si-ps-corrs-c134-ia17
 
-service-facs-si-ps-corrs-c134-ia18-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia18:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia18
 
-service-facs-si-ps-corrs-c134-ia18-start:
+service-start-lowstack-si-ps-corrs-c134-ia18:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia18.yml facs-si-ps-corrs-c134-ia18
 
-service-facs-si-ps-corrs-c134-ia19-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia19:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia19
 
-service-facs-si-ps-corrs-c134-ia19-start:
+service-start-lowstack-si-ps-corrs-c134-ia19:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia19.yml facs-si-ps-corrs-c134-ia19
 
-service-facs-si-ps-corrs-c134-ia20-stop:
+service-stop-lowstack-si-ps-corrs-c134-ia20:
 	cd services; docker stack rm facs-si-ps-corrs-c134-ia20
 
-service-facs-si-ps-corrs-c134-ia20-start:
+service-start-lowstack-si-ps-corrs-c134-ia20:
 	cd services; docker stack deploy -c docker-stack-si-ps-corrs-c134-ia20.yml facs-si-ps-corrs-c134-ia20
 
-service-facs-si-ps-trims-qs-m12-ia01-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia01:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia01
 
-service-facs-si-ps-trims-qs-m12-ia01-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia01:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia01.yml facs-si-ps-trims-qs-m12-ia01
 
-service-facs-si-ps-trims-qs-m12-ia02-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia02:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia02
 
-service-facs-si-ps-trims-qs-m12-ia02-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia02:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia02.yml facs-si-ps-trims-qs-m12-ia02
 
-service-facs-si-ps-trims-qs-m12-ia03-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia03:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia03
 
-service-facs-si-ps-trims-qs-m12-ia03-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia03:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia03.yml facs-si-ps-trims-qs-m12-ia03
 
-service-facs-si-ps-trims-qs-m12-ia04-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia04:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia04
 
-service-facs-si-ps-trims-qs-m12-ia04-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia04:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia04.yml facs-si-ps-trims-qs-m12-ia04
 
-service-facs-si-ps-trims-qs-m12-ia05-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia05:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia05
 
-service-facs-si-ps-trims-qs-m12-ia05-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia05:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia05.yml facs-si-ps-trims-qs-m12-ia05
 
-service-facs-si-ps-trims-qs-m12-ia06-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia06:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia06
 
-service-facs-si-ps-trims-qs-m12-ia06-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia06:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia06.yml facs-si-ps-trims-qs-m12-ia06
 
-service-facs-si-ps-trims-qs-m12-ia07-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia07:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia07
 
-service-facs-si-ps-trims-qs-m12-ia07-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia07:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia07.yml facs-si-ps-trims-qs-m12-ia07
 
-service-facs-si-ps-trims-qs-m12-ia08-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia08:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia08
 
-service-facs-si-ps-trims-qs-m12-ia08-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia08:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia08.yml facs-si-ps-trims-qs-m12-ia08
 
-service-facs-si-ps-trims-qs-m12-ia09-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia09:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia09
 
-service-facs-si-ps-trims-qs-m12-ia09-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia09:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia09.yml facs-si-ps-trims-qs-m12-ia09
 
-service-facs-si-ps-trims-qs-m12-ia10-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia10:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia10
 
-service-facs-si-ps-trims-qs-m12-ia10-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia10:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia10.yml facs-si-ps-trims-qs-m12-ia10
 
-service-facs-si-ps-trims-qs-m12-ia11-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia11:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia11
 
-service-facs-si-ps-trims-qs-m12-ia11-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia11:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia11.yml facs-si-ps-trims-qs-m12-ia11
 
-service-facs-si-ps-trims-qs-m12-ia12-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia12:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia12
 
-service-facs-si-ps-trims-qs-m12-ia12-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia12:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia12.yml facs-si-ps-trims-qs-m12-ia12
 
-service-facs-si-ps-trims-qs-m12-ia13-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia13:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia13
 
-service-facs-si-ps-trims-qs-m12-ia13-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia13:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia13.yml facs-si-ps-trims-qs-m12-ia13
 
-service-facs-si-ps-trims-qs-m12-ia14-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia14:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia14
 
-service-facs-si-ps-trims-qs-m12-ia14-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia14:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia14.yml facs-si-ps-trims-qs-m12-ia14
 
-service-facs-si-ps-trims-qs-m12-ia15-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia15:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia15
 
-service-facs-si-ps-trims-qs-m12-ia15-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia15:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia15.yml facs-si-ps-trims-qs-m12-ia15
 
-service-facs-si-ps-trims-qs-m12-ia16-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia16:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia16
 
-service-facs-si-ps-trims-qs-m12-ia16-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia16:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia16.yml facs-si-ps-trims-qs-m12-ia16
 
-service-facs-si-ps-trims-qs-m12-ia17-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia17:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia17
 
-service-facs-si-ps-trims-qs-m12-ia17-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia17:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia17.yml facs-si-ps-trims-qs-m12-ia17
 
-service-facs-si-ps-trims-qs-m12-ia18-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia18:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia18
 
-service-facs-si-ps-trims-qs-m12-ia18-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia18:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia18.yml facs-si-ps-trims-qs-m12-ia18
 
-service-facs-si-ps-trims-qs-m12-ia19-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia19:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia19
 
-service-facs-si-ps-trims-qs-m12-ia19-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia19:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia19.yml facs-si-ps-trims-qs-m12-ia19
 
-service-facs-si-ps-trims-qs-m12-ia20-stop:
+service-stop-lowstack-si-ps-trims-qs-m12-ia20:
 	cd services; docker stack rm facs-si-ps-trims-qs-m12-ia20
 
-service-facs-si-ps-trims-qs-m12-ia20-start:
+service-start-lowstack-si-ps-trims-qs-m12-ia20:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia20.yml facs-si-ps-trims-qs-m12-ia20
 
-service-facs-si-ps-trims-qs-c1234-ia01-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia01:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia01
 
-service-facs-si-ps-trims-qs-c1234-ia01-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia01:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia01.yml facs-si-ps-trims-qs-c1234-ia01
 
-service-facs-si-ps-trims-qs-c1234-ia02-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia02:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia02
 
-service-facs-si-ps-trims-qs-c1234-ia02-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia02:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia02.yml facs-si-ps-trims-qs-c1234-ia02
 
-service-facs-si-ps-trims-qs-c1234-ia03-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia03:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia03
 
-service-facs-si-ps-trims-qs-c1234-ia03-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia03:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia03.yml facs-si-ps-trims-qs-c1234-ia03
 
-service-facs-si-ps-trims-qs-c1234-ia04-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia04:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia04
 
-service-facs-si-ps-trims-qs-c1234-ia04-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia04:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia04.yml facs-si-ps-trims-qs-c1234-ia04
 
-service-facs-si-ps-trims-qs-c1234-ia05-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia05:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia05
 
-service-facs-si-ps-trims-qs-c1234-ia05-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia05:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia05.yml facs-si-ps-trims-qs-c1234-ia05
 
-service-facs-si-ps-trims-qs-c1234-ia06-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia06:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia06
 
-service-facs-si-ps-trims-qs-c1234-ia06-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia06:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia06.yml facs-si-ps-trims-qs-c1234-ia06
 
-service-facs-si-ps-trims-qs-c1234-ia07-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia07:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia07
 
-service-facs-si-ps-trims-qs-c1234-ia07-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia07:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia07.yml facs-si-ps-trims-qs-c1234-ia07
 
-service-facs-si-ps-trims-qs-c1234-ia08-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia08:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia08
 
-service-facs-si-ps-trims-qs-c1234-ia08-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia08:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia08.yml facs-si-ps-trims-qs-c1234-ia08
 
-service-facs-si-ps-trims-qs-c1234-ia09-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia09:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia09
 
-service-facs-si-ps-trims-qs-c1234-ia09-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia09:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia09.yml facs-si-ps-trims-qs-c1234-ia09
 
-service-facs-si-ps-trims-qs-c1234-ia10-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia10:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia10
 
-service-facs-si-ps-trims-qs-c1234-ia10-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia10:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia10.yml facs-si-ps-trims-qs-c1234-ia10
 
-service-facs-si-ps-trims-qs-c1234-ia11-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia11:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia11
 
-service-facs-si-ps-trims-qs-c1234-ia11-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia11:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia11.yml facs-si-ps-trims-qs-c1234-ia11
 
-service-facs-si-ps-trims-qs-c1234-ia12-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia12:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia12
 
-service-facs-si-ps-trims-qs-c1234-ia12-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia12:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia12.yml facs-si-ps-trims-qs-c1234-ia12
 
-service-facs-si-ps-trims-qs-c1234-ia13-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia13:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia13
 
-service-facs-si-ps-trims-qs-c1234-ia13-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia13:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia13.yml facs-si-ps-trims-qs-c1234-ia13
 
-service-facs-si-ps-trims-qs-c1234-ia14-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia14:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia14
 
-service-facs-si-ps-trims-qs-c1234-ia14-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia14:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia14.yml facs-si-ps-trims-qs-c1234-ia14
 
-service-facs-si-ps-trims-qs-c1234-ia15-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia15:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia15
 
-service-facs-si-ps-trims-qs-c1234-ia15-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia15:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia15.yml facs-si-ps-trims-qs-c1234-ia15
 
-service-facs-si-ps-trims-qs-c1234-ia16-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia16:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia16
 
-service-facs-si-ps-trims-qs-c1234-ia16-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia16:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia16.yml facs-si-ps-trims-qs-c1234-ia16
 
-service-facs-si-ps-trims-qs-c1234-ia17-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia17:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia17
 
-service-facs-si-ps-trims-qs-c1234-ia17-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia17:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia17.yml facs-si-ps-trims-qs-c1234-ia17
 
-service-facs-si-ps-trims-qs-c1234-ia18-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia18:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia18
 
-service-facs-si-ps-trims-qs-c1234-ia18-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia18:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia18.yml facs-si-ps-trims-qs-c1234-ia18
 
-service-facs-si-ps-trims-qs-c1234-ia19-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia19:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia19
 
-service-facs-si-ps-trims-qs-c1234-ia19-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia19:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia19.yml facs-si-ps-trims-qs-c1234-ia19
 
-service-facs-si-ps-trims-qs-c1234-ia20-stop:
+service-stop-lowstack-si-ps-trims-qs-c1234-ia20:
 	cd services; docker stack rm facs-si-ps-trims-qs-c1234-ia20
 
-service-facs-si-ps-trims-qs-c1234-ia20-start:
+service-start-lowstack-si-ps-trims-qs-c1234-ia20:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia20.yml facs-si-ps-trims-qs-c1234-ia20
 
 
-service-facs-all-stop:
-	cd services; \
-	docker stack rm facs-as-ps-dclinks-tbts-bodip \
-	docker stack rm facs-as-ps-dclinks-ia01t10 \
-	docker stack rm facs-as-ps-dclinks-ia11t20 \
-	docker stack rm facs-li-ps-spect-quads-lens \
-	docker stack rm facs-li-ps-corrs \
-	docker stack rm facs-li-ps-slnds \
-	docker stack rm facs-li-ps-conv \
-	docker stack rm facs-li-ps-diag \
-	docker stack rm facs-tb-ps \
-	docker stack rm facs-bo-ps-dips \
-	docker stack rm facs-bo-ps-quads \
-	docker stack rm facs-bo-ps-sexts \
-	docker stack rm facs-bo-ps-corrs-ia01t10 \
-	docker stack rm facs-bo-ps-corrs-ia11t20 \
-	docker stack rm facs-ts-ps \
-	docker stack rm facs-si-ps-dips \
-	docker stack rm facs-si-ps-quads \
-	docker stack rm facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0 \
-	docker stack rm facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01 \
-	docker stack rm facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia01 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia02 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia03 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia04 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia05 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia06 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia07 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia08 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia09 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia10 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia11 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia12 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia13 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia14 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia15 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia16 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia17 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia18 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia19 \
-	docker stack rm facs-si-ps-corrs-c2m12-ia20 \
-	docker stack rm facs-si-ps-corrs-c134-ia01 \
-	docker stack rm facs-si-ps-corrs-c134-ia02 \
-	docker stack rm facs-si-ps-corrs-c134-ia03 \
-	docker stack rm facs-si-ps-corrs-c134-ia04 \
-	docker stack rm facs-si-ps-corrs-c134-ia05 \
-	docker stack rm facs-si-ps-corrs-c134-ia06 \
-	docker stack rm facs-si-ps-corrs-c134-ia07 \
-	docker stack rm facs-si-ps-corrs-c134-ia08 \
-	docker stack rm facs-si-ps-corrs-c134-ia09 \
-	docker stack rm facs-si-ps-corrs-c134-ia10 \
-	docker stack rm facs-si-ps-corrs-c134-ia11 \
-	docker stack rm facs-si-ps-corrs-c134-ia12 \
-	docker stack rm facs-si-ps-corrs-c134-ia13 \
-	docker stack rm facs-si-ps-corrs-c134-ia14 \
-	docker stack rm facs-si-ps-corrs-c134-ia15 \
-	docker stack rm facs-si-ps-corrs-c134-ia16 \
-	docker stack rm facs-si-ps-corrs-c134-ia17 \
-	docker stack rm facs-si-ps-corrs-c134-ia18 \
-	docker stack rm facs-si-ps-corrs-c134-ia19 \
-	docker stack rm facs-si-ps-corrs-c134-ia20 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia01 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia02 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia03 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia04 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia05 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia06 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia07 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia08 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia09 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia10 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia11 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia12 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia13 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia14 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia15 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia16 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia17 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia18 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia19 \
-	docker stack rm facs-si-ps-trims-qs-m12-ia20 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia01 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia02 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia03 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia04 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia05 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia06 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia07 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia08 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia09 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia10 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia11 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia12 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia13 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia14 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia15 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia16 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia17 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia18 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia19 \
-	docker stack rm facs-si-ps-trims-qs-c1234-ia20 \
-	docker stack rm facs-as-pu-conv \
-	docker stack rm facs-as-ti \
-	docker stack rm facs-bo-ti-bpms-corrs \
-	docker stack rm facs-si-ti-bpms-corrs \
-	docker stack rm facs-si-ti-trims-skews \
-	docker stack rm facs-as-ap-posang \
-	docker stack rm facs-as-ap-opticscorr \
-	docker stack rm facs-as-ap-currinfo \
-	docker stack rm facs-as-ap-sofb \
-	docker stack rm facs-si-ap-sofb \
-	docker stack rm facs-as-ap-diag \
-	docker stack rm facs-li-ap-energy \
-	docker stack rm facs-si-ap-bl \
-	docker stack rm facs-si-id-conv \
-	docker stack rm facs-as-ap-machshift
+service-stop-lowstack-as-ti-general:
+	cd services; docker stack rm facs-as-ti-general
+service-start-lowstack-as-ti-general:
+	cd services; docker stack deploy -c docker-stack-as-ti-general.yml facs-as-ti-general
 
-service-facs-all-start:
-	cd services; \
-	docker stack deploy -c docker-stack-as-ps-dclinks-tbts-bodip.yml facs-as-ps-dclinks-tbts-bodip \
-	docker stack deploy -c docker-stack-as-ps-dclinks-ia01t10.yml facs-as-ps-dclinks-ia01t10 \
-	docker stack deploy -c docker-stack-as-ps-dclinks-ia11t20.yml facs-as-ps-dclinks-ia11t20 \
-	docker stack deploy -c docker-stack-li-ps-spect-quads-lens.yml facs-li-ps-spect-quads-lens \
-	docker stack deploy -c docker-stack-li-ps-corrs.yml facs-li-ps-corrs \
-	docker stack deploy -c docker-stack-li-ps-slnds.yml facs-li-ps-slnds \
-	docker stack deploy -c docker-stack-li-ps-conv.yml facs-li-ps-conv \
-	docker stack deploy -c docker-stack-li-ps-diag.yml facs-li-ps-diag \
-	docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps \
-	docker stack deploy -c docker-stack-bo-ps-dips.yml facs-bo-ps-dips \
-	docker stack deploy -c docker-stack-bo-ps-quads.yml facs-bo-ps-quads \
-	docker stack deploy -c docker-stack-bo-ps-sexts.yml facs-bo-ps-sexts \
-	docker stack deploy -c docker-stack-bo-ps-corrs-ia01t10.yml facs-bo-ps-corrs-ia01t10 \
-	docker stack deploy -c docker-stack-bo-ps-corrs-ia11t20.yml facs-bo-ps-corrs-ia11t20 \
-	docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps \
-	docker stack deploy -c docker-stack-si-ps-dips.yml facs-si-ps-dips \
-	docker stack deploy -c docker-stack-si-ps-quads.yml facs-si-ps-quads \
-	docker stack deploy -c docker-stack-si-ps-sexts-sda12b2-sfa0p0-sda0p0 facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0 \
-	docker stack deploy -c docker-stack-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01 facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01 \
-	docker stack deploy -c docker-stack-si-ps-sexts-sfb12-sdb3-sfp12-sdp23 facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia01.yml facs-si-ps-corrs-c2m12-ia01 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia02.yml facs-si-ps-corrs-c2m12-ia02 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia03.yml facs-si-ps-corrs-c2m12-ia03 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia04.yml facs-si-ps-corrs-c2m12-ia04 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia05.yml facs-si-ps-corrs-c2m12-ia05 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia06.yml facs-si-ps-corrs-c2m12-ia06 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia07.yml facs-si-ps-corrs-c2m12-ia07 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia08.yml facs-si-ps-corrs-c2m12-ia08 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia09.yml facs-si-ps-corrs-c2m12-ia09 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia10.yml facs-si-ps-corrs-c2m12-ia10 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia11.yml facs-si-ps-corrs-c2m12-ia11 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia12.yml facs-si-ps-corrs-c2m12-ia12 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia13.yml facs-si-ps-corrs-c2m12-ia13 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia14.yml facs-si-ps-corrs-c2m12-ia14 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia15.yml facs-si-ps-corrs-c2m12-ia15 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia16.yml facs-si-ps-corrs-c2m12-ia16 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia17.yml facs-si-ps-corrs-c2m12-ia17 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia18.yml facs-si-ps-corrs-c2m12-ia18 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia19.yml facs-si-ps-corrs-c2m12-ia19 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c2m12-ia20.yml facs-si-ps-corrs-c2m12-ia20 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia01.yml facs-si-ps-corrs-c134-ia01 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia02.yml facs-si-ps-corrs-c134-ia02 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia03.yml facs-si-ps-corrs-c134-ia03 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia04.yml facs-si-ps-corrs-c134-ia04 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia05.yml facs-si-ps-corrs-c134-ia05 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia06.yml facs-si-ps-corrs-c134-ia06 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia07.yml facs-si-ps-corrs-c134-ia07 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia08.yml facs-si-ps-corrs-c134-ia08 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia09.yml facs-si-ps-corrs-c134-ia09 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia10.yml facs-si-ps-corrs-c134-ia10 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia11.yml facs-si-ps-corrs-c134-ia11 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia12.yml facs-si-ps-corrs-c134-ia12 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia13.yml facs-si-ps-corrs-c134-ia13 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia14.yml facs-si-ps-corrs-c134-ia14 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia15.yml facs-si-ps-corrs-c134-ia15 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia16.yml facs-si-ps-corrs-c134-ia16 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia17.yml facs-si-ps-corrs-c134-ia17 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia18.yml facs-si-ps-corrs-c134-ia18 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia19.yml facs-si-ps-corrs-c134-ia19 \
-	docker stack deploy -c docker-stack-si-ps-corrs-c134-ia20.yml facs-si-ps-corrs-c134-ia20 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia01.yml facs-si-ps-trims-qs-m12-ia01 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia02.yml facs-si-ps-trims-qs-m12-ia02 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia03.yml facs-si-ps-trims-qs-m12-ia03 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia04.yml facs-si-ps-trims-qs-m12-ia04 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia05.yml facs-si-ps-trims-qs-m12-ia05 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia06.yml facs-si-ps-trims-qs-m12-ia06 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia07.yml facs-si-ps-trims-qs-m12-ia07 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia08.yml facs-si-ps-trims-qs-m12-ia08 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia09.yml facs-si-ps-trims-qs-m12-ia09 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia10.yml facs-si-ps-trims-qs-m12-ia10 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia11.yml facs-si-ps-trims-qs-m12-ia11 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia12.yml facs-si-ps-trims-qs-m12-ia12 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia13.yml facs-si-ps-trims-qs-m12-ia13 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia14.yml facs-si-ps-trims-qs-m12-ia14 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia15.yml facs-si-ps-trims-qs-m12-ia15 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia16.yml facs-si-ps-trims-qs-m12-ia16 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia17.yml facs-si-ps-trims-qs-m12-ia17 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia18.yml facs-si-ps-trims-qs-m12-ia18 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia19.yml facs-si-ps-trims-qs-m12-ia19 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-m12-ia20.yml facs-si-ps-trims-qs-m12-ia20 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia01.yml facs-si-ps-trims-qs-c1234-ia01 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia02.yml facs-si-ps-trims-qs-c1234-ia02 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia03.yml facs-si-ps-trims-qs-c1234-ia03 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia04.yml facs-si-ps-trims-qs-c1234-ia04 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia05.yml facs-si-ps-trims-qs-c1234-ia05 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia06.yml facs-si-ps-trims-qs-c1234-ia06 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia07.yml facs-si-ps-trims-qs-c1234-ia07 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia08.yml facs-si-ps-trims-qs-c1234-ia08 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia09.yml facs-si-ps-trims-qs-c1234-ia09 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia10.yml facs-si-ps-trims-qs-c1234-ia10 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia11.yml facs-si-ps-trims-qs-c1234-ia11 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia12.yml facs-si-ps-trims-qs-c1234-ia12 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia13.yml facs-si-ps-trims-qs-c1234-ia13 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia14.yml facs-si-ps-trims-qs-c1234-ia14 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia15.yml facs-si-ps-trims-qs-c1234-ia15 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia16.yml facs-si-ps-trims-qs-c1234-ia16 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia17.yml facs-si-ps-trims-qs-c1234-ia17 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia18.yml facs-si-ps-trims-qs-c1234-ia18 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia19.yml facs-si-ps-trims-qs-c1234-ia19 \
-	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia20.yml facs-si-ps-trims-qs-c1234-ia20 \
-	docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv \
-	docker stack deploy -c docker-stack-as-ti.yml facs-as-ti \
-	docker stack deploy -c docker-stack-bo-ti-bpms-corrs.yml facs-bo-ti-bpms-corrs \
-	docker stack deploy -c docker-stack-si-ti-bpms-corrs.yml facs-si-ti-bpms-corrs \
-	docker stack deploy -c docker-stack-si-ti-trims-skews.yml facs-si-ti-trims-skews \
-	docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang \
-	docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr \
-	docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo \
-	docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb \
-	docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb \
-	docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag \
-	docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy \
-	docker stack deploy -c docker-stack-si-ap-bl.yml facs-si-ap-bl \
-	docker stack deploy -c docker-stack-si-id-conv.yml facs-si-id-conv \
-	docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift
+service-stop-lowstack-bo-ti-bpms-corrs:
+	cd services; docker stack rm facs-bo-ti-bpms-corrs
+
+service-start-lowstack-bo-ti-bpms-corrs:
+	cd services; docker stack deploy -c docker-stack-bo-ti-bpms-corrs.yml facs-bo-ti-bpms-corrs
+
+service-stop-lowstack-si-ti-bpms-corrs:
+	cd services; docker stack rm facs-si-ti-bpms-corrs
+
+service-start-lowstack-si-ti-bpms-corrs:
+	cd services; docker stack deploy -c docker-stack-si-ti-bpms-corrs.yml facs-si-ti-bpms-corrs
+
+service-stop-lowstack-si-ti-trims-skews:
+	cd services; docker stack rm facs-si-ti-trims-skews
+
+service-start-lowstack-si-ti-trims-skews:
+	cd services; docker stack deploy -c docker-stack-si-ti-trims-skews.yml facs-si-ti-trims-skews
+
+
+
+
+
+
+
+
+service-stop-lowstack-as-pu-conv:
+	cd services; docker stack rm facs-as-pu-conv
+
+service-start-lowstack-as-pu-conv:
+	cd services; docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv
+
+service-stop-lowstack-as-ap-posang:
+	cd services; docker stack rm facs-as-ap-posang
+
+service-start-lowstack-as-ap-posang:
+	cd services; docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang
+
+service-stop-lowstack-as-ap-opticscorr:
+	cd services; docker stack rm facs-as-ap-opticscorr
+
+service-start-lowstack-as-ap-opticscorr:
+	cd services; docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr
+
+service-stop-lowstack-as-ap-currinfo:
+	cd services; docker stack rm facs-as-ap-currinfo
+
+service-start-lowstack-as-ap-currinfo:
+	cd services; docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo
+
+service-stop-lowstack-as-ap-sofb:
+	cd services; docker stack rm facs-as-ap-sofb
+
+service-start-lowstack-as-ap-sofb:
+	cd services; docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb
+
+service-stop-lowstack-si-ap-sofb:
+	cd services; docker stack rm facs-si-ap-sofb
+
+service-start-lowstack-si-ap-sofb:
+	cd services; docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb
+
+service-stop-lowstack-as-ap-diag:
+	cd services; docker stack rm facs-as-ap-diag
+
+service-start-lowstack-as-ap-diag:
+	cd services; docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag
+
+service-stop-lowstack-li-ap-energy:
+	cd services; docker stack rm facs-li-ap-energy
+
+service-start-lowstack-li-ap-energy:
+	cd services; docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy
+
+service-stop-lowstack-si-ap-bl:
+	cd services; docker stack rm facs-si-ap-bl
+
+service-start-lowstack-si-ap-bl:
+	cd services; docker stack deploy -c docker-stack-si-ap-bl.yml facs-si-ap-bl
+
+service-stop-lowstack-si-id-conv:
+	cd services; docker stack rm facs-si-id-conv
+
+service-start-lowstack-si-id-conv:
+	cd services; docker stack deploy -c docker-stack-si-id-conv.yml facs-si-id-conv
+
+service-stop-lowstack-as-ap-machshift:
+	cd services; docker stack rm facs-as-ap-machshift
+
+service-start-lowstack-as-ap-machshift:
+	cd services; docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift
+
+TARGET_LOWSTACK_DEPS_STOP := service-stop-lowstack-as-ps-dclinks-tbts-bodip
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia01t05
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia06t10
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia11t15
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia16t20
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-li-ps-spect-quads-lens
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-li-ps-corrs
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-li-ps-slnds
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-li-ps-conv
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-li-ps-diag
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-tb-ps
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-dips
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-quads
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-sexts
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-fams
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia01t05
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia06t10
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia11t15
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia16t20
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-ts-ps
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-dips
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-quads-qd
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-quads-qfq
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-sexts-sda12b2-sfa0p0-sda0p0
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-sexts-sfb12-sdb3-sfp12-sdp23
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia01
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia02
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia03
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia04
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia05
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia06
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia07
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia08
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia09
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia10
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia11
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia12
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia13
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia14
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia15
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia16
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia17
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia18
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia19
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c2m12-ia20
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia01
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia02
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia03
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia04
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia05
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia06
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia07
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia08
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia09
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia10
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia11
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia12
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia13
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia14
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia15
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia16
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia17
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia18
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia19
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-corrs-c134-ia20
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia01
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia02
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia03
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia04
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia05
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia06
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia07
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia08
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia09
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia10
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia11
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia12
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia13
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia14
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia15
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia16
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia17
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia18
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia19
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-m12-ia20
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia01
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia02
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia03
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia04
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia05
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia06
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia07
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia08
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia09
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia10
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia11
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia12
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia13
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia14
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia15
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia16
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia17
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia18
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia19
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-trims-qs-c1234-ia20
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ti-general
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ti-bpms-corrs
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ti-bpms-corrs
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ti-trims-skews
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-pu-conv
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ap-posang
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ap-opticscorr
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ap-currinfo
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ap-sofb
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ap-sofb
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ap-diag
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-li-ap-energy
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ap-bl
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-id-conv
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ap-machshift
+service-stop-lowstack-all: $(TARGET_LOWSTACK_DEPS_STOP)
+
+TARGET_LOWSTACK_DEPS_START := service-start-lowstack-as-ps-dclinks-tbts-bodip
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia01t05
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia06t10
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia11t15
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia16t20
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-li-ps-spect-quads-lens
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-li-ps-corrs
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-li-ps-slnds
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-li-ps-conv
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-li-ps-diag
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-tb-ps
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-dips
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-quads
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-sexts
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-fams
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia01t05
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia06t10
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia11t15
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia16t20
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-ts-ps
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-dips
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-quads-qd
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-quads-qfq
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-sexts-sda12b2-sfa0p0-sda0p0
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-sexts-sfb12-sdb3-sfp12-sdp23
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia01
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia02
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia03
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia04
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia05
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia06
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia07
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia08
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia09
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia10
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia11
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia12
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia13
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia14
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia15
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia16
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia17
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia18
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia19
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c2m12-ia20
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia01
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia02
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia03
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia04
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia05
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia06
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia07
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia08
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia09
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia10
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia11
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia12
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia13
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia14
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia15
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia16
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia17
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia18
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia19
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-corrs-c134-ia20
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia01
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia02
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia03
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia04
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia05
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia06
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia07
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia08
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia09
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia10
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia11
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia12
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia13
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia14
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia15
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia16
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia17
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia18
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia19
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-m12-ia20
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia01
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia02
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia03
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia04
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia05
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia06
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia07
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia08
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia09
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia10
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia11
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia12
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia13
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia14
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia15
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia16
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia17
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia18
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia19
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-trims-qs-c1234-ia20
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ti-general
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ti-bpms-corrs
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ti-bpms-corrs
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ti-trims-skews
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-pu-conv
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ap-posang
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ap-opticscorr
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ap-currinfo
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ap-sofb
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ap-sofb
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ap-diag
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-li-ap-energy
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ap-bl
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-id-conv
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ap-machshift
+service-start-lowstack-all: $(TARGET_LOWSTACK_DEPS_START)
+
+# --- stop all services ---
+
+TARGET_DEPS_STOP := $(TARGET_HIGHSTACK_DEPS_START)
+TARGET_DEPS_STOP += $(TARGET_LOWSTACK_DEPS_START )
+service-stop-all: $(TARGET_DEPS_STOP)
