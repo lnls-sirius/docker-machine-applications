@@ -3,7 +3,7 @@ version: "3.7"
 services:
   
   spect-quads-lens:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-spect-quads-lens.bash'
     deploy:
       placement:
@@ -31,7 +31,7 @@ services:
       - ioc-network
 
   corrs:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-corrs.bash'
     deploy:
       placement:
@@ -59,7 +59,7 @@ services:
       - ioc-network
 
   slnds:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-slnds.bash'
     deploy:
       placement:
@@ -87,7 +87,7 @@ services:
       - ioc-network
 
   conv:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-conv.bash'
     deploy:
       placement:
@@ -115,7 +115,7 @@ services:
       - ioc-network
 
   diag:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-diag.bash'
     deploy:
       placement:

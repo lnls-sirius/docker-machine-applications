@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   dips:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-dips.bash'
     deploy:
       placement:
@@ -31,7 +31,7 @@ services:
       - ioc-network
 
   quads:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-quads.bash'
     deploy:
       placement:
@@ -59,7 +59,7 @@ services:
       - ioc-network
 
   sexts:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-sexts.bash'
     deploy:
       placement:

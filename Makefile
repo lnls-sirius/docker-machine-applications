@@ -38,6 +38,7 @@ image-cleanup:
 
 
 # --- higher stacking level services ---
+
 service-stop-highstack-as-ps-dclinks:
 	cd services; docker stack rm facs-as-ps-dclinks
 
@@ -187,36 +188,150 @@ TARGET_HIGHSTACK_DEPS_START += service-start-highstack-si-ap-bl
 TARGET_HIGHSTACK_DEPS_START += service-start-highstack-si-id-conv
 service-start-highstack-all: $(TARGET_HIGHSTACK_DEPS_START)
 
+# --- middle stacking level services ---
+
+# service-stop-midstack-bo-ps-fams:
+# 	cd services; docker stack rm facs-bo-ps-fams
+
+# service-start-midstack-bo-ps-fams:
+# 	cd services; docker stack deploy -c docker-stack-bo-ps-fams.yml facs-bo-ps-fams
+
+# service-stop-midstack-bo-ps-corrs:
+# 	cd services; docker stack rm facs-bo-ps-corrs
+
+# service-start-midstack-bo-ps-corrs:
+# 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs.yml facs-bo-ps-corrs
+
+# TARGET_MIDSTACK_DEPS_START += service-start-midstack-bo-ps-fams
+# TARGET_MIDSTACK_DEPS_START += service-start-midstack-bo-ps-corrs
+
 # --- lower stacking level services ---
+
 service-stop-lowstack-as-ps-dclinks-tbts-bodip:
 	cd services; docker stack rm facs-as-ps-dclinks-tbts-bodip
 
 service-start-lowstack-as-ps-dclinks-tbts-bodip:
 	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-tbts-bodip.yml facs-as-ps-dclinks-tbts-bodip
 
-service-stop-lowstack-as-ps-dclinks-ia01t05:
-	cd services; docker stack rm facs-as-ps-dclinks-ia01t05
+service-stop-lowstack-as-ps-dclinks-ia01:
+	cd services; docker stack rm facs-as-ps-dclinks-ia01
 
-service-start-lowstack-as-ps-dclinks-ia01t05:
-	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia01t05.yml facs-as-ps-dclinks-ia01t05
+service-start-lowstack-as-ps-dclinks-ia01:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia01.yml facs-as-ps-dclinks-ia01
 
-service-stop-lowstack-as-ps-dclinks-ia06t10:
-	cd services; docker stack rm facs-as-ps-dclinks-ia06t10
+service-stop-lowstack-as-ps-dclinks-ia02:
+	cd services; docker stack rm facs-as-ps-dclinks-ia02
 
-service-start-lowstack-as-ps-dclinks-ia06t10:
-	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia06t10.yml facs-as-ps-dclinks-ia06t10
+service-start-lowstack-as-ps-dclinks-ia02:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia02.yml facs-as-ps-dclinks-ia02
 
-service-stop-lowstack-as-ps-dclinks-ia11t15:
-	cd services; docker stack rm facs-as-ps-dclinks-ia11t15
+service-stop-lowstack-as-ps-dclinks-ia03:
+	cd services; docker stack rm facs-as-ps-dclinks-ia03
 
-service-start-lowstack-as-ps-dclinks-ia11t15:
-	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia11t15.yml facs-as-ps-dclinks-ia11t15
+service-start-lowstack-as-ps-dclinks-ia03:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia03.yml facs-as-ps-dclinks-ia03
 
-service-stop-lowstack-as-ps-dclinks-ia16t20:
-	cd services; docker stack rm facs-as-ps-dclinks-ia16t20
+service-stop-lowstack-as-ps-dclinks-ia04:
+	cd services; docker stack rm facs-as-ps-dclinks-ia04
 
-service-start-lowstack-as-ps-dclinks-ia16t20:
-	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia16t20.yml facs-as-ps-dclinks-ia16t20
+service-start-lowstack-as-ps-dclinks-ia04:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia04.yml facs-as-ps-dclinks-ia04
+
+service-stop-lowstack-as-ps-dclinks-ia05:
+	cd services; docker stack rm facs-as-ps-dclinks-ia05
+
+service-start-lowstack-as-ps-dclinks-ia05:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia05.yml facs-as-ps-dclinks-ia05
+
+service-stop-lowstack-as-ps-dclinks-ia06:
+	cd services; docker stack rm facs-as-ps-dclinks-ia06
+
+service-start-lowstack-as-ps-dclinks-ia06:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia06.yml facs-as-ps-dclinks-ia06
+
+service-stop-lowstack-as-ps-dclinks-ia07:
+	cd services; docker stack rm facs-as-ps-dclinks-ia07
+
+service-start-lowstack-as-ps-dclinks-ia07:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia07.yml facs-as-ps-dclinks-ia07
+
+service-stop-lowstack-as-ps-dclinks-ia08:
+	cd services; docker stack rm facs-as-ps-dclinks-ia08
+
+service-start-lowstack-as-ps-dclinks-ia08:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia08.yml facs-as-ps-dclinks-ia08
+
+service-stop-lowstack-as-ps-dclinks-ia09:
+	cd services; docker stack rm facs-as-ps-dclinks-ia09
+
+service-start-lowstack-as-ps-dclinks-ia09:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia09.yml facs-as-ps-dclinks-ia09
+
+service-stop-lowstack-as-ps-dclinks-ia10:
+	cd services; docker stack rm facs-as-ps-dclinks-ia10
+
+service-start-lowstack-as-ps-dclinks-ia10:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia10.yml facs-as-ps-dclinks-ia10
+
+service-stop-lowstack-as-ps-dclinks-ia11:
+	cd services; docker stack rm facs-as-ps-dclinks-ia11
+
+service-start-lowstack-as-ps-dclinks-ia11:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia11.yml facs-as-ps-dclinks-ia11
+
+service-stop-lowstack-as-ps-dclinks-ia12:
+	cd services; docker stack rm facs-as-ps-dclinks-ia12
+
+service-start-lowstack-as-ps-dclinks-ia12:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia12.yml facs-as-ps-dclinks-ia12
+
+service-stop-lowstack-as-ps-dclinks-ia13:
+	cd services; docker stack rm facs-as-ps-dclinks-ia13
+
+service-start-lowstack-as-ps-dclinks-ia13:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia13.yml facs-as-ps-dclinks-ia13
+
+service-stop-lowstack-as-ps-dclinks-ia14:
+	cd services; docker stack rm facs-as-ps-dclinks-ia14
+
+service-start-lowstack-as-ps-dclinks-ia14:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia14.yml facs-as-ps-dclinks-ia14
+
+service-stop-lowstack-as-ps-dclinks-ia15:
+	cd services; docker stack rm facs-as-ps-dclinks-ia15
+
+service-start-lowstack-as-ps-dclinks-ia15:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia15.yml facs-as-ps-dclinks-ia15
+
+service-stop-lowstack-as-ps-dclinks-ia16:
+	cd services; docker stack rm facs-as-ps-dclinks-ia16
+
+service-start-lowstack-as-ps-dclinks-ia16:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia16.yml facs-as-ps-dclinks-ia16
+
+service-stop-lowstack-as-ps-dclinks-ia17:
+	cd services; docker stack rm facs-as-ps-dclinks-ia17
+
+service-start-lowstack-as-ps-dclinks-ia17:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia17.yml facs-as-ps-dclinks-ia17
+
+service-stop-lowstack-as-ps-dclinks-ia18:
+	cd services; docker stack rm facs-as-ps-dclinks-ia18
+
+service-start-lowstack-as-ps-dclinks-ia18:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia18.yml facs-as-ps-dclinks-ia18
+
+service-stop-lowstack-as-ps-dclinks-ia19:
+	cd services; docker stack rm facs-as-ps-dclinks-ia19
+
+service-start-lowstack-as-ps-dclinks-ia19:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia19.yml facs-as-ps-dclinks-ia19
+
+service-stop-lowstack-as-ps-dclinks-ia20:
+	cd services; docker stack rm facs-as-ps-dclinks-ia20
+
+service-start-lowstack-as-ps-dclinks-ia20:
+	cd services; docker stack deploy -c docker-stack-as-ps-dclinks-ia20.yml facs-as-ps-dclinks-ia20
 
 service-stop-lowstack-li-ps-spect-quads-lens:
 	cd services; docker stack rm facs-li-ps-spect-quads-lens
@@ -272,41 +387,83 @@ service-stop-lowstack-bo-ps-sexts:
 service-start-lowstack-bo-ps-sexts:
 	cd services; docker stack deploy -c docker-stack-bo-ps-sexts.yml facs-bo-ps-sexts
 
-service-stop-lowstack-bo-ps-fams:
-	cd services; docker stack rm facs-bo-ps-fams
+service-stop-lowstack-bo-ps-corrs-ia01:
+	cd services; docker stack rm facs-bo-ps-corrs-ia01
 
-service-start-lowstack-bo-ps-fams:
-	cd services; docker stack deploy -c docker-stack-bo-ps-fams.yml facs-bo-ps-fams
+service-start-lowstack-bo-ps-corrs-ia01:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia01.yml facs-bo-ps-corrs-ia01
 
-service-stop-lowstack-bo-ps-corrs-ia01t05:
-	cd services; docker stack rm facs-bo-ps-corrs-ia01t05
+service-stop-lowstack-bo-ps-corrs-ia02:
+	cd services; docker stack rm facs-bo-ps-corrs-ia02
 
-service-start-lowstack-bo-ps-corrs-ia01t05:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia01t05.yml facs-bo-ps-corrs-ia01t05
+service-start-lowstack-bo-ps-corrs-ia02:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia02.yml facs-bo-ps-corrs-ia02
 
-service-stop-lowstack-bo-ps-corrs-ia06t10:
-	cd services; docker stack rm facs-bo-ps-corrs-ia06t10
+service-stop-lowstack-bo-ps-corrs-ia04:
+	cd services; docker stack rm facs-bo-ps-corrs-ia04
 
-service-start-lowstack-bo-ps-corrs-ia06t10:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia06t10.yml facs-bo-ps-corrs-ia06t10
+service-start-lowstack-bo-ps-corrs-ia04:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia04.yml facs-bo-ps-corrs-ia04
 
-service-stop-lowstack-bo-ps-corrs-ia11t15:
-	cd services; docker stack rm facs-bo-ps-corrs-ia11t15
+service-stop-lowstack-bo-ps-corrs-ia05:
+	cd services; docker stack rm facs-bo-ps-corrs-ia05
 
-service-start-lowstack-bo-ps-corrs-ia11t15:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia11t15.yml facs-bo-ps-corrs-ia11t15
+service-start-lowstack-bo-ps-corrs-ia05:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia05.yml facs-bo-ps-corrs-ia05
 
-service-stop-lowstack-bo-ps-corrs-ia16t20:
-	cd services; docker stack rm facs-bo-ps-corrs-ia16t20
+service-stop-lowstack-bo-ps-corrs-ia07:
+	cd services; docker stack rm facs-bo-ps-corrs-ia07
 
-service-start-lowstack-bo-ps-corrs-ia16t20:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia16t20.yml facs-bo-ps-corrs-ia16t20
+service-start-lowstack-bo-ps-corrs-ia07:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia07.yml facs-bo-ps-corrs-ia07
 
-service-stop-lowstack-bo-ps-corrs:
-	cd services; docker stack rm facs-bo-ps-corrs
+service-stop-lowstack-bo-ps-corrs-ia08:
+	cd services; docker stack rm facs-bo-ps-corrs-ia08
 
-service-start-lowstack-bo-ps-corrs:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs.yml facs-bo-ps-corrs
+service-start-lowstack-bo-ps-corrs-ia08:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia08.yml facs-bo-ps-corrs-ia08
+
+service-stop-lowstack-bo-ps-corrs-ia10:
+	cd services; docker stack rm facs-bo-ps-corrs-ia10
+
+service-start-lowstack-bo-ps-corrs-ia10:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia10.yml facs-bo-ps-corrs-ia10
+
+service-stop-lowstack-bo-ps-corrs-ia11:
+	cd services; docker stack rm facs-bo-ps-corrs-ia11
+
+service-start-lowstack-bo-ps-corrs-ia11:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia11.yml facs-bo-ps-corrs-ia11
+
+service-stop-lowstack-bo-ps-corrs-ia13:
+	cd services; docker stack rm facs-bo-ps-corrs-ia13
+
+service-start-lowstack-bo-ps-corrs-ia13:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia13.yml facs-bo-ps-corrs-ia13
+
+service-stop-lowstack-bo-ps-corrs-ia14:
+	cd services; docker stack rm facs-bo-ps-corrs-ia14
+
+service-start-lowstack-bo-ps-corrs-ia14:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia14.yml facs-bo-ps-corrs-ia14
+
+service-stop-lowstack-bo-ps-corrs-ia16:
+	cd services; docker stack rm facs-bo-ps-corrs-ia16
+
+service-start-lowstack-bo-ps-corrs-ia16:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia16.yml facs-bo-ps-corrs-ia16
+
+service-stop-lowstack-bo-ps-corrs-ia17:
+	cd services; docker stack rm facs-bo-ps-corrs-ia17
+
+service-start-lowstack-bo-ps-corrs-ia17:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia17.yml facs-bo-ps-corrs-ia17
+
+service-stop-lowstack-bo-ps-corrs-ia20:
+	cd services; docker stack rm facs-bo-ps-corrs-ia20
+
+service-start-lowstack-bo-ps-corrs-ia20:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia20.yml facs-bo-ps-corrs-ia20
 
 service-stop-lowstack-ts-ps:
 	cd services; docker stack rm facs-ts-ps
@@ -920,11 +1077,28 @@ service-stop-lowstack-as-ap-machshift:
 service-start-lowstack-as-ap-machshift:
 	cd services; docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift
 
+
 TARGET_LOWSTACK_DEPS_STOP := service-stop-lowstack-as-ps-dclinks-tbts-bodip
-TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia01t05
-TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia06t10
-TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia11t15
-TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia16t20
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia01
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia02
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia03
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia04
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia05
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia06
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia07
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia08
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia09
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia10
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia11
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia12
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia13
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia14
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia15
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia16
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia17
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia18
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia19
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ps-dclinks-ia20
 TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-li-ps-spect-quads-lens
 TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-li-ps-corrs
 TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-li-ps-slnds
@@ -934,12 +1108,19 @@ TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-tb-ps
 TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-dips
 TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-quads
 TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-sexts
-TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-fams
-TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia01t05
-TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia06t10
-TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia11t15
-TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia16t20
-TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia01
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia02
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia04
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia05
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia07
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia08
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia10
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia11
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia13
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia14
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia16
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia17
+TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-bo-ps-corrs-ia20
 TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-ts-ps
 TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-dips
 TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-si-ps-quads-qd
@@ -1045,10 +1226,26 @@ TARGET_LOWSTACK_DEPS_STOP += service-stop-lowstack-as-ap-machshift
 service-stop-lowstack-all: $(TARGET_LOWSTACK_DEPS_STOP)
 
 TARGET_LOWSTACK_DEPS_START := service-start-lowstack-as-ps-dclinks-tbts-bodip
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia01t05
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia06t10
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia11t15
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia16t20
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia01
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia02
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia03
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia04
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia05
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia06
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia07
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia08
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia09
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia10
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia11
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia12
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia13
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia14
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia15
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia16
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia17
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia18
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia19
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ps-dclinks-ia20
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-li-ps-spect-quads-lens
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-li-ps-corrs
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-li-ps-slnds
@@ -1058,12 +1255,19 @@ TARGET_LOWSTACK_DEPS_START += service-start-lowstack-tb-ps
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-dips
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-quads
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-sexts
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-fams
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia01t05
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia06t10
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia11t15
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia16t20
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia01
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia02
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia04
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia05
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia07
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia08
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia10
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia11
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia13
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia14
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia16
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia17
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia20
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-ts-ps
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-dips
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-quads-qd
@@ -1167,6 +1371,7 @@ TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ap-bl
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-id-conv
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ap-machshift
 service-start-lowstack-all: $(TARGET_LOWSTACK_DEPS_START)
+
 
 # --- stop all services ---
 

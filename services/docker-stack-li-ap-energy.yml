@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   iocs:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/li-ap-energy.bash'
     deploy:
       placement:
