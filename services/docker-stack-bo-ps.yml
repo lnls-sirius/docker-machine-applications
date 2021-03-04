@@ -86,65 +86,9 @@ services:
     networks:
       - ioc-network
 
-  corrs-ia01t05:
-      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
-      command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia01t05.bash'
-      deploy:
-        placement:
-          constraints:
-            # - node.hostname != CA-RaTim-CO-IOCSrv
-            # - node.hostname != IA-14RaDiag03-CO-IOCSrv
-            # - node.hostname != IA-16RaBbB-CO-IOCSrv
-            # - node.hostname != IA-18RaDiag04-CO-IOCSrv
-            # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-            # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
-            # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
-            # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
-            - node.hostname != CA-RaCtrl-CO-Srv-1
-            - node.hostname != LA-RaCtrl-CO-Srv-1
-            - node.hostname != TA-TiRack-CO-FWSrv-1
-        replicas: 1
-        restart_policy:
-          condition: any
-      logging:
-        driver: "json-file"
-        options:
-          max-file: "10"
-          max-size: "10m"
-      networks:
-        - ioc-network
-
-  corrs-ia06t10:
-      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
-      command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia06t10.bash'
-      deploy:
-        placement:
-          constraints:
-            # - node.hostname != CA-RaTim-CO-IOCSrv
-            # - node.hostname != IA-14RaDiag03-CO-IOCSrv
-            # - node.hostname != IA-16RaBbB-CO-IOCSrv
-            # - node.hostname != IA-18RaDiag04-CO-IOCSrv
-            # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-            # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
-            # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
-            # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
-            - node.hostname != CA-RaCtrl-CO-Srv-1
-            - node.hostname != LA-RaCtrl-CO-Srv-1
-            - node.hostname != TA-TiRack-CO-FWSrv-1
-        replicas: 1
-        restart_policy:
-          condition: any
-      logging:
-        driver: "json-file"
-        options:
-          max-file: "10"
-          max-size: "10m"
-      networks:
-        - ioc-network
-
-  corrs-ia11t15:
+  ia01:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia11t15.bash'
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia01.bash'
     deploy:
       placement:
         constraints:
@@ -170,9 +114,317 @@ services:
     networks:
       - ioc-network
 
-  corrs-ia16t20:
+  ia02:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia16t20.bash'
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia02.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia04:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia04.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia05:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia05.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia07:
+      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+      command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia07.bash'
+      deploy:
+        placement:
+          constraints:
+            # - node.hostname != CA-RaTim-CO-IOCSrv
+            # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+            # - node.hostname != IA-16RaBbB-CO-IOCSrv
+            # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+            # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+            # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+            # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+            # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+            - node.hostname != CA-RaCtrl-CO-Srv-1
+            - node.hostname != LA-RaCtrl-CO-Srv-1
+            - node.hostname != TA-TiRack-CO-FWSrv-1
+        replicas: 1
+        restart_policy:
+          condition: any
+      logging:
+        driver: "json-file"
+        options:
+          max-file: "10"
+          max-size: "10m"
+      networks:
+        - ioc-network
+
+  ia08:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia08.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia10:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia10.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia11:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia11.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia13:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia13.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia14:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia14.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia16:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia16.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia17:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia17.bash'
+    deploy:
+      placement:
+        constraints:
+          # - node.hostname != CA-RaTim-CO-IOCSrv
+          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
+          # - node.hostname != IA-16RaBbB-CO-IOCSrv
+          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
+          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname != CA-RaCtrl-CO-Srv-1
+          - node.hostname != LA-RaCtrl-CO-Srv-1
+          - node.hostname != TA-TiRack-CO-FWSrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+  ia20:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia20.bash'
     deploy:
       placement:
         constraints:

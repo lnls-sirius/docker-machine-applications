@@ -1,6 +1,6 @@
 ## Note
 
-* This README is to incomplete
+* This README is incomplete
 
 ## Estimate of CPU usage
 

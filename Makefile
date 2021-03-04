@@ -38,6 +38,7 @@ image-cleanup:
 
 
 # --- higher stacking level services ---
+
 service-stop-highstack-as-ps-dclinks:
 	cd services; docker stack rm facs-as-ps-dclinks
 
@@ -187,7 +188,25 @@ TARGET_HIGHSTACK_DEPS_START += service-start-highstack-si-ap-bl
 TARGET_HIGHSTACK_DEPS_START += service-start-highstack-si-id-conv
 service-start-highstack-all: $(TARGET_HIGHSTACK_DEPS_START)
 
+# --- middle stacking level services ---
+
+# service-stop-midstack-bo-ps-fams:
+# 	cd services; docker stack rm facs-bo-ps-fams
+
+# service-start-midstack-bo-ps-fams:
+# 	cd services; docker stack deploy -c docker-stack-bo-ps-fams.yml facs-bo-ps-fams
+
+# service-stop-midstack-bo-ps-corrs:
+# 	cd services; docker stack rm facs-bo-ps-corrs
+
+# service-start-midstack-bo-ps-corrs:
+# 	cd services; docker stack deploy -c docker-stack-bo-ps-corrs.yml facs-bo-ps-corrs
+
+# TARGET_MIDSTACK_DEPS_START += service-start-midstack-bo-ps-fams
+# TARGET_MIDSTACK_DEPS_START += service-start-midstack-bo-ps-corrs
+
 # --- lower stacking level services ---
+
 service-stop-lowstack-as-ps-dclinks-tbts-bodip:
 	cd services; docker stack rm facs-as-ps-dclinks-tbts-bodip
 
@@ -272,41 +291,83 @@ service-stop-lowstack-bo-ps-sexts:
 service-start-lowstack-bo-ps-sexts:
 	cd services; docker stack deploy -c docker-stack-bo-ps-sexts.yml facs-bo-ps-sexts
 
-service-stop-lowstack-bo-ps-fams:
-	cd services; docker stack rm facs-bo-ps-fams
+service-stop-lowstack-bo-ps-corrs-ia01:
+	cd services; docker stack rm facs-bo-ps-corrs-ia01
 
-service-start-lowstack-bo-ps-fams:
-	cd services; docker stack deploy -c docker-stack-bo-ps-fams.yml facs-bo-ps-fams
+service-start-lowstack-bo-ps-corrs-ia01:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia01.yml facs-bo-ps-corrs-ia01
 
-service-stop-lowstack-bo-ps-corrs-ia01t05:
-	cd services; docker stack rm facs-bo-ps-corrs-ia01t05
+service-stop-lowstack-bo-ps-corrs-ia02:
+	cd services; docker stack rm facs-bo-ps-corrs-ia02
 
-service-start-lowstack-bo-ps-corrs-ia01t05:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia01t05.yml facs-bo-ps-corrs-ia01t05
+service-start-lowstack-bo-ps-corrs-ia02:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia02.yml facs-bo-ps-corrs-ia02
 
-service-stop-lowstack-bo-ps-corrs-ia06t10:
-	cd services; docker stack rm facs-bo-ps-corrs-ia06t10
+service-stop-lowstack-bo-ps-corrs-ia04:
+	cd services; docker stack rm facs-bo-ps-corrs-ia04
 
-service-start-lowstack-bo-ps-corrs-ia06t10:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia06t10.yml facs-bo-ps-corrs-ia06t10
+service-start-lowstack-bo-ps-corrs-ia04:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia04.yml facs-bo-ps-corrs-ia04
 
-service-stop-lowstack-bo-ps-corrs-ia11t15:
-	cd services; docker stack rm facs-bo-ps-corrs-ia11t15
+service-stop-lowstack-bo-ps-corrs-ia05:
+	cd services; docker stack rm facs-bo-ps-corrs-ia05
 
-service-start-lowstack-bo-ps-corrs-ia11t15:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia11t15.yml facs-bo-ps-corrs-ia11t15
+service-start-lowstack-bo-ps-corrs-ia05:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia05.yml facs-bo-ps-corrs-ia05
 
-service-stop-lowstack-bo-ps-corrs-ia16t20:
-	cd services; docker stack rm facs-bo-ps-corrs-ia16t20
+service-stop-lowstack-bo-ps-corrs-ia07:
+	cd services; docker stack rm facs-bo-ps-corrs-ia07
 
-service-start-lowstack-bo-ps-corrs-ia16t20:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia16t20.yml facs-bo-ps-corrs-ia16t20
+service-start-lowstack-bo-ps-corrs-ia07:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia07.yml facs-bo-ps-corrs-ia07
 
-service-stop-lowstack-bo-ps-corrs:
-	cd services; docker stack rm facs-bo-ps-corrs
+service-stop-lowstack-bo-ps-corrs-ia08:
+	cd services; docker stack rm facs-bo-ps-corrs-ia08
 
-service-start-lowstack-bo-ps-corrs:
-	cd services; docker stack deploy -c docker-stack-bo-ps-corrs.yml facs-bo-ps-corrs
+service-start-lowstack-bo-ps-corrs-ia08:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia08.yml facs-bo-ps-corrs-ia08
+
+service-stop-lowstack-bo-ps-corrs-ia10:
+	cd services; docker stack rm facs-bo-ps-corrs-ia10
+
+service-start-lowstack-bo-ps-corrs-ia10:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia10.yml facs-bo-ps-corrs-ia10
+
+service-stop-lowstack-bo-ps-corrs-ia11:
+	cd services; docker stack rm facs-bo-ps-corrs-ia11
+
+service-start-lowstack-bo-ps-corrs-ia11:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia11.yml facs-bo-ps-corrs-ia11
+
+service-stop-lowstack-bo-ps-corrs-ia13:
+	cd services; docker stack rm facs-bo-ps-corrs-ia13
+
+service-start-lowstack-bo-ps-corrs-ia13:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia13.yml facs-bo-ps-corrs-ia13
+
+service-stop-lowstack-bo-ps-corrs-ia14:
+	cd services; docker stack rm facs-bo-ps-corrs-ia14
+
+service-start-lowstack-bo-ps-corrs-ia14:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia14.yml facs-bo-ps-corrs-ia14
+
+service-stop-lowstack-bo-ps-corrs-ia16:
+	cd services; docker stack rm facs-bo-ps-corrs-ia16
+
+service-start-lowstack-bo-ps-corrs-ia16:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia16.yml facs-bo-ps-corrs-ia16
+
+service-stop-lowstack-bo-ps-corrs-ia17:
+	cd services; docker stack rm facs-bo-ps-corrs-ia17
+
+service-start-lowstack-bo-ps-corrs-ia17:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia17.yml facs-bo-ps-corrs-ia17
+
+service-stop-lowstack-bo-ps-corrs-ia20:
+	cd services; docker stack rm facs-bo-ps-corrs-ia20
+
+service-start-lowstack-bo-ps-corrs-ia20:
+	cd services; docker stack deploy -c docker-stack-bo-ps-corrs-ia20.yml facs-bo-ps-corrs-ia20
 
 service-stop-lowstack-ts-ps:
 	cd services; docker stack rm facs-ts-ps
@@ -1058,12 +1119,19 @@ TARGET_LOWSTACK_DEPS_START += service-start-lowstack-tb-ps
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-dips
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-quads
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-sexts
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-fams
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia01t05
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia06t10
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia11t15
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia16t20
-TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia01
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia02
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia04
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia05
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia07
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia08
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia10
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia11
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia13
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia14
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia16
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia17
+TARGET_LOWSTACK_DEPS_START += service-start-lowstack-bo-ps-corrs-ia20
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-ts-ps
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-dips
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ps-quads-qd
@@ -1167,6 +1235,7 @@ TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-ap-bl
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-si-id-conv
 TARGET_LOWSTACK_DEPS_START += service-start-lowstack-as-ap-machshift
 service-start-lowstack-all: $(TARGET_LOWSTACK_DEPS_START)
+
 
 # --- stop all services ---
 
