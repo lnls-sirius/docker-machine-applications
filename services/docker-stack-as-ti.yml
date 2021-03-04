@@ -3,7 +3,7 @@ version: "3.7"
 services:
   
   general:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/as-ti-general.bash'
     deploy:
       placement:
@@ -31,7 +31,7 @@ services:
       - ioc-network
 
   bo-bpms-corrs:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ti-bpms-corrs.bash'
     deploy:
       placement:
@@ -59,7 +59,7 @@ services:
       - ioc-network
 
   si-bpms-corrs:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/si-ti-bpms-corrs.bash'
     deploy:
       placement:
@@ -87,7 +87,7 @@ services:
       - ioc-network
 
   si-trims-skews:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2020-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
     command: bash -c 'source /etc/profile && /ioc-apps/si-ti-trims-skews.bash'
     deploy:
       placement:
