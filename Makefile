@@ -74,10 +74,10 @@ service-stop-highstack-si-ps:
 service-start-highstack-si-ps:
 	cd services; docker stack deploy -c docker-stack-si-ps.yml facs-si-ps
 
-service-stop-highstack-as-ti-conv:
+service-stop-highstack-as-ti:
 	cd services; docker stack rm facs-as-ti
 
-service-start-highstack-as-ti-conv:
+service-start-highstack-as-ti:
 	cd services; docker stack deploy -c docker-stack-as-ti.yml facs-as-ti
 
 service-stop-highstack-as-pu-conv:
@@ -151,6 +151,7 @@ TARGET_HIGHSTACK_DEPS_STOP := service-stop-highstack-as-ps-dclinks
 TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-li-ps
 TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-tb-ps
 TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-bo-ps
+TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-ts-ps
 TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-si-ps
 TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-as-ti
 TARGET_HIGHSTACK_DEPS_STOP += service-stop-highstack-as-pu-conv
@@ -170,6 +171,7 @@ TARGET_HIGHSTACK_DEPS_START := service-start-highstack-as-ps-dclinks
 TARGET_HIGHSTACK_DEPS_START += service-start-highstack-li-ps
 TARGET_HIGHSTACK_DEPS_START += service-start-highstack-tb-ps
 TARGET_HIGHSTACK_DEPS_START += service-start-highstack-bo-ps
+TARGET_HIGHSTACK_DEPS_START += service-start-highstack-ts-ps
 TARGET_HIGHSTACK_DEPS_START += service-start-highstack-si-ps
 TARGET_HIGHSTACK_DEPS_START += service-start-highstack-as-ti
 TARGET_HIGHSTACK_DEPS_START += service-start-highstack-as-pu-conv
@@ -245,19 +247,6 @@ service-stop-lowstack-li-ps-diag:
 
 service-start-lowstack-li-ps-diag:
 	cd services; docker stack deploy -c docker-stack-li-ps-diag.yml facs-li-ps-diag
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 service-stop-lowstack-tb-ps:
 	cd services; docker stack rm facs-tb-ps
