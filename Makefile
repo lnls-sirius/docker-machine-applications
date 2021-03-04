@@ -3,6 +3,15 @@ FAC_EPICS_TAG:=$(shell cat ./images/.env | grep FAC_EPICS_TAG= | sed s/FAC_EPICS
 FAC_APPS_TAG:=$(shell cat ./images/.env | grep FAC_APPS_TAG= | sed s/FAC_APPS_TAG=//g)
 FAC_IOCS_TAG:=$(shell cat ./images/.env | grep FAC_IOCS_TAG= | sed s/FAC_IOCS_TAG=//g)
 
+
+# --- tags ---
+
+tags-iocs-update:
+	cd services; find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \;
+
+tags-iocs-template:
+	cd services; find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
+
 # --- images ---
 
 image-build-fac-iocs: image-cleanup image-pull-fac-apps
@@ -42,110 +51,164 @@ image-cleanup:
 service-stop-highstack-as-ps-dclinks:
 	cd services; docker stack rm facs-as-ps-dclinks
 
-service-start-highstack-as-ps-dclinks:
-	cd services; docker stack deploy -c docker-stack-as-ps-dclinks.yml facs-as-ps-dclinks
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-li-ps:
 	cd services; docker stack rm facs-li-ps
 
-service-start-highstack-li-ps:
-	cd services; docker stack deploy -c docker-stack-li-ps.yml facs-li-ps
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-tb-ps:
 	cd services; docker stack rm facs-tb-ps
 
-service-start-highstack-tb-ps:
-	cd services; docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-bo-ps:
 	cd services; docker stack rm facs-bo-ps
 
-service-start-highstack-bo-ps:
-	cd services; docker stack deploy -c docker-stack-bo-ps.yml facs-bo-ps
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-ts-ps:
 	cd services; docker stack rm facs-ts-ps
 
-service-start-highstack-ts-ps:
-	cd services; docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-si-ps:
 	cd services; docker stack rm facs-si-ps
 
-service-start-highstack-si-ps:
-	cd services; docker stack deploy -c docker-stack-si-ps.yml facs-si-ps
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-as-ti:
 	cd services; docker stack rm facs-as-ti
 
-service-start-highstack-as-ti:
-	cd services; docker stack deploy -c docker-stack-as-ti.yml facs-as-ti
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-as-pu-conv:
 	cd services; docker stack rm facs-as-pu-conv
 
-service-start-highstack-as-pu-conv:
-	cd services; docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-as-ap-posang:
 	cd services; docker stack rm facs-as-ap-posang
 
-service-start-highstack-as-ap-posang:
-	cd services; docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-as-ap-opticscorr:
 	cd services; docker stack rm facs-as-ap-opticscorr
 
-service-start-highstack-as-ap-opticscorr:
-	cd services; docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-as-ap-currinfo:
 	cd services; docker stack rm facs-as-ap-currinfo
 
-service-start-highstack-as-ap-currinfo:
-	cd services; docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-as-ap-sofb:
 	cd services; docker stack rm facs-as-ap-sofb
 
-service-start-highstack-as-ap-sofb:
-	cd services; docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-si-ap-sofb:
 	cd services; docker stack rm facs-si-ap-sofb
 
-service-start-highstack-si-ap-sofb:
-	cd services; docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-as-ap-diag:
 	cd services; docker stack rm facs-as-ap-diag
 
-service-start-highstack-as-ap-diag:
-	cd services; docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-li-ap-energy:
 	cd services; docker stack rm facs-li-ap-energy
 
-service-start-highstack-li-ap-energy:
-	cd services; docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-si-ap-bl:
 	cd services; docker stack rm facs-si-ap-bl
 
-service-start-highstack-si-ap-bl:
-	cd services; docker stack deploy -c docker-stack-si-ap-bl.yml facs-si-ap-bl
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-si-id-conv:
 	cd services; docker stack rm facs-si-id-conv
 
-service-start-highstack-si-id-conv:
-	cd services; docker stack deploy -c docker-stack-si-id-conv.yml facs-si-id-conv
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 service-stop-highstack-as-ap-machshift:
 	cd services; docker stack rm facs-as-ap-machshift
 
-service-start-highstack-as-ap-machshift:
-	cd services; docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift
+service-start-highstack-$1:
+	cd services; \
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
+	docker stack deploy -c docker-stack-$2.yml facs-$3 \; ;\
+	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 
 TARGET_HIGHSTACK_DEPS_STOP := service-stop-highstack-as-ps-dclinks

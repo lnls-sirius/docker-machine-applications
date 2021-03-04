@@ -3,7 +3,7 @@ version: "3.7"
 services:
   
   dips:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-dips.bash'
     deploy:
       placement:
@@ -31,7 +31,7 @@ services:
       - ioc-network
 
   quads-qd:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-quads-qd.bash'
     deploy:
       placement:
@@ -59,7 +59,7 @@ services:
       - ioc-network
 
   quads-qfq:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-quads-qfq.bash'
     deploy:
       placement:
@@ -87,7 +87,7 @@ services:
       - ioc-network
 
   sexts-sda12b2-sfa0p0-sda0p0:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-sexts-sda12b2-sfa0p0-sda0p0.bash'
     deploy:
       placement:
@@ -115,7 +115,7 @@ services:
       - ioc-network
   
   sexts-sfa12-sda3p1-sfb0-sdb01:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-sexts-sfa12-sda3p1-sfb0-sdb01.bash'
     deploy:
       placement:
@@ -143,7 +143,7 @@ services:
       - ioc-network
 
   sexts-sfb12-sdb3-sfp12-sdp23:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-sexts-sfb12-sdb3-sfp12-sdp23.bash'
     deploy:
       placement:
@@ -171,7 +171,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia01:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia01.bash'
     deploy:
       placement:
@@ -199,7 +199,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia02:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia02.bash'
     deploy:
       placement:
@@ -227,7 +227,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia03:
-      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
       command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia03.bash'
       deploy:
         placement:
@@ -255,7 +255,7 @@ services:
         - ioc-network
 
   corrs-c2m12-ia04:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia04.bash'
     deploy:
       placement:
@@ -283,7 +283,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia05:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia05.bash'
     deploy:
       placement:
@@ -311,7 +311,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia06:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia06.bash'
     deploy:
       placement:
@@ -339,7 +339,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia07:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia07.bash'
     deploy:
       placement:
@@ -367,7 +367,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia08:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia08.bash'
     deploy:
       placement:
@@ -395,7 +395,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia09:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia09.bash'
     deploy:
       placement:
@@ -423,7 +423,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia10:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia10.bash'
     deploy:
       placement:
@@ -451,7 +451,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia11:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia11.bash'
     deploy:
       placement:
@@ -479,7 +479,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia12:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia12.bash'
     deploy:
       placement:
@@ -507,7 +507,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia13:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia13.bash'
     deploy:
       placement:
@@ -535,7 +535,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia14:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia14.bash'
     deploy:
       placement:
@@ -563,7 +563,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia15:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia15.bash'
     deploy:
       placement:
@@ -591,7 +591,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia16:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia16.bash'
     deploy:
       placement:
@@ -619,7 +619,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia17:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia17.bash'
     deploy:
       placement:
@@ -647,7 +647,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia18:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia18.bash'
     deploy:
       placement:
@@ -675,7 +675,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia19:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia19.bash'
     deploy:
       placement:
@@ -703,7 +703,7 @@ services:
       - ioc-network
 
   corrs-c2m12-ia20:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia20.bash'
     deploy:
       placement:
@@ -731,7 +731,7 @@ services:
       - ioc-network
 
   corrs-c134-ia01:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia01.bash'
     deploy:
       placement:
@@ -759,7 +759,7 @@ services:
       - ioc-network
 
   corrs-c134-ia02:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia02.bash'
     deploy:
       placement:
@@ -787,7 +787,7 @@ services:
       - ioc-network
 
   corrs-c134-ia03:
-      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
       command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia03.bash'
       deploy:
         placement:
@@ -815,7 +815,7 @@ services:
         - ioc-network
 
   corrs-c134-ia04:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia04.bash'
     deploy:
       placement:
@@ -843,7 +843,7 @@ services:
       - ioc-network
 
   corrs-c134-ia05:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia05.bash'
     deploy:
       placement:
@@ -871,7 +871,7 @@ services:
       - ioc-network
 
   corrs-c134-ia06:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia06.bash'
     deploy:
       placement:
@@ -899,7 +899,7 @@ services:
       - ioc-network
 
   corrs-c134-ia07:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia07.bash'
     deploy:
       placement:
@@ -927,7 +927,7 @@ services:
       - ioc-network
 
   corrs-c134-ia08:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia08.bash'
     deploy:
       placement:
@@ -955,7 +955,7 @@ services:
       - ioc-network
 
   corrs-c134-ia09:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia09.bash'
     deploy:
       placement:
@@ -983,7 +983,7 @@ services:
       - ioc-network
 
   corrs-c134-ia10:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia10.bash'
     deploy:
       placement:
@@ -1011,7 +1011,7 @@ services:
       - ioc-network
 
   corrs-c134-ia11:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia11.bash'
     deploy:
       placement:
@@ -1039,7 +1039,7 @@ services:
       - ioc-network
 
   corrs-c134-ia12:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia12.bash'
     deploy:
       placement:
@@ -1067,7 +1067,7 @@ services:
       - ioc-network
 
   corrs-c134-ia13:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia13.bash'
     deploy:
       placement:
@@ -1095,7 +1095,7 @@ services:
       - ioc-network
 
   corrs-c134-ia14:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia14.bash'
     deploy:
       placement:
@@ -1123,7 +1123,7 @@ services:
       - ioc-network
 
   corrs-c134-ia15:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia15.bash'
     deploy:
       placement:
@@ -1151,7 +1151,7 @@ services:
       - ioc-network
 
   corrs-c134-ia16:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia16.bash'
     deploy:
       placement:
@@ -1179,7 +1179,7 @@ services:
       - ioc-network
 
   corrs-c134-ia17:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia17.bash'
     deploy:
       placement:
@@ -1207,7 +1207,7 @@ services:
       - ioc-network
 
   corrs-c134-ia18:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia18.bash'
     deploy:
       placement:
@@ -1235,7 +1235,7 @@ services:
       - ioc-network
 
   corrs-c134-ia19:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia19.bash'
     deploy:
       placement:
@@ -1263,7 +1263,7 @@ services:
       - ioc-network
 
   corrs-c134-ia20:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia20.bash'
     deploy:
       placement:
@@ -1291,7 +1291,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia01:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia01.bash'
     deploy:
       placement:
@@ -1319,7 +1319,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia02:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia02.bash'
     deploy:
       placement:
@@ -1347,7 +1347,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia03:
-      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
       command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia03.bash'
       deploy:
         placement:
@@ -1375,7 +1375,7 @@ services:
         - ioc-network
 
   trims-qs-c1234-ia04:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia04.bash'
     deploy:
       placement:
@@ -1403,7 +1403,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia05:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia05.bash'
     deploy:
       placement:
@@ -1431,7 +1431,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia06:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia06.bash'
     deploy:
       placement:
@@ -1459,7 +1459,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia07:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia07.bash'
     deploy:
       placement:
@@ -1487,7 +1487,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia08:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia08.bash'
     deploy:
       placement:
@@ -1515,7 +1515,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia09:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia09.bash'
     deploy:
       placement:
@@ -1543,7 +1543,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia10:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia10.bash'
     deploy:
       placement:
@@ -1571,7 +1571,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia11:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia11.bash'
     deploy:
       placement:
@@ -1599,7 +1599,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia12:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia12.bash'
     deploy:
       placement:
@@ -1627,7 +1627,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia13:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia13.bash'
     deploy:
       placement:
@@ -1655,7 +1655,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia14:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia14.bash'
     deploy:
       placement:
@@ -1683,7 +1683,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia15:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia15.bash'
     deploy:
       placement:
@@ -1711,7 +1711,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia16:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia16.bash'
     deploy:
       placement:
@@ -1739,7 +1739,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia17:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia17.bash'
     deploy:
       placement:
@@ -1767,7 +1767,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia18:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia18.bash'
     deploy:
       placement:
@@ -1795,7 +1795,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia19:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia19.bash'
     deploy:
       placement:
@@ -1823,7 +1823,7 @@ services:
       - ioc-network
 
   trims-qs-c1234-ia20:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia20.bash'
     deploy:
       placement:
@@ -1851,7 +1851,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia01:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia01.bash'
     deploy:
       placement:
@@ -1879,7 +1879,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia02:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia02.bash'
     deploy:
       placement:
@@ -1907,7 +1907,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia03:
-      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+      image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
       command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia03.bash'
       deploy:
         placement:
@@ -1935,7 +1935,7 @@ services:
         - ioc-network
 
   trims-qs-m12-ia04:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia04.bash'
     deploy:
       placement:
@@ -1963,7 +1963,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia05:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia05.bash'
     deploy:
       placement:
@@ -1991,7 +1991,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia06:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia06.bash'
     deploy:
       placement:
@@ -2019,7 +2019,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia07:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia07.bash'
     deploy:
       placement:
@@ -2047,7 +2047,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia08:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia08.bash'
     deploy:
       placement:
@@ -2075,7 +2075,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia09:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia09.bash'
     deploy:
       placement:
@@ -2103,7 +2103,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia10:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia10.bash'
     deploy:
       placement:
@@ -2131,7 +2131,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia11:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia11.bash'
     deploy:
       placement:
@@ -2159,7 +2159,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia12:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia12.bash'
     deploy:
       placement:
@@ -2187,7 +2187,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia13:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia13.bash'
     deploy:
       placement:
@@ -2215,7 +2215,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia14:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia14.bash'
     deploy:
       placement:
@@ -2243,7 +2243,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia15:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia15.bash'
     deploy:
       placement:
@@ -2271,7 +2271,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia16:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia16.bash'
     deploy:
       placement:
@@ -2299,7 +2299,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia17:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia17.bash'
     deploy:
       placement:
@@ -2327,7 +2327,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia18:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia18.bash'
     deploy:
       placement:
@@ -2355,7 +2355,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia19:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia19.bash'
     deploy:
       placement:
@@ -2383,7 +2383,7 @@ services:
       - ioc-network
 
   trims-qs-m12-ia20:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02-test-si-corrs
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia20.bash'
     deploy:
       placement:
