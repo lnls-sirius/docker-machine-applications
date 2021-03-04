@@ -830,9 +830,9 @@ service-stop-lowstack-si-ps-trims-qs-c1234-ia20:
 service-start-lowstack-si-ps-trims-qs-c1234-ia20:
 	cd services; docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia20.yml facs-si-ps-trims-qs-c1234-ia20
 
-
 service-stop-lowstack-as-ti-general:
 	cd services; docker stack rm facs-as-ti-general
+
 service-start-lowstack-as-ti-general:
 	cd services; docker stack deploy -c docker-stack-as-ti-general.yml facs-as-ti-general
 
@@ -853,13 +853,6 @@ service-stop-lowstack-si-ti-trims-skews:
 
 service-start-lowstack-si-ti-trims-skews:
 	cd services; docker stack deploy -c docker-stack-si-ti-trims-skews.yml facs-si-ti-trims-skews
-
-
-
-
-
-
-
 
 service-stop-lowstack-as-pu-conv:
 	cd services; docker stack rm facs-as-pu-conv
