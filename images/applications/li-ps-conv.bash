@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 14.5%
 
 # Conv
 /usr/local/bin/sirius-ioc-li-ps-conv.py \
@@ -22,7 +23,7 @@ LI-01:PS-CH-5 \
 LI-01:PS-CV-6 \
 LI-01:PS-CH-6 \
 LI-01:PS-CV-7 \
-LI-01:PS-CH-7 &> /ioc-logs/sirius-ioc-li-ps-conv &
+LI-01:PS-CH-7 &> /ioc-logs/sirius-ioc-li-ps-conv & # 14.5%
 # LI-01:PS-LensRev \
 # LI-01:PS-Lens-1 \
 # LI-01:PS-Lens-2 \

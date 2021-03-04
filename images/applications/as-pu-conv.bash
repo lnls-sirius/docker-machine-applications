@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 25.7%
 
 # sirius-ioc-as-pu-conv.service
 /usr/local/bin/sirius-ioc-as-pu-conv.py \
@@ -14,7 +15,7 @@ TS-04:PU-InjSeptF \
 SI-01SA:PU-InjDpKckr \
 SI-01SA:PU-InjNLKckr \
 SI-01SA:PU-PingH \
-SI-19C4:PU-PingV &> /ioc-logs/sirius-ioc-as-pu-conv &
+SI-19C4:PU-PingV &> /ioc-logs/sirius-ioc-as-pu-conv & # 25.7%
 
 
 # keep entry point running

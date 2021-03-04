@@ -1,35 +1,18 @@
+## Note
+
+* This README is to incomplete
+
+## Estimate of CPU usage
+
+* There are currently 208 FAC IOCs partitioned in 49 services (SOFB)
+* 1 SOFB-SI and 20 PSCorrs were not computed 
+* All services run in identical Dell servers
+* All IOCs sum up to 2563 % of CPU (ps aux) -> average of 52.3% per service
+* Ideally each service should then use 52.3%
+
 ## Build
-É importante utilizar tags diferentes na construção da imagem. O formato da tag é escolha dos desenvolvedores e não existe um padrão.
+It is important to use different tags when building docker images in order to avoid unintended use of out-of-date images. Different tags also allow for restoring previously used images.
 
-Sugestões:
 
-* Usar timestamp
-* Versionamento numério e.g. 1.0.0
-* Hash do repositório
-* Qualquer combinação única etc.
-
-Isso evita o uso acidental de imagens desatualizadas e podemos restaurar para algum estado anterior.
-Para apenas construir as imagens:
-```command
-docker-compose build
-```
-Para construir as imagens limpando o cache e outros artefatos:
-```command
-docker-compose --file docker-compose.yml build --force-rm --no-cache <nome_servico>
-```
-
-### Injeção de variáveis no .yml
-
-O comando `docker-compose` pode fazer substituição de variáveis nos arquivos yml.
-Isso não funciona no `docker swarm`, porém pode ser útil para versionar a construção.
-O arquivo `.env` foi criado para demonstar essa funcionalidade.
-
-Para que variáveis sejam substituidas no Dockerfile no momento da construção da imagem ela deve ser declarada previamente usando `ARG <NOME>`.
-Elas são passadas pelo `docker-compose.yml` dentro de build.
-
-** Substituição de variáveis não é realizada pelo docker stack ! **
-
-## Limpeza de images
-```command
-docker system prune --filter "label=br.com.lnls-sirius.department=FAC" --all --force
-```
+## Makefile
+There are targets that can be used to build, pull and run services

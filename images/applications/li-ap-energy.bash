@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+# CPU usage estimate (ps aux): 4.3%
 
 # li-ap-energy
-/usr/local/bin/sirius-ioc-li-ap-energy.py &> /ioc-logs/sirius-ioc-li-ap-energy &
+/usr/local/bin/sirius-ioc-li-ap-energy.py &> /ioc-logs/sirius-ioc-li-ap-energy & # 4.3%
 
 
 # keep entry point running
