@@ -1,5 +1,5 @@
-ARG DEBIAN_TAG
-FROM dockerregistry.lnls-sirius.com.br/debian:${DEBIAN_TAG}
+ARG BASE_IMAGE_TAG
+FROM dockerregistry.lnls-sirius.com.br/debian:${BASE_IMAGE_TAG}
 
 SHELL ["bash", "-c"]
 

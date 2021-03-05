@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   tbts-bpdip:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-tbts-bodip.bash'
     deploy:
       placement:
@@ -31,7 +31,7 @@ services:
       - ioc-network
 
   ia01:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia01.bash'
     deploy:
       placement:
@@ -59,7 +59,7 @@ services:
       - ioc-network
 
   ia02:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia02.bash'
     deploy:
       placement:
@@ -87,7 +87,7 @@ services:
       - ioc-network
 
   ia03:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia03.bash'
     deploy:
       placement:
@@ -115,7 +115,7 @@ services:
       - ioc-network
 
   ia04:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia04.bash'
     deploy:
       placement:
@@ -143,7 +143,7 @@ services:
       - ioc-network
 
   ia05:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia05.bash'
     deploy:
       placement:
@@ -171,7 +171,7 @@ services:
       - ioc-network
 
   ia06:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia06.bash'
     deploy:
       placement:
@@ -199,7 +199,7 @@ services:
       - ioc-network
 
   ia07:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia07.bash'
     deploy:
       placement:
@@ -227,7 +227,7 @@ services:
       - ioc-network
 
   ia08:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia08.bash'
     deploy:
       placement:
@@ -255,7 +255,7 @@ services:
       - ioc-network
 
   ia09:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia09.bash'
     deploy:
       placement:
@@ -283,7 +283,7 @@ services:
       - ioc-network
 
   ia10:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia10.bash'
     deploy:
       placement:
@@ -311,7 +311,7 @@ services:
       - ioc-network
 
   ia11:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia11.bash'
     deploy:
       placement:
@@ -339,7 +339,7 @@ services:
       - ioc-network
 
   ia12:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia12.bash'
     deploy:
       placement:
@@ -367,7 +367,7 @@ services:
       - ioc-network
 
   ia13:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia13.bash'
     deploy:
       placement:
@@ -395,7 +395,7 @@ services:
       - ioc-network
 
   ia14:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia14.bash'
     deploy:
       placement:
@@ -423,7 +423,7 @@ services:
       - ioc-network
 
   ia15:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia15.bash'
     deploy:
       placement:
@@ -451,7 +451,7 @@ services:
       - ioc-network
 
   ia16:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia16.bash'
     deploy:
       placement:
@@ -479,7 +479,7 @@ services:
       - ioc-network
 
   ia17:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia17.bash'
     deploy:
       placement:
@@ -507,7 +507,7 @@ services:
       - ioc-network
 
   ia18:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia18.bash'
     deploy:
       placement:
@@ -535,7 +535,7 @@ services:
       - ioc-network
 
   ia19:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia19.bash'
     deploy:
       placement:
@@ -563,7 +563,7 @@ services:
       - ioc-network
 
   ia20:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:2021-03-02
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia20.bash'
     deploy:
       placement:
