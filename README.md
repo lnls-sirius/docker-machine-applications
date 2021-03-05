@@ -4,7 +4,7 @@ This repository contains files used to create docker images and to manage FAC se
 
 ## Docker images
 
-There are four docker images used to create the final image for FAC services:
+There are four docker images for creating the final image for FAC services:
 
 1. _fac-base_: official debian, a few aditional at packages and ansible.
 2. _fac-epics_: _fac-base_ and python and epics packages
@@ -21,12 +21,10 @@ Makefile targets can be used to build docker images:
 ## Services
 
 All FAC services were implemented in two partition sets of stack services: a _highstack_ set and a _lowstack_ set.
-_highstack_ set is composed of stack services gathered in larger groups. for example, BO power supply IOCs are grouped as a single stack service in the _highstack_ set called *facs-bo-ps*, whereas in the _lowstack_ these IOCs are implemented with many service stacks, *facs-bo-ps-dips*, *facs-bo-ps-quads*, and so on.
+_highstack_ set is composed of stack services gathered in larger IOC groups. for example, BO power supply IOCs are grouped as a single stack service in the _highstack_ set called *facs-bo-ps*, whereas in the _lowstack_ set these IOCs are implemented with many service stacks, *facs-bo-ps-dips*, *facs-bo-ps-quads*, and so on.
 
-For all stack services, either of _highstack_ or _lowstack_ type, there is Makefile target for stopping the servie stack and another one
-for starting it.
-
-It is important to use different tags when building docker images in order to avoid unintended use of out-of-date images. Different tags also allow for restoring previously used images.
+For all stack services, either of _highstack_ or _lowstack_ type, there are Makefile targets for stopping service stacks and another one
+for starting them.
 
 ## Image tags
 
