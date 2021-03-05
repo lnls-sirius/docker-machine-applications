@@ -5,8 +5,8 @@ SHELL ["bash", "-c"]
 
 WORKDIR /opt
 
-RUN mkdir -p /ioc-apps
-RUN mkdir -p /ioc-logs
+RUN mkdir -p /ioc-apps; \
+    mkdir -p /ioc-logs
 
 COPY applications/*.bash /ioc-apps/
 
