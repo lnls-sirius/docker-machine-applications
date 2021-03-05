@@ -44,7 +44,6 @@ image-pull-fac-base:
 image-cleanup:
 	docker system prune --filter "label=br.com.lnls-sirius.department=FAC" --all --force
 
-
 # --- higher stacking level services ---
 
 service-start-highstack-as-ps-dclinks:
@@ -249,27 +248,26 @@ service-stop-highstack-all:
 	docker stack rm facs-as-ap-machshift
 
 service-start-highstack-all: 
-	cd services; \
-	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" {} \; ;\
-	docker stack deploy -c docker-stack-as-ps-dclinks.yml facs-as-ps-dclinks; \
-	docker stack deploy -c docker-stack-li-ps.yml facs-li-ps; \
-	docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps; \
-	docker stack deploy -c docker-stack-bo-ps.yml facs-bo-ps; \
-	docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps; \
-	docker stack deploy -c docker-stack-si-ps.yml facs-si-ps; \
-	docker stack deploy -c docker-stack-as-ti.yml facs-as-ti; \
-	docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv; \
-	docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang; \
-	docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr; \
-	docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo; \
-	docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb; \
-	docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb; \
-	docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag; \
-	docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy; \
-	docker stack deploy -c docker-stack-si-ap-bl.yml facs-si-ap-bl; \
-	docker stack deploy -c docker-stack-si-id-conv.yml facs-si-id-conv; \
-	docker stack deploy -c docker-stack-as-ap-machsh.yml facs-as-ap-machshift; \
-	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \; ;\
+	make tags-iocs-update; \
+    docker stack deploy -c docker-stack-as-ps-dclinks.yml facs-as-ps-dclinks; \
+    docker stack deploy -c docker-stack-li-ps.yml facs-li-ps; \
+    docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps; \
+    docker stack deploy -c docker-stack-bo-ps.yml facs-bo-ps; \
+    docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps; \
+    docker stack deploy -c docker-stack-si-ps.yml facs-si-ps; \
+    docker stack deploy -c docker-stack-as-ti.yml facs-as-ti; \
+    docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv; \
+    docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang; \
+    docker stack deploy -c docker-stack-as-ap-opticscorr.yml facs-as-ap-opticscorr; \
+    docker stack deploy -c docker-stack-as-ap-currinfo.yml facs-as-ap-currinfo; \
+    docker stack deploy -c docker-stack-as-ap-sofb.yml facs-as-ap-sofb; \
+    docker stack deploy -c docker-stack-si-ap-sofb.yml facs-si-ap-sofb; \
+    docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag; \
+    docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy; \
+    docker stack deploy -c docker-stack-si-ap-bl.yml facs-si-ap-bl; \
+    docker stack deploy -c docker-stack-si-id-conv.yml facs-si-id-conv; \
+    docker stack deploy -c docker-stack-as-ap-machsh.yml facs-as-ap-machshift; \
+	make tags-iocs-template
 
 # --- middle stacking level services ---
 
