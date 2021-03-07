@@ -564,11 +564,23 @@ service-start-lowstack-bo-ps-corrs-ia20:
 	docker stack deploy -c docker-stack-bo-ps-corrs-ia20\.yml facs-bo-ps-corrs-ia20; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-bo-ps-corrs-ia20.yml
 
-service-start-lowstack-ts-ps:
+service-start-lowstack-ts-ps-dips:
 	cd services; \
-	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" docker-stack-ts-ps.yml; \
-	docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps; \
-	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-ts-ps.yml
+	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" docker-stack-ts-ps-dips.yml; \
+	docker stack deploy -c docker-stack-ts-ps-dips.yml facs-ts-ps-dips; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-ts-ps-dips.yml
+
+service-start-lowstack-ts-ps-quads:
+	cd services; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" docker-stack-ts-ps-quads.yml; \
+	docker stack deploy -c docker-stack-ts-ps-quads.yml facs-ts-ps-quads; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-ts-ps-quads.yml
+
+service-start-lowstack-ts-ps-corrs:
+	cd services; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" docker-stack-ts-ps-corrs.yml; \
+	docker stack deploy -c docker-stack-ts-ps-corrs.yml facs-ts-ps-corrs; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-ts-ps-corrs.yml
 
 service-start-lowstack-si-ps-dips:
 	cd services; \
@@ -1356,9 +1368,17 @@ service-stop-lowstack-bo-ps-corrs-ia20:
 	cd services; \
 	docker stack rm facs-bo-ps-corrs-ia20
 
-service-stop-lowstack-ts-ps:
+service-stop-lowstack-ts-ps-dips:
 	cd services; \
-	docker stack rm facs-ts-ps
+	docker stack rm facs-ts-ps-dips
+
+service-stop-lowstack-ts-ps-quads:
+	cd services; \
+	docker stack rm facs-ts-ps-quads
+
+service-stop-lowstack-ts-ps-corrs:
+	cd services; \
+	docker stack rm facs-ts-ps-corrs
 
 service-stop-lowstack-si-ps-dips:
 	cd services; \
@@ -1811,7 +1831,9 @@ service-start-lowstack-all:
 	docker stack deploy -c docker-stack-bo-ps-corrs-ia16; \
 	docker stack deploy -c docker-stack-bo-ps-corrs-ia17; \
 	docker stack deploy -c docker-stack-bo-ps-corrs-ia20; \
-	docker stack deploy -c docker-stack-ts-ps; \
+	docker stack deploy -c docker-stack-ts-ps-dips; \
+	docker stack deploy -c docker-stack-ts-ps-quads; \
+	docker stack deploy -c docker-stack-ts-ps-corrs; \
 	docker stack deploy -c docker-stack-si-ps-dips; \
 	docker stack deploy -c docker-stack-si-ps-quads-qd; \
 	docker stack deploy -c docker-stack-si-ps-quads-qfq; \
@@ -1962,7 +1984,9 @@ service-stop-lowstack-all:
 	docker stack rm facs-bo-ps-corrs-ia16; \
 	docker stack rm facs-bo-ps-corrs-ia17; \
 	docker stack rm facs-bo-ps-corrs-ia20; \
-	docker stack rm ts-ps; \
+	docker stack rm ts-ps-dips; \
+	docker stack rm ts-ps-quads; \
+	docker stack rm ts-ps-corrs; \
 	docker stack rm facs-si-ps-dips; \
 	docker stack rm facs-si-ps-quads-qd; \
 	docker stack rm facs-si-ps-quads-qfq; \

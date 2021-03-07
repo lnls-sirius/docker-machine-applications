@@ -6,7 +6,7 @@
 /usr/local/bin/sirius-ioc-as-ps.py LA-RaCtrl:CO-PSCtrl-TB2 &> /ioc-logs/sirius-ioc-tb-ps-corrs & # 27.7%
 
 # Diagnostics
-/usr/local/bin/sirius-ioc-as-ps-diag.py TB ".*" "C.*" &> /ioc-logs/sirius-ioc-tb-ps-diag & # 2.2%
+/usr/local/bin/sirius-ioc-as-ps-diag.py TB ".*" "C.*" &> /ioc-logs/sirius-ioc-tb-ps-diag-corrs & # 2.2%
 
 
 # keep entry point running

@@ -6,7 +6,7 @@
 /usr/local/bin/sirius-ioc-as-ps.py LA-RaPS02:CO-PSCtrl-TB &> /ioc-logs/sirius-ioc-tb-ps-dips & # 8.1%
 
 # Diagnostics
-/usr/local/bin/sirius-ioc-as-ps-diag.py TB Fam B &> /ioc-logs/sirius-ioc-tb-ps-diag & # 2.2%
+/usr/local/bin/sirius-ioc-as-ps-diag.py TB Fam B &> /ioc-logs/sirius-ioc-tb-ps-diag-dips & # 2.2%
 
 
 # keep entry point running
