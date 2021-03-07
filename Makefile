@@ -1166,583 +1166,583 @@ service-start-lowstack-as-ap-machshift:
 
 service-stop-lowstack-as-ps-dclinks-tbts-bodip:
 	cd services; \
-	docker stack rm as-ps-dclinks-tbts-bodip
+	docker stack rm facs-as-ps-dclinks-tbts-bodip
 
 service-stop-lowstack-as-ps-dclinks-ia01:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia01
+	docker stack rm facs-as-ps-dclinks-ia01
 
 service-stop-lowstack-as-ps-dclinks-ia02:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia02
+	docker stack rm facs-as-ps-dclinks-ia02
 
 service-stop-lowstack-as-ps-dclinks-ia03:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia03
+	docker stack rm facs-as-ps-dclinks-ia03
 
 service-stop-lowstack-as-ps-dclinks-ia04:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia04
+	docker stack rm facs-as-ps-dclinks-ia04
 
 service-stop-lowstack-as-ps-dclinks-ia05:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia05
+	docker stack rm facs-as-ps-dclinks-ia05
 
 service-stop-lowstack-as-ps-dclinks-ia06:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia06
+	docker stack rm facs-as-ps-dclinks-ia06
 
 service-stop-lowstack-as-ps-dclinks-ia07:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia07
+	docker stack rm facs-as-ps-dclinks-ia07
 
 service-stop-lowstack-as-ps-dclinks-ia08:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia08
+	docker stack rm facs-as-ps-dclinks-ia08
 
 service-stop-lowstack-as-ps-dclinks-ia09:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia09
+	docker stack rm facs-as-ps-dclinks-ia09
 
 service-stop-lowstack-as-ps-dclinks-ia10:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia10
+	docker stack rm facs-as-ps-dclinks-ia10
 
 service-stop-lowstack-as-ps-dclinks-ia11:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia11
+	docker stack rm facs-as-ps-dclinks-ia11
 
 service-stop-lowstack-as-ps-dclinks-ia12:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia12
+	docker stack rm facs-as-ps-dclinks-ia12
 
 service-stop-lowstack-as-ps-dclinks-ia13:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia13
+	docker stack rm facs-as-ps-dclinks-ia13
 
 service-stop-lowstack-as-ps-dclinks-ia14:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia14
+	docker stack rm facs-as-ps-dclinks-ia14
 
 service-stop-lowstack-as-ps-dclinks-ia15:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia15
+	docker stack rm facs-as-ps-dclinks-ia15
 
 service-stop-lowstack-as-ps-dclinks-ia16:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia16
+	docker stack rm facs-as-ps-dclinks-ia16
 
 service-stop-lowstack-as-ps-dclinks-ia17:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia17
+	docker stack rm facs-as-ps-dclinks-ia17
 
 service-stop-lowstack-as-ps-dclinks-ia18:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia18
+	docker stack rm facs-as-ps-dclinks-ia18
 
 service-stop-lowstack-as-ps-dclinks-ia19:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia19
+	docker stack rm facs-as-ps-dclinks-ia19
 
 service-stop-lowstack-as-ps-dclinks-ia20:
 	cd services; \
-	docker stack rm as-ps-dclinks-ia20
+	docker stack rm facs-as-ps-dclinks-ia20
 
 service-stop-lowstack-li-ps-spect-quads-lens:
 	cd services; \
-	docker stack rm li-ps-spect-quads-lens
+	docker stack rm facs-li-ps-spect-quads-lens
 
 service-stop-lowstack-li-ps-corrs:
 	cd services; \
-	docker stack rm li-ps-corrs
+	docker stack rm facs-li-ps-corrs
 
 service-stop-lowstack-li-ps-slnds:
 	cd services; \
-	docker stack rm li-ps-slnds
+	docker stack rm facs-li-ps-slnds
 
 service-stop-lowstack-li-ps-conv:
 	cd services; \
-	docker stack rm li-ps-conv
+	docker stack rm facs-li-ps-conv
 
 service-stop-lowstack-li-ps-diag:
 	cd services; \
-	docker stack rm li-ps-diag
+	docker stack rm facs-li-ps-diag
 
 service-stop-lowstack-tb-ps:
 	cd services; \
-	docker stack rm tb-ps
+	docker stack rm facs-tb-ps
 
 service-stop-lowstack-bo-ps-dips:
 	cd services; \
-	docker stack rm bo-ps-dips
+	docker stack rm facs-bo-ps-dips
 
 service-stop-lowstack-bo-ps-quads:
 	cd services; \
-	docker stack rm bo-ps-quads
+	docker stack rm facs-bo-ps-quads
 
 service-stop-lowstack-bo-ps-sexts:
 	cd services; \
-	docker stack rm bo-ps-sexts
+	docker stack rm facs-bo-ps-sexts
 
 service-stop-lowstack-bo-ps-corrs-ia01:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia01
+	docker stack rm facs-bo-ps-corrs-ia01
 
 service-stop-lowstack-bo-ps-corrs-ia02:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia02
+	docker stack rm facs-bo-ps-corrs-ia02
 
 service-stop-lowstack-bo-ps-corrs-ia04:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia04
+	docker stack rm facs-bo-ps-corrs-ia04
 
 service-stop-lowstack-bo-ps-corrs-ia05:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia05
+	docker stack rm facs-bo-ps-corrs-ia05
 
 service-stop-lowstack-bo-ps-corrs-ia07:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia07
+	docker stack rm facs-bo-ps-corrs-ia07
 
 service-stop-lowstack-bo-ps-corrs-ia08:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia08
+	docker stack rm facs-bo-ps-corrs-ia08
 
 service-stop-lowstack-bo-ps-corrs-ia10:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia10
+	docker stack rm facs-bo-ps-corrs-ia10
 
 service-stop-lowstack-bo-ps-corrs-ia11:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia11
+	docker stack rm facs-bo-ps-corrs-ia11
 
 service-stop-lowstack-bo-ps-corrs-ia13:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia13
+	docker stack rm facs-bo-ps-corrs-ia13
 
 service-stop-lowstack-bo-ps-corrs-ia14:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia14
+	docker stack rm facs-bo-ps-corrs-ia14
 
 service-stop-lowstack-bo-ps-corrs-ia16:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia16
+	docker stack rm facs-bo-ps-corrs-ia16
 
 service-stop-lowstack-bo-ps-corrs-ia17:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia17
+	docker stack rm facs-bo-ps-corrs-ia17
 
 service-stop-lowstack-bo-ps-corrs-ia20:
 	cd services; \
-	docker stack rm bo-ps-corrs-ia20
+	docker stack rm facs-bo-ps-corrs-ia20
 
 service-stop-lowstack-ts-ps:
 	cd services; \
-	docker stack rm ts-ps
+	docker stack rm facs-ts-ps
 
 service-stop-lowstack-si-ps-dips:
 	cd services; \
-	docker stack rm si-ps-dips
+	docker stack rm facs-si-ps-dips
 
 service-stop-lowstack-si-ps-quads-qd:
 	cd services; \
-	docker stack rm si-ps-quads-qd
+	docker stack rm facs-si-ps-quads-qd
 
 service-stop-lowstack-si-ps-quads-qfq:
 	cd services; \
-	docker stack rm si-ps-quads-qfq
+	docker stack rm facs-si-ps-quads-qfq
 
 service-stop-lowstack-si-ps-sexts-sda12b2-sfa0p0-sda0p0:
 	cd services; \
-	docker stack rm si-ps-sexts-sda12b2-sfa0p0-sda0p0
+	docker stack rm facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0
 
 service-stop-lowstack-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01:
 	cd services; \
-	docker stack rm si-ps-sexts-sfa12-sda3p1-sfb0-sdb01
+	docker stack rm facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01
 
 service-stop-lowstack-si-ps-sexts-sfb12-sdb3-sfp12-sdp23:
 	cd services; \
-	docker stack rm si-ps-sexts-sfb12-sdb3-sfp12-sdp23
+	docker stack rm facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia01:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia01
+	docker stack rm facs-si-ps-corrs-c2m12-ia01
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia02:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia02
+	docker stack rm facs-si-ps-corrs-c2m12-ia02
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia03:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia03
+	docker stack rm facs-si-ps-corrs-c2m12-ia03
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia04:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia04
+	docker stack rm facs-si-ps-corrs-c2m12-ia04
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia05:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia05
+	docker stack rm facs-si-ps-corrs-c2m12-ia05
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia06:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia06
+	docker stack rm facs-si-ps-corrs-c2m12-ia06
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia07:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia07
+	docker stack rm facs-si-ps-corrs-c2m12-ia07
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia08:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia08
+	docker stack rm facs-si-ps-corrs-c2m12-ia08
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia09:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia09
+	docker stack rm facs-si-ps-corrs-c2m12-ia09
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia10:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia10
+	docker stack rm facs-si-ps-corrs-c2m12-ia10
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia11:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia11
+	docker stack rm facs-si-ps-corrs-c2m12-ia11
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia12:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia12
+	docker stack rm facs-si-ps-corrs-c2m12-ia12
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia13:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia13
+	docker stack rm facs-si-ps-corrs-c2m12-ia13
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia14:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia14
+	docker stack rm facs-si-ps-corrs-c2m12-ia14
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia15:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia15
+	docker stack rm facs-si-ps-corrs-c2m12-ia15
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia16:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia16
+	docker stack rm facs-si-ps-corrs-c2m12-ia16
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia17:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia17
+	docker stack rm facs-si-ps-corrs-c2m12-ia17
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia18:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia18
+	docker stack rm facs-si-ps-corrs-c2m12-ia18
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia19:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia19
+	docker stack rm facs-si-ps-corrs-c2m12-ia19
 
 service-stop-lowstack-si-ps-corrs-c2m12-ia20:
 	cd services; \
-	docker stack rm si-ps-corrs-c2m12-ia20
+	docker stack rm facs-si-ps-corrs-c2m12-ia20
 
 service-stop-lowstack-si-ps-corrs-c134-ia01:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia01
+	docker stack rm facs-si-ps-corrs-c134-ia01
 
 service-stop-lowstack-si-ps-corrs-c134-ia02:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia02
+	docker stack rm facs-si-ps-corrs-c134-ia02
 
 service-stop-lowstack-si-ps-corrs-c134-ia03:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia03
+	docker stack rm facs-si-ps-corrs-c134-ia03
 
 service-stop-lowstack-si-ps-corrs-c134-ia04:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia04
+	docker stack rm facs-si-ps-corrs-c134-ia04
 
 service-stop-lowstack-si-ps-corrs-c134-ia05:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia05
+	docker stack rm facs-si-ps-corrs-c134-ia05
 
 service-stop-lowstack-si-ps-corrs-c134-ia06:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia06
+	docker stack rm facs-si-ps-corrs-c134-ia06
 
 service-stop-lowstack-si-ps-corrs-c134-ia07:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia07
+	docker stack rm facs-si-ps-corrs-c134-ia07
 
 service-stop-lowstack-si-ps-corrs-c134-ia08:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia08
+	docker stack rm facs-si-ps-corrs-c134-ia08
 
 service-stop-lowstack-si-ps-corrs-c134-ia09:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia09
+	docker stack rm facs-si-ps-corrs-c134-ia09
 
 service-stop-lowstack-si-ps-corrs-c134-ia10:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia10
+	docker stack rm facs-si-ps-corrs-c134-ia10
 
 service-stop-lowstack-si-ps-corrs-c134-ia11:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia11
+	docker stack rm facs-si-ps-corrs-c134-ia11
 
 service-stop-lowstack-si-ps-corrs-c134-ia12:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia12
+	docker stack rm facs-si-ps-corrs-c134-ia12
 
 service-stop-lowstack-si-ps-corrs-c134-ia13:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia13
+	docker stack rm facs-si-ps-corrs-c134-ia13
 
 service-stop-lowstack-si-ps-corrs-c134-ia14:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia14
+	docker stack rm facs-si-ps-corrs-c134-ia14
 
 service-stop-lowstack-si-ps-corrs-c134-ia15:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia15
+	docker stack rm facs-si-ps-corrs-c134-ia15
 
 service-stop-lowstack-si-ps-corrs-c134-ia16:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia16
+	docker stack rm facs-si-ps-corrs-c134-ia16
 
 service-stop-lowstack-si-ps-corrs-c134-ia17:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia17
+	docker stack rm facs-si-ps-corrs-c134-ia17
 
 service-stop-lowstack-si-ps-corrs-c134-ia18:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia18
+	docker stack rm facs-si-ps-corrs-c134-ia18
 
 service-stop-lowstack-si-ps-corrs-c134-ia19:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia19
+	docker stack rm facs-si-ps-corrs-c134-ia19
 
 service-stop-lowstack-si-ps-corrs-c134-ia20:
 	cd services; \
-	docker stack rm si-ps-corrs-c134-ia20
+	docker stack rm facs-si-ps-corrs-c134-ia20
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia01:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia01
+	docker stack rm facs-si-ps-trims-qs-m12-ia01
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia02:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia02
+	docker stack rm facs-si-ps-trims-qs-m12-ia02
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia03:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia03
+	docker stack rm facs-si-ps-trims-qs-m12-ia03
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia04:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia04
+	docker stack rm facs-si-ps-trims-qs-m12-ia04
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia05:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia05
+	docker stack rm facs-si-ps-trims-qs-m12-ia05
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia06:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia06
+	docker stack rm facs-si-ps-trims-qs-m12-ia06
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia07:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia07
+	docker stack rm facs-si-ps-trims-qs-m12-ia07
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia08:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia08
+	docker stack rm facs-si-ps-trims-qs-m12-ia08
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia09:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia09
+	docker stack rm facs-si-ps-trims-qs-m12-ia09
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia10:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia10
+	docker stack rm facs-si-ps-trims-qs-m12-ia10
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia11:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia11
+	docker stack rm facs-si-ps-trims-qs-m12-ia11
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia12:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia12
+	docker stack rm facs-si-ps-trims-qs-m12-ia12
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia13:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia13
+	docker stack rm facs-si-ps-trims-qs-m12-ia13
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia14:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia14
+	docker stack rm facs-si-ps-trims-qs-m12-ia14
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia15:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia15
+	docker stack rm facs-si-ps-trims-qs-m12-ia15
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia16:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia16
+	docker stack rm facs-si-ps-trims-qs-m12-ia16
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia17:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia17
+	docker stack rm facs-si-ps-trims-qs-m12-ia17
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia18:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia18
+	docker stack rm facs-si-ps-trims-qs-m12-ia18
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia19:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia19
+	docker stack rm facs-si-ps-trims-qs-m12-ia19
 
 service-stop-lowstack-si-ps-trims-qs-m12-ia20:
 	cd services; \
-	docker stack rm si-ps-trims-qs-m12-ia20
+	docker stack rm facs-si-ps-trims-qs-m12-ia20
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia01:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia01
+	docker stack rm facs-si-ps-trims-qs-c1234-ia01
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia02:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia02
+	docker stack rm facs-si-ps-trims-qs-c1234-ia02
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia03:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia03
+	docker stack rm facs-si-ps-trims-qs-c1234-ia03
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia04:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia04
+	docker stack rm facs-si-ps-trims-qs-c1234-ia04
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia05:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia05
+	docker stack rm facs-si-ps-trims-qs-c1234-ia05
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia06:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia06
+	docker stack rm facs-si-ps-trims-qs-c1234-ia06
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia07:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia07
+	docker stack rm facs-si-ps-trims-qs-c1234-ia07
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia08:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia08
+	docker stack rm facs-si-ps-trims-qs-c1234-ia08
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia09:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia09
+	docker stack rm facs-si-ps-trims-qs-c1234-ia09
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia10:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia10
+	docker stack rm facs-si-ps-trims-qs-c1234-ia10
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia11:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia11
+	docker stack rm facs-si-ps-trims-qs-c1234-ia11
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia12:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia12
+	docker stack rm facs-si-ps-trims-qs-c1234-ia12
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia13:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia13
+	docker stack rm facs-si-ps-trims-qs-c1234-ia13
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia14:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia14
+	docker stack rm facs-si-ps-trims-qs-c1234-ia14
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia15:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia15
+	docker stack rm facs-si-ps-trims-qs-c1234-ia15
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia16:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia16
+	docker stack rm facs-si-ps-trims-qs-c1234-ia16
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia17:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia17
+	docker stack rm facs-si-ps-trims-qs-c1234-ia17
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia18:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia18
+	docker stack rm facs-si-ps-trims-qs-c1234-ia18
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia19:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia19
+	docker stack rm facs-si-ps-trims-qs-c1234-ia19
 
 service-stop-lowstack-si-ps-trims-qs-c1234-ia20:
 	cd services; \
-	docker stack rm si-ps-trims-qs-c1234-ia20
+	docker stack rm facs-si-ps-trims-qs-c1234-ia20
 
 service-stop-lowstack-as-ti-general:
 	cd services; \
-	docker stack rm as-ti-general
+	docker stack rm facs-as-ti-general
 
 service-stop-lowstack-bo-ti-bpms-corrs:
 	cd services; \
-	docker stack rm bo-ti-bpms-corrs
+	docker stack rm facs-bo-ti-bpms-corrs
 
 service-stop-lowstack-si-ti-bpms-corrs:
 	cd services; \
-	docker stack rm si-ti-bpms-corrs
+	docker stack rm facs-si-ti-bpms-corrs
 
 service-stop-lowstack-si-ti-trims-skews:
 	cd services; \
-	docker stack rm si-ti-trims-skews
+	docker stack rm facs-si-ti-trims-skews
 
 service-stop-lowstack-as-pu-conv:
 	cd services; \
-	docker stack rm as-pu-conv
+	docker stack rm facs-as-pu-conv
 
 service-stop-lowstack-as-ap-posang:
 	cd services; \
-	docker stack rm as-ap-posang
+	docker stack rm facs-as-ap-posang
 
 service-stop-lowstack-as-ap-opticscorr:
 	cd services; \
-	docker stack rm as-ap-opticscorr
+	docker stack rm facs-as-ap-opticscorr
 
 service-stop-lowstack-as-ap-currinfo:
 	cd services; \
-	docker stack rm as-ap-currinfo
+	docker stack rm facs-as-ap-currinfo
 
 service-stop-lowstack-as-ap-sofb:
 	cd services; \
-	docker stack rm as-ap-sofb
+	docker stack rm facs-as-ap-sofb
 
 service-stop-lowstack-si-ap-sofb:
 	cd services; \
-	docker stack rm si-ap-sofb
+	docker stack rm facs-si-ap-sofb
 
 service-stop-lowstack-as-ap-diag:
 	cd services; \
-	docker stack rm as-ap-diag
+	docker stack rm facs-as-ap-diag
 
 service-stop-lowstack-li-ap-energy:
 	cd services; \
-	docker stack rm li-ap-energy
+	docker stack rm facs-li-ap-energy
 
 service-stop-lowstack-si-ap-bl:
 	cd services; \
-	docker stack rm si-ap-bl
+	docker stack rm facs-si-ap-bl
 
 service-stop-lowstack-si-id-conv:
 	cd services; \
-	docker stack rm si-id-conv
+	docker stack rm facs-si-id-conv
 
 service-stop-lowstack-as-ap-machshift:
 	cd services; \
-	docker stack rm as-ap-machshift
+	docker stack rm facs-as-ap-machshift
 
 service-start-lowstack-all:
 	make tags-iocs-update; \
@@ -1895,151 +1895,151 @@ service-start-lowstack-all:
 
 service-stop-lowstack-all:
 	cd services; \
-	docker stack rm as-ps-dclinks-tbts-bodip; \
-	docker stack rm as-ps-dclinks-ia01; \
-	docker stack rm as-ps-dclinks-ia02; \
-	docker stack rm as-ps-dclinks-ia03; \
-	docker stack rm as-ps-dclinks-ia04; \
-	docker stack rm as-ps-dclinks-ia05; \
-	docker stack rm as-ps-dclinks-ia06; \
-	docker stack rm as-ps-dclinks-ia07; \
-	docker stack rm as-ps-dclinks-ia08; \
-	docker stack rm as-ps-dclinks-ia09; \
-	docker stack rm as-ps-dclinks-ia10; \
-	docker stack rm as-ps-dclinks-ia11; \
-	docker stack rm as-ps-dclinks-ia12; \
-	docker stack rm as-ps-dclinks-ia13; \
-	docker stack rm as-ps-dclinks-ia14; \
-	docker stack rm as-ps-dclinks-ia15; \
-	docker stack rm as-ps-dclinks-ia16; \
-	docker stack rm as-ps-dclinks-ia17; \
-	docker stack rm as-ps-dclinks-ia18; \
-	docker stack rm as-ps-dclinks-ia19; \
-	docker stack rm as-ps-dclinks-ia20; \
-	docker stack rm li-ps-spect-quads-lens; \
-	docker stack rm li-ps-corrs; \
-	docker stack rm li-ps-slnds; \
-	docker stack rm li-ps-conv; \
-	docker stack rm li-ps-diag; \
+	docker stack rm facs-as-ps-dclinks-tbts-bodip; \
+	docker stack rm facs-as-ps-dclinks-ia01; \
+	docker stack rm facs-as-ps-dclinks-ia02; \
+	docker stack rm facs-as-ps-dclinks-ia03; \
+	docker stack rm facs-as-ps-dclinks-ia04; \
+	docker stack rm facs-as-ps-dclinks-ia05; \
+	docker stack rm facs-as-ps-dclinks-ia06; \
+	docker stack rm facs-as-ps-dclinks-ia07; \
+	docker stack rm facs-as-ps-dclinks-ia08; \
+	docker stack rm facs-as-ps-dclinks-ia09; \
+	docker stack rm facs-as-ps-dclinks-ia10; \
+	docker stack rm facs-as-ps-dclinks-ia11; \
+	docker stack rm facs-as-ps-dclinks-ia12; \
+	docker stack rm facs-as-ps-dclinks-ia13; \
+	docker stack rm facs-as-ps-dclinks-ia14; \
+	docker stack rm facs-as-ps-dclinks-ia15; \
+	docker stack rm facs-as-ps-dclinks-ia16; \
+	docker stack rm facs-as-ps-dclinks-ia17; \
+	docker stack rm facs-as-ps-dclinks-ia18; \
+	docker stack rm facs-as-ps-dclinks-ia19; \
+	docker stack rm facs-as-ps-dclinks-ia20; \
+	docker stack rm facs-li-ps-spect-quads-lens; \
+	docker stack rm facs-li-ps-corrs; \
+	docker stack rm facs-li-ps-slnds; \
+	docker stack rm facs-li-ps-conv; \
+	docker stack rm facs-li-ps-diag; \
 	docker stack rm tb-ps; \
-	docker stack rm bo-ps-dips; \
-	docker stack rm bo-ps-quads; \
-	docker stack rm bo-ps-sexts; \
-	docker stack rm bo-ps-corrs-ia01; \
-	docker stack rm bo-ps-corrs-ia02; \
-	docker stack rm bo-ps-corrs-ia04; \
-	docker stack rm bo-ps-corrs-ia05; \
-	docker stack rm bo-ps-corrs-ia07; \
-	docker stack rm bo-ps-corrs-ia08; \
-	docker stack rm bo-ps-corrs-ia10; \
-	docker stack rm bo-ps-corrs-ia11; \
-	docker stack rm bo-ps-corrs-ia13; \
-	docker stack rm bo-ps-corrs-ia14; \
-	docker stack rm bo-ps-corrs-ia16; \
-	docker stack rm bo-ps-corrs-ia17; \
-	docker stack rm bo-ps-corrs-ia20; \
+	docker stack rm facs-bo-ps-dips; \
+	docker stack rm facs-bo-ps-quads; \
+	docker stack rm facs-bo-ps-sexts; \
+	docker stack rm facs-bo-ps-corrs-ia01; \
+	docker stack rm facs-bo-ps-corrs-ia02; \
+	docker stack rm facs-bo-ps-corrs-ia04; \
+	docker stack rm facs-bo-ps-corrs-ia05; \
+	docker stack rm facs-bo-ps-corrs-ia07; \
+	docker stack rm facs-bo-ps-corrs-ia08; \
+	docker stack rm facs-bo-ps-corrs-ia10; \
+	docker stack rm facs-bo-ps-corrs-ia11; \
+	docker stack rm facs-bo-ps-corrs-ia13; \
+	docker stack rm facs-bo-ps-corrs-ia14; \
+	docker stack rm facs-bo-ps-corrs-ia16; \
+	docker stack rm facs-bo-ps-corrs-ia17; \
+	docker stack rm facs-bo-ps-corrs-ia20; \
 	docker stack rm ts-ps; \
-	docker stack rm si-ps-dips; \
-	docker stack rm si-ps-quads-qd; \
-	docker stack rm si-ps-quads-qfq; \
-	docker stack rm si-ps-sexts-sda12b2-sfa0p0-sda0p0; \
-	docker stack rm si-ps-sexts-sfa12-sda3p1-sfb0-sdb01; \
-	docker stack rm si-ps-sexts-sfb12-sdb3-sfp12-sdp23; \
-	docker stack rm si-ps-corrs-c2m12-ia01; \
-	docker stack rm si-ps-corrs-c2m12-ia02; \
-	docker stack rm si-ps-corrs-c2m12-ia03; \
-	docker stack rm si-ps-corrs-c2m12-ia04; \
-	docker stack rm si-ps-corrs-c2m12-ia05; \
-	docker stack rm si-ps-corrs-c2m12-ia06; \
-	docker stack rm si-ps-corrs-c2m12-ia07; \
-	docker stack rm si-ps-corrs-c2m12-ia08; \
-	docker stack rm si-ps-corrs-c2m12-ia09; \
-	docker stack rm si-ps-corrs-c2m12-ia10; \
-	docker stack rm si-ps-corrs-c2m12-ia11; \
-	docker stack rm si-ps-corrs-c2m12-ia12; \
-	docker stack rm si-ps-corrs-c2m12-ia13; \
-	docker stack rm si-ps-corrs-c2m12-ia14; \
-	docker stack rm si-ps-corrs-c2m12-ia15; \
-	docker stack rm si-ps-corrs-c2m12-ia16; \
-	docker stack rm si-ps-corrs-c2m12-ia17; \
-	docker stack rm si-ps-corrs-c2m12-ia18; \
-	docker stack rm si-ps-corrs-c2m12-ia19; \
-	docker stack rm si-ps-corrs-c2m12-ia20; \
-	docker stack rm si-ps-corrs-c134-ia01; \
-	docker stack rm si-ps-corrs-c134-ia02; \
-	docker stack rm si-ps-corrs-c134-ia03; \
-	docker stack rm si-ps-corrs-c134-ia04; \
-	docker stack rm si-ps-corrs-c134-ia05; \
-	docker stack rm si-ps-corrs-c134-ia06; \
-	docker stack rm si-ps-corrs-c134-ia07; \
-	docker stack rm si-ps-corrs-c134-ia08; \
-	docker stack rm si-ps-corrs-c134-ia09; \
-	docker stack rm si-ps-corrs-c134-ia10; \
-	docker stack rm si-ps-corrs-c134-ia11; \
-	docker stack rm si-ps-corrs-c134-ia12; \
-	docker stack rm si-ps-corrs-c134-ia13; \
-	docker stack rm si-ps-corrs-c134-ia14; \
-	docker stack rm si-ps-corrs-c134-ia15; \
-	docker stack rm si-ps-corrs-c134-ia16; \
-	docker stack rm si-ps-corrs-c134-ia17; \
-	docker stack rm si-ps-corrs-c134-ia18; \
-	docker stack rm si-ps-corrs-c134-ia19; \
-	docker stack rm si-ps-corrs-c134-ia20; \
-	docker stack rm si-ps-trims-qs-m12-ia01; \
-	docker stack rm si-ps-trims-qs-m12-ia02; \
-	docker stack rm si-ps-trims-qs-m12-ia03; \
-	docker stack rm si-ps-trims-qs-m12-ia04; \
-	docker stack rm si-ps-trims-qs-m12-ia05; \
-	docker stack rm si-ps-trims-qs-m12-ia06; \
-	docker stack rm si-ps-trims-qs-m12-ia07; \
-	docker stack rm si-ps-trims-qs-m12-ia08; \
-	docker stack rm si-ps-trims-qs-m12-ia09; \
-	docker stack rm si-ps-trims-qs-m12-ia10; \
-	docker stack rm si-ps-trims-qs-m12-ia11; \
-	docker stack rm si-ps-trims-qs-m12-ia12; \
-	docker stack rm si-ps-trims-qs-m12-ia13; \
-	docker stack rm si-ps-trims-qs-m12-ia14; \
-	docker stack rm si-ps-trims-qs-m12-ia15; \
-	docker stack rm si-ps-trims-qs-m12-ia16; \
-	docker stack rm si-ps-trims-qs-m12-ia17; \
-	docker stack rm si-ps-trims-qs-m12-ia18; \
-	docker stack rm si-ps-trims-qs-m12-ia19; \
-	docker stack rm si-ps-trims-qs-m12-ia20; \
-	docker stack rm si-ps-trims-qs-c1234-ia01; \
-	docker stack rm si-ps-trims-qs-c1234-ia02; \
-	docker stack rm si-ps-trims-qs-c1234-ia03; \
-	docker stack rm si-ps-trims-qs-c1234-ia04; \
-	docker stack rm si-ps-trims-qs-c1234-ia05; \
-	docker stack rm si-ps-trims-qs-c1234-ia06; \
-	docker stack rm si-ps-trims-qs-c1234-ia07; \
-	docker stack rm si-ps-trims-qs-c1234-ia08; \
-	docker stack rm si-ps-trims-qs-c1234-ia09; \
-	docker stack rm si-ps-trims-qs-c1234-ia10; \
-	docker stack rm si-ps-trims-qs-c1234-ia11; \
-	docker stack rm si-ps-trims-qs-c1234-ia12; \
-	docker stack rm si-ps-trims-qs-c1234-ia13; \
-	docker stack rm si-ps-trims-qs-c1234-ia14; \
-	docker stack rm si-ps-trims-qs-c1234-ia15; \
-	docker stack rm si-ps-trims-qs-c1234-ia16; \
-	docker stack rm si-ps-trims-qs-c1234-ia17; \
-	docker stack rm si-ps-trims-qs-c1234-ia18; \
-	docker stack rm si-ps-trims-qs-c1234-ia19; \
-	docker stack rm si-ps-trims-qs-c1234-ia20; \
-	docker stack rm as-ti-general; \
-	docker stack rm bo-ti-bpms-corrs; \
-	docker stack rm si-ti-bpms-corrs; \
-	docker stack rm si-ti-trims-skews; \
-	docker stack rm as-pu-conv; \
-	docker stack rm as-ap-posang; \
-	docker stack rm as-ap-opticscorr; \
-	docker stack rm as-ap-currinfo; \
-	docker stack rm as-ap-sofb; \
-	docker stack rm si-ap-sofb; \
-	docker stack rm as-ap-diag; \
-	docker stack rm li-ap-energy; \
-	docker stack rm si-ap-bl; \
-	docker stack rm si-id-conv; \
-	docker stack rm as-ap-machshift
+	docker stack rm facs-si-ps-dips; \
+	docker stack rm facs-si-ps-quads-qd; \
+	docker stack rm facs-si-ps-quads-qfq; \
+	docker stack rm facs-si-ps-sexts-sda12b2-sfa0p0-sda0p0; \
+	docker stack rm facs-si-ps-sexts-sfa12-sda3p1-sfb0-sdb01; \
+	docker stack rm facs-si-ps-sexts-sfb12-sdb3-sfp12-sdp23; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia01; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia02; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia03; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia04; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia05; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia06; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia07; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia08; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia09; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia10; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia11; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia12; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia13; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia14; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia15; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia16; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia17; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia18; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia19; \
+	docker stack rm facs-si-ps-corrs-c2m12-ia20; \
+	docker stack rm facs-si-ps-corrs-c134-ia01; \
+	docker stack rm facs-si-ps-corrs-c134-ia02; \
+	docker stack rm facs-si-ps-corrs-c134-ia03; \
+	docker stack rm facs-si-ps-corrs-c134-ia04; \
+	docker stack rm facs-si-ps-corrs-c134-ia05; \
+	docker stack rm facs-si-ps-corrs-c134-ia06; \
+	docker stack rm facs-si-ps-corrs-c134-ia07; \
+	docker stack rm facs-si-ps-corrs-c134-ia08; \
+	docker stack rm facs-si-ps-corrs-c134-ia09; \
+	docker stack rm facs-si-ps-corrs-c134-ia10; \
+	docker stack rm facs-si-ps-corrs-c134-ia11; \
+	docker stack rm facs-si-ps-corrs-c134-ia12; \
+	docker stack rm facs-si-ps-corrs-c134-ia13; \
+	docker stack rm facs-si-ps-corrs-c134-ia14; \
+	docker stack rm facs-si-ps-corrs-c134-ia15; \
+	docker stack rm facs-si-ps-corrs-c134-ia16; \
+	docker stack rm facs-si-ps-corrs-c134-ia17; \
+	docker stack rm facs-si-ps-corrs-c134-ia18; \
+	docker stack rm facs-si-ps-corrs-c134-ia19; \
+	docker stack rm facs-si-ps-corrs-c134-ia20; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia01; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia02; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia03; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia04; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia05; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia06; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia07; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia08; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia09; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia10; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia11; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia12; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia13; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia14; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia15; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia16; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia17; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia18; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia19; \
+	docker stack rm facs-si-ps-trims-qs-m12-ia20; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia01; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia02; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia03; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia04; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia05; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia06; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia07; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia08; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia09; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia10; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia11; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia12; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia13; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia14; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia15; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia16; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia17; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia18; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia19; \
+	docker stack rm facs-si-ps-trims-qs-c1234-ia20; \
+	docker stack rm facs-as-ti-general; \
+	docker stack rm facs-bo-ti-bpms-corrs; \
+	docker stack rm facs-si-ti-bpms-corrs; \
+	docker stack rm facs-si-ti-trims-skews; \
+	docker stack rm facs-as-pu-conv; \
+	docker stack rm facs-as-ap-posang; \
+	docker stack rm facs-as-ap-opticscorr; \
+	docker stack rm facs-as-ap-currinfo; \
+	docker stack rm facs-as-ap-sofb; \
+	docker stack rm facs-si-ap-sofb; \
+	docker stack rm facs-as-ap-diag; \
+	docker stack rm facs-li-ap-energy; \
+	docker stack rm facs-si-ap-bl; \
+	docker stack rm facs-si-id-conv; \
+	docker stack rm facs-as-ap-machshift
 
 # --- all ---
 
