@@ -452,19 +452,19 @@ service-start-lowstack-li-ps-diag:
 
 service-start-lowstack-tb-ps-dips:
 	cd services; \
-	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" docker-stack-tb-ps-dips.yml; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" docker-stack-tb-ps-dips.yml; \
 	docker stack deploy -c docker-stack-tb-ps-dips.yml facs-tb-ps-dips; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-tb-ps-dipcs.yml
 
 service-start-lowstack-tb-ps-quads:
 	cd services; \
-	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" docker-stack-tb-ps-quads.yml; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" docker-stack-tb-ps-quads.yml; \
 	docker stack deploy -c docker-stack-tb-ps-quads.yml facs-tb-ps-quads; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-tb-ps-quads.yml
 
 service-start-lowstack-tb-ps-corrs:
 	cd services; \
-	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IOCS_TAG)/g" docker-stack-tb-ps-corrs.yml; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" docker-stack-tb-ps-corrs.yml; \
 	docker stack deploy -c docker-stack-tb-ps-corrs.yml facs-tb-ps-corrs; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-tb-ps-corrs.yml
 
