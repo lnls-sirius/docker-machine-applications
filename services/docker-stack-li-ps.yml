@@ -88,6 +88,10 @@ services:
 
   conv:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    depends_on:
+      - "spect-quads-lens"
+      - "corrs"
+      - "slnds"
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-conv.bash'
     deploy:
       placement:
@@ -116,6 +120,10 @@ services:
 
   diag:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    depends_on:
+      - "spect-quads-lens"
+      - "corrs"
+      - "slnds"
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-diag.bash'
     deploy:
       placement:
