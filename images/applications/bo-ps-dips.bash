@@ -10,5 +10,8 @@
 /usr/local/bin/sirius-ioc-as-ps-diag.py BO ".*" "B-(1|2)" &> /ioc-logs/sirius-ioc-bo-ps-dips-diag & # 4.0%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

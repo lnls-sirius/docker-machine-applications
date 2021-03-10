@@ -8,5 +8,8 @@
 /usr/local/bin/sirius-ioc-as-ps-diag.py SI "(03M2|04M1)" "Q(F|D)" &> /ioc-logs/sirius-ioc-si-ps-diag-trims-m12-ia03 & # 4.3%
 /usr/local/bin/sirius-ioc-as-ps-diag.py SI "(03M1|03M2)" "QS" &> /ioc-logs/sirius-ioc-si-ps-diag-qs-m12-ia03 & # 4.3%
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

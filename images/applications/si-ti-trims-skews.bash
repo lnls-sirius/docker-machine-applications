@@ -9,5 +9,8 @@
 /usr/local/bin/sirius-ioc-as-ti-control.py -s si-skews >& /ioc-logs/sirius-ioc-si-ti-trig-skews & # 6.3%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

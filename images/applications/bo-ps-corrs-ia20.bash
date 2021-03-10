@@ -9,5 +9,8 @@
 /usr/local/bin/sirius-ioc-as-ps-diag.py BO "4(7|9)(U|D)" "(CH|CV)" &> /ioc-logs/sirius-ioc-bo-ps-corrs-diag-ia20 & # 1.9%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

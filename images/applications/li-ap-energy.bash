@@ -6,5 +6,8 @@
 /usr/local/bin/sirius-ioc-li-ap-energy.py &> /ioc-logs/sirius-ioc-li-ap-energy & # 4.3%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

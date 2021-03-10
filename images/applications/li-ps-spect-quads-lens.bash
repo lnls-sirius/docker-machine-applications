@@ -20,5 +20,8 @@
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-01:PS-LensRev &> /ioc-logs/sirius-ioc-li-ps-lensrev & # 2.4%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

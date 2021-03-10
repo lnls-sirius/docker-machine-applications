@@ -11,5 +11,8 @@
 /usr/local/bin/sirius-ioc-si-ap-chromcorr.py &> /ioc-logs/sirius-ioc-si-ap-chromcorr & # 8.7%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

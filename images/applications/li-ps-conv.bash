@@ -52,5 +52,8 @@ LI-01:PS-CH-7 &> /ioc-logs/sirius-ioc-li-ps-conv & # 14.5%
 # LI-Fam:PS-Slnd-21 \
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

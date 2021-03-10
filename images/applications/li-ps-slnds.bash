@@ -26,5 +26,8 @@
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-Fam:PS-Slnd-21 &> /ioc-logs/sirius-ioc-li-ps-solenoid-21 & # 1.9%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

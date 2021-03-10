@@ -8,5 +8,8 @@
 /usr/local/bin/sirius-ioc-as-ps-diag.py SI "17(C2|M1|M2)" "C(H|V).*" &> /ioc-logs/sirius-ioc-si-ps-diag-corrs-c2m12-ia17 & # 7.6%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

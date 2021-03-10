@@ -21,5 +21,8 @@
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-01:PS-CV-7 &> /ioc-logs/sirius-ioc-li-ps-cv7 & # 2.3%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

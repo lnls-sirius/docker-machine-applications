@@ -12,5 +12,8 @@
 /usr/local/bin/sirius-ioc-as-ps-diag.py SI Fam "QD.*" &> /ioc-logs/sirius-ioc-si-ps-diag-quads-qd & # 2.7%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

@@ -10,5 +10,8 @@
 /usr/local/bin/sirius-ioc-si-ap-currinfo-lifetime.py &> /ioc-logs/sirius-ioc-si-ap-currinfo-lifetime & # 9.9%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity
