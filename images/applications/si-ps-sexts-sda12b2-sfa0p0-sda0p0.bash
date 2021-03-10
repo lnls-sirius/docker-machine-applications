@@ -20,5 +20,8 @@
 /usr/local/bin/sirius-ioc-as-ps-diag.py SI Fam "S(DB2|DA2|DA1|FP0|FA0|DP0|DA0)" &> /ioc-logs/sirius-ioc-si-ps-diag-sexts-sda12b2-sfa0p0-sda0p0  & # 1.9%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

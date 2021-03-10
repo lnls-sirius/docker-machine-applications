@@ -9,5 +9,8 @@
 /usr/local/bin/sirius-ioc-as-ti-control.py -s bo-corrs >& /ioc-logs/sirius-ioc-bo-ti-trig-corrs & # 5.4%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

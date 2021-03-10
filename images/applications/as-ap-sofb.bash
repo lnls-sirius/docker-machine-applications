@@ -6,5 +6,8 @@
 /usr/local/bin/sirius-ioc-bo-ap-sofb.py &> /ioc-logs/sirius-ioc-bo-ap-sofb & # 6.4%
 /usr/local/bin/sirius-ioc-ts-ap-sofb.py &> /ioc-logs/sirius-ioc-ts-ap-sofb & # 5.7%
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

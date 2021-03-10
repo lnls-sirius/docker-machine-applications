@@ -10,5 +10,8 @@
 /usr/local/bin/sirius-ioc-as-ps-diag.py BO ".*" "S(F|D)" &> /ioc-logs/sirius-ioc-bo-ps-sexts-diag & # 4.5%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

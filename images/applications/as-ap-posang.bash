@@ -7,5 +7,8 @@
 /usr/local/bin/sirius-ioc-ts-ap-posang.py &> /ioc-logs/sirius-ioc-ts-ap-posang & # 4.3%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

@@ -9,5 +9,8 @@
 /usr/local/bin/sirius-ioc-as-ps-diag.py TB ".*" "C.*" &> /ioc-logs/sirius-ioc-tb-ps-diag-corrs & # 2.2%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity

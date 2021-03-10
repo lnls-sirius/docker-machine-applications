@@ -5,9 +5,15 @@ SHELL ["bash", "-c"]
 
 WORKDIR /opt
 
+# create directories
 RUN mkdir -p /ioc-apps; \
     mkdir -p /ioc-logs
 
+# logrotate
+COPY ./etc/crontab /etc/crontab
+COPY ./etc/logrotate.conf /etc/logrotate.conf
+
+# applications
 COPY applications/*.bash /ioc-apps/
 
 RUN source /etc/profile

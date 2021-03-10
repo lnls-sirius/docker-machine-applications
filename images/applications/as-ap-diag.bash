@@ -12,5 +12,8 @@
 /usr/local/bin/sirius-ioc-li-ap-diag.py &> /ioc-logs/sirius-ioc-li-ap-diag & # 6.2%
 
 
+# run cron for log rotation
+cron &
+
 # keep entry point running
 sleep infinity
