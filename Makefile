@@ -6,22 +6,22 @@ FAC_IMG_IOCS_TAG ?= $(shell cat ./images/.env | grep FAC_IMG_IOCS_TAG= | sed s/F
 # --- deploy ---
 
 deploy:
-	# update image tag
+	# save deploy tag to file
+	echo $(FAC_IMG_IOCS_TAG) > /tmp/_DEPLOY_TAG_
+	# update image tag in .env
 	sed -i "s/FAC_IMG_IOCS_TAG=.*/FAC_IMG_IOCS_TAG=$(FAC_IMG_IOCS_TAG)/g" ./images/.env 
-	# commit all
-	git commit -a
-	# create deploy tag and push to origin
-	git tag $(FAC_IMG_IOCS_TAG)
-	git push --tags
 	# create image and push to dockerregistry
 	make image-build-fac-iocs
 
 # --- tags ---
 
-tags-iocs-update:
+tag-show-fac-iocs:
+	@cat /tmp/_DEPLOY_TAG_
+
+tag-update-fac-iocs:
 	cd services; find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" {} \;
 
-tags-iocs-template:
+tag-template-fac-iocs:
 	cd services; find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \;
 
 # --- images ---
@@ -240,7 +240,7 @@ service-stop-highstack-as-ap-machshift:
 	docker stack rm facs-as-ap-machshift
 
 service-start-highstack-all: 
-	make tags-iocs-update; \
+	make tag-update-fac-iocs; \
     docker stack deploy -c docker-stack-as-ps-dclinks.yml facs-as-ps-dclinks; \
     docker stack deploy -c docker-stack-li-ps.yml facs-li-ps; \
     docker stack deploy -c docker-stack-tb-ps.yml facs-tb-ps; \
@@ -259,7 +259,7 @@ service-start-highstack-all:
     docker stack deploy -c docker-stack-si-ap-bl.yml facs-si-ap-bl; \
     docker stack deploy -c docker-stack-si-id-conv.yml facs-si-id-conv; \
     docker stack deploy -c docker-stack-as-ap-machsh.yml facs-as-ap-machshift; \
-	make tags-iocs-template
+	make tag-template-fac-iocs
 
 service-stop-highstack-all: 
 	cd services; \
@@ -1790,7 +1790,7 @@ service-stop-lowstack-as-ap-machshift:
 	docker stack rm facs-as-ap-machshift
 
 service-start-lowstack-all:
-	make tags-iocs-update; \
+	make tag-update-fac-iocs; \
 	docker stack deploy -c docker-stack-as-ps-dclinks-tbts-bodip; \
 	docker stack deploy -c docker-stack-as-ps-dclinks-ia01; \
 	docker stack deploy -c docker-stack-as-ps-dclinks-ia02; \
@@ -1940,7 +1940,7 @@ service-start-lowstack-all:
 	docker stack deploy -c docker-stack-si-ap-bl; \
 	docker stack deploy -c docker-stack-si-id-conv; \
 	docker stack deploy -c docker-stack-as-ap-machshift; \
-	make tags-iocs-template
+	make tag-template-fac-iocs
 
 service-stop-lowstack-all:
 	cd services; \
