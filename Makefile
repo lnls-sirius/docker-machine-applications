@@ -8,6 +8,11 @@ FAC_IMG_IOCS_TAG ?= $(shell cat ./images/.env | grep FAC_IMG_IOCS_TAG= | sed s/F
 deploy:
 	# update image tag
 	sed -i "s/FAC_IMG_IOCS_TAG=.*/FAC_IMG_IOCS_TAG=$(FAC_IMG_IOCS_TAG)/g" ./images/.env 
+	# commit all
+	git commit -a
+	# create deploy tag and push to origin
+	git tag $(FAC_IMG_IOCS_TAG)
+	git push --tags
 	# create image and push to dockerregistry
 	make image-build-fac-iocs
 
