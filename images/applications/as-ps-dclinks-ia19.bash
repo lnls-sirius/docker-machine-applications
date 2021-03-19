@@ -2,7 +2,7 @@
 
 # CPU usage estimate (ps aux): 4.7%
 
-/usr/local/bin/sirius-ioc-as-ps.py IA-19RaCtrl:CO-DCLinkCtrl &> /ioc-logs/sirius-ioc-as-ps-dclink-ia19 & # 4.7%
+/usr/local/bin/sirius-ioc-as-ps.py IA-19RaCtrl:CO-DCLinkCtrl &> /ioc-logs/sirius-ioc-as-ps-dclink-ia19.log & # 4.7%
 
 
 # run cron for log rotation
