@@ -2,16 +2,18 @@ FAC_IMG_BASE_TAG ?= $(shell cat ./images/.env | grep FAC_IMG_BASE_TAG= | sed s/F
 FAC_IMG_EPICS_TAG ?= $(shell cat ./images/.env | grep FAC_IMG_EPICS_TAG= | sed s/FAC_IMG_EPICS_TAG=//g)
 FAC_IMG_APPS_TAG ?= $(shell cat ./images/.env | grep FAC_IMG_APPS_TAG= | sed s/FAC_IMG_APPS_TAG=//g)
 FAC_IMG_IOCS_TAG ?= $(shell cat ./images/.env | grep FAC_IMG_IOCS_TAG= | sed s/FAC_IMG_IOCS_TAG=//g)
+FAC_IMG_DEPLOY_TAG = ?= $(FAC_IMG_IOCS_TAG)
 
 # --- deploy ---
 
 deploy:
 	# save deploy tag to file
-	echo $(FAC_IMG_IOCS_TAG) > /tmp/_DEPLOY_TAG_
-	# update image tag in .env
-	sed -i "s/FAC_IMG_IOCS_TAG=.*/FAC_IMG_IOCS_TAG=$(FAC_IMG_IOCS_TAG)/g" ./images/.env 
-	# create image and push to dockerregistry
-	make image-build-fac-iocs
+	echo $(FAC_IMG_DEPLOY_TAG) > /tmp/_DEPLOY_TAG_
+	# update image tags in .env
+	sed -i "s/FAC_IMG_APPS_TAG=.*/FAC_IMG_APPS_TAG=$(FAC_IMG_DEPLOY_TAG)/g" ./images/.env
+	sed -i "s/FAC_IMG_IOCS_TAG=.*/FAC_IMG_IOCS_TAG=$(FAC_IMG_DEPLOY_TAG)/g" ./images/.env
+	# create fac-iocs image and push to dockerregistry
+	make image-build-fac-deploy
 
 # --- tags ---
 
@@ -26,13 +28,20 @@ tag-template-fac-iocs:
 
 # --- images ---
 
+image-build-fac-deploy: image-cleanup
+	cd images; \
+	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-apps; \
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(FAC_IMG_DEPLOY_TAG)
+	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-apps; \
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IMG_DEPLOY_TAG)
+
 image-build-fac-iocs: image-cleanup image-pull-fac-apps
 	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-iocs
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IMG_IOCS_TAG)
 
 image-build-fac-apps: image-cleanup image-pull-fac-epics
 	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-apps
-	docker push dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(FAC_IMG_IOCS_TAG)
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(FAC_IMG_APPS_TAG)
 
 image-build-fac-epics: image-cleanup image-pull-fac-base
 	cd images; docker-compose --file docker-compose.yml build --force-rm --no-cache fac-epics
