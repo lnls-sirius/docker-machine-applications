@@ -218,7 +218,7 @@ service-stop-highstack-as-ap-sofb:
 service-stop-highstack-si-ap-sofb:
 	cd services; \
 	docker stack rm facs-si-ap-sofb
-
+	
 service-stop-highstack-as-ap-diag:
 	cd services; \
 	docker stack rm facs-as-ap-diag
