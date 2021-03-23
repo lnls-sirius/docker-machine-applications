@@ -13,7 +13,7 @@ services:
           # - node.hostname != IA-16RaBbB-CO-IOCSrv
           # - node.hostname != IA-18RaDiag04-CO-IOCSrv
           # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
           # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
           # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
           - node.hostname != CA-RaCtrl-CO-Srv-1
@@ -41,7 +41,7 @@ services:
           # - node.hostname != IA-16RaBbB-CO-IOCSrv
           # - node.hostname != IA-18RaDiag04-CO-IOCSrv
           # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
           # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
           # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
           - node.hostname != CA-RaCtrl-CO-Srv-1
@@ -69,7 +69,7 @@ services:
           # - node.hostname != IA-16RaBbB-CO-IOCSrv
           # - node.hostname != IA-18RaDiag04-CO-IOCSrv
           # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
+          - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
           # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
           # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
           - node.hostname != CA-RaCtrl-CO-Srv-1
