@@ -2,7 +2,7 @@ FAC_IMG_BASE_TAG ?= $(shell cat ./images/.env | grep FAC_IMG_BASE_TAG= | sed s/F
 FAC_IMG_EPICS_TAG ?= $(shell cat ./images/.env | grep FAC_IMG_EPICS_TAG= | sed s/FAC_IMG_EPICS_TAG=//g)
 FAC_IMG_APPS_TAG ?= $(shell cat ./images/.env | grep FAC_IMG_APPS_TAG= | sed s/FAC_IMG_APPS_TAG=//g)
 FAC_IMG_IOCS_TAG ?= $(shell cat ./images/.env | grep FAC_IMG_IOCS_TAG= | sed s/FAC_IMG_IOCS_TAG=//g)
-FAC_IMG_DEPLOY_TAG = ?= $(FAC_IMG_IOCS_TAG)
+FAC_IMG_DEPLOY_TAG ?= $(FAC_IMG_IOCS_TAG)
 
 # --- deploy ---
 
