@@ -32,7 +32,7 @@ image-build-fac-deploy: image-cleanup
 	cd images; \
 	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-apps; \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(FAC_IMG_DEPLOY_TAG)
-	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-apps; \
+	docker-compose --file docker-compose.yml build --force-rm --no-cache fac-iocs; \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(FAC_IMG_DEPLOY_TAG)
 
 image-build-fac-iocs: image-cleanup image-pull-fac-apps
