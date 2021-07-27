@@ -228,6 +228,7 @@ class ServiceConfig:
             'corrs': 'li-ps-corrs',
             'slnds': 'li-ps-slnds',
             'conv': ('li-ps-conv', ('spect-quads-lens', 'corrs', 'slnds')),
+            'diag': ('li-ps-diag', ('spect-quads-lens', 'corrs', 'slnds')),
             },
         'tb-ps': {
             'dips': 'tb-ps-dips',
