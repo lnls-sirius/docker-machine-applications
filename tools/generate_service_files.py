@@ -372,7 +372,8 @@ class DockerStackConfig(ServiceConfig):
             strf += '\n' + '    depends_on:'
             for item in depends:
                 strf += '\n' + '      - "' + item + '"'
-        strf += '\n' + '    command: ' + DockerStackConfig.get_command(app)
+        if 'CSCONSTS' not in self.image_tag:
+            strf += '\n' + '    command: ' + DockerStackConfig.get_command(app)
         strf += '\n' + '    deploy:'
         strf += '\n' + '      placement:'
         strf += '\n' + '        constraints:'
@@ -385,10 +386,9 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + '      options:'
         strf += '\n' + '        max-file: ' + '"10"'
         strf += '\n' + '        max-size: ' + '"10m"'
-        if 'CSCONSTS' not in self.image_tag:
-            strf += '\n' + '    networks:'
-            for network in self.networks:
-                strf += '\n' + '      - ' + network
+        strf += '\n' + '    networks:'
+        for network in self.networks:
+            strf += '\n' + '      - ' + network
         return strf
 
     def str_networks(self):
