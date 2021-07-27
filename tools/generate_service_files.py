@@ -3,6 +3,10 @@
 
 class ServiceConfig:
 
+    SERVICES_CSCONSTS = {
+        'csconsts': 'IA-16RaBbB-CO-IOCSrv'
+        }
+
     SERVICES = {
         'as-ap-currinfo': 'IA-14RaDiag03-CO-IOCSrv',
         'as-ap-machshift': 'IA-16RaBbB-CO-IOCSrv',
@@ -328,17 +332,24 @@ class ServiceConfig:
             'trims-qs-m12-ia19': ('si-ps-trims-qs-m12-ia19', ('dips', 'quads-qd', 'quads-qfq')),
             'trims-qs-m12-ia20': ('si-ps-trims-qs-m12-ia20', ('dips', 'quads-qd', 'quads-qfq')),
             },
-            
         }
 
 
 class DockerStackConfig(ServiceConfig):
 
-    def __init__(self):
+    IMAGE_TAG_CSCONSTS = '__FAC_CSCONSTS_TAG_TEMPLATE__'
+    IMAGE_TAG_IOCS = '__FAC_IOC_TAG_TEMPLATE__'
+
+    def __init__(self, image_tag):
         self.version = '3.7'
-        self.image = 'dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__'
+        self.image_tag = image_tag
+        if 'CSCONSTS' in image_tag:
+            self.image = 'dockerregistry.lnls-sirius.com.br/fac/fac-csconsts:' + self.image_tag
+            self.networks = ['host_network']
+        else:
+            self.image = 'dockerregistry.lnls-sirius.com.br/fac/fac-iocs:' + self.image_tag
+            self.networks = ['ioc-network']
         self.replicas = '1'
-        self.networks = ['ioc-network']
         self.condition = 'any'
         self.driver = 'json-file'
 
@@ -374,9 +385,10 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + '      options:'
         strf += '\n' + '        max-file: ' + '"10"'
         strf += '\n' + '        max-size: ' + '"10m"'
-        strf += '\n' + '    networks:'
-        for network in self.networks:
-            strf += '\n' + '      - ' + network
+        if 'CSCONSTS' not in self.image_tag:
+            strf += '\n' + '    networks:'
+            for network in self.networks:
+                strf += '\n' + '      - ' + network
         return strf
 
     def str_networks(self):
@@ -391,7 +403,7 @@ class DockerStackConfig(ServiceConfig):
 class DockerLowStackConfig(DockerStackConfig):
 
     def __init__(self, app, node):
-        super().__init__()
+        super().__init__(DockerStackConfig.IMAGE_TAG_IOCS)
         self.app = app
         self.node = node
         
@@ -413,7 +425,7 @@ class DockerLowStackConfig(DockerStackConfig):
 class DockerHighStackConfig(DockerStackConfig):
 
     def __init__(self, stack):
-        super().__init__()
+        super().__init__(DockerStackConfig.IMAGE_TAG_IOCS)
         self.stack = stack
         self.services = ServiceConfig.STACKS[stack]
 
@@ -438,16 +450,50 @@ class DockerHighStackConfig(DockerStackConfig):
         print(self, file=open(fname, 'w'))
 
 
+class DockerCSConstsConfig(DockerStackConfig):
+
+    def __init__(self, app, node):
+        super().__init__(DockerStackConfig.IMAGE_TAG_CSCONSTS)
+        self.app = app
+        self.node = node
+
+    def __str__(self):
+
+        strf = self.str_header()
+        strf += '\n'
+        strf += '\n' + '  facs-csconsts:'
+        strf += self.str_service(self.image, self.app, self.node)
+        strf += '\n'
+        strf += self.str_networks()
+        return strf
+
+    def save_config_file(self):
+        fname = 'docker-stack-' + self.app + '.yml'
+        print(self, file=open(fname, 'w'))
+
+    def str_networks(self):
+        strf = ''
+        strf += '\n' + 'networks:'
+        strf += '\n' + '  host_network' + ':'
+        strf += '\n' + '    external:'
+        strf += '\n' + '      name: "host"'
+        return strf
+
+
 def generate_service_files():
+
+    for app, node in ServiceConfig.SERVICES_CSCONSTS.items():
+        config = DockerCSConstsConfig(app=app, node=node)
+        config.save_config_file()
 
     for app, node in ServiceConfig.SERVICES.items():
         config = DockerLowStackConfig(app=app, node=node)
         config.save_config_file()
-
 
     for stack in ServiceConfig.STACKS:
         config = DockerHighStackConfig(stack)
         config.save_config_file()
 
 
-generate_service_files()
+if __name__ == "__main__":
+    generate_service_files()
