@@ -39,3 +39,16 @@ For better splitting of IOCs into containers/services an estimate of CPU usage o
 * All IOCs sum up to 2563 % of CPU (ps aux) - 2021-
 * Ideally each service should then use 17.7%
 
+## Moving services around docker nodes:
+
+* List running services in a docker node:
+    docker node ps IA-14RaDiag03-CO-IOCSrv | grep Running | grep fac | grep trims-qs-c123
+
+* Add constraint to a service:
+    docker service update --constraint-add "node.hostname == lnlsfac-srv2" facs-si-ps_trims-qs-c1234-ia10
+
+* Remove constraint to a service:
+    docker service update --constraint-rm "node.hostname == lnlsfac-srv2" facs-si-ps_trims-qs-c1234-ia10
+
+* watch dell servers load:
+    https://10.0.38.46:20093/zabbix.php?action=dashboard.view&dashboardid=73

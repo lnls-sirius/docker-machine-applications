@@ -1,24 +1,14 @@
 version: "3.7"
 
 services:
-  
+
   spect-quads-lens:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-spect-quads-lens.bash'
     deploy:
       placement:
         constraints:
-          # - node.hostname != CA-RaTim-CO-IOCSrv
-          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
-          # - node.hostname != IA-16RaBbB-CO-IOCSrv
-          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
-          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-          - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
-          - node.hostname != CA-RaCtrl-CO-Srv-1
-          - node.hostname != LA-RaCtrl-CO-Srv-1
-          - node.hostname != TA-TiRack-CO-FWSrv-1
+          - node.hostname == IA-16RaBbB-CO-IOCSrv
       replicas: 1
       restart_policy:
         condition: any
@@ -36,17 +26,7 @@ services:
     deploy:
       placement:
         constraints:
-          # - node.hostname != CA-RaTim-CO-IOCSrv
-          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
-          # - node.hostname != IA-16RaBbB-CO-IOCSrv
-          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
-          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-          - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
-          - node.hostname != CA-RaCtrl-CO-Srv-1
-          - node.hostname != LA-RaCtrl-CO-Srv-1
-          - node.hostname != TA-TiRack-CO-FWSrv-1
+          - node.hostname == IA-16RaBbB-CO-IOCSrv
       replicas: 1
       restart_policy:
         condition: any
@@ -64,17 +44,7 @@ services:
     deploy:
       placement:
         constraints:
-          # - node.hostname != CA-RaTim-CO-IOCSrv
-          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
-          # - node.hostname != IA-16RaBbB-CO-IOCSrv
-          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
-          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-          - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
-          - node.hostname != CA-RaCtrl-CO-Srv-1
-          - node.hostname != LA-RaCtrl-CO-Srv-1
-          - node.hostname != TA-TiRack-CO-FWSrv-1
+          - node.hostname == IA-14RaDiag03-CO-IOCSrv
       replicas: 1
       restart_policy:
         condition: any
@@ -96,17 +66,7 @@ services:
     deploy:
       placement:
         constraints:
-          # - node.hostname != CA-RaTim-CO-IOCSrv
-          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
-          # - node.hostname != IA-16RaBbB-CO-IOCSrv
-          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
-          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-          - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
-          - node.hostname != CA-RaCtrl-CO-Srv-1
-          - node.hostname != LA-RaCtrl-CO-Srv-1
-          - node.hostname != TA-TiRack-CO-FWSrv-1
+          - node.hostname == IA-14RaDiag03-CO-IOCSrv
       replicas: 1
       restart_policy:
         condition: any
@@ -128,17 +88,7 @@ services:
     deploy:
       placement:
         constraints:
-          # - node.hostname != CA-RaTim-CO-IOCSrv
-          # - node.hostname != IA-14RaDiag03-CO-IOCSrv
-          # - node.hostname != IA-16RaBbB-CO-IOCSrv
-          # - node.hostname != IA-18RaDiag04-CO-IOCSrv
-          # - node.hostname != IA-20RaDiag01-CO-IOCSrv-1
-          - node.hostname != IA-20RaDiag01-CO-IOCSrv-2
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-1
-          # - node.hostname != IA-20RaDiag02-CO-IOCSrv-2
-          - node.hostname != CA-RaCtrl-CO-Srv-1
-          - node.hostname != LA-RaCtrl-CO-Srv-1
-          - node.hostname != TA-TiRack-CO-FWSrv-1
+          - node.hostname == IA-16RaBbB-CO-IOCSrv
       replicas: 1
       restart_policy:
         condition: any
