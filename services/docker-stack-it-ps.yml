@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+
+  lens:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c 'source /etc/profile && /ioc-apps/it-ps-lens.bash'
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == lnlsfac-srv2
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+networks:
+  ioc-network:
+    external: true
+    name: "host"
