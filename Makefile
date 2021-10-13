@@ -104,6 +104,12 @@ service-start-highstack-si-ps:
 	docker stack deploy -c docker-stack-si-ps.yml facs-si-ps; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-ps.yml
 
+service-start-highstack-it-ps:
+	cd services; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" docker-stack-it-ps.yml; \
+	docker stack deploy -c docker-stack-it-ps.yml facs-it-ps; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-it-ps.yml
+
 service-start-highstack-as-ti:
 	cd services; \
 	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" docker-stack-as-ti.yml; \
@@ -200,6 +206,10 @@ service-stop-highstack-si-ps:
 	cd services; \
 	docker stack rm facs-si-ps
 
+service-stop-highstack-it-ps:
+	cd services; \
+	docker stack rm facs-it-ps
+
 service-stop-highstack-as-ti:
 	cd services; \
 	docker stack rm facs-as-ti
@@ -248,7 +258,7 @@ service-stop-highstack-as-ap-machshift:
 	cd services; \
 	docker stack rm facs-as-ap-machshift
 
-service-start-highstack-all: 
+service-start-highstack-all:
 	make tag-update-fac-iocs; \
 	docker stack deploy -c docker-stack-as-ps-dclinks.yml facs-as-ps-dclinks; \
 	docker stack deploy -c docker-stack-li-ps.yml facs-li-ps; \
@@ -256,6 +266,7 @@ service-start-highstack-all:
 	docker stack deploy -c docker-stack-bo-ps.yml facs-bo-ps; \
 	docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps; \
 	docker stack deploy -c docker-stack-si-ps.yml facs-si-ps; \
+	docker stack deploy -c docker-stack-it-ps.yml facs-it-ps; \
 	docker stack deploy -c docker-stack-as-ti.yml facs-as-ti; \
 	docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv; \
 	docker stack deploy -c docker-stack-as-ap-posang.yml facs-as-ap-posang; \
@@ -270,7 +281,7 @@ service-start-highstack-all:
 	docker stack deploy -c docker-stack-as-ap-machsh.yml facs-as-ap-machshift; \
 	make tag-template-fac-iocs
 
-service-stop-highstack-all: 
+service-stop-highstack-all:
 	cd services; \
 	docker stack rm facs-as-ps-dclinks; \
 	docker stack rm facs-li-ps; \
@@ -278,6 +289,7 @@ service-stop-highstack-all:
 	docker stack rm facs-bo-ps; \
 	docker stack rm facs-ts-ps; \
 	docker stack rm facs-si-ps; \
+	docker stack rm facs-it-ps; \
 	docker stack rm facs-as-ti; \
 	docker stack rm facs-as-pu-conv; \
 	docker stack rm facs-as-ap-posang; \
@@ -1112,6 +1124,12 @@ service-start-lowstack-si-ps-trims-qs-c1234-ia20:
 	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia20.yml facs-si-ps-trims-qs-c1234-ia20; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-ps-trims-qs-c1234-ia20.yml
 
+service-start-lowstack-it-ps-lens:
+	cd services; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" docker-stack-it-ps-lens.yml; \
+	docker stack deploy -c docker-stack-it-ps-lens.yml facs-it-ps-lens; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-it-ps-lens.yml
+
 service-start-lowstack-as-ti-general:
 	cd services; \
 	sed -i "s/fac-iocs:.*/fac-iocs:$(FAC_IMG_IOCS_TAG)/g" docker-stack-as-ti-general.yml; \
@@ -1738,6 +1756,10 @@ service-stop-lowstack-si-ps-trims-qs-c1234-ia20:
 	cd services; \
 	docker stack rm facs-si-ps-trims-qs-c1234-ia20
 
+service-stop-lowstack-it-ps-lens:
+	cd services; \
+	docker stack rm facs-it-ps-lens
+
 service-stop-lowstack-as-ti-general:
 	cd services; \
 	docker stack rm facs-as-ti-general
@@ -1934,6 +1956,7 @@ service-start-lowstack-all:
 	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia18; \
 	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia19; \
 	docker stack deploy -c docker-stack-si-ps-trims-qs-c1234-ia20; \
+	docker stack deploy -c docker-stack-it-ps-lens; \
 	docker stack deploy -c docker-stack-as-ti-general; \
 	docker stack deploy -c docker-stack-bo-ti-bpms-corrs; \
 	docker stack deploy -c docker-stack-si-ti-bpms-corrs; \
@@ -2087,6 +2110,7 @@ service-stop-lowstack-all:
 	docker stack rm facs-si-ps-trims-qs-c1234-ia18; \
 	docker stack rm facs-si-ps-trims-qs-c1234-ia19; \
 	docker stack rm facs-si-ps-trims-qs-c1234-ia20; \
+	docker stack rm facs-it-ps-lens; \
 	docker stack rm facs-as-ti-general; \
 	docker stack rm facs-bo-ti-bpms-corrs; \
 	docker stack rm facs-si-ti-bpms-corrs; \

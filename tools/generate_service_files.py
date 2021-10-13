@@ -68,7 +68,7 @@ class ServiceConfig:
         'ts-ps-dips': 'lnlsfac-srv2',
         'ts-ps-quads': 'IA-20RaDiag02-CO-IOCSrv-2',
         'ts-ps-corrs': 'IA-20RaDiag02-CO-IOCSrv-2',
-        'si-ap-bl': 'IA-16RaBbB-CO-IOCSrv',     
+        'si-ap-bl': 'IA-16RaBbB-CO-IOCSrv',
         'si-id-conv': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ap-sofb': 'IA-20RaDiag01-CO-IOCSrv-2',
         'si-ps-dips': 'IA-14RaDiag03-CO-IOCSrv',
@@ -157,6 +157,7 @@ class ServiceConfig:
         'si-ps-trims-qs-c1234-ia18': 'lnlsfac-srv2',
         'si-ps-trims-qs-c1234-ia19': 'lnlsfac-srv2',
         'si-ps-trims-qs-c1234-ia20': 'CA-RaTim-CO-IOCSrv',
+        'it-ps-lens': 'lnlsfac-srv2',
         }
 
     STACKS = {
@@ -182,13 +183,13 @@ class ServiceConfig:
             'ia18': 'as-ps-dclinks-ia18',
             'ia19': 'as-ps-dclinks-ia19',
             'ia20': 'as-ps-dclinks-ia20',
-            },  
+            },
         'as-ti': {
             'general': 'as-ti-general',
             'bo-bpms-corrs': 'bo-ti-bpms-corrs',
             'si-bpms-corrs': 'si-ti-bpms-corrs',
-            'si-trims-skews': 'si-ti-trims-skews', 
-            },   
+            'si-trims-skews': 'si-ti-trims-skews',
+            },
         'bo-ps-corrs': {
             'ia01': 'bo-ps-corrs-ia01',
             'ia02': 'bo-ps-corrs-ia02',
@@ -203,7 +204,7 @@ class ServiceConfig:
             'ia16': 'bo-ps-corrs-ia16',
             'ia17': 'bo-ps-corrs-ia17',
             'ia20': 'bo-ps-corrs-ia20',
-            }, 
+            },
         'bo-ps-fams': {
             'dips': 'bo-ps-dips',
             'quads': ('bo-ps-quads', ('dips', )),
@@ -332,6 +333,9 @@ class ServiceConfig:
             'trims-qs-m12-ia19': ('si-ps-trims-qs-m12-ia19', ('dips', 'quads-qd', 'quads-qfq')),
             'trims-qs-m12-ia20': ('si-ps-trims-qs-m12-ia20', ('dips', 'quads-qd', 'quads-qfq')),
             },
+        'it-ps': {
+            'lens': 'it-ps-lens',
+            },
         }
 
 
@@ -399,14 +403,14 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + '    name: "host"'
         return strf
 
-    
+
 class DockerLowStackConfig(DockerStackConfig):
 
     def __init__(self, app, node):
         super().__init__(DockerStackConfig.IMAGE_TAG_IOCS)
         self.app = app
         self.node = node
-        
+
     def __str__(self):
 
         strf = self.str_header()
