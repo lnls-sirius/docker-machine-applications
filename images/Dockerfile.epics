@@ -13,7 +13,7 @@ RUN set -e; \
     cd lnls-ansible; \
     git checkout ${ANSIBLE_TAG}; \
     \
-    ansible-playbook --connection=local playbooks/playbook-fac-services-epics.yml
+    ansible-playbook --connection=local --inventory ./inventories/sirius --extra-vars="inventory=./inventories/sirius" playbooks/playbook-fac-services-epics.yml
 
 RUN source /etc/profile
 
