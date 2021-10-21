@@ -1,0 +1,38 @@
+ARG IMG_EPICS_TAG
+
+FROM fac-epics-python2:${IMG_EPICS_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install apt packages
+
+RUN apt-get install -y \
+    logrotate \
+    cron
+
+# Create IOC-related directories
+
+RUN mkdir -p /ioc-apps && \
+    mkdir -p /ioc-logs
+
+# Copy bash-file applications
+
+COPY apps/li-ps-*.bash /ioc-apps/
+
+# Define logrotate with cron
+
+COPY ./etc/crontab /etc/crontab
+COPY ./etc/logrotate.conf /etc/logrotate.conf
+
+# Install IOC-related lnls-sirius packages
+
+RUN cd repos && \
+    git -c http.sslVerify=false clone https://gitlab.abtlus.org.br/FACS/linac-ioc-ps && \
+    cd linac-ioc-ps && \
+    git checkout :pkg_version_linac_ioc_ps && \
+    ./setup.py install --single-version-externally-managed --compile --force --record /dev/null
+

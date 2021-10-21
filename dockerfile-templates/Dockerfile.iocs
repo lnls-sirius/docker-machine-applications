@@ -1,0 +1,43 @@
+ARG IMG_APPS_TAG
+FROM fac-apps:${IMG_APPS_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+# Create IOC-related directories
+
+RUN mkdir -p /ioc-apps && \
+    mkdir -p /ioc-logs
+
+# Copy bash-file applications
+
+COPY apps/*.bash /ioc-apps/
+
+# Install lnls-sirius packages
+
+RUN cd repos && \
+    git clone https://github.com/lnls-fac/mathphys && \
+    cd mathphys/ && \
+    git checkout :pkg_version_mathphys && \
+    python-sirius setup.py install
+
+RUN cd repos && \
+    git clone https://github.com/lnls-sirius/dev-packages && \
+    cd dev-packages/siriuspy && \
+    git checkout :pkg_version_siriuspy && \
+    make install
+
+RUN cd repos && \
+    git clone https://github.com/lnls-sirius/eth-bridge-pru-serial485 && \
+    cd eth-bridge-pru-serial485/client/ && \
+    git checkout :pkg_version_ethbridge_pru_serial && \
+    make install
+
+RUN cd repos && \
+    git clone https://github.com/lnls-sirius/machine-applications && \
+    cd machine-applications/ && \
+    git checkout :pkg_version_machine_applications && \
+    make install-scripts
+    
+

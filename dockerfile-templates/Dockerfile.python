@@ -1,0 +1,44 @@
+ARG IMG_DEBIAN_TAG
+FROM debian:${IMG_DEBIAN_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install generic apt packages
+
+RUN apt-get update && apt-get install -y \
+    apt-utils \
+    sudo \
+    procps \
+    wget \
+    iproute2 \
+    iputils-ping \
+    libreadline-dev \
+    git
+
+# Install python-related apt packages
+
+RUN apt-get install -y \
+    python3-pip \
+    python3-tk \
+    swig
+
+# Create symbolic links for the sirius environment
+
+RUN ln -s /usr/bin/python3 /usr/local/bin/python-sirius && \
+    ln -s /usr/bin/pip3 /usr/local/bin/pip-sirius && \
+    ln -s /usr/bin/python3-config /usr/local/bin/python-sirius-config
+
+# Install basic python pip packages
+
+RUN pip-sirius install \
+    numpy \
+    matplotlib
+
+# Create repos directory
+
+RUN mkdir repos
+

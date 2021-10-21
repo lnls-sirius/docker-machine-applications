@@ -1,0 +1,28 @@
+ARG IMG_EPICS_TAG
+FROM fac-epics:${IMG_EPICS_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install apt packages
+
+RUN apt-get install -y \
+    logrotate \
+    cron
+
+# Create IOC-related directories
+
+COPY ./etc/crontab /etc/crontab
+COPY ./etc/logrotate.conf /etc/logrotate.conf
+
+# Install pip-package dependencies
+
+RUN pip-sirius install \
+    aiohttp \
+    bottleneck \
+    python-dateutil
+    
+

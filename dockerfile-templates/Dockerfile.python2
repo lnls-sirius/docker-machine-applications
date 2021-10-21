@@ -1,0 +1,48 @@
+ARG IMG_DEBIAN_TAG
+FROM debian:${IMG_DEBIAN_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install generic apt packages
+
+RUN apt-get update && apt-get install -y \
+    apt-utils \
+    sudo \
+    procps \
+    wget \
+    iproute2 \
+    iputils-ping \
+    libreadline-dev \
+    git \
+    make \
+    g++
+
+# Install python-related apt packages
+
+RUN apt-get install -y \
+    python2 \
+    python2-dev \
+    swig  
+
+# Apt does not support pip2 in debian bullseye
+# Install pip version 9.0.1 in order to avoid error message
+# in newer pip versions about Python2 not being supported anymore
+
+RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py && \
+    python2 get-pip.py "pip:pkg_version_python2_pip"
+
+# Create symbolic links for sirius environment
+
+RUN ln -s /usr/bin/python2 /usr/bin/python && \
+    ln -s /usr/bin/python2 /usr/local/bin/python-sirius && \
+    ln -s /usr/local/bin/pip2 /usr/local/bin/pip-sirius && \
+    ln -s /usr/bin/python2-config /usr/local/bin/python-sirius-config
+
+# Create repos directory
+
+RUN mkdir repos
+
