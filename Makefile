@@ -64,7 +64,6 @@ image-build-fac-epics: dockerfiles-create
 	docker build -f ./deploy/Dockerfile.epics \
 		$(BUILD_CACHE) \
 		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
-		--build-arg PYTHON_VER= \
 		--build-arg IMG_PYTHON_TAG=$(IMG_PYTHON_TAG) \
 		--build-arg EPICS_BASE_TAG=$(EPICS_BASE_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
