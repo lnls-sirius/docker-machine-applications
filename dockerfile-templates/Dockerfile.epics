@@ -1,6 +1,5 @@
-ARG PYTHON_VER=
 ARG IMG_PYTHON_TAG
-FROM dockerregistry.lnls-sirius.com.br/fac/fac-python${PYTHON_VER}:${IMG_PYTHON_TAG}
+FROM dockerregistry.lnls-sirius.com.br/fac/fac-python:${IMG_PYTHON_TAG}
 
 SHELL ["bash", "-c"]
 

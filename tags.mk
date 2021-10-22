@@ -8,15 +8,13 @@ FILES_SERVER_URL ?= http://10.0.38.42/download/lnls-ansible
 # tag with EPICS base version
 EPICS_BASE_TAG ?= base-3.15.6
 
-# DEPLOY_TAG used for all docker images
+# tags used for creating docker images
+IMG_DEBIAN_TAG ?= bullseye-20211011
 DEPLOY_TAG ?= 2021-10-18_test
 
-# tags of docker images that are used by other images or used in deploy
-IMG_DEBIAN_TAG ?= bullseye-20211011
+# image tags used for starting docker services
 IMG_IOCS_LI_PS_TAG ?= 2021-10-18_test
-
-IMG_PYTHON_TAG ?= 2021-10-18_test
+IMG_PYTHON_TAG ?= 2021-10-18_test # also used as base image for fac-epics
 IMG_EPICS_TAG ?= 2021-10-18_test
 IMG_APPS_TAG ?= 2021-10-18_test
-
 IMG_IOCS_TAG ?= $(DEPLOY_TAG)
