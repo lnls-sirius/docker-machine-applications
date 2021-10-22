@@ -45,7 +45,7 @@ image-cleanup:
 
 image-pull-tag-push-debian:
 	docker pull debian:$(IMG_DEBIAN_TAG)
-	docker tag  debian:$(IMG_DEBIAN_TAG) dockerregistry.lnls-sirius.com.br/fac/fac-debian:$(IMG_DEBIAN_TAG)
+	docker tag  debian:$(IMG_DEBIAN_TAG) dockerregistry.lnls-sirius.com.br/fac/fac-debian:$(IMG_DEBIAN_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-debian:$(IMG_DEBIAN_TAG)
 
 # time: 2m35s @ 10.0.38.42
@@ -55,7 +55,7 @@ image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-deb
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEBIAN_TAG=$(IMG_DEBIAN_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
-		. -t dockerregistry.lnls-sirius.com.br/fac/fac-python:$(DEPLOY_TAG)
+		. -t dockerregistry.lnls-sirius.com.br/fac/fac-python:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-python:$(DEPLOY_TAG)
 
 # time: 1m02s @ 10.0.38.42
@@ -67,7 +67,7 @@ image-build-fac-epics: dockerfiles-create
 		--build-arg IMG_PYTHON_TAG=$(IMG_PYTHON_TAG) \
 		--build-arg EPICS_BASE_TAG=$(EPICS_BASE_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
-		. -t dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG)
+		. -t dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG)
 
 # time: 3m29s @ 10.0.38.42
@@ -77,7 +77,7 @@ image-build-fac-apps: dockerfiles-create
 		$(BUILD_CACHE) \
 		--build-arg IMG_EPICS_TAG=$(IMG_EPICS_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
-		. -t dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(DEPLOY_TAG)
+		. -t dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(DEPLOY_TAG)
 
 # time: 1m41s @ 10.0.38.42
