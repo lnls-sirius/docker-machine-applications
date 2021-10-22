@@ -15,8 +15,8 @@
 
 include tags.mk
 
-VERSION_FILE ?= https://raw.githubusercontent.com/lnls-sirius/lnls-ansible/$(LNLS_ANSIBLE_TAG)/inventories/sirius/group_vars/all
 BUILD_CACHE ?= --no-cache
+# BUILD_CACHE ?= 
 
 deploy: image-build-fac-iocs
 	# update deploy tag in tags.mk
@@ -40,38 +40,58 @@ dockerfiles-create:
 dockerfiles-destroy:
 	rm -rf ./deploy
 
+image-cleanup:
+	docker system prune --filter "label=br.com.lnls-sirius.department=FAC" --all --force
+
 # time: 2m35s @ 10.0.38.42
-image-build-fac-python: dockerfiles-create
+image-build-fac-python: image-cleanup dockerfiles-create
 	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.python > ./deploy/Dockerfile.python
 	docker build -f ./deploy/Dockerfile.python \
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEBIAN_TAG=$(IMG_DEBIAN_TAG) \
-		. -t fac-python:$(DEPLOY_TAG)
+		--label "br.com.lnls-sirius.department=FAC" \
+		. -t dockerregistry.lnls-sirius.com.br/fac/fac-python:$(DEPLOY_TAG)
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-python:$(DEPLOY_TAG)
 
 # time: 1m02s @ 10.0.38.42
 image-build-fac-epics: dockerfiles-create
 	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.epics > ./deploy/Dockerfile.epics
+	-docker pull dockerregistry.lnls-sirius.com.br/fac/fac-python:$(IMG_PYTHON_TAG)
+	-docker pull dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG)
 	docker build -f ./deploy/Dockerfile.epics \
 		$(BUILD_CACHE) \
+		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
 		--build-arg PYTHON_VER= \
 		--build-arg IMG_PYTHON_TAG=$(IMG_PYTHON_TAG) \
 		--build-arg EPICS_BASE_TAG=$(EPICS_BASE_TAG) \
-		. -t fac-epics:$(DEPLOY_TAG)
+		--label "br.com.lnls-sirius.department=FAC" \
+		. -t dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG)
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG)
 
 # time: 3m29s @ 10.0.38.42
 image-build-fac-apps: dockerfiles-create
 	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.apps > ./deploy/Dockerfile.apps
+	-docker pull dockerregistry.lnls-sirius.com.br/fac/fac-python:$(IMG_PYTHON_TAG)
+	-docker pull dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(IMG_EPICS_TAG)
+	-docker pull dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(DEPLOY_TAG)
 	docker build -f ./deploy/Dockerfile.apps \
 		$(BUILD_CACHE) \
 		--build-arg IMG_EPICS_TAG=$(IMG_EPICS_TAG) \
-		. -t fac-apps:$(DEPLOY_TAG)
+		--label "br.com.lnls-sirius.department=FAC" \
+		. -t dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(DEPLOY_TAG)
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(DEPLOY_TAG)
 
 # time: 1m41s @ 10.0.38.42
-image-build-fac-iocs: dockerfiles-create
+image-build-fac-iocs: image-cleanup dockerfiles-create
 	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.iocs > ./deploy/Dockerfile.iocs
+# -docker pull dockerregistry.lnls-sirius.com.br/fac/fac-python:$(IMG_PYTHON_TAG)
+# -docker pull dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(IMG_EPICS_TAG)
+# -docker pull dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(IMG_APPS_TAG)
+# -docker pull dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(DEPLOY_TAG)
 	docker build -f ./deploy/Dockerfile.iocs \
 		$(BUILD_CACHE) \
 		--build-arg IMG_APPS_TAG=$(IMG_APPS_TAG) \
+		--label "br.com.lnls-sirius.department=FAC" \
 		. -t dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(DEPLOY_TAG)
 
@@ -83,15 +103,19 @@ image-build-fac-iocs-li-ps: dockerfiles-create
 	docker build -f ./deploy/Dockerfile.python2 \
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEBIAN_TAG=$(IMG_DEBIAN_TAG) \
+		--label "br.com.lnls-sirius.department=FAC" \
 		. -t fac-python2:$(DEPLOY_TAG) && \
 	docker build -f ./deploy/Dockerfile.epics-python2 \
 		$(BUILD_CACHE) \
+		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
 		--build-arg IMG_PYTHON2_TAG=$(DEPLOY_TAG) \
 		--build-arg EPICS_BASE_TAG=$(EPICS_BASE_TAG) \
+		--label "br.com.lnls-sirius.department=FAC" \
 		. -t fac-epics-python2:$(DEPLOY_TAG) && \
 	docker build -f ./deploy/Dockerfile.iocs-li-ps \
 		$(BUILD_CACHE) \
 		--build-arg IMG_EPICS_TAG=$(DEPLOY_TAG) \
+		--label "br.com.lnls-sirius.department=FAC" \
 		. -t dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:$(DEPLOY_TAG)
 
@@ -144,12 +168,6 @@ service-start-as-ps-dclinks:
 	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-as-ps-dclinks.yml; \
 	docker stack deploy -c docker-stack-as-ps-dclinks.yml facs-as-ps-dclinks; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-as-ps-dclinks.yml
-
-service-start-li-ps:
-	cd services; \
-	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-li-ps.yml; \
-	docker stack deploy -c docker-stack-li-ps.yml facs-li-ps; \
-	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-li-ps.yml
 
 service-start-tb-ps:
 	cd services; \
@@ -256,10 +274,6 @@ service-start-as-ap-machshift:
 service-stop-as-ps-dclinks:
 	cd services; \
 	docker stack rm facs-as-ps-dclinks
-
-service-stop-li-ps:
-	cd services; \
-	docker stack rm facs-li-ps
 
 service-stop-tb-ps:
 	cd services; \

@@ -32,7 +32,9 @@ RUN apt-get install -y \
 # Install pip version 9.0.1 in order to avoid error message
 # in newer pip versions about Python2 not being supported anymore
 
-RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py && \
+ARG FILES_SERVER_URL
+# RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py && \
+RUN wget ${FILES_SERVER_URL}/get_pip/get-pip.py && \
     python2 get-pip.py "pip:pkg_version_python2_pip"
 
 # Create symbolic links for sirius environment

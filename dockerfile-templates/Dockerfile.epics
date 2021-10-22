@@ -1,16 +1,17 @@
 ARG PYTHON_VER=
 ARG IMG_PYTHON_TAG
-FROM fac-python${PYTHON_VER}:${IMG_PYTHON_TAG}
+FROM dockerregistry.lnls-sirius.com.br/fac/fac-python${PYTHON_VER}:${IMG_PYTHON_TAG}
 
 SHELL ["bash", "-c"]
 
 WORKDIR /opt
 
-# # Install EPICS-base package from tarball
+# Install EPICS-base package from tarball
 
+ARG FILES_SERVER_URL
 ARG EPICS_BASE_TAG
 RUN cd repos && \
-    wget https://epics.anl.gov/download/base/${EPICS_BASE_TAG}.tar.gz  && \
+    wget ${FILES_SERVER_URL}/${EPICS_BASE_TAG}.tar.gz  && \
     tar xzf ${EPICS_BASE_TAG}.tar.gz && \
     rm -rf ${EPICS_BASE_TAG}.tar.gz && \
     cd ${EPICS_BASE_TAG} && make -j8 && make clean
