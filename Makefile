@@ -120,32 +120,19 @@ image-build-fac-iocs-li-ps: dockerfiles-create
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:$(DEPLOY_TAG)
 
 image-runbash-fac-python:
-	docker run -it --network host fac-python:$(DEPLOY_TAG)
+	docker run -it --rm --network host dockerregistry.lnls-sirius.com.br/fac/fac-python:$(DEPLOY_TAG)
 
 image-runbash-fac-epics:
-	docker run -it --network host fac-epics:$(DEPLOY_TAG)
+	docker run -it --rm --network host dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG)
 
 image-runbash-fac-apps:
-	docker run -it --network host fac-apps:$(DEPLOY_TAG)
+	docker run -it --rm --network host dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(DEPLOY_TAG)
 
 image-runbash-fac-iocs:
-	docker run -it --network host fac-iocs:$(DEPLOY_TAG)
+	docker run -it --rm --network host dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(DEPLOY_TAG)
 
 image-runbash-fac-iocs-li-ps:
-	docker run -it --network host fac-iocs-li-ps:$(DEPLOY_TAG)
-
-run-test:
-	docker run --rm -it \
-   --user=$(id -u) \
-   --env="DISPLAY" \
-   --workdir=/app \
-   --volume="$PWD":/app \
-   --volume="/etc/group:/etc/group:ro" \
-   --volume="/etc/passwd:/etc/passwd:ro" \
-   --volume="/etc/shadow:/etc/shadow:ro" \
-   --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
-   --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-   --network host fac-python:$(DEPLOY_TAG)
+	docker run -it --rm --network host dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:$(DEPLOY_TAG)
 
 
 # --- individual service stacks ---

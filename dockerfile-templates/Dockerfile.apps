@@ -23,6 +23,8 @@ COPY ./etc/logrotate.conf /etc/logrotate.conf
 RUN pip-sirius install \
     aiohttp \
     bottleneck \
-    python-dateutil
+    python-dateutil \
+    pyvisa \
+    pyvisa_py
     
 
