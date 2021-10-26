@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   spect-quads-lens:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:__FAC_IOC_LI_PS_TAG_TEMPLATE__
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-spect-quads-lens.bash'
     deploy:
       placement:
@@ -21,7 +21,7 @@ services:
       - ioc-network
 
   corrs:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:__FAC_IOC_LI_PS_TAG_TEMPLATE__
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-corrs.bash'
     deploy:
       placement:
@@ -39,7 +39,7 @@ services:
       - ioc-network
 
   slnds:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:__FAC_IOC_LI_PS_TAG_TEMPLATE__
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/li-ps-slnds.bash'
     deploy:
       placement:

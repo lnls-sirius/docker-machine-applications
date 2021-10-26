@@ -39,5 +39,5 @@ RUN cd repos && \
     cd machine-applications/ && \
     git checkout :pkg_version_machine_applications && \
     make install-scripts
-    
 
+ENV EPICS_CA_ADDR_LIST="10.128.1.12:5064 10.128.1.12:5070 10.128.1.54:5064 10.128.1.55:5064 10.128.1.13:5064 10.128.1.13:5068 10.128.1.13:5070"

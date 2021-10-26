@@ -25,6 +25,6 @@ RUN pip-sirius install \
     bottleneck \
     python-dateutil \
     pyvisa \
-    pyvisa_py
-    
-
+    pyvisa_py \
+    urllib3 \
+    scipy
