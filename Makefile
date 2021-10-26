@@ -16,7 +16,7 @@
 include tags.mk
 
 BUILD_CACHE ?= --no-cache
-# BUILD_CACHE ?= 
+# BUILD_CACHE ?=
 
 deploy: image-build-fac-iocs
 	# update deploy tag in tags.mk
@@ -98,12 +98,14 @@ image-build-fac-iocs-li-ps: image-cleanup dockerfiles-create image-pull-tag-push
 	docker build -f ./deploy/Dockerfile.python2 \
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEBIAN_TAG=$(IMG_DEBIAN_TAG) \
+		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
+		--build-arg EPICS_BASE_TAG=$(EPICS_BASE_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
 		. -t fac-python2 && \
 	docker build -f ./deploy/Dockerfile.epics-python2 \
 		$(BUILD_CACHE) \
-		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
 		--build-arg IMG_PYTHON2_TAG=$(DEPLOY_TAG) \
+		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
 		--build-arg EPICS_BASE_TAG=$(EPICS_BASE_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
 		. -t fac-epics-python2 && \
@@ -378,5 +380,3 @@ service-stop-all:
 	docker stack rm facs-si-ap-bl; \
 	docker stack rm facs-si-id-conv; \
 	docker stack rm facs-as-ap-machshift
-
-

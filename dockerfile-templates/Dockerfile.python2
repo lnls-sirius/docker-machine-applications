@@ -1,5 +1,5 @@
 ARG IMG_DEBIAN_TAG
-FROM dockerregistry.lnls-sirius.com.br/debian:${IMG_DEBIAN_TAG}
+FROM dockerregistry.lnls-sirius.com.br/fac/debian:${IMG_DEBIAN_TAG}
 
 SHELL ["bash", "-c"]
 
@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y \
     python2 \
     python2-dev \
-    swig  
+    swig
 
 # Apt does not support pip2 in debian bullseye
 # Install pip version 9.0.1 in order to avoid error message
@@ -47,4 +47,3 @@ RUN ln -s /usr/bin/python2 /usr/bin/python && \
 # Create repos directory
 
 RUN mkdir repos
-

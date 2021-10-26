@@ -9,19 +9,19 @@ WORKDIR /opt
 # # Install EPICS base package from tarball
 
 ARG FILES_SERVER_URL
-ARG EPICS_BASE
+ARG EPICS_BASE_TAG
 RUN cd repos && \
-    wget ${FILES_SERVER_URL}/${EPICS_BASE}.tar.gz  && \
-    tar xzf ${EPICS_BASE}.tar.gz && \
-    rm -rf ${EPICS_BASE}.tar.gz && \
-    cd ${EPICS_BASE} && make -j8 && make clean
+    wget ${FILES_SERVER_URL}/${EPICS_BASE_TAG}.tar.gz  && \
+    tar xzf ${EPICS_BASE_TAG}.tar.gz && \
+    rm -rf ${EPICS_BASE_TAG}.tar.gz && \
+    cd ${EPICS_BASE_TAG} && make -j8 && make clean
 
 # Set environment variables (needed before pyepics and pcaspy)
 
-ARG EPICS_BASE
-ENV PATH="${PATH}:/opt/repos/${EPICS_BASE}/bin/linux-x86_64" \
-    PYEPICS_LIBCA=/opt/repos/${EPICS_BASE}/lib/linux-x86_64/lib/lica.so \
-    EPICS_BASE=/opt/repos/${EPICS_BASE} \
+ARG EPICS_BASE_TAG
+ENV PATH="${PATH}:/opt/repos/${EPICS_BASE_TAG}/bin/linux-x86_64" \
+    PYEPICS_LIBCA=/opt/repos/${EPICS_BASE_TAG}/lib/linux-x86_64/lib/lica.so \
+    EPICS_BASE=/opt/repos/${EPICS_BASE_TAG} \
     EPICS_HOST_ARCH=linux-x86_64
 
 # Install epics-related pip packages
