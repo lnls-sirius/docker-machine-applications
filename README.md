@@ -8,17 +8,17 @@ There are five docker images for creating the final image for FAC services:
 
 1. _fac-python_: Python3 image based on debian:$(IMG_DEBIAN_TAG) image
 2. _fac-epics_: _fac-python_ and epics base package defined in $(EPICS_BASE_TAG)
-3. _fac-apps_: _fac-epics_ and IOC packages dependencies
-4. _fac-iocs_: _fac-apps_ and sirius packages for IOCs and bash script entry-points
+3. _fac-deps_: _fac-epics_ and IOC packages dependencies
+4. _fac-iocs_: _fac-deps_ and sirius packages for IOCs and bash script entry-points
 5. _fac-iocs-li-ps_: linac power supply IOC images.
 ## Build
 
-Image tags and package versions can be edited in files _tags.mk_ and _pkg-versionx.txt_. 
+Image tags and package versions can be edited in files _tags.mk_ and _pkg-versionx.txt_.
 
 Docker images can be built locally with makefile targets:
 1. image-build-fac-python
 2. image-build-fac-epics
-3. image-build-fac-apps
+3. image-build-fac-deps
 4. image-build-fac-iocs (IOC image)
 5. image-build-fac-iocs-li-ps (IOC image)
 

@@ -71,21 +71,21 @@ image-build-fac-epics: dockerfiles-create
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG)
 
 # time: 3m29s @ 10.0.38.42
-image-build-fac-apps: dockerfiles-create
-	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.apps > ./deploy/Dockerfile.apps
-	docker build -f ./deploy/Dockerfile.apps \
+image-build-fac-deps: dockerfiles-create
+	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.deps > ./deploy/Dockerfile.deps
+	docker build -f ./deploy/Dockerfile.deps \
 		$(BUILD_CACHE) \
 		--build-arg IMG_EPICS_TAG=$(IMG_EPICS_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
-		. -t dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(DEPLOY_TAG) && \
-	docker push dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(DEPLOY_TAG)
+		. -t dockerregistry.lnls-sirius.com.br/fac/fac-deps:$(DEPLOY_TAG) && \
+	docker push dockerregistry.lnls-sirius.com.br/fac/fac-deps:$(DEPLOY_TAG)
 
 # time: 1m41s @ 10.0.38.42
 image-build-fac-iocs: image-cleanup dockerfiles-create
 	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.iocs > ./deploy/Dockerfile.iocs
 	docker build -f ./deploy/Dockerfile.iocs \
 		$(BUILD_CACHE) \
-		--build-arg IMG_APPS_TAG=$(IMG_APPS_TAG) \
+		--build-arg IMG_DEPS_TAG=$(IMG_DEPS_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
 		. -t dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(DEPLOY_TAG)
@@ -122,8 +122,8 @@ image-runbash-fac-python:
 image-runbash-fac-epics:
 	docker run -it --rm --network host dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG)
 
-image-runbash-fac-apps:
-	docker run -it --rm --network host dockerregistry.lnls-sirius.com.br/fac/fac-apps:$(DEPLOY_TAG)
+image-runbash-fac-deps:
+	docker run -it --rm --network host dockerregistry.lnls-sirius.com.br/fac/fac-deps:$(DEPLOY_TAG)
 
 image-runbash-fac-iocs:
 	docker run -it --rm --network host dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(DEPLOY_TAG)
