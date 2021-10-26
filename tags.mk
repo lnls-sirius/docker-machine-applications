@@ -16,5 +16,5 @@ DEPLOY_TAG ?= 2021-10-18_test
 IMG_IOCS_LI_PS_TAG ?= 2021-10-18_test
 IMG_PYTHON_TAG ?= 2021-10-18_test # also used as base image for fac-epics
 IMG_EPICS_TAG ?= 2021-10-18_test
-IMG_APPS_TAG ?= 2021-10-18_test
+IMG_DEPS_TAG ?= 2021-10-18_test
 IMG_IOCS_TAG ?= $(DEPLOY_TAG)
