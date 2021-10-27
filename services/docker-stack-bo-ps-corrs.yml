@@ -5,6 +5,8 @@ services:
   ia01:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia01.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -23,6 +25,8 @@ services:
   ia02:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia02.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -41,6 +45,8 @@ services:
   ia04:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia04.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -59,6 +65,8 @@ services:
   ia05:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia05.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -77,6 +85,8 @@ services:
   ia07:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia07.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -95,6 +105,8 @@ services:
   ia08:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia08.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -113,6 +125,8 @@ services:
   ia10:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia10.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -131,6 +145,8 @@ services:
   ia11:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia11.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -149,6 +165,8 @@ services:
   ia13:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia13.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -167,6 +185,8 @@ services:
   ia14:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia14.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -185,6 +205,8 @@ services:
   ia16:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia16.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -203,6 +225,8 @@ services:
   ia17:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia17.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -221,6 +245,8 @@ services:
   ia20:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia20.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
