@@ -5,6 +5,8 @@ services:
   tbts-bodip:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-tbts-bodip.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -23,6 +25,8 @@ services:
   ia01:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia01.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -41,6 +45,8 @@ services:
   ia02:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia02.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -59,6 +65,8 @@ services:
   ia03:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia03.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -77,6 +85,8 @@ services:
   ia04:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia04.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -95,6 +105,8 @@ services:
   ia05:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia05.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -113,6 +125,8 @@ services:
   ia06:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia06.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -131,6 +145,8 @@ services:
   ia07:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia07.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -149,6 +165,8 @@ services:
   ia08:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia08.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -167,6 +185,8 @@ services:
   ia09:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia09.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -185,6 +205,8 @@ services:
   ia10:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia10.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -203,6 +225,8 @@ services:
   ia11:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia11.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -221,6 +245,8 @@ services:
   ia12:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia12.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -239,6 +265,8 @@ services:
   ia13:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia13.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -257,6 +285,8 @@ services:
   ia14:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia14.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -275,6 +305,8 @@ services:
   ia15:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia15.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -293,6 +325,8 @@ services:
   ia16:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia16.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -311,6 +345,8 @@ services:
   ia17:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia17.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -329,6 +365,8 @@ services:
   ia18:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia18.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -347,6 +385,8 @@ services:
   ia19:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia19.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
@@ -365,6 +405,8 @@ services:
   ia20:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c 'source /etc/profile && /ioc-apps/as-ps-dclinks-ia20.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
