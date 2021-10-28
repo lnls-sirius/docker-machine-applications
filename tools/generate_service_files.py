@@ -359,7 +359,7 @@ class DockerStackConfig(ServiceConfig):
 
     @staticmethod
     def get_command(app):
-        strf = "bash -c 'source /etc/profile && /ioc-apps/" + app + ".bash'"
+        strf = "bash -c '/ioc-apps/" + app + ".bash'"
         return strf
 
     def str_header(self):
