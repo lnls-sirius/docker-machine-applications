@@ -4,7 +4,7 @@ services:
 
   iocs:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia11.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia11.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:

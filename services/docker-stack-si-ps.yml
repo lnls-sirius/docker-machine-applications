@@ -4,7 +4,7 @@ services:
 
   dips:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-dips.bash'
+    command: bash -c '/ioc-apps/si-ps-dips.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -26,7 +26,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-quads-qd.bash'
+    command: bash -c '/ioc-apps/si-ps-quads-qd.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -48,7 +48,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-quads-qfq.bash'
+    command: bash -c '/ioc-apps/si-ps-quads-qfq.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -70,7 +70,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-sexts-sda12b2-sfa0p0-sda0p0.bash'
+    command: bash -c '/ioc-apps/si-ps-sexts-sda12b2-sfa0p0-sda0p0.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -92,7 +92,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-sexts-sfa12-sda3p1-sfb0-sdb01.bash'
+    command: bash -c '/ioc-apps/si-ps-sexts-sfa12-sda3p1-sfb0-sdb01.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -114,7 +114,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-sexts-sfb12-sdb3-sfp12-sdp23.bash'
+    command: bash -c '/ioc-apps/si-ps-sexts-sfb12-sdb3-sfp12-sdp23.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -136,7 +136,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia01.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia01.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -158,7 +158,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia02.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia02.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -180,7 +180,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia03.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia03.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -202,7 +202,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia04.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia04.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -224,7 +224,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia05.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia05.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -246,7 +246,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia06.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia06.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -268,7 +268,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia07.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia07.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -290,7 +290,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia08.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia08.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -312,7 +312,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia09.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia09.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -334,7 +334,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia10.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia10.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -356,7 +356,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia11.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia11.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -378,7 +378,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia12.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia12.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -400,7 +400,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia13.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia13.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -422,7 +422,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia14.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia14.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -444,7 +444,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia15.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia15.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -466,7 +466,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia16.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia16.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -488,7 +488,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia17.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia17.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -510,7 +510,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia18.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia18.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -532,7 +532,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia19.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia19.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -554,7 +554,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c2m12-ia20.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c2m12-ia20.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -576,7 +576,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia01.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia01.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -598,7 +598,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia02.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia02.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -620,7 +620,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia03.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia03.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -642,7 +642,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia04.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia04.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -664,7 +664,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia05.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia05.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -686,7 +686,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia06.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia06.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -708,7 +708,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia07.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia07.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -730,7 +730,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia08.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia08.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -752,7 +752,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia09.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia09.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -774,7 +774,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia10.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia10.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -796,7 +796,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia11.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia11.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -818,7 +818,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia12.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia12.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -840,7 +840,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia13.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia13.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -862,7 +862,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia14.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia14.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -884,7 +884,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia15.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia15.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -906,7 +906,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia16.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia16.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -928,7 +928,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia17.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia17.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -950,7 +950,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia18.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia18.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -972,7 +972,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia19.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia19.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -994,7 +994,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-corrs-c134-ia20.bash'
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia20.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1018,7 +1018,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia01.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia01.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1042,7 +1042,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia02.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia02.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1066,7 +1066,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia03.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia03.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1090,7 +1090,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia04.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia04.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1114,7 +1114,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia05.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia05.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1138,7 +1138,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia06.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia06.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1162,7 +1162,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia07.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia07.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1186,7 +1186,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia08.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia08.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1210,7 +1210,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia09.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia09.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1234,7 +1234,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia10.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia10.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1258,7 +1258,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia11.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia11.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1282,7 +1282,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia12.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia12.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1306,7 +1306,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia13.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia13.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1330,7 +1330,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia14.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia14.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1354,7 +1354,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia15.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia15.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1378,7 +1378,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia16.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia16.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1402,7 +1402,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia17.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia17.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1426,7 +1426,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia18.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia18.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1450,7 +1450,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia19.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia19.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1474,7 +1474,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-c1234-ia20.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia20.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1498,7 +1498,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia01.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia01.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1522,7 +1522,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia02.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia02.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1546,7 +1546,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia03.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia03.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1570,7 +1570,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia04.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia04.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1594,7 +1594,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia05.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia05.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1618,7 +1618,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia06.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia06.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1642,7 +1642,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia07.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia07.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1666,7 +1666,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia08.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia08.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1690,7 +1690,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia09.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia09.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1714,7 +1714,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia10.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia10.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1738,7 +1738,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia11.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia11.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1762,7 +1762,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia12.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia12.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1786,7 +1786,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia13.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia13.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1810,7 +1810,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia14.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia14.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1834,7 +1834,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia15.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia15.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1858,7 +1858,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia16.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia16.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1882,7 +1882,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia17.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia17.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1906,7 +1906,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia18.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia18.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1930,7 +1930,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia19.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia19.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -1954,7 +1954,7 @@ services:
       - "dips"
       - "quads-qd"
       - "quads-qfq"
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ps-trims-qs-m12-ia20.bash'
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia20.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
