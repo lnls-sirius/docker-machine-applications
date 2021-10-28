@@ -378,6 +378,8 @@ class DockerStackConfig(ServiceConfig):
                 strf += '\n' + '      - "' + item + '"'
         if 'CSCONSTS' not in self.image_tag:
             strf += '\n' + '    command: ' + DockerStackConfig.get_command(app)
+        strf += '\n' + '    volumes:'
+        strf += '\n' + '      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"'
         strf += '\n' + '    deploy:'
         strf += '\n' + '      placement:'
         strf += '\n' + '        constraints:'
