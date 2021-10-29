@@ -16,17 +16,19 @@
 include tags.mk
 
 BUILD_CACHE ?= --no-cache
+
 # BUILD_CACHE ?=
 
-deploy: image-build-fac-iocs
-	# update deploy tag in tags.mk
-	sed -i "s/DEPLOY_TAG ?= .*/DEPLOY_TAG ?= $(DEPLOY_TAG)/g" ./tags.mk
+deploy: tags-update-deploy image-build-fac-iocs
 
 tags-pkg-versions:
 	vi pkg-versions.txt
 
 tags-update:
 	vi tags.mk
+
+tags-update-deploy:
+	sed -i "s/DEPLOY_TAG ?= .*/DEPLOY_TAG ?= $(DEPLOY_TAG)/g" ./tags.mk
 
 dockerfiles-create:
 	mkdir -p ./deploy
