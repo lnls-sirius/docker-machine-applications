@@ -1,6 +1,4 @@
-
-ARG IMG_PYTHON2_TAG
-FROM fac-python2:${IMG_PYTHON2_TAG}
+FROM fac-python2
 
 SHELL ["bash", "-c"]
 

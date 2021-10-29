@@ -1,22 +1,6 @@
-# Deploy:
-#
-# 0. make tags-pkg-versions         # Update forced package tags (optional)
-# 1. make tags-update               # Update image and repo tags
-#
-# IOC image:
-#
-# 2. make image-build-fac-python
-# 3. make image-build-fac-epics
-# 4. make image-build-fac-iocs
-#
-# Linac PS IOC image:
-#
-# 5. make image-build-fac-ioc-li-ps
-
 include tags.mk
 
 BUILD_CACHE ?= --no-cache
-
 # BUILD_CACHE ?=
 
 deploy: tags-update-deploy image-build-fac-iocs
@@ -101,19 +85,16 @@ image-build-fac-iocs-li-ps: image-cleanup dockerfiles-create image-pull-tag-push
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEBIAN_TAG=$(IMG_DEBIAN_TAG) \
 		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
-		--build-arg EPICS_BASE_TAG=$(EPICS_BASE_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
 		. -t fac-python2 && \
 	docker build -f ./deploy/Dockerfile.epics-python2 \
 		$(BUILD_CACHE) \
-		--build-arg IMG_PYTHON2_TAG=$(DEPLOY_TAG) \
 		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
 		--build-arg EPICS_BASE_TAG=$(EPICS_BASE_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
 		. -t fac-epics-python2 && \
 	docker build -f ./deploy/Dockerfile.iocs-li-ps \
 		$(BUILD_CACHE) \
-		--build-arg IMG_EPICS_TAG=$(DEPLOY_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
 		. -t dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:$(DEPLOY_TAG)

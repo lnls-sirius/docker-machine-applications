@@ -1,6 +1,4 @@
-ARG IMG_EPICS_TAG
-
-FROM fac-epics-python2:${IMG_EPICS_TAG}
+FROM fac-epics-python2
 
 SHELL ["bash", "-c"]
 
