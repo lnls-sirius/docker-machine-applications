@@ -15,16 +15,16 @@ tags-update-deploy:
 	sed -i "s/DEPLOY_TAG ?= .*/DEPLOY_TAG ?= $(DEPLOY_TAG)/g" ./tags.mk
 
 dockerfiles-create:
-	mkdir -p ./deploy
-	echo $(IMG_DEBIAN_TAG) > ./deploy/IMG_DEBIAN_TAG
-	echo $(LNLS_ANSIBLE_TAG) > ./deploy/LNLS_ANSIBLE_TAG
-	curl $(VERSION_FILE) -o ./deploy/LNLS-ANSIBLE-ALL && \
-	cat ./deploy/LNLS-ANSIBLE-ALL | grep "^pkg_" | sed "s/://g" | sed 's/"//g' > ./deploy/PKG-VERSIONS && \
-	cat ./deploy/PKG-VERSIONS > ./deploy/REPLACE-RULES
-	cat ./pkg-versions.txt >> ./deploy/REPLACE-RULES
+	mkdir -p ./deploy-files
+	echo $(IMG_DEBIAN_TAG) > ./deploy-files/IMG_DEBIAN_TAG
+	echo $(LNLS_ANSIBLE_TAG) > ./deploy-files/LNLS_ANSIBLE_TAG
+	curl $(VERSION_FILE) -o ./deploy-files/LNLS-ANSIBLE-ALL && \
+	cat ./deploy-files/LNLS-ANSIBLE-ALL | grep "^pkg_" | sed "s/://g" | sed 's/"//g' > ./deploy-files/PKG-VERSIONS && \
+	cat ./deploy-files/PKG-VERSIONS > ./deploy-files/REPLACE-RULES
+	cat ./pkg-versions.txt >> ./deploy-files/REPLACE-RULES
 
 dockerfiles-destroy:
-	rm -rf ./deploy
+	rm -rf ./deploy-files
 
 image-cleanup:
 	docker system prune --filter "label=br.com.lnls-sirius.department=FAC" --all --force
@@ -36,8 +36,8 @@ image-pull-tag-push-debian:
 
 # time: 2m35s @ 10.0.38.42
 image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-debian
-	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.python > ./deploy/Dockerfile.python
-	docker build -f ./deploy/Dockerfile.python \
+	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python > ./deploy-files/Dockerfile.python
+	docker build -f ./deploy-files/Dockerfile.python \
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEBIAN_TAG=$(IMG_DEBIAN_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
@@ -46,8 +46,8 @@ image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-deb
 
 # time: 1m02s @ 10.0.38.42
 image-build-fac-epics: dockerfiles-create
-	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.epics > ./deploy/Dockerfile.epics
-	docker build -f ./deploy/Dockerfile.epics \
+	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics > ./deploy-files/Dockerfile.epics
+	docker build -f ./deploy-files/Dockerfile.epics \
 		$(BUILD_CACHE) \
 		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
 		--build-arg IMG_PYTHON_TAG=$(IMG_PYTHON_TAG) \
@@ -58,8 +58,8 @@ image-build-fac-epics: dockerfiles-create
 
 # time: 3m29s @ 10.0.38.42
 image-build-fac-deps: dockerfiles-create
-	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.deps > ./deploy/Dockerfile.deps
-	docker build -f ./deploy/Dockerfile.deps \
+	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.deps > ./deploy-files/Dockerfile.deps
+	docker build -f ./deploy-files/Dockerfile.deps \
 		$(BUILD_CACHE) \
 		--build-arg IMG_EPICS_TAG=$(IMG_EPICS_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
@@ -68,8 +68,8 @@ image-build-fac-deps: dockerfiles-create
 
 # time: 1m41s @ 10.0.38.42
 image-build-fac-iocs: image-cleanup dockerfiles-create
-	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.iocs > ./deploy/Dockerfile.iocs
-	docker build -f ./deploy/Dockerfile.iocs \
+	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.iocs > ./deploy-files/Dockerfile.iocs
+	docker build -f ./deploy-files/Dockerfile.iocs \
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEPS_TAG=$(IMG_DEPS_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
@@ -78,22 +78,22 @@ image-build-fac-iocs: image-cleanup dockerfiles-create
 
 # time: 3m21s @ 10.0.38.42
 image-build-fac-iocs-li-ps: image-cleanup dockerfiles-create image-pull-tag-push-debian
-	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.python2 > ./deploy/Dockerfile.python2
-	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.epics-python2 > ./deploy/Dockerfile.epics-python2
-	python ./tools/replace_versions.py ./deploy/REPLACE-RULES dockerfile-templates/Dockerfile.iocs-li-ps > ./deploy/Dockerfile.iocs-li-ps
-	docker build -f ./deploy/Dockerfile.python2 \
+	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python2 > ./deploy-files/Dockerfile.python2
+	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics-python2 > ./deploy-files/Dockerfile.epics-python2
+	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.iocs-li-ps > ./deploy-files/Dockerfile.iocs-li-ps
+	docker build -f ./deploy-files/Dockerfile.python2 \
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEBIAN_TAG=$(IMG_DEBIAN_TAG) \
 		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
 		--label "br.com.lnls-sirius.department=FAC" \
 		. -t fac-python2 && \
-	docker build -f ./deploy/Dockerfile.epics-python2 \
+	docker build -f ./deploy-files/Dockerfile.epics-python2 \
 		$(BUILD_CACHE) \
 		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
 		--build-arg EPICS_BASE_TAG=$(EPICS_BASE_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
 		. -t fac-epics-python2 && \
-	docker build -f ./deploy/Dockerfile.iocs-li-ps \
+	docker build -f ./deploy-files/Dockerfile.iocs-li-ps \
 		$(BUILD_CACHE) \
 		--label "br.com.lnls-sirius.department=FAC" \
 		. -t dockerregistry.lnls-sirius.com.br/fac/fac-iocs-li-ps:$(DEPLOY_TAG) && \
@@ -309,6 +309,7 @@ service-stop-si-id-conv:
 service-stop-as-ap-machshift:
 	cd services; \
 	docker stack rm facs-as-ap-machshift
+
 
 
 
