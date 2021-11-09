@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y \
     iproute2 \
     iputils-ping \
     libreadline-dev \
-    git
+    git \
+    nano
 
 # Install python-related apt packages
 
@@ -41,4 +42,3 @@ RUN pip-sirius install \
 # Create repos directory
 
 RUN mkdir repos
-
