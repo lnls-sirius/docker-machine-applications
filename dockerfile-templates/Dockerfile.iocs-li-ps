@@ -29,7 +29,7 @@ COPY ./etc/logrotate.conf /etc/logrotate.conf
 # Install IOC-related lnls-sirius packages
 
 RUN cd repos && \
-    git -c http.sslVerify=false clone https://gitlab.abtlus.org.br/FACS/linac-ioc-ps && \
+    git -c http.sslVerify=false clone https://gitlab.cnpem.br/FACS/linac-ioc-ps && \
     cd linac-ioc-ps && \
     git checkout :pkg_version_linac_ioc_ps && \
     ./setup.py install --single-version-externally-managed --compile --force --record /dev/null

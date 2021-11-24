@@ -31,8 +31,8 @@ image-cleanup:
 
 image-pull-tag-push-debian:
 	docker pull debian:$(IMG_DEBIAN_TAG)
-	docker tag  debian:$(IMG_DEBIAN_TAG) dockerregistry.lnls-sirius.com.br/fac/fac-debian:$(IMG_DEBIAN_TAG) && \
-	docker push dockerregistry.lnls-sirius.com.br/fac/fac-debian:$(IMG_DEBIAN_TAG)
+	docker tag  debian:$(IMG_DEBIAN_TAG) dockerregistry.lnls-sirius.com.br/fac/debian:$(IMG_DEBIAN_TAG) && \
+	docker push dockerregistry.lnls-sirius.com.br/fac/debian:$(IMG_DEBIAN_TAG)
 
 # time: 2m35s @ 10.0.38.42
 image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-debian
