@@ -13,6 +13,10 @@ RUN apt-get install -y \
     logrotate \
     cron
 
+# Remove apt list files
+
+# RUN rm -rf /var/lib/apt/lists/*
+
 # Create IOC-related directories
 
 COPY ./etc/crontab /etc/crontab
