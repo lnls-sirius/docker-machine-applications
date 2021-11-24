@@ -6,7 +6,7 @@ SHELL ["bash", "-c"]
 WORKDIR /opt
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV TZ=America/Sao_Paulo
+ENV TZ America/Sao_Paulo
 
 # Install generic apt packages
 
@@ -25,7 +25,8 @@ RUN apt-get update && apt-get install -y \
     g++ \
     && \
     rm -rf /var/lib/apt/lists/* && \
-    dpkg -reconfigure --frontend noninteractive tzdata
+    ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
+    dpkg-reconfigure --frontend $DEBIAN_FRONTEND tzdata
 
 # Install python-related apt packages
 
