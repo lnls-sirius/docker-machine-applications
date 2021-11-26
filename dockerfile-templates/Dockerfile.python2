@@ -8,6 +8,13 @@ WORKDIR /opt
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ America/Sao_Paulo
 
+# Configure apt proxy
+
+ARG APT_PROXY_SERVER=10.0.38.42:3142
+RUN \
+    echo "Acquire::http { Proxy \"http://${APT_PROXY_SERVER}\"; }" > /etc/apt/apt.conf.d/proxy ;\
+    echo "Acquire::https::proxy \"DIRECT\";" >> /etc/apt/apt.conf.d/proxy
+
 # Install generic apt packages
 
 RUN apt-get update && apt-get install -y \
