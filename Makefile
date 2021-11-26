@@ -34,7 +34,7 @@ image-pull-tag-push-debian:
 	docker tag  debian:$(IMG_DEBIAN_TAG) dockerregistry.lnls-sirius.com.br/fac/debian:$(IMG_DEBIAN_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/debian:$(IMG_DEBIAN_TAG)
 
-# time: 2m35s @ 10.0.38.42
+# time: 4m0s @ 10.0.38.42
 image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-debian
 	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python > ./deploy-files/Dockerfile.python
 	docker build -f ./deploy-files/Dockerfile.python \
@@ -44,7 +44,7 @@ image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-deb
 		. -t dockerregistry.lnls-sirius.com.br/fac/fac-python:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-python:$(DEPLOY_TAG)
 
-# time: 1m02s @ 10.0.38.42
+# time: 1m11s @ 10.0.38.42
 image-build-fac-epics: dockerfiles-create
 	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics > ./deploy-files/Dockerfile.epics
 	docker build -f ./deploy-files/Dockerfile.epics \
@@ -56,7 +56,7 @@ image-build-fac-epics: dockerfiles-create
 		. -t dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-epics:$(DEPLOY_TAG)
 
-# time: 3m29s @ 10.0.38.42
+# time: 4m5s @ 10.0.38.42
 image-build-fac-deps: dockerfiles-create
 	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.deps > ./deploy-files/Dockerfile.deps
 	docker build -f ./deploy-files/Dockerfile.deps \
@@ -66,7 +66,7 @@ image-build-fac-deps: dockerfiles-create
 		. -t dockerregistry.lnls-sirius.com.br/fac/fac-deps:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-deps:$(DEPLOY_TAG)
 
-# time: 1m41s @ 10.0.38.42
+# time: 1m59s @ 10.0.38.42
 image-build-fac-iocs: image-cleanup dockerfiles-create
 	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.iocs > ./deploy-files/Dockerfile.iocs
 	docker build -f ./deploy-files/Dockerfile.iocs \
@@ -76,7 +76,7 @@ image-build-fac-iocs: image-cleanup dockerfiles-create
 		. -t dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(DEPLOY_TAG) && \
 	docker push dockerregistry.lnls-sirius.com.br/fac/fac-iocs:$(DEPLOY_TAG)
 
-# time: 3m21s @ 10.0.38.42
+# time: 4m45s @ 10.0.38.42
 image-build-fac-iocs-li-ps: image-cleanup dockerfiles-create image-pull-tag-push-debian
 	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python2 > ./deploy-files/Dockerfile.python2
 	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics-python2 > ./deploy-files/Dockerfile.epics-python2
