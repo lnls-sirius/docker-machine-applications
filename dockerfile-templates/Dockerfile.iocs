@@ -1,0 +1,43 @@
+ARG IMG_DEPS_TAG
+FROM dockerregistry.lnls-sirius.com.br/fac/fac-deps:${IMG_DEPS_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+# Create IOC-related directories
+
+RUN mkdir -p /ioc-apps && \
+    mkdir -p /ioc-logs
+
+# Copy bash-file applications
+
+COPY apps/*.bash /ioc-apps/
+
+# Install lnls-sirius packages
+
+RUN cd repos && \
+    git clone https://github.com/lnls-fac/mathphys && \
+    cd mathphys/ && \
+    git checkout :pkg_version_mathphys && \
+    python-sirius setup.py install
+
+RUN cd repos && \
+    git clone https://github.com/lnls-sirius/dev-packages && \
+    cd dev-packages/siriuspy && \
+    git checkout :pkg_version_siriuspy && \
+    make install
+
+RUN cd repos && \
+    git clone https://github.com/lnls-sirius/eth-bridge-pru-serial485 && \
+    cd eth-bridge-pru-serial485/client/ && \
+    git checkout :pkg_version_ethbridge_pru_serial && \
+    make install
+
+RUN cd repos && \
+    git clone https://github.com/lnls-sirius/machine-applications && \
+    cd machine-applications/ && \
+    git checkout :pkg_version_machine_applications && \
+    make install-scripts
+
+ENV EPICS_CA_ADDR_LIST="10.128.1.12:5064 10.128.1.12:5070 10.128.1.54:5064 10.128.1.55:5064 10.128.1.13:5064 10.128.1.13:5068 10.128.1.13:5070 10.0.38.29:5064 10.0.38.37:5064 10.0.38.39:5064 10.0.38.92:5064 10.0.38.93:5064"

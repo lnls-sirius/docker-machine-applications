@@ -4,7 +4,7 @@ services:
 
   dips:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-dips.bash'
+    command: bash -c '/ioc-apps/bo-ps-dips.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -26,7 +26,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-quads.bash'
+    command: bash -c '/ioc-apps/bo-ps-quads.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -48,7 +48,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-sexts.bash'
+    command: bash -c '/ioc-apps/bo-ps-sexts.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -70,7 +70,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia01.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia01.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -92,7 +92,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia02.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia02.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -114,7 +114,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia04.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia04.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -136,7 +136,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia05.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia05.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -158,7 +158,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia07.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia07.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -180,7 +180,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia08.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia08.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -202,7 +202,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia10.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia10.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -224,7 +224,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia11.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia11.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -246,7 +246,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia13.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia13.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -268,7 +268,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia14.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia14.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -290,7 +290,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia16.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia16.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -312,7 +312,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia17.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia17.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -334,7 +334,7 @@ services:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ps-corrs-ia20.bash'
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia20.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:

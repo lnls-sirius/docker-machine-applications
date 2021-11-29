@@ -4,7 +4,7 @@ services:
 
   lens:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c 'source /etc/profile && /ioc-apps/it-ps-lens.bash'
+    command: bash -c '/ioc-apps/it-ps-lens.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:

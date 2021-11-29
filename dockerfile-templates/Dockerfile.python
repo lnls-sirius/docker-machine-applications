@@ -1,0 +1,56 @@
+ARG IMG_DEBIAN_TAG
+FROM dockerregistry.lnls-sirius.com.br/fac/debian:${IMG_DEBIAN_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ America/Sao_Paulo
+
+# Configure apt proxy
+
+ARG APT_PROXY_SERVER=10.0.38.42:3142
+RUN \
+    echo "Acquire::http { Proxy \"http://${APT_PROXY_SERVER}\"; }" > /etc/apt/apt.conf.d/proxy ;\
+    echo "Acquire::https::proxy \"DIRECT\";" >> /etc/apt/apt.conf.d/proxy
+
+# Install generic apt packages
+
+RUN apt-get update && apt-get install -y \
+    apt-utils \
+    tzdata \
+    sudo \
+    procps \
+    wget \
+    iproute2 \
+    iputils-ping \
+    libreadline-dev \
+    git \
+    nano \
+    && \
+    ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
+    dpkg-reconfigure --frontend $DEBIAN_FRONTEND tzdata
+
+# Install python-related apt packages
+
+RUN apt-get install -y \
+    python3-pip \
+    python3-tk \
+    swig
+
+# Create symbolic links for the sirius environment
+
+RUN ln -s /usr/bin/python3 /usr/local/bin/python-sirius && \
+    ln -s /usr/bin/pip3 /usr/local/bin/pip-sirius && \
+    ln -s /usr/bin/python3-config /usr/local/bin/python-sirius-config
+
+# Install basic python pip packages
+
+RUN pip-sirius install \
+    numpy \
+    matplotlib
+
+# Create repos directory
+
+RUN mkdir repos

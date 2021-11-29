@@ -1,0 +1,34 @@
+ARG IMG_EPICS_TAG
+FROM dockerregistry.lnls-sirius.com.br/fac/fac-epics:${IMG_EPICS_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install apt packages
+
+RUN apt-get install -y \
+    logrotate \
+    cron
+
+# Remove apt list files
+
+# RUN rm -rf /var/lib/apt/lists/*
+
+# Create IOC-related directories
+
+COPY ./etc/crontab /etc/crontab
+COPY ./etc/logrotate.conf /etc/logrotate.conf
+
+# Install pip-package dependencies
+
+RUN pip-sirius install \
+    aiohttp \
+    bottleneck \
+    python-dateutil \
+    pyvisa \
+    pyvisa_py \
+    urllib3 \
+    scipy

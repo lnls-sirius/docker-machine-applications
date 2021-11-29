@@ -1,0 +1,62 @@
+ARG IMG_DEBIAN_TAG
+FROM dockerregistry.lnls-sirius.com.br/fac/debian:${IMG_DEBIAN_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ America/Sao_Paulo
+
+# Configure apt proxy
+
+ARG APT_PROXY_SERVER=10.0.38.42:3142
+RUN \
+    echo "Acquire::http { Proxy \"http://${APT_PROXY_SERVER}\"; }" > /etc/apt/apt.conf.d/proxy ;\
+    echo "Acquire::https::proxy \"DIRECT\";" >> /etc/apt/apt.conf.d/proxy
+
+# Install generic apt packages
+
+RUN apt-get update && apt-get install -y \
+    apt-utils \
+    tzdata \
+    sudo \
+    procps \
+    wget \
+    iproute2 \
+    iputils-ping \
+    libreadline-dev \
+    git \
+    nano \
+    make \
+    g++ \
+    && \
+    ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
+    dpkg-reconfigure --frontend $DEBIAN_FRONTEND tzdata
+
+# Install python-related apt packages
+
+RUN apt-get install -y \
+    python2 \
+    python2-dev \
+    swig
+
+# Apt does not support pip2 in debian bullseye
+# Install pip version 9.0.1 in order to avoid error message
+# in newer pip versions about Python2 not being supported anymore
+
+ARG FILES_SERVER_URL
+# RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py && \
+RUN wget ${FILES_SERVER_URL}/get_pip/get-pip.py && \
+    python2 get-pip.py "pip:pkg_version_python2_pip"
+
+# Create symbolic links for sirius environment
+
+RUN ln -s /usr/bin/python2 /usr/bin/python && \
+    ln -s /usr/bin/python2 /usr/local/bin/python-sirius && \
+    ln -s /usr/local/bin/pip2 /usr/local/bin/pip-sirius && \
+    ln -s /usr/bin/python2-config /usr/local/bin/python-sirius-config
+
+# Create repos directory
+
+RUN mkdir repos

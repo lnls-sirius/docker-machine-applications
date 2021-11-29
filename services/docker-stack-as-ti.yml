@@ -4,7 +4,7 @@ services:
 
   general:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c 'source /etc/profile && /ioc-apps/as-ti-general.bash'
+    command: bash -c '/ioc-apps/as-ti-general.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -24,7 +24,7 @@ services:
 
   bo-bpms-corrs:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c 'source /etc/profile && /ioc-apps/bo-ti-bpms-corrs.bash'
+    command: bash -c '/ioc-apps/bo-ti-bpms-corrs.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -44,7 +44,7 @@ services:
 
   si-bpms-corrs:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ti-bpms-corrs.bash'
+    command: bash -c '/ioc-apps/si-ti-bpms-corrs.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
@@ -64,7 +64,7 @@ services:
 
   si-trims-skews:
     image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c 'source /etc/profile && /ioc-apps/si-ti-trims-skews.bash'
+    command: bash -c '/ioc-apps/si-ti-trims-skews.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
