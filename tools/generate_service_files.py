@@ -14,6 +14,7 @@ class ServiceConfig:
         'as-ap-opticscorr': 'CA-RaTim-CO-IOCSrv',
         'as-ap-posang': 'IA-16RaBbB-CO-IOCSrv',
         'as-ap-sofb': 'lnlsfac-srv2',
+        'as-ap-injctrl': 'IA-20RaDiag02-CO-IOCSrv-2',
         'as-ps-dclinks-tbts-bodip': 'IA-16RaBbB-CO-IOCSrv',
         'as-ps-dclinks-ia01': 'CA-RaTim-CO-IOCSrv',
         'as-ps-dclinks-ia02': 'CA-RaTim-CO-IOCSrv',
