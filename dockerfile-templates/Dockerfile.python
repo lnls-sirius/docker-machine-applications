@@ -51,6 +51,10 @@ RUN pip-sirius install \
     numpy \
     matplotlib
 
+# update pip version
+
+RUN python-sirius -m pip install pip:pkg_version_pip
+
 # Create repos directory
 
 RUN mkdir repos
