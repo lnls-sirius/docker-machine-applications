@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+
 export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 25.1%
 
 # sirius-ioc-si-ps-quads-qd1.service
@@ -10,7 +12,6 @@ export PYTHONUNBUFFERED=yes
 
 # Diag
 /usr/local/bin/sirius-ioc-as-ps-diag.py SI Fam "QD.*" &> /ioc-logs/sirius-ioc-si-ps-diag-quads-qd.log & # 2.7%
-
 
 # run cron for log rotation
 cron &

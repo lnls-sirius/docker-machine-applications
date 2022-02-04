@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+
 export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 29.9%
 
 # Correctors
@@ -7,7 +9,6 @@ export PYTHONUNBUFFERED=yes
 
 # Diagnostics
 /usr/local/bin/sirius-ioc-as-ps-diag.py TB ".*" "C.*" &> /ioc-logs/sirius-ioc-tb-ps-diag-corrs.log & # 2.2%
-
 
 # run cron for log rotation
 cron &

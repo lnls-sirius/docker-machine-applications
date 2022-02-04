@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+
 export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 14.5%
 
 # Conv
@@ -50,7 +52,6 @@ LI-01:PS-CH-7 &> /ioc-logs/sirius-ioc-li-ps-conv.log & # 14.5%
 # LI-Fam:PS-Slnd-19 \
 # LI-Fam:PS-Slnd-20 \
 # LI-Fam:PS-Slnd-21 \
-
 
 # run cron for log rotation
 cron &

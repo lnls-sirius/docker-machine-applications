@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+
 export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 23.4%
 
 # Quadrupoles
@@ -8,7 +10,6 @@ export PYTHONUNBUFFERED=yes
 
 # Diagnostics
 /usr/local/bin/sirius-ioc-as-ps-diag.py BO ".*" "Q(F|D)" &> /ioc-logs/sirius-ioc-bo-ps-quads-diag.log & # 4.2%
-
 
 # run cron for log rotation
 cron &

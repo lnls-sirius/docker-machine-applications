@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+
 export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 25.7%
 
 # sirius-ioc-as-pu-conv.service
@@ -16,7 +18,6 @@ SI-01SA:PU-InjDpKckr \
 SI-01SA:PU-InjNLKckr \
 SI-01SA:PU-PingH \
 SI-19C4:PU-PingV &> /ioc-logs/sirius-ioc-as-pu-conv.log & # 25.7%
-
 
 # run cron for log rotation
 cron &
