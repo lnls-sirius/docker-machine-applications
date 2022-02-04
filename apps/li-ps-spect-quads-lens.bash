@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 26.4%
 
 # Spectrometer
@@ -18,7 +20,6 @@
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-01:PS-Lens-3  &> /ioc-logs/sirius-ioc-li-ps-lens3.log & # 2.4%
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-01:PS-Lens-4  &> /ioc-logs/sirius-ioc-li-ps-lens4.log & # 2.4%
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-01:PS-LensRev &> /ioc-logs/sirius-ioc-li-ps-lensrev.log & # 2.4%
-
 
 # run cron for log rotation
 cron &

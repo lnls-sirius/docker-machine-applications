@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 26.8%
 
 # sirius-ioc-as-ti-trig.service
@@ -19,7 +21,6 @@
 
 # sirius-ioc-si-ti-trig.service
 /usr/local/bin/sirius-ioc-as-ti-control.py -s si >& /ioc-logs/sirius-ioc-si-ti-trig & # 5.9%
-
 
 # run cron for log rotation
 cron &

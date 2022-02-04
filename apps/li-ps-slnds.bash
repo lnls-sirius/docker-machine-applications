@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 39.9%
 
 # Solenoids
@@ -24,7 +26,6 @@
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-Fam:PS-Slnd-19 &> /ioc-logs/sirius-ioc-li-ps-solenoid-19.log & # 1.9%
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-Fam:PS-Slnd-20 &> /ioc-logs/sirius-ioc-li-ps-solenoid-20.log & # 1.9%
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-Fam:PS-Slnd-21 &> /ioc-logs/sirius-ioc-li-ps-solenoid-21.log & # 1.9%
-
 
 # run cron for log rotation
 cron &

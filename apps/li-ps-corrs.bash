@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 32.2%
 
 # CHs
@@ -19,7 +21,6 @@
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-01:PS-CV-5 &> /ioc-logs/sirius-ioc-li-ps-cv5.log & # 2.3%
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-01:PS-CV-6 &> /ioc-logs/sirius-ioc-li-ps-cv6.log & # 2.3%
 /usr/local/bin/sirius-ioc-li-ps.py -n LI-01:PS-CV-7 &> /ioc-logs/sirius-ioc-li-ps-cv7.log & # 2.3%
-
 
 # run cron for log rotation
 cron &

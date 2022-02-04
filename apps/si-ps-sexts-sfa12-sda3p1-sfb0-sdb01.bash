@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 27.9%
 
 # sirius-ioc-si-ps-sexts-sfa12-sda3p1.service
@@ -18,7 +20,6 @@
 
 # Diag
 /usr/local/bin/sirius-ioc-as-ps-diag.py SI Fam "S(FA1|DA3|DP1|FA2|DB1|FB0|DB0)" &> /ioc-logs/sirius-ioc-si-ps-diag-sexts-sfa12-sda3p1-sfb0-sdb01.log & # 1.9%
-
 
 # run cron for log rotation
 cron &
