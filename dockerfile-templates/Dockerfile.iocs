@@ -20,7 +20,7 @@ RUN cd repos && \
     git clone https://github.com/lnls-fac/mathphys && \
     cd mathphys/ && \
     git checkout :pkg_version_mathphys && \
-    python-sirius setup.py install
+    make install
 
 RUN cd repos && \
     git clone https://github.com/lnls-sirius/dev-packages && \
@@ -38,6 +38,6 @@ RUN cd repos && \
     git clone https://github.com/lnls-sirius/machine-applications && \
     cd machine-applications/ && \
     git checkout :pkg_version_machine_applications && \
-    make install-scripts
+    make install
 
-ENV EPICS_CA_ADDR_LIST="10.128.1.12:5064 10.128.1.12:5070 10.128.1.54:5064 10.128.1.55:5064 10.128.1.13:5064 10.128.1.13:5068 10.128.1.13:5070 10.0.38.29:5064 10.0.38.37:5064 10.0.38.39:5064 10.0.38.92:5064 10.0.38.93:5064"
+ENV EPICS_CA_ADDR_LIST="10.128.1.12:5064 10.128.1.12:5070 10.128.1.54:5064 10.128.1.55:5064 10.128.1.13:5064 10.128.1.13:5068 10.128.1.13:5070 10.0.38.29:5064 10.0.38.37:5064 10.0.38.39:5064 10.0.38.52:5064 10.0.38.93:5064"
