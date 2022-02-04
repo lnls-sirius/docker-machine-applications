@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+
 export PYTHONUNBUFFERED=yes
+
 # CPU usage estimate (ps aux): 47.0%
 
 # Dipoles
@@ -8,7 +10,6 @@ export PYTHONUNBUFFERED=yes
 
 # Diagnostics
 /usr/local/bin/sirius-ioc-as-ps-diag.py BO ".*" "B-(1|2)" &> /ioc-logs/sirius-ioc-bo-ps-dips-diag.log & # 4.0%
-
 
 # run cron for log rotation
 cron &
