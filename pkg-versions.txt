@@ -1,3 +1,4 @@
+pkg_version_pip ==21.3.1
 pkg_version_pyepics ==3.4.0
 pkg_version_pcaspy ==0.7.3
 

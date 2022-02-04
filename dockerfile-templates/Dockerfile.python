@@ -53,7 +53,7 @@ RUN pip-sirius install \
 
 # update pip version
 
-RUN python-sirius -m pip install pip==21.3.1
+RUN python-sirius -m pip install pip:pkg_version_pip
 
 # Create repos directory
 
