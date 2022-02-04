@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+export PYTHONUNBUFFERED=yes
 # CPU usage estimate (ps aux): 70.7%
 
 # sirius-ioc-si-ps-dipoles.service

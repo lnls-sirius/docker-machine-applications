@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+export PYTHONUNBUFFERED=yes
 # CPU usage estimate (ps aux): 28.5%
 
 # sirius-ioc-si-ps-sexts-sfb12-sdb3.service

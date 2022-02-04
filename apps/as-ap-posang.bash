@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+export PYTHONUNBUFFERED=yes
 # CPU usage estimate (ps aux): 8.7%
 
 # TB and TS posang

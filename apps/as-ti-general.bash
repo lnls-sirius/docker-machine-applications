@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+export PYTHONUNBUFFERED=yes
 # CPU usage estimate (ps aux): 26.8%
 
 # sirius-ioc-as-ti-trig.service

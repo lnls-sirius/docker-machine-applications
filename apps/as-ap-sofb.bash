@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+export PYTHONUNBUFFERED=yes
 # CPU usage estimate (ps aux): 17.9%
 
 /usr/local/bin/sirius-ioc-tb-ap-sofb.py &> /ioc-logs/sirius-ioc-tb-ap-sofb.log & # 5.8%
