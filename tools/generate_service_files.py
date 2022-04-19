@@ -158,6 +158,7 @@ class ServiceConfig:
         'si-ps-trims-qs-c1234-ia18': 'lnlsfac-srv2',
         'si-ps-trims-qs-c1234-ia19': 'lnlsfac-srv2',
         'si-ps-trims-qs-c1234-ia20': 'CA-RaTim-CO-IOCSrv',
+        'si-ps-diag-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
         'it-ps-lens': 'lnlsfac-srv2',
         }
 
@@ -333,6 +334,7 @@ class ServiceConfig:
             'trims-qs-m12-ia18': ('si-ps-trims-qs-m12-ia18', ('dips', 'quads-qd', 'quads-qfq')),
             'trims-qs-m12-ia19': ('si-ps-trims-qs-m12-ia19', ('dips', 'quads-qd', 'quads-qfq')),
             'trims-qs-m12-ia20': ('si-ps-trims-qs-m12-ia20', ('dips', 'quads-qd', 'quads-qfq')),
+            'diag-fastcorrs': 'si-ps-diag-fastcorrs',
             },
         'it-ps': {
             'lens': 'it-ps-lens',
