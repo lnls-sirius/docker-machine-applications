@@ -160,6 +160,12 @@ service-start-si-ps:
 	docker stack deploy -c docker-stack-si-ps.yml facs-si-ps; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-ps.yml
 
+service-start-si-ps-fastcorrs:
+	cd services; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-si-ps-fastcorrs.yml; \
+	docker stack deploy -c docker-stack-si-ps-fastcorrs.yml facs-si-ps-fastcorrs; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-ps-fastcorrs.yml
+
 service-start-it-ps:
 	cd services; \
 	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-it-ps.yml; \
@@ -264,6 +270,10 @@ service-stop-si-ps:
 	cd services; \
 	docker stack rm facs-si-ps
 
+service-stop-si-ps-fastcorrs:
+	cd services; \
+	docker stack rm facs-si-ps-fastcorrs
+
 service-stop-it-ps:
 	cd services; \
 	docker stack rm facs-it-ps
@@ -333,6 +343,7 @@ service-start-all:
 	docker stack deploy -c docker-stack-bo-ps.yml facs-bo-ps; \
 	docker stack deploy -c docker-stack-ts-ps.yml facs-ts-ps; \
 	docker stack deploy -c docker-stack-si-ps.yml facs-si-ps; \
+	docker stack deploy -c docker-stack-si-ps-fastcorrs.yml facs-si-ps-fastcorrs; \
 	docker stack deploy -c docker-stack-it-ps.yml facs-it-ps; \
 	docker stack deploy -c docker-stack-as-ti.yml facs-as-ti; \
 	docker stack deploy -c docker-stack-as-pu-conv.yml facs-as-pu-conv; \
@@ -358,6 +369,7 @@ service-stop-all:
 	docker stack rm facs-bo-ps; \
 	docker stack rm facs-ts-ps; \
 	docker stack rm facs-si-ps; \
+	docker stack rm facs-si-ps-fastcorrs; \
 	docker stack rm facs-it-ps; \
 	docker stack rm facs-as-ti; \
 	docker stack rm facs-as-pu-conv; \

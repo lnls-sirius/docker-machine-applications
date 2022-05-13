@@ -335,11 +335,13 @@ class ServiceConfig:
             'trims-qs-m12-ia18': ('si-ps-trims-qs-m12-ia18', ('dips', 'quads-qd', 'quads-qfq')),
             'trims-qs-m12-ia19': ('si-ps-trims-qs-m12-ia19', ('dips', 'quads-qd', 'quads-qfq')),
             'trims-qs-m12-ia20': ('si-ps-trims-qs-m12-ia20', ('dips', 'quads-qd', 'quads-qfq')),
-            'conv-fastcorrs': 'si-ps-conv-fastcorrs',
-            'diag-fastcorrs': 'si-ps-diag-fastcorrs',
             },
         'it-ps': {
             'lens': 'it-ps-lens',
+            },
+        'si-ps-fastcorrs': {
+            'conv': 'si-ps-conv-fastcorrs',
+            'diag': 'si-ps-diag-fastcorrs',
             },
         }
 
