@@ -158,6 +158,8 @@ class ServiceConfig:
         'si-ps-trims-qs-c1234-ia18': 'lnlsfac-srv2',
         'si-ps-trims-qs-c1234-ia19': 'lnlsfac-srv2',
         'si-ps-trims-qs-c1234-ia20': 'CA-RaTim-CO-IOCSrv',
+        'si-ps-conv-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
+        'si-ps-diag-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
         'it-ps-lens': 'lnlsfac-srv2',
         }
 
@@ -336,6 +338,10 @@ class ServiceConfig:
             },
         'it-ps': {
             'lens': 'it-ps-lens',
+            },
+        'si-ps-fastcorrs': {
+            'conv': 'si-ps-conv-fastcorrs',
+            'diag': 'si-ps-diag-fastcorrs',
             },
         }
 
