@@ -163,7 +163,7 @@ SI-20M2:PS-FCV \
 SI-20C2:PS-FCH \
 SI-20C2:PS-FCV \
 SI-20C3:PS-FCH \
-SI-20C3:PS-FCV &> /ioc-logs/sirius-ioc-si-ps-conv-fastcorrs.log & #
+SI-20C3:PS-FCV | tee /ioc-logs/sirius-ioc-si-ps-conv-fastcorrs.log & #
 
 # run cron for log rotation
 cron &
