@@ -25,7 +25,7 @@ LI-01:PS-CH-5 \
 LI-01:PS-CV-6 \
 LI-01:PS-CH-6 \
 LI-01:PS-CV-7 \
-LI-01:PS-CH-7 &> /ioc-logs/sirius-ioc-li-ps-conv.log & # 14.5%
+LI-01:PS-CH-7 | tee /ioc-logs/sirius-ioc-li-ps-conv.log & # 14.5%
 # LI-01:PS-LensRev \
 # LI-01:PS-Lens-1 \
 # LI-01:PS-Lens-2 \
