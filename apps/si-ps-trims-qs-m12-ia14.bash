@@ -9,6 +9,7 @@ export PYTHONUNBUFFERED=yes
 # Diag
 /usr/local/bin/sirius-ioc-as-ps-diag.py SI "(14M2|15M1)" "Q(F|D)" | tee /ioc-logs/sirius-ioc-si-ps-diag-trims-m12-ia14.log & # 4.3%
 /usr/local/bin/sirius-ioc-as-ps-diag.py SI "(14M1|14M2)" "QS" | tee /ioc-logs/sirius-ioc-si-ps-diag-qs-m12-ia14.log & # 4.3%
+/usr/local/bin/sirius-ioc-as-ps-diag.py SI "14SB" "C(H|V)" | tee /ioc-logs/sirius-ioc-si-ps-diag-corrs-sb-ia14.log & # 4.3%
 # run cron for log rotation
 cron &
 
