@@ -69,7 +69,6 @@ class ServiceConfig:
         'ts-ps-dips': 'lnlsfac-srv2',
         'ts-ps-quads': 'IA-20RaDiag02-CO-IOCSrv-2',
         'ts-ps-corrs': 'IA-20RaDiag02-CO-IOCSrv-2',
-        'si-ap-bl': 'IA-16RaBbB-CO-IOCSrv',
         'si-ap-fofb': 'IA-18RaDiag04-CO-IOCSrv',
         'si-id-conv': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ap-sofb': 'IA-20RaDiag01-CO-IOCSrv-2',
