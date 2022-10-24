@@ -8,7 +8,6 @@ from siriuspy.search import PSSearch, HLTimeSearch, IDSearch
 from siriuspy.currinfo.csdev import get_currinfo_database
 from siriuspy.diagsys.rfdiag.csdev import Const as RFDiagConst
 from siriuspy.diagsys.lidiag.csdev import Const as LIDiagConst
-from siriuspy.meas.manaca.csdev import Const as MNCConst
 
 
 class ServiceConfig:
@@ -616,9 +615,7 @@ def generate_service_2_ioc_table():
                         devs = RFDiagConst.ALL_DEVICES
                         prefixes.extend([d+':Diag' for d in devs])
                 elif prs[1] == 'ap':
-                    if prs[2] == 'manaca':
-                        prefixes.append(MNCConst.PREFIX_IOC.strip(':'))
-                    elif prs[2] == 'currinfo':
+                    if prs[2] == 'currinfo':
                         if 'lifetime' in ioc or ioc.startswith('bo'):
                             pref = prs[0].upper() + '-Glob:AP-CurrInfo'
                             prefixes.append(pref)
