@@ -1,7 +1,17 @@
 #!/usr/bin/env python-sirius
 
+import os
+import yaml
+from siriuspy import util
+from siriuspy.namesys import SiriusPVName as _PVName
+from siriuspy.search import PSSearch, HLTimeSearch, IDSearch
+from siriuspy.currinfo.csdev import get_currinfo_database
+from siriuspy.diagsys.rfdiag.csdev import Const as RFDiagConst
+from siriuspy.diagsys.lidiag.csdev import Const as LIDiagConst
+
 
 class ServiceConfig:
+    """Services configuration."""
 
     SERVICES_CSCONSTS = {
         'csconsts': 'IA-16RaBbB-CO-IOCSrv'
@@ -347,6 +357,7 @@ class ServiceConfig:
 
 
 class DockerStackConfig(ServiceConfig):
+    """Docker stack configuration."""
 
     IMAGE_TAG_CSCONSTS = '__FAC_CSCONSTS_TAG_TEMPLATE__'
     IMAGE_TAG_IOCS = '__FAC_IOC_TAG_TEMPLATE__'
@@ -414,6 +425,7 @@ class DockerStackConfig(ServiceConfig):
 
 
 class DockerLowStackConfig(DockerStackConfig):
+    """Docker low stack configuration."""
 
     def __init__(self, app, node):
         super().__init__(DockerStackConfig.IMAGE_TAG_IOCS)
@@ -436,6 +448,7 @@ class DockerLowStackConfig(DockerStackConfig):
 
 
 class DockerHighStackConfig(DockerStackConfig):
+    """Docker high stack configuration."""
 
     def __init__(self, stack):
         super().__init__(DockerStackConfig.IMAGE_TAG_IOCS)
@@ -464,6 +477,7 @@ class DockerHighStackConfig(DockerStackConfig):
 
 
 class DockerCSConstsConfig(DockerStackConfig):
+    """Docker control-system-constants configuration."""
 
     def __init__(self, app, node):
         super().__init__(DockerStackConfig.IMAGE_TAG_CSCONSTS)
@@ -494,6 +508,7 @@ class DockerCSConstsConfig(DockerStackConfig):
 
 
 def generate_service_files():
+    """Generate docker service file."""
 
     for app, node in ServiceConfig.SERVICES_CSCONSTS.items():
         config = DockerCSConstsConfig(app=app, node=node)
@@ -508,5 +523,164 @@ def generate_service_files():
         config.save_config_file()
 
 
+def generate_service_2_ioc_table():
+    """Generate docker service -> IOCs table."""
+
+    cont2serv = dict()
+    for stack, sub2serv in ServiceConfig.STACKS.items():
+        for sub, serv in sub2serv.items():
+            if isinstance(serv, (tuple, list)):
+                serv = serv[0]
+            cont2serv['facs-' + stack + '_' + sub] = serv
+    serv2cont = {v: k for k, v in cont2serv.items()}
+
+    cont2iocs = dict()
+    for service in ServiceConfig.SERVICES:
+        if service in serv2cont:
+            container = serv2cont[service]
+        else:
+            container = 'facs-' + service
+
+        appdir_path = os.path.join(
+            os.path.abspath(os.path.dirname(__file__)), '..', 'apps')
+        appfile_path = os.path.join(appdir_path, service + '.bash')
+
+        iocs = list()
+        with open(appfile_path, 'r') as file:
+            text = file.read()
+            lines = text.splitlines()
+            for lin in lines:
+                lin = lin.strip()
+                if not lin or lin[0] == '#':
+                    continue  # empty line or comment
+                elif '/ioc-logs/sirius-ioc-' in lin:
+                    if '-ps' in lin and 'conv' not in lin:
+                        iocname = lin.split('/bin/sirius-ioc-')[1]
+                        iocname = iocname.split(' | tee ')[0]
+                        iocname = iocname.replace('.py', '').replace(' -n', '')
+                    else:
+                        iocname = lin.split('/ioc-logs/sirius-ioc-')[1]
+                        iocname = iocname.split(' &')[0]
+                        iocname = iocname.split('.log')[0]
+                    iocs.append(iocname)
+        cont2iocs[container] = iocs
+
+    data = dict()
+    for container, iocs in cont2iocs.items():
+        data[container] = dict()
+        for ioc in iocs:
+            ioc = ioc.strip(' ')
+            prefixes = list()
+            if ('-ps' in ioc or '-pu' in ioc) and 'conv' not in ioc:
+                prs = ioc.replace('"', '')
+                prs = prs.split(' ')
+                if prs[0] == 'as-ps':
+                    psm = PSSearch.conv_bbbname_2_psnames(prs[1])
+                    prefixes.extend([p[0] for p in psm])
+                elif 'diag' in prs[0]:
+                    if 'ps' in ioc:
+                        filt = {'sec': prs[1], 'sub': prs[2], 'dev': prs[3]}
+                    else:
+                        filt = {'dis': 'PU', 'dev': '.*(Kckr|Sept)'}
+                    devnames = PSSearch.get_psnames(filt)
+                    prefixes.extend([p+':Diag' for p in devnames])
+                elif prs[0] == 'li-ps':
+                    prefixes.append(prs[1])
+            else:
+                prs = ioc.split('-')
+                if 'conv' in ioc:
+                    if 'id' in ioc:
+                        idnames = IDSearch.get_idnames()
+                        prefixes.extend([i+':Kx' for i in idnames])
+                    else:
+                        if prs[0] == 'li':
+                            filt = {'sec': 'LI'}
+                        elif prs[1] == 'pu':
+                            filt = {'dis': 'PU'}
+                        elif 'fastcorr' in ioc:
+                            filt = {'sec': 'SI', 'dev': 'FC.*'}
+                        psnames = PSSearch.get_psnames(filt)
+                        for psn in psnames:
+                            try:
+                                magf = PSSearch.conv_psname_2_magfunc(psn)
+                                strg = util.get_strength_label(magf)
+                                prefixes.append(psn + ':' + strg)
+                            except ValueError:
+                                pass
+                elif 'diag' in prs[2]:
+                    if prs[0] == 'li':
+                        devs = LIDiagConst.ALL_DEVICES
+                        prefixes.extend([d+':Diag' for d in devs])
+                    elif prs[1] == 'rf':
+                        devs = RFDiagConst.ALL_DEVICES
+                        prefixes.extend([d+':Diag' for d in devs])
+                elif prs[1] == 'ap':
+                    if prs[2] == 'currinfo':
+                        if 'lifetime' in ioc or ioc.startswith('bo'):
+                            pref = prs[0].upper() + '-Glob:AP-CurrInfo'
+                            prefixes.append(pref)
+                        else:
+                            dbs = get_currinfo_database(prs[0].upper())
+                            devs = {str(_PVName(p).device_name) for p in dbs}
+                            prefixes.extend(sorted(devs))
+                    else:
+                        devname = prs[2][0].upper() + prs[2][1:]
+                        devname = devname.replace('ang', 'Ang')
+                        devname = devname.replace('corr', 'Corr')
+                        devname = devname.replace('shift', 'Shift')
+                        devname = devname.replace('ctrl', 'Ctrl')
+                        devname = devname.replace('ofb', 'OFB')
+                        devname = devname.replace('Energy', 'MeasEnergy')
+                        pref = prs[0].upper() + '-Glob:AP-' + devname
+                        prefixes.append(pref)
+                elif prs[1] == 'ti':
+                    filt = {'sec': prs[0].upper()}
+                    if len(prs) == 4:
+                        if prs[3] == 'bpms':
+                            filt['dev'] = 'BPM'
+                        else:
+                            filt['idx'] = prs[3].capitalize()
+                            filt['idx'] = filt['idx'].replace('trim', 'Trim')
+                    else:
+                        filt['dev'] = '(?!BPM).*'
+                        filt['idx'] = '(?!(Corrs|Skews|QTrims))'
+                    devnames = HLTimeSearch.get_hl_triggers(filt)
+                    prefixes.extend([str(d) for d in devnames])
+            data[container][ioc] = prefixes
+
+    fname = 'facs.yml'
+    hmsg = '# This is a yml file that was automatically generated by\n'
+    hmsg += '# the generate_service_files.py script, available at the\n'
+    hmsg += '# docker-machine-applications repository.\n'
+    hmsg += '#\n'
+    hmsg += '# It can be imported into python3 code as a dict with:\n'
+    hmsg += '# ```\n'
+    hmsg += '#     with open("facs.yml") as file:\n'
+    hmsg += '#         data = yaml.load(file)\n'
+    hmsg += '# ```\n'
+    hmsg += '# where `yaml` is a python3 module available in `pip3`.\n'
+    hmsg += '#\n'
+    hmsg += '# The blocks below define the relation:\n'
+    hmsg += '# SERVICE:\n'
+    hmsg += '#   IOC_X:\n'
+    hmsg += '#     PREFIX_A\n'
+    hmsg += '#     PREFIX_B\n'
+    hmsg += '#   IOC_Y:\n'
+    hmsg += '#     PREFIX_C\n'
+    hmsg += '#     ...\n'
+    hmsg += '# where SERVICE is the name of the docker service, IOC_X\n'
+    hmsg += '# and IOC_Y are references to IOC processes running into\n'
+    hmsg += '# the docker container, PREFIX_A and PREFIX_B, for IOC_X,\n'
+    hmsg += '# and PREFIX_C, for IOC_Y, are prefixes of PVs that are\n'
+    hmsg += '# provided by each of the IOCs.\n\n'
+
+    with open(fname, 'w') as file:
+        file.write(hmsg)
+        for container, iocs in data.items():
+            file.write(yaml.dump({container: iocs}, default_flow_style=False))
+            file.write('\n')
+
+
 if __name__ == "__main__":
     generate_service_files()
+    generate_service_2_ioc_table()
