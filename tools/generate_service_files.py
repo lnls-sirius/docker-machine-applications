@@ -585,7 +585,7 @@ def generate_service_2_ioc_table():
                     else:
                         filt = {'dis': 'PU', 'dev': '.*(Kckr|Sept)'}
                     devnames = PSSearch.get_psnames(filt)
-                    prefixes.extend([p+':Diag*' for p in devnames])
+                    prefixes.extend([p+':Diag' for p in devnames])
                 elif prs[0] == 'li-ps':
                     prefixes.append(prs[1])
             else:
@@ -593,7 +593,7 @@ def generate_service_2_ioc_table():
                 if 'conv' in ioc:
                     if 'id' in ioc:
                         idnames = IDSearch.get_idnames()
-                        prefixes.extend([i+':Kx*' for i in idnames])
+                        prefixes.extend([i+':Kx' for i in idnames])
                     else:
                         if prs[0] == 'li':
                             filt = {'sec': 'LI'}
@@ -606,16 +606,16 @@ def generate_service_2_ioc_table():
                             try:
                                 magf = PSSearch.conv_psname_2_magfunc(psn)
                                 strg = util.get_strength_label(magf)
-                                prefixes.append(psn + ':' + strg + '*')
+                                prefixes.append(psn + ':' + strg)
                             except ValueError:
                                 pass
                 elif 'diag' in prs[2]:
                     if prs[0] == 'li':
                         devs = LIDiagConst.ALL_DEVICES
-                        prefixes.extend([d+':Diag*' for d in devs])
+                        prefixes.extend([d+':Diag' for d in devs])
                     elif prs[1] == 'rf':
                         devs = RFDiagConst.ALL_DEVICES
-                        prefixes.extend([d+':Diag*' for d in devs])
+                        prefixes.extend([d+':Diag' for d in devs])
                 elif prs[1] == 'ap':
                     if prs[2] == 'manaca':
                         prefixes.append(MNCConst.PREFIX_IOC.strip(':'))
@@ -626,7 +626,7 @@ def generate_service_2_ioc_table():
                         else:
                             dbs = get_currinfo_database(prs[0].upper())
                             devs = {str(_PVName(p).device_name) for p in dbs}
-                            prefixes.extend(devs)
+                            prefixes.extend(sorted(devs))
                     else:
                         devname = prs[2][0].upper() + prs[2][1:]
                         devname = devname.replace('ang', 'Ang')
