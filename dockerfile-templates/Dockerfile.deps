@@ -34,4 +34,5 @@ RUN pip-sirius install \
     scipy \
     pydantic \
     pyaml \
+    serial \
     toml
