@@ -33,6 +33,6 @@ RUN pip-sirius install \
     urllib3 \
     scipy \
     pydantic \
-    pyaml \
+    pyyaml \
     serial \
     toml
