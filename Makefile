@@ -166,6 +166,13 @@ service-start-si-ps-fastcorrs:
 	docker stack deploy -c docker-stack-si-ps-fastcorrs.yml facs-si-ps-fastcorrs; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-ps-fastcorrs.yml
 
+service-start-si-ps-corrs-wig180:
+	cd services; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-si-ps-corrs-sb-ia14.yml; \
+	docker stack deploy -c docker-stack-si-ps-corrs-sb-ia14.yml facs-si-ps-corrs-sb-ia14; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-ps-corrs-sb-ia14.yml
+
+
 service-start-it-ps:
 	cd services; \
 	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-it-ps.yml; \
@@ -273,6 +280,10 @@ service-stop-si-ps:
 service-stop-si-ps-fastcorrs:
 	cd services; \
 	docker stack rm facs-si-ps-fastcorrs
+
+service-stop-si-ps-corrs-wig180:
+	cd services; \
+	docker stack rm facs-si-ps-corrs-wig180
 
 service-stop-it-ps:
 	cd services; \
