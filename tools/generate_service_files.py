@@ -81,6 +81,7 @@ class ServiceConfig:
         'ts-ps-corrs': 'IA-20RaDiag02-CO-IOCSrv-2',
         'si-ap-fofb': 'IA-18RaDiag04-CO-IOCSrv',
         'si-id-conv': 'IA-18RaDiag04-CO-IOCSrv',
+        'si-id-epu50': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ap-sofb': 'IA-20RaDiag01-CO-IOCSrv-2',
         'si-ps-dips': 'IA-14RaDiag03-CO-IOCSrv',
         'si-ps-quads-qfq': 'IA-16RaBbB-CO-IOCSrv',
@@ -348,6 +349,10 @@ class ServiceConfig:
             'trims-qs-m12-ia19': ('si-ps-trims-qs-m12-ia19', ('dips', 'quads-qd', 'quads-qfq')),
             'trims-qs-m12-ia20': ('si-ps-trims-qs-m12-ia20', ('dips', 'quads-qd', 'quads-qfq')),
             },
+        'si-id': {
+            'epu50': 'si-id-epu50',
+            'conv': ('si-id-conv', ('epu50', )),
+        },
         'it-ps': {
             'lens': 'it-ps-lens',
             },
@@ -609,6 +614,11 @@ def generate_service_2_ioc_table():
                                 prefixes.append(psn + ':' + strg)
                             except ValueError:
                                 pass
+                elif 'id' in ioc:
+                    iddev = ioc.split('-')[2].upper()
+                    idnames = IDSearch.get_idnames({'dev': iddev})
+                    # needs conversion to str to avoid SiriusPVName __str__
+                    prefixes.extend([str(idname) for idname in idnames])
                 elif 'diag' in prs[2]:
                     if prs[0] == 'li':
                         devs = LIDiagConst.ALL_DEVICES

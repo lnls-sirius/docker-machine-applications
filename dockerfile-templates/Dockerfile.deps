@@ -31,4 +31,8 @@ RUN pip-sirius install \
     pyvisa \
     pyvisa_py \
     urllib3 \
-    scipy
+    scipy \
+    pydantic \
+    pyyaml \
+    serial \
+    toml
