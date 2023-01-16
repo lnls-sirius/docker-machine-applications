@@ -28,7 +28,7 @@ RUN pip-sirius install \
     aiohttp \
     bottleneck \
     python-dateutil \
-    pyvisa \
+    pyvisa:pkg_version_pyvisa\
     pyvisa_py \
     urllib3 \
     scipy \
