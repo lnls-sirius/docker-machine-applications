@@ -26,4 +26,5 @@ ENV PATH="${PATH}:/opt/repos/${EPICS_BASE_TAG}/bin/linux-x86_64" \
 
 RUN pip-sirius install \
     pyepics:pkg_version_python2_pyepics \
-    pcaspy:pkg_version_python2_pcaspy
+    pcaspy:pkg_version_python2_pcaspy \
+    pyvisa:pkg_version_pyvisa
