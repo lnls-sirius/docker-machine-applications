@@ -232,6 +232,12 @@ service-start-si-ap-fofb:
 	docker stack deploy -c docker-stack-si-ap-fofb.yml facs-si-ap-fofb; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-ap-fofb.yml
 
+service-start-si-ap-stabinfo:
+	cd services; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-si-ap-stabinfo.yml; \
+	docker stack deploy -c docker-stack-si-ap-stabinfo.yml facs-si-ap-stabinfo; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-ap-stabinfo.yml
+
 service-start-si-id:
 	cd services; \
 	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-si-id.yml; \
@@ -317,6 +323,10 @@ service-stop-li-ap-energy:
 service-stop-si-ap-fofb:
 	cd services; \
 	docker stack rm facs-si-ap-fofb
+
+service-stop-si-ap-stabinfo:
+	cd services; \
+	docker stack rm facs-si-ap-stabinfo
 
 service-stop-si-id:
 	cd services; \
