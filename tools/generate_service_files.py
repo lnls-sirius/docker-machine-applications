@@ -80,6 +80,7 @@ class ServiceConfig:
         'ts-ps-quads': 'IA-20RaDiag02-CO-IOCSrv-2',
         'ts-ps-corrs': 'IA-20RaDiag02-CO-IOCSrv-2',
         'si-ap-fofb': 'IA-18RaDiag04-CO-IOCSrv',
+        'si-ap-stabinfo': 'IA-20RaDiag02-CO-IOCSrv-2',
         'si-id-conv': 'IA-18RaDiag04-CO-IOCSrv',
         'si-id-epu50': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ap-sofb': 'IA-20RaDiag01-CO-IOCSrv-2',
@@ -642,6 +643,7 @@ def generate_service_2_ioc_table():
                         devname = devname.replace('shift', 'Shift')
                         devname = devname.replace('ctrl', 'Ctrl')
                         devname = devname.replace('ofb', 'OFB')
+                        devname = devname.replace('Stabinfo', 'StabilityInfo')
                         devname = devname.replace('Energy', 'MeasEnergy')
                         pref = prs[0].upper() + '-Glob:AP-' + devname
                         prefixes.append(pref)
