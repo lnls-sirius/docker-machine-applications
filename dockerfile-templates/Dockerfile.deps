@@ -35,4 +35,5 @@ RUN pip-sirius install \
     pydantic \
     pyyaml \
     serial \
-    toml
+    toml \
+    GPy:pkg_version_gpy
