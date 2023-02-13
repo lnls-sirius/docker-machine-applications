@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install apt packages
 
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
     logrotate \
     cron
 
