@@ -373,19 +373,28 @@ class DockerStackConfig(ServiceConfig):
     def __init__(self, image_tag):
         self.version = '3.7'
         self.image_tag = image_tag
-        if 'CSCONSTS' in image_tag:
-            self.image = 'dockerregistry.lnls-sirius.com.br/fac/fac-csconsts:' + self.image_tag
-            self.networks = ['host_network']
-        else:
-            self.image = 'dockerregistry.lnls-sirius.com.br/fac/fac-iocs:' + self.image_tag
-            self.networks = ['ioc-network']
+        self.networks = ['host_network'] if 'CSCONSTS' in image_tag else \
+            ['ioc-network']
         self.replicas = '1'
         self.condition = 'any'
         self.driver = 'json-file'
 
     @staticmethod
     def get_command(app):
+        """Return command."""
         strf = "bash -c '/ioc-apps/" + app + ".bash'"
+        return strf
+
+    def get_image(self, app):
+        """Return image."""
+        if 'CSCONSTS' in self.image_tag:
+            image = 'fac-csconsts'
+        elif 'li-ps' in app and 'conv' not in app and 'diag' not in app:
+            image = 'fac-iocs-li-ps'
+        else:
+            image = 'fac-iocs'
+        strf = 'dockerregistry.lnls-sirius.com.br/fac/' + image + ":"
+        strf += self.image_tag
         return strf
 
     def str_header(self):
@@ -395,9 +404,9 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + 'services:'
         return strf
 
-    def str_service(self, image, app, node, depends=None):
+    def str_service(self, app, node, depends=None):
         strf = ''
-        strf += '\n' + '    image: ' + image
+        strf += '\n' + '    image: ' + self.get_image(app)
         if depends:
             strf += '\n' + '    depends_on:'
             for item in depends:
@@ -441,11 +450,10 @@ class DockerLowStackConfig(DockerStackConfig):
         self.node = node
 
     def __str__(self):
-
         strf = self.str_header()
         strf += '\n'
         strf += '\n' + '  iocs:'
-        strf += self.str_service(self.image, self.app, self.node)
+        strf += self.str_service(self.app, self.node)
         strf += '\n'
         strf += self.str_networks()
         return strf
@@ -474,7 +482,7 @@ class DockerHighStackConfig(DockerStackConfig):
             node = ServiceConfig.SERVICES[app]
             strf += '\n'
             strf += '\n' + '  ' + service + ':'
-            strf += self.str_service(self.image, app, node, depends)
+            strf += self.str_service(app, node, depends)
         strf += '\n'
         strf += self.str_networks()
         return strf
@@ -493,11 +501,10 @@ class DockerCSConstsConfig(DockerStackConfig):
         self.node = node
 
     def __str__(self):
-
         strf = self.str_header()
         strf += '\n'
         strf += '\n' + '  facs-csconsts:'
-        strf += self.str_service(self.image, self.app, self.node)
+        strf += self.str_service(self.app, self.node)
         strf += '\n'
         strf += self.str_networks()
         return strf
