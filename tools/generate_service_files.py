@@ -362,9 +362,9 @@ class ServiceConfig:
             'conv': 'si-ps-conv-fastcorrs',
             'diag': 'si-ps-diag-fastcorrs',
             },
-        'bl-ap': {
-            'imgproc': 'bl-ap-imgproc',
-            },
+        # 'bl-ap-imgproc': {
+        #     'imgproc': 'bl-ap-imgproc',
+        #     },
         }
 
 
