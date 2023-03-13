@@ -174,6 +174,7 @@ class ServiceConfig:
         'si-ps-conv-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
         'si-ps-diag-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
         'it-ps-lens': 'lnlsfac-srv2',
+        'bl-ap-imgproc': 'IA-18RaDiag04-CO-IOCSrv',
         }
 
     STACKS = {
@@ -360,6 +361,9 @@ class ServiceConfig:
         'si-ps-fastcorrs': {
             'conv': 'si-ps-conv-fastcorrs',
             'diag': 'si-ps-diag-fastcorrs',
+            },
+        'bl-ap': {
+            'imgproc': 'bl-ap-imgproc',
             },
         }
 
