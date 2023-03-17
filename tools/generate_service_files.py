@@ -596,7 +596,9 @@ def generate_service_2_ioc_table():
                     if 'ps' in ioc:
                         filt = {'sec': prs[1], 'sub': prs[2], 'dev': prs[3]}
                     else:
-                        filt = {'dis': 'PU', 'dev': '.*(Kckr|Sept)'}
+                        filt = {
+                            'dis': 'PU', 'dev': '.*(Kckr|Sept)',
+                            'propty_name': '(?!:CCoil).*'}
                     devnames = PSSearch.get_psnames(filt)
                     prefixes.extend([p+':Diag' for p in devnames])
                 elif prs[0] == 'li-ps':
@@ -616,10 +618,12 @@ def generate_service_2_ioc_table():
                             filt = {'sec': 'SI', 'dev': 'FC.*'}
                         psnames = PSSearch.get_psnames(filt)
                         for psn in psnames:
+                            psn = _PVName(psn)
                             try:
                                 magf = PSSearch.conv_psname_2_magfunc(psn)
                                 strg = util.get_strength_label(magf)
-                                prefixes.append(psn + ':' + strg)
+                                prefixes.append(str(psn.substitute(
+                                    propty_name=psn.propty_name+strg)))
                             except ValueError:
                                 pass
                 elif 'id' in ioc:
