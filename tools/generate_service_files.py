@@ -607,6 +607,7 @@ def generate_service_2_ioc_table():
                 if 'conv' in ioc:
                     if 'id' in ioc:
                         idnames = IDSearch.get_idnames()
+                        idnames.remove('SI-14SB:ID-WIG180')
                         prefixes.extend([i+':Kx' for i in idnames])
                     else:
                         if prs[0] == 'li':
