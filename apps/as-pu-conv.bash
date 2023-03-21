@@ -16,6 +16,8 @@ TS-04:PU-InjSeptG-2 \
 TS-04:PU-InjSeptF \
 SI-01SA:PU-InjDpKckr \
 SI-01SA:PU-InjNLKckr \
+SI-01SA:PU-InjNLKckr:CCoilH \
+SI-01SA:PU-InjNLKckr:CCoilV \
 SI-01SA:PU-PingH \
 SI-19C4:PU-PingV | tee /ioc-logs/sirius-ioc-as-pu-conv.log & # 25.7%
 
