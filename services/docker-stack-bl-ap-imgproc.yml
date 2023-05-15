@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+
+  iocs:
+    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/bl-ap-imgproc.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == IA-18RaDiag04-CO-IOCSrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
+
+networks:
+  ioc-network:
+    external: true
+    name: "host"
