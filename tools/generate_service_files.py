@@ -175,6 +175,7 @@ class ServiceConfig:
         'si-ps-diag-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
         'it-ps-lens': 'lnlsfac-srv2',
         'bl-ap-imgproc': 'IA-18RaDiag04-CO-IOCSrv',
+        'si-ap-idff': 'IA-18RaDiag04-CO-IOCSrv',
         }
 
     STACKS = {
@@ -573,7 +574,7 @@ def generate_service_2_ioc_table():
                 if not lin or lin[0] == '#':
                     continue  # empty line or comment
                 elif '/ioc-logs/sirius-ioc-' in lin:
-                    if '-ps' in lin and 'conv' not in lin:
+                    if ('-ps' in lin  or 'idff' in lin) and 'conv' not in lin:
                         iocname = lin.split('/bin/sirius-ioc-')[1]
                         iocname = iocname.split(' | tee ')[0]
                         iocname = iocname.replace('.py', '').replace(' -n', '')
@@ -632,10 +633,15 @@ def generate_service_2_ioc_table():
                             except ValueError:
                                 pass
                 elif 'id' in ioc:
-                    iddev = ioc.split('-')[2].upper()
-                    idnames = IDSearch.get_idnames({'dev': iddev})
-                    # needs conversion to str to avoid SiriusPVName __str__
-                    prefixes.extend([str(idname) for idname in idnames])
+                    if 'idff' in ioc:
+                        idn = ioc.split(' ')[1]
+                        pref = 'SI-' + _PVName(idn).sub + ':AP-IDFF'
+                        prefixes.append(pref)
+                    else:
+                        iddev = ioc.split('-')[2].upper()
+                        idnames = IDSearch.get_idnames({'dev': iddev})
+                        # needs conversion to str to avoid SiriusPVName __str__
+                        prefixes.extend([str(idname) for idname in idnames])
                 elif 'diag' in prs[2]:
                     if prs[0] == 'li':
                         devs = LIDiagConst.ALL_DEVICES
@@ -652,6 +658,12 @@ def generate_service_2_ioc_table():
                             dbs = get_currinfo_database(prs[0].upper())
                             devs = {str(_PVName(p).device_name) for p in dbs}
                             prefixes.extend(sorted(devs))
+                    elif prs[0] == 'bl' and prs[2] == 'imgproc':
+                        bline = prs[3][0:3].upper()
+                        hutch = 'A' if prs[3][-1] == 1 else 'B'
+                        cam = 'BASLER01'
+                        pref = ':'.join([bline, hutch, cam])
+                        prefixes.append(pref)
                     else:
                         devname = prs[2][0].upper() + prs[2][1:]
                         devname = devname.replace('ang', 'Ang')
