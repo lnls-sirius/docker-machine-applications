@@ -98,7 +98,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -120,7 +120,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -142,7 +142,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -186,7 +186,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -318,7 +318,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -406,7 +406,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -472,7 +472,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -626,7 +626,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -692,7 +692,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -758,7 +758,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -846,7 +846,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1068,7 +1068,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1116,7 +1116,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1140,7 +1140,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1188,7 +1188,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1308,7 +1308,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1356,7 +1356,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1380,7 +1380,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1404,7 +1404,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1428,7 +1428,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1452,7 +1452,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1476,7 +1476,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1500,7 +1500,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1668,7 +1668,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1692,7 +1692,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1716,7 +1716,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1836,7 +1836,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1860,7 +1860,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1884,7 +1884,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1932,7 +1932,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1956,7 +1956,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -2004,7 +2004,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == lnlsfac-srv2
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
       replicas: 1
       restart_policy:
         condition: any
