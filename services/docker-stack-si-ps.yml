@@ -98,7 +98,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-2
       replicas: 1
       restart_policy:
         condition: any
@@ -120,7 +120,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
+          - node.hostname == IA-20RaDiag02-CO-IOCSrv-2
       replicas: 1
       restart_policy:
         condition: any
@@ -1428,7 +1428,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
+          - node.hostname == IA-18RaDiag04-CO-IOCSrv
       replicas: 1
       restart_policy:
         condition: any
@@ -1452,7 +1452,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
+          - node.hostname == IA-18RaDiag04-CO-IOCSrv
       replicas: 1
       restart_policy:
         condition: any
@@ -1476,7 +1476,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
+          - node.hostname == IA-18RaDiag04-CO-IOCSrv
       replicas: 1
       restart_policy:
         condition: any
@@ -1500,7 +1500,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-20RaDiag02-CO-IOCSrv-1
+          - node.hostname == IA-18RaDiag04-CO-IOCSrv
       replicas: 1
       restart_policy:
         condition: any
