@@ -628,7 +628,8 @@ def generate_service_2_ioc_table():
                         elif prs[1] == 'pu':
                             filt = {'dis': 'PU'}
                         elif 'fastcorr' in ioc:
-                            filt = {'sec': 'SI', 'dev': 'FC.*'}
+                            sub = prs[4][-2:] + '.*'
+                            filt = {'sec': 'SI', 'sub': sub, 'dev': 'FC.*'}
                         psnames = PSSearch.get_psnames(filt)
                         for psn in psnames:
                             psn = _PVName(psn)
