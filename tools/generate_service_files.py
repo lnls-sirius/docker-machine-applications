@@ -172,7 +172,7 @@ class ServiceConfig:
         'si-ps-trims-qs-c1234-ia18': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ps-trims-qs-c1234-ia19': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ps-trims-qs-c1234-ia20': 'CA-RaTim-CO-IOCSrv',
-        'si-ps-conv-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs': 'IA-20RaDiag01-CO-IOCSrv-2',
         'si-ps-diag-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
         'it-ps-lens': 'IA-18RaDiag04-CO-IOCSrv',
         'bl-ap-imgproc': 'LA-RaCtrl-CO-Srv-1',

@@ -10,7 +10,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-20RaDiag02-CO-IOCSrv-2
+          - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
       replicas: 1
       restart_policy:
         condition: any
