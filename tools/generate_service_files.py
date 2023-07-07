@@ -724,14 +724,16 @@ def generate_service_2_ioc_table():
                     filt = {'sec': prs[0].upper()}
                     if len(prs) == 4:
                         if prs[3] == 'bpms':
-                            filt['dev'] = 'BPM'
+                            filt['dev'] = 'BPM(?!-PsMtn).*'
                         else:
-                            filt['idx'] = prs[3].capitalize()
-                            filt['idx'] = filt['idx'].replace('trim', 'Trim')
+                            idx = prs[3].capitalize().replace('trim', 'Trim')
+                            filt['idx'] = idx
+                        devnames = HLTimeSearch.get_hl_triggers(filt)
                     else:
-                        filt['dev'] = '(?!BPM).*'
-                        filt['idx'] = '(?!(Corrs|Skews|QTrims))'
-                    devnames = HLTimeSearch.get_hl_triggers(filt)
+                        indv = ('Corrs', 'Skews', 'QTrims', 'BPM')
+                        devnames = [
+                            t for t in HLTimeSearch.get_hl_triggers(filt)
+                            if not t.endswith(indv)]
                     prefixes.extend([str(d) for d in devnames])
             data[container][ioc] = prefixes
 
