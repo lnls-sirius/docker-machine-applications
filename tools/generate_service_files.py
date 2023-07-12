@@ -172,7 +172,26 @@ class ServiceConfig:
         'si-ps-trims-qs-c1234-ia18': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ps-trims-qs-c1234-ia19': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ps-trims-qs-c1234-ia20': 'CA-RaTim-CO-IOCSrv',
-        'si-ps-conv-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia01': 'IA-20RaDiag01-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia02': 'IA-20RaDiag01-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia03': 'IA-20RaDiag01-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia04': 'IA-20RaDiag01-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia05': 'IA-20RaDiag01-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia06': 'IA-20RaDiag01-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia07': 'IA-20RaDiag01-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia08': 'IA-20RaDiag01-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia09': 'IA-20RaDiag01-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia10': 'IA-20RaDiag01-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia11': 'IA-20RaDiag02-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia12': 'IA-20RaDiag02-CO-IOCSrv-2',
+        'si-ps-conv-fastcorrs-ia13': 'IA-20RaDiag02-CO-IOCSrv-1',
+        'si-ps-conv-fastcorrs-ia14': 'IA-20RaDiag02-CO-IOCSrv-1',
+        'si-ps-conv-fastcorrs-ia15': 'IA-16RaBbB-CO-IOCSrv',
+        'si-ps-conv-fastcorrs-ia16': 'IA-16RaBbB-CO-IOCSrv',
+        'si-ps-conv-fastcorrs-ia17': 'CA-RaTim-CO-IOCSrv',
+        'si-ps-conv-fastcorrs-ia18': 'CA-RaTim-CO-IOCSrv',
+        'si-ps-conv-fastcorrs-ia19': 'IA-18RaDiag04-CO-IOCSrv',
+        'si-ps-conv-fastcorrs-ia20': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ps-diag-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
         'it-ps-lens': 'IA-18RaDiag04-CO-IOCSrv',
         'bl-ap-imgproc': 'LA-RaCtrl-CO-Srv-1',
@@ -363,7 +382,26 @@ class ServiceConfig:
             'lens': 'it-ps-lens',
             },
         'si-ps-fastcorrs': {
-            'conv': 'si-ps-conv-fastcorrs',
+            'conv-ia01': 'si-ps-conv-fastcorrs-ia01',
+            'conv-ia02': 'si-ps-conv-fastcorrs-ia02',
+            'conv-ia03': 'si-ps-conv-fastcorrs-ia03',
+            'conv-ia04': 'si-ps-conv-fastcorrs-ia04',
+            'conv-ia05': 'si-ps-conv-fastcorrs-ia05',
+            'conv-ia06': 'si-ps-conv-fastcorrs-ia06',
+            'conv-ia07': 'si-ps-conv-fastcorrs-ia07',
+            'conv-ia08': 'si-ps-conv-fastcorrs-ia08',
+            'conv-ia09': 'si-ps-conv-fastcorrs-ia09',
+            'conv-ia10': 'si-ps-conv-fastcorrs-ia10',
+            'conv-ia11': 'si-ps-conv-fastcorrs-ia11',
+            'conv-ia12': 'si-ps-conv-fastcorrs-ia12',
+            'conv-ia13': 'si-ps-conv-fastcorrs-ia13',
+            'conv-ia14': 'si-ps-conv-fastcorrs-ia14',
+            'conv-ia15': 'si-ps-conv-fastcorrs-ia15',
+            'conv-ia16': 'si-ps-conv-fastcorrs-ia16',
+            'conv-ia17': 'si-ps-conv-fastcorrs-ia17',
+            'conv-ia18': 'si-ps-conv-fastcorrs-ia18',
+            'conv-ia19': 'si-ps-conv-fastcorrs-ia19',
+            'conv-ia20': 'si-ps-conv-fastcorrs-ia20',
             'diag': 'si-ps-diag-fastcorrs',
             },
         'si-ap-idff': {
@@ -619,8 +657,7 @@ def generate_service_2_ioc_table():
                 prs = ioc.split('-')
                 if 'conv' in ioc:
                     if 'id' in ioc:
-                        idnames = IDSearch.get_idnames()
-                        idnames.remove('SI-14SB:ID-WIG180')
+                        idnames = IDSearch.get_idnames({'dev': 'APU.*'})
                         prefixes.extend([i+':Kx' for i in idnames])
                     else:
                         if prs[0] == 'li':
@@ -628,7 +665,8 @@ def generate_service_2_ioc_table():
                         elif prs[1] == 'pu':
                             filt = {'dis': 'PU'}
                         elif 'fastcorr' in ioc:
-                            filt = {'sec': 'SI', 'dev': 'FC.*'}
+                            sub = prs[4][-2:] + '.*'
+                            filt = {'sec': 'SI', 'sub': sub, 'dev': 'FC.*'}
                         psnames = PSSearch.get_psnames(filt)
                         for psn in psnames:
                             psn = _PVName(psn)
@@ -686,14 +724,16 @@ def generate_service_2_ioc_table():
                     filt = {'sec': prs[0].upper()}
                     if len(prs) == 4:
                         if prs[3] == 'bpms':
-                            filt['dev'] = 'BPM'
+                            filt['dev'] = 'BPM(?!-PsMtn).*'
                         else:
-                            filt['idx'] = prs[3].capitalize()
-                            filt['idx'] = filt['idx'].replace('trim', 'Trim')
+                            idx = prs[3].capitalize().replace('trim', 'Trim')
+                            filt['idx'] = idx
+                        devnames = HLTimeSearch.get_hl_triggers(filt)
                     else:
-                        filt['dev'] = '(?!BPM).*'
-                        filt['idx'] = '(?!(Corrs|Skews|QTrims))'
-                    devnames = HLTimeSearch.get_hl_triggers(filt)
+                        indv = ('Corrs', 'Skews', 'QTrims', 'BPM')
+                        devnames = [
+                            t for t in HLTimeSearch.get_hl_triggers(filt)
+                            if not t.endswith(indv)]
                     prefixes.extend([str(d) for d in devnames])
             data[container][ioc] = prefixes
 
