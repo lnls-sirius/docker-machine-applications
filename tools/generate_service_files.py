@@ -197,6 +197,7 @@ class ServiceConfig:
         'bl-ap-imgproc': 'LA-RaCtrl-CO-Srv-1',
         'si-ap-idff-epu50': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ap-idff-papu50': 'IA-18RaDiag04-CO-IOCSrv',
+        'si-ap-orbintlk': 'IA-20RaDiag01-CO-IOCSrv-2',
         }
 
     STACKS = {
@@ -718,13 +719,14 @@ def generate_service_2_ioc_table():
                         devname = devname.replace('ofb', 'OFB')
                         devname = devname.replace('Stabinfo', 'StabilityInfo')
                         devname = devname.replace('Energy', 'MeasEnergy')
+                        devname = devname.replace('intlk', 'Intlk')
                         pref = prs[0].upper() + '-Glob:AP-' + devname
                         prefixes.append(pref)
                 elif prs[1] == 'ti':
                     filt = {'sec': prs[0].upper()}
                     if len(prs) == 4:
                         if prs[3] == 'bpms':
-                            filt['dev'] = 'BPM(?!-PsMtn).*'
+                            filt['dev'] = 'BPM(?!-.*).*'
                         else:
                             idx = prs[3].capitalize().replace('trim', 'Trim')
                             filt['idx'] = idx
