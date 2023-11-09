@@ -290,7 +290,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-16RaBbB-CO-IOCSrv
+          - node.hostname == LA-RaCtrl-CO-Srv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -310,7 +310,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-16RaBbB-CO-IOCSrv
+          - node.hostname == LA-RaCtrl-CO-Srv-1
       replicas: 1
       restart_policy:
         condition: any
