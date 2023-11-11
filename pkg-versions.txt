@@ -2,6 +2,7 @@ pkg_version_pip ==21.3.1
 pkg_version_pyepics ==3.4.0
 pkg_version_pcaspy ==0.7.3
 pkg_version_gpy ==1.10.0
+pkg_version_h5py ==3.10.0
 
 pkg_version_python2_pip ==9.0.1
 pkg_version_python2_pyepics ==3.4.0
