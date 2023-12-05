@@ -82,7 +82,6 @@ class ServiceConfig:
         'si-ap-fofb': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ap-stabinfo': 'IA-20RaDiag02-CO-IOCSrv-2',
         'si-id-conv': 'IA-18RaDiag04-CO-IOCSrv',
-        'si-id-delta52': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ap-sofb': 'IA-20RaDiag01-CO-IOCSrv-2',
         'si-ps-dips': 'IA-14RaDiag03-CO-IOCSrv',
         'si-ps-quads-qfq': 'IA-16RaBbB-CO-IOCSrv',

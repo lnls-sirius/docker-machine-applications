@@ -25,13 +25,14 @@ COPY ./etc/logrotate.conf /etc/logrotate.conf
 # Install pip-package dependencies
 
 RUN pip-sirius install \
-    aiohttp \
-    bottleneck \
+    aiohttp:pkg_version_aiohttp \
+    bottleneck:pkg_version_bottleneck \
     python-dateutil \
     urllib3 \
-    scipy \
+    scipy:pkg_version_scipy \
     pydantic \
     pyyaml \
     serial \
     toml \
-    GPy:pkg_version_gpy
+    GPy:pkg_version_gpy \
+    h5py:pkg_version_h5py
