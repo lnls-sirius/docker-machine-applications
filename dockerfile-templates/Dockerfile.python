@@ -48,8 +48,8 @@ RUN ln -s /usr/bin/python3 /usr/local/bin/python-sirius && \
 # Install basic python pip packages
 
 RUN pip-sirius install \
-    numpy \
-    matplotlib
+    numpy:pkg_version_numpy\
+    matplotlib:pkg_version_matplotlib
 
 # update pip version
 

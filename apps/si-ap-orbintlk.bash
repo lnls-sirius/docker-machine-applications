@@ -2,7 +2,7 @@
 
 export PYTHONUNBUFFERED=yes
 
-/usr/local/bin/sirius-ioc-si-ap-idff.py SI-10SB:ID-EPU50 | tee /ioc-logs/sirius-ioc-si-ap-idff-epu50.log & # 4.4%
+/usr/local/bin/sirius-ioc-si-ap-orbintlk.py | tee /ioc-logs/sirius-ioc-si-ap-orbintlk.log &
 
 # run cron for log rotation
 cron &
