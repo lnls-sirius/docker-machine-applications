@@ -194,7 +194,7 @@ class ServiceConfig:
         'si-ps-conv-fastcorrs-ia20': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ps-diag-fastcorrs': 'IA-20RaDiag02-CO-IOCSrv-2',
         'it-ps-lens': 'IA-18RaDiag04-CO-IOCSrv',
-        'bl-ap-imgproc': 'LA-RaCtrl-CO-Srv-1',
+        'bl-ap-imgproc': 'CA-RaCtrl-CO-Srv-1',
         'si-ap-idff-epu50': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ap-idff-papu50': 'IA-18RaDiag04-CO-IOCSrv',
         }
