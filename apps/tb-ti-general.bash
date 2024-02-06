@@ -2,7 +2,7 @@
 
 export PYTHONUNBUFFERED=yes
 
-/usr/local/bin/sirius-ioc-as-ti-control.py -s as | tee /ioc-logs/sirius-ioc-as-ti-trig & # 3.7%
+/usr/local/bin/sirius-ioc-as-ti-control.py -s tb | tee /ioc-logs/sirius-ioc-tb-ti-trig & # 4.0%
 
 # run cron for log rotation
 cron &
