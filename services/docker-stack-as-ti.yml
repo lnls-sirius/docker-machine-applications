@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   as-general:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ti-general.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -23,7 +23,7 @@ services:
       - ioc-network
 
   li-general:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/li-ti-general.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -43,7 +43,7 @@ services:
       - ioc-network
 
   tb-general:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/tb-ti-general.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -63,7 +63,7 @@ services:
       - ioc-network
 
   bo-general:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/bo-ti-general.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -83,7 +83,7 @@ services:
       - ioc-network
 
   ts-general:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/ts-ti-general.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -103,7 +103,7 @@ services:
       - ioc-network
 
   si-general:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/si-ti-general.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -123,7 +123,7 @@ services:
       - ioc-network
 
   ba-general:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/ba-ti-general.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -143,7 +143,7 @@ services:
       - ioc-network
 
   bo-bpms-corrs:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/bo-ti-bpms-corrs.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -163,7 +163,7 @@ services:
       - ioc-network
 
   si-bpms-corrs:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/si-ti-bpms-corrs.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -183,7 +183,7 @@ services:
       - ioc-network
 
   si-trims-skews:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/si-ti-trims-skews.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
