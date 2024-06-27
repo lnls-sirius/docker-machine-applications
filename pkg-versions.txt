@@ -9,6 +9,6 @@ pkg_version_aiohttp ==3.7.4
 pkg_version_matplotlib ==3.3.4
 pkg_version_scipy ==1.10.1
 
-pkg_version_python2_pip ==9.0.1
+pkg_version_python2_pip ==20.1.1
 pkg_version_python2_pyepics ==3.4.0
 pkg_version_python2_pcaspy ==0.7.3
