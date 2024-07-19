@@ -1,5 +1,5 @@
 ARG IMG_DEPS_TAG
-FROM dockerregistry.lnls-sirius.com.br/fac/fac-deps:${IMG_DEPS_TAG}
+FROM ghcr.io/lnls-sirius/docker-machine-applications/fac-deps:${IMG_DEPS_TAG}
 
 SHELL ["bash", "-c"]
 

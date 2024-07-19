@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   tbts-bodip:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-tbts-bodip.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -23,7 +23,7 @@ services:
       - ioc-network
 
   ia01:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia01.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -43,7 +43,7 @@ services:
       - ioc-network
 
   ia02:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia02.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -63,7 +63,7 @@ services:
       - ioc-network
 
   ia03:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia03.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -83,7 +83,7 @@ services:
       - ioc-network
 
   ia04:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia04.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -103,7 +103,7 @@ services:
       - ioc-network
 
   ia05:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia05.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -123,7 +123,7 @@ services:
       - ioc-network
 
   ia06:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia06.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -143,7 +143,7 @@ services:
       - ioc-network
 
   ia07:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia07.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -163,7 +163,7 @@ services:
       - ioc-network
 
   ia08:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia08.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -183,7 +183,7 @@ services:
       - ioc-network
 
   ia09:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia09.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -203,7 +203,7 @@ services:
       - ioc-network
 
   ia10:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia10.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -223,7 +223,7 @@ services:
       - ioc-network
 
   ia11:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia11.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -243,7 +243,7 @@ services:
       - ioc-network
 
   ia12:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia12.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -263,7 +263,7 @@ services:
       - ioc-network
 
   ia13:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia13.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -283,7 +283,7 @@ services:
       - ioc-network
 
   ia14:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia14.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -303,7 +303,7 @@ services:
       - ioc-network
 
   ia15:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia15.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -323,7 +323,7 @@ services:
       - ioc-network
 
   ia16:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia16.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -343,7 +343,7 @@ services:
       - ioc-network
 
   ia17:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia17.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -363,7 +363,7 @@ services:
       - ioc-network
 
   ia18:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia18.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -383,7 +383,7 @@ services:
       - ioc-network
 
   ia19:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia19.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -403,7 +403,7 @@ services:
       - ioc-network
 
   ia20:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/as-ps-dclinks-ia20.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"

@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   iocs:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/si-ps-corrs-c134-ia07.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"

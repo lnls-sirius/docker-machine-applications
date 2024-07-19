@@ -454,7 +454,7 @@ class DockerStackConfig(ServiceConfig):
             image = 'fac-iocs-li-ps'
         else:
             image = 'fac-iocs'
-        strf = 'dockerregistry.lnls-sirius.com.br/fac/' + image + ":"
+        strf = "ghcr.io/lnls-sirius/docker-machine-applications/" + image + ":"
         strf += self.image_tag
         return strf
 

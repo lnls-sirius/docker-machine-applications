@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   dips:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/bo-ps-dips.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
@@ -23,7 +23,7 @@ services:
       - ioc-network
 
   quads:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-quads.bash'
@@ -45,7 +45,7 @@ services:
       - ioc-network
 
   sexts:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-sexts.bash'
@@ -67,7 +67,7 @@ services:
       - ioc-network
 
   corrs-ia01:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia01.bash'
@@ -89,7 +89,7 @@ services:
       - ioc-network
 
   corrs-ia02:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia02.bash'
@@ -111,7 +111,7 @@ services:
       - ioc-network
 
   corrs-ia04:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia04.bash'
@@ -133,7 +133,7 @@ services:
       - ioc-network
 
   corrs-ia05:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia05.bash'
@@ -155,7 +155,7 @@ services:
       - ioc-network
 
   corrs-ia07:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia07.bash'
@@ -177,7 +177,7 @@ services:
       - ioc-network
 
   corrs-ia08:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia08.bash'
@@ -199,7 +199,7 @@ services:
       - ioc-network
 
   corrs-ia10:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia10.bash'
@@ -221,7 +221,7 @@ services:
       - ioc-network
 
   corrs-ia11:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia11.bash'
@@ -243,7 +243,7 @@ services:
       - ioc-network
 
   corrs-ia13:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia13.bash'
@@ -265,7 +265,7 @@ services:
       - ioc-network
 
   corrs-ia14:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia14.bash'
@@ -287,7 +287,7 @@ services:
       - ioc-network
 
   corrs-ia16:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia16.bash'
@@ -309,7 +309,7 @@ services:
       - ioc-network
 
   corrs-ia17:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia17.bash'
@@ -331,7 +331,7 @@ services:
       - ioc-network
 
   corrs-ia20:
-    image: dockerregistry.lnls-sirius.com.br/fac/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
       - "dips"
     command: bash -c '/ioc-apps/bo-ps-corrs-ia20.bash'
