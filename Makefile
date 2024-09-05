@@ -36,7 +36,7 @@ image-pull-tag-push-debian:
 
 # time: 4m0s @ 10.0.38.42
 image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-debian
-	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python > ./deploy-files/Dockerfile.python
+	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python > ./deploy-files/Dockerfile.python
 	docker build -f ./deploy-files/Dockerfile.python \
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEBIAN_TAG=$(IMG_DEBIAN_TAG) \
@@ -46,7 +46,7 @@ image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-deb
 
 # time: 1m11s @ 10.0.38.42
 image-build-fac-epics: dockerfiles-create
-	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics > ./deploy-files/Dockerfile.epics
+	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics > ./deploy-files/Dockerfile.epics
 	docker build -f ./deploy-files/Dockerfile.epics \
 		$(BUILD_CACHE) \
 		--build-arg FILES_SERVER_URL=$(FILES_SERVER_URL) \
@@ -58,7 +58,7 @@ image-build-fac-epics: dockerfiles-create
 
 # time: 4m5s @ 10.0.38.42
 image-build-fac-deps: dockerfiles-create
-	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.deps > ./deploy-files/Dockerfile.deps
+	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.deps > ./deploy-files/Dockerfile.deps
 	docker build -f ./deploy-files/Dockerfile.deps \
 		$(BUILD_CACHE) \
 		--build-arg IMG_EPICS_TAG=$(IMG_EPICS_TAG) \
@@ -68,19 +68,19 @@ image-build-fac-deps: dockerfiles-create
 
 # time: 1m59s @ 10.0.38.42
 image-build-fac-iocs: image-cleanup dockerfiles-create
-	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.iocs > ./deploy-files/Dockerfile.iocs
+	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.iocs > ./deploy-files/Dockerfile.iocs
 	docker build -f ./deploy-files/Dockerfile.iocs \
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEPS_TAG=$(IMG_DEPS_TAG) \
 		--label "br.com.lnls-sirius.department=FAC" \
-		. -t ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:$(DEPLOY_TAG) && \
-	docker push ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:$(DEPLOY_TAG)
+		. -t ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:$(DEPLOY_TAG)
+	# docker push ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:$(DEPLOY_TAG)
 
 # time: 4m45s @ 10.0.38.42
 image-build-fac-iocs-li-ps: image-cleanup dockerfiles-create image-pull-tag-push-debian
-	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python2 > ./deploy-files/Dockerfile.python2
-	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics-python2 > ./deploy-files/Dockerfile.epics-python2
-	python ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.iocs-li-ps > ./deploy-files/Dockerfile.iocs-li-ps
+	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python2 > ./deploy-files/Dockerfile.python2
+	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics-python2 > ./deploy-files/Dockerfile.epics-python2
+	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.iocs-li-ps > ./deploy-files/Dockerfile.iocs-li-ps
 	docker build -f ./deploy-files/Dockerfile.python2 \
 		$(BUILD_CACHE) \
 		--build-arg IMG_DEBIAN_TAG=$(IMG_DEBIAN_TAG) \
