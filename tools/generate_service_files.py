@@ -449,12 +449,12 @@ class DockerStackConfig(ServiceConfig):
     def get_image(self, app):
         """Return image."""
         if 'CSCONSTS' in self.image_tag:
-            image = 'fac-csconsts'
+            image = 'control-system-constants'
         elif 'li-ps' in app and 'conv' not in app and 'diag' not in app:
-            image = 'fac-iocs-li-ps'
+            image = 'docker-machine-applications/fac-iocs-li-ps'
         else:
-            image = 'fac-iocs'
-        strf = "ghcr.io/lnls-sirius/docker-machine-applications/" + image + ":"
+            image = 'docker-machine-applications/fac-iocs'
+        strf = "ghcr.io/lnls-sirius/" + image + ":"
         strf += self.image_tag
         return strf
 

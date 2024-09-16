@@ -429,3 +429,16 @@ service-stop-all:
 	docker stack rm facs-as-ap-injctrl; \
 	docker stack rm facs-bl-ap-imgproc; \
 	docker stack rm facs-si-ap-orbintlk
+
+
+#  --- csconstants services ---
+
+service-start-csconsts:
+	cd services; \
+	sed -i "s/control-system-constants:.*/control-system-constants:$(CSCONSTS_VERSION)/g" docker-stack-csconsts.yml; \
+	docker stack deploy -c docker-stack-csconsts.yml facs-csconsts; \
+	sed -i "s/control-system-constants:.*/control-system-constants:__FAC_CSCONSTS_TAG_TEMPLATE__/g" docker-stack-csconsts.yml
+
+service-stop-csconsts:
+	cd services; \
+	docker stack rm facs-csconsts
