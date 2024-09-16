@@ -14,7 +14,7 @@ class ServiceConfig:
     """Services configuration."""
 
     SERVICES_CSCONSTS = {
-        'csconsts': 'IA-16RaBbB-CO-IOCSrv'
+        'csconsts': 'CA-RaCtrl-CO-Srv-1'
         }
 
     SERVICES = {
