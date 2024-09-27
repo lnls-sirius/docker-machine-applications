@@ -140,7 +140,6 @@ class ServiceConfig:
         'si-ps-corrs-qs-sb-ia10': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ps-corrs-sb-ia14': 'IA-14RaDiag03-CO-IOCSrv',
         'si-ps-corrlong-sb-ia14': 'IA-18RaDiag04-CO-IOCSrv',
-        'si-ps-corrs-sa-ia17': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ps-trims-qs-m12-ia01': 'IA-16RaBbB-CO-IOCSrv',
         'si-ps-trims-qs-m12-ia02': 'CA-RaTim-CO-IOCSrv',
         'si-ps-trims-qs-m12-ia03': 'IA-16RaBbB-CO-IOCSrv',
@@ -205,7 +204,6 @@ class ServiceConfig:
         'it-ps-lens': 'IA-18RaDiag04-CO-IOCSrv',
         'bl-ap-imgproc': 'CA-RaCtrl-CO-Srv-1',
         'si-ap-idff-delta52': 'IA-18RaDiag04-CO-IOCSrv',
-        'si-ap-idff-papu50': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ap-orbintlk': 'IA-20RaDiag01-CO-IOCSrv-2',
         }
 
@@ -348,7 +346,6 @@ class ServiceConfig:
             'corrs-c134-ia19': ('si-ps-corrs-c134-ia19', ('dips', )),
             'corrs-c134-ia20': ('si-ps-corrs-c134-ia20', ('dips', )),
             'corrs-qs-sb-ia10': ('si-ps-corrs-qs-sb-ia10', ('dips', )),
-            'corrs-sa-ia17': ('si-ps-corrs-sa-ia17', ('dips', )),
             'trims-qs-c1234-ia01': ('si-ps-trims-qs-c1234-ia01', ('dips', 'quads-qd', 'quads-qfq')),
             'trims-qs-c1234-ia02': ('si-ps-trims-qs-c1234-ia02', ('dips', 'quads-qd', 'quads-qfq')),
             'trims-qs-c1234-ia03': ('si-ps-trims-qs-c1234-ia03', ('dips', 'quads-qd', 'quads-qfq')),
@@ -421,7 +418,6 @@ class ServiceConfig:
             },
         'si-ap-idff': {
             'delta52': 'si-ap-idff-delta52',
-            'papu50': 'si-ap-idff-papu50',
         }
         # 'bl-ap-imgproc': {
         #     'imgproc': 'bl-ap-imgproc',
