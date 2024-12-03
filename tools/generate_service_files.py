@@ -1,13 +1,15 @@
 #!/usr/bin/env python-sirius
+"""Generate Service Files."""
 
 import os
+
 import yaml
 from siriuspy import util
-from siriuspy.namesys import SiriusPVName as _PVName
-from siriuspy.search import PSSearch, HLTimeSearch, IDSearch
 from siriuspy.currinfo.csdev import get_currinfo_database
-from siriuspy.diagsys.rfdiag.csdev import Const as RFDiagConst
 from siriuspy.diagsys.lidiag.csdev import Const as LIDiagConst
+from siriuspy.diagsys.rfdiag.csdev import Const as RFDiagConst
+from siriuspy.namesys import SiriusPVName as _PVName
+from siriuspy.search import HLTimeSearch, IDSearch, PSSearch
 
 
 class ServiceConfig:
@@ -204,6 +206,8 @@ class ServiceConfig:
         'it-ps-lens': 'IA-18RaDiag04-CO-IOCSrv',
         'bl-ap-imgproc': 'CA-RaCtrl-CO-Srv-1',
         'si-ap-idff-delta52': 'IA-18RaDiag04-CO-IOCSrv',
+        'si-ap-idff-ivu18-sb08': 'IA-18RaDiag04-CO-IOCSrv',
+        'si-ap-idff-ivu18-sb14': 'IA-18RaDiag04-CO-IOCSrv',
         'si-ap-orbintlk': 'IA-20RaDiag01-CO-IOCSrv-2',
         }
 
@@ -302,9 +306,15 @@ class ServiceConfig:
             'dips': 'si-ps-dips',
             'quads-qd': ('si-ps-quads-qd', ('dips', )),
             'quads-qfq': ('si-ps-quads-qfq', ('dips', )),
-            'sexts-sda12b2-sfa0p0-sda0p0': ('si-ps-sexts-sda12b2-sfa0p0-sda0p0', ('dips', )),
-            'sexts-sfa12-sda3p1-sfb0-sdb01': ('si-ps-sexts-sfa12-sda3p1-sfb0-sdb01', ('dips', )),
-            'sexts-sfb12-sdb3-sfp12-sdp23': ('si-ps-sexts-sfb12-sdb3-sfp12-sdp23', ('dips', )),
+            'sexts-sda12b2-sfa0p0-sda0p0': (
+                'si-ps-sexts-sda12b2-sfa0p0-sda0p0',
+                ('dips', )),
+            'sexts-sfa12-sda3p1-sfb0-sdb01': (
+                'si-ps-sexts-sfa12-sda3p1-sfb0-sdb01',
+                ('dips', )),
+            'sexts-sfb12-sdb3-sfp12-sdp23': (
+                'si-ps-sexts-sfb12-sdb3-sfp12-sdp23',
+                ('dips', )),
             'corrs-c2m12-ia01': ('si-ps-corrs-c2m12-ia01', ('dips', )),
             'corrs-c2m12-ia02': ('si-ps-corrs-c2m12-ia02', ('dips', )),
             'corrs-c2m12-ia03': ('si-ps-corrs-c2m12-ia03', ('dips', )),
@@ -350,46 +360,126 @@ class ServiceConfig:
             'corrs-qs-sb-ia10': ('si-ps-corrs-qs-sb-ia10', ('dips', )),
             'corrs-sb-ia14': ('si-ps-corrs-sb-ia14', ('dips', )),
             'corrlong-sb-ia14': ('si-ps-corrlong-sb-ia14', ('dips', )),
-            'trims-qs-c1234-ia01': ('si-ps-trims-qs-c1234-ia01', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia02': ('si-ps-trims-qs-c1234-ia02', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia03': ('si-ps-trims-qs-c1234-ia03', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia04': ('si-ps-trims-qs-c1234-ia04', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia05': ('si-ps-trims-qs-c1234-ia05', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia06': ('si-ps-trims-qs-c1234-ia06', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia07': ('si-ps-trims-qs-c1234-ia07', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia08': ('si-ps-trims-qs-c1234-ia08', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia09': ('si-ps-trims-qs-c1234-ia09', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia10': ('si-ps-trims-qs-c1234-ia10', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia11': ('si-ps-trims-qs-c1234-ia11', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia12': ('si-ps-trims-qs-c1234-ia12', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia13': ('si-ps-trims-qs-c1234-ia13', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia14': ('si-ps-trims-qs-c1234-ia14', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia15': ('si-ps-trims-qs-c1234-ia15', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia16': ('si-ps-trims-qs-c1234-ia16', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia17': ('si-ps-trims-qs-c1234-ia17', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia18': ('si-ps-trims-qs-c1234-ia18', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia19': ('si-ps-trims-qs-c1234-ia19', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-c1234-ia20': ('si-ps-trims-qs-c1234-ia20', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia01': ('si-ps-trims-qs-m12-ia01', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia02': ('si-ps-trims-qs-m12-ia02', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia03': ('si-ps-trims-qs-m12-ia03', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia04': ('si-ps-trims-qs-m12-ia04', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia05': ('si-ps-trims-qs-m12-ia05', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia06': ('si-ps-trims-qs-m12-ia06', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia07': ('si-ps-trims-qs-m12-ia07', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia08': ('si-ps-trims-qs-m12-ia08', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia09': ('si-ps-trims-qs-m12-ia09', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia10': ('si-ps-trims-qs-m12-ia10', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia11': ('si-ps-trims-qs-m12-ia11', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia12': ('si-ps-trims-qs-m12-ia12', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia13': ('si-ps-trims-qs-m12-ia13', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia14': ('si-ps-trims-qs-m12-ia14', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia15': ('si-ps-trims-qs-m12-ia15', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia16': ('si-ps-trims-qs-m12-ia16', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia17': ('si-ps-trims-qs-m12-ia17', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia18': ('si-ps-trims-qs-m12-ia18', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia19': ('si-ps-trims-qs-m12-ia19', ('dips', 'quads-qd', 'quads-qfq')),
-            'trims-qs-m12-ia20': ('si-ps-trims-qs-m12-ia20', ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia01': (
+                'si-ps-trims-qs-c1234-ia01',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia02': (
+                'si-ps-trims-qs-c1234-ia02',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia03': (
+                'si-ps-trims-qs-c1234-ia03',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia04': (
+                'si-ps-trims-qs-c1234-ia04',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia05': (
+                'si-ps-trims-qs-c1234-ia05',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia06': (
+                'si-ps-trims-qs-c1234-ia06',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia07': (
+                'si-ps-trims-qs-c1234-ia07',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia08': (
+                'si-ps-trims-qs-c1234-ia08',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia09': (
+                'si-ps-trims-qs-c1234-ia09',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia10': (
+                'si-ps-trims-qs-c1234-ia10',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia11': (
+                'si-ps-trims-qs-c1234-ia11',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia12': (
+                'si-ps-trims-qs-c1234-ia12',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia13': (
+                'si-ps-trims-qs-c1234-ia13',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia14': (
+                'si-ps-trims-qs-c1234-ia14',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia15': (
+                'si-ps-trims-qs-c1234-ia15',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia16': (
+                'si-ps-trims-qs-c1234-ia16',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia17': (
+                'si-ps-trims-qs-c1234-ia17',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia18': (
+                'si-ps-trims-qs-c1234-ia18',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia19': (
+                'si-ps-trims-qs-c1234-ia19',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-c1234-ia20': (
+                'si-ps-trims-qs-c1234-ia20',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia01': (
+                'si-ps-trims-qs-m12-ia01',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia02': (
+                'si-ps-trims-qs-m12-ia02',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia03': (
+                'si-ps-trims-qs-m12-ia03',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia04': (
+                'si-ps-trims-qs-m12-ia04',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia05': (
+                'si-ps-trims-qs-m12-ia05',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia06': (
+                'si-ps-trims-qs-m12-ia06',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia07': (
+                'si-ps-trims-qs-m12-ia07',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia08': (
+                'si-ps-trims-qs-m12-ia08',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia09': (
+                'si-ps-trims-qs-m12-ia09',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia10': (
+                'si-ps-trims-qs-m12-ia10',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia11': (
+                'si-ps-trims-qs-m12-ia11',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia12': (
+                'si-ps-trims-qs-m12-ia12',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia13': (
+                'si-ps-trims-qs-m12-ia13',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia14': (
+                'si-ps-trims-qs-m12-ia14',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia15': (
+                'si-ps-trims-qs-m12-ia15',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia16': (
+                'si-ps-trims-qs-m12-ia16',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia17': (
+                'si-ps-trims-qs-m12-ia17',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia18': (
+                'si-ps-trims-qs-m12-ia18',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia19': (
+                'si-ps-trims-qs-m12-ia19',
+                ('dips', 'quads-qd', 'quads-qfq')),
+            'trims-qs-m12-ia20': (
+                'si-ps-trims-qs-m12-ia20',
+                ('dips', 'quads-qd', 'quads-qfq')),
             },
         'si-id': {
             'conv': 'si-id-conv',
@@ -422,6 +512,8 @@ class ServiceConfig:
             },
         'si-ap-idff': {
             'delta52': 'si-ap-idff-delta52',
+            'ivu18-sb08': 'si-ap-idff-ivu18-sb08',
+            'ivu18-sb14': 'si-ap-idff-ivu18-sb14',
         }
         # 'bl-ap-imgproc': {
         #     'imgproc': 'bl-ap-imgproc',
@@ -436,6 +528,7 @@ class DockerStackConfig(ServiceConfig):
     IMAGE_TAG_IOCS = '__FAC_IOC_TAG_TEMPLATE__'
 
     def __init__(self, image_tag):
+        """."""
         self.version = '3.7'
         self.image_tag = image_tag
         self.networks = ['host_network'] if 'CSCONSTS' in image_tag else \
@@ -463,6 +556,7 @@ class DockerStackConfig(ServiceConfig):
         return strf
 
     def str_header(self):
+        """."""
         strf = ''
         strf += 'version: "' + self.version + '"'
         strf += '\n'
@@ -470,6 +564,7 @@ class DockerStackConfig(ServiceConfig):
         return strf
 
     def str_service(self, app, node, depends=None):
+        """."""
         strf = ''
         strf += '\n' + '    image: ' + self.get_image(app)
         if depends:
@@ -479,7 +574,8 @@ class DockerStackConfig(ServiceConfig):
         if 'CSCONSTS' not in self.image_tag:
             strf += '\n' + '    command: ' + DockerStackConfig.get_command(app)
         strf += '\n' + '    volumes:'
-        strf += '\n' + '      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"'
+        strf += '\n' + ('      - "/storage/common/fac/iocs-log:'
+                        '/home/sirius/iocs-log"')
         strf += '\n' + '    deploy:'
         strf += '\n' + '      placement:'
         strf += '\n' + '        constraints:'
@@ -498,6 +594,7 @@ class DockerStackConfig(ServiceConfig):
         return strf
 
     def str_networks(self):
+        """."""
         strf = ''
         strf += '\n' + 'networks:'
         strf += '\n' + '  ioc-network' + ':'
@@ -510,11 +607,13 @@ class DockerLowStackConfig(DockerStackConfig):
     """Docker low stack configuration."""
 
     def __init__(self, app, node):
+        """."""
         super().__init__(DockerStackConfig.IMAGE_TAG_IOCS)
         self.app = app
         self.node = node
 
     def __str__(self):
+        """."""
         strf = self.str_header()
         strf += '\n'
         strf += '\n' + '  iocs:'
@@ -524,6 +623,7 @@ class DockerLowStackConfig(DockerStackConfig):
         return strf
 
     def save_config_file(self):
+        """."""
         fname = 'docker-stack-' + self.app + '.yml'
         print(self, file=open(fname, 'w'))
 
@@ -589,7 +689,6 @@ class DockerCSConstsConfig(DockerStackConfig):
 
 def generate_service_files():
     """Generate docker service file."""
-
     for app, node in ServiceConfig.SERVICES_CSCONSTS.items():
         config = DockerCSConstsConfig(app=app, node=node)
         config.save_config_file()
@@ -603,9 +702,8 @@ def generate_service_files():
         config.save_config_file()
 
 
-def generate_service_2_ioc_table():
+def generate_service_2_ioc_table():  # noqa: C901
     """Generate docker service -> IOCs table."""
-
     cont2serv = dict()
     for stack, sub2serv in ServiceConfig.STACKS.items():
         for sub, serv in sub2serv.items():

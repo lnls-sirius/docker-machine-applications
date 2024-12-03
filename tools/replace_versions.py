@@ -38,7 +38,7 @@ def print_output_file(data):
     """."""
     for datum in data:
         print(datum)
-        
+
 
 def run_replace():
     """."""
