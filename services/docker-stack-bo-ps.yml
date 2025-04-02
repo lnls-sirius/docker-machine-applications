@@ -120,7 +120,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == CA-RaTim-CO-IOCSrv
+          - node.hostname == ca-ratim-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -142,7 +142,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == CA-RaTim-CO-IOCSrv
+          - node.hostname == ca-ratim-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -340,7 +340,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == CA-RaTim-CO-IOCSrv
+          - node.hostname == ca-ratim-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
