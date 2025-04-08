@@ -10,7 +10,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-18RaDiag04-CO-IOCSrv
+          - node.hostname == ca-ratim-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any

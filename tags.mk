@@ -10,7 +10,8 @@ EPICS_BASE_TAG ?= base-3.15.6
 
 # tags used for creating docker images
 IMG_DEBIAN_TAG ?= bullseye-20211011
-DEPLOY_TAG ?= 2024-06-26
+#DEPLOY_TAG ?= 2024-06-26
+DEPLOY_TAG ?= 2025-01-27_15-00-00
 
 # image tags used for starting docker services
 IMG_IOCS_LI_PS_TAG ?= 2024-06-26
