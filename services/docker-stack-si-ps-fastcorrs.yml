@@ -2,205 +2,205 @@ version: "3.7"
 
 services:
 
-  #conv-ia01:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia01.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  conv-ia01:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia01.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-16rabbb-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-  #conv-ia02:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia02.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  conv-ia02:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia02.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-16rabbb-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-  #conv-ia03:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia03.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  conv-ia03:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia03.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-16rabbb-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-  #conv-ia04:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia04.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  conv-ia04:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia04.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-16rabbb-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-  #conv-ia05:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia05.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  conv-ia05:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia05.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-16rabbb-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-  #conv-ia06:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia06.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  conv-ia06:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia06.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-16rabbb-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-  #conv-ia07:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia07.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  conv-ia07:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia07.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-16rabbb-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-  #conv-ia08:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia08.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  conv-ia08:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia08.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-16rabbb-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-  #conv-ia09:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia09.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  conv-ia09:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia09.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-16rabbb-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-  #conv-ia10:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia10.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag01-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  conv-ia10:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia10.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-16rabbb-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
   #conv-ia11:
   #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
