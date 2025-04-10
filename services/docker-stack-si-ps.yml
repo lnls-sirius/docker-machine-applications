@@ -88,49 +88,49 @@ services:
     networks:
       - ioc-network
 
-  #sexts-sfa12-sda3p1-sfb0-sdb01:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  depends_on:
-  #    - "dips"
-  #  command: bash -c '/ioc-apps/si-ps-sexts-sfa12-sda3p1-sfb0-sdb01.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag02-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  sexts-sfa12-sda3p1-sfb0-sdb01:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    depends_on:
+      - "dips"
+    command: bash -c '/ioc-apps/si-ps-sexts-sfa12-sda3p1-sfb0-sdb01.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-20radiag02-co-iocsrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-  #sexts-sfb12-sdb3-sfp12-sdp23:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  depends_on:
-  #    - "dips"
-  #  command: bash -c '/ioc-apps/si-ps-sexts-sfb12-sdb3-sfp12-sdp23.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag02-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  sexts-sfb12-sdb3-sfp12-sdp23:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    depends_on:
+      - "dips"
+    command: bash -c '/ioc-apps/si-ps-sexts-sfb12-sdb3-sfp12-sdp23.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-20radiag02-co-iocsrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
   corrs-c2m12-ia01:
     image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
@@ -594,27 +594,27 @@ services:
     networks:
       - ioc-network
 
-  #corrs-c134-ia02:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  depends_on:
-  #    - "dips"
-  #  command: bash -c '/ioc-apps/si-ps-corrs-c134-ia02.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag02-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  corrs-c134-ia02:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    depends_on:
+      - "dips"
+    command: bash -c '/ioc-apps/si-ps-corrs-c134-ia02.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-20radiag02-co-iocsrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
   corrs-c134-ia03:
     image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
@@ -1386,29 +1386,29 @@ services:
     networks:
       - ioc-network
 
-  #trims-qs-c1234-ia12:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  depends_on:
-  #    - "dips"
-  #    - "quads-qd"
-  #    - "quads-qfq"
-  #  command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia12.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag02-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  trims-qs-c1234-ia12:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    depends_on:
+      - "dips"
+      - "quads-qd"
+      - "quads-qfq"
+    command: bash -c '/ioc-apps/si-ps-trims-qs-c1234-ia12.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-20radiag02-co-iocsrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
   trims-qs-c1234-ia13:
     image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
@@ -1842,29 +1842,29 @@ services:
     networks:
       - ioc-network
 
-  #trims-qs-m12-ia11:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  depends_on:
-  #    - "dips"
-  #    - "quads-qd"
-  #    - "quads-qfq"
-  #  command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia11.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-20RaDiag02-CO-IOCSrv-2
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  trims-qs-m12-ia11:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    depends_on:
+      - "dips"
+      - "quads-qd"
+      - "quads-qfq"
+    command: bash -c '/ioc-apps/si-ps-trims-qs-m12-ia11.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-20radiag02-co-iocsrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
   trims-qs-m12-ia12:
     image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
