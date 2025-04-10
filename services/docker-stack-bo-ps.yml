@@ -176,27 +176,27 @@ services:
     networks:
       - ioc-network
 
-  #corrs-ia08:
-  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-  #  depends_on:
-  #    - "dips"
-  #  command: bash -c '/ioc-apps/bo-ps-corrs-ia08.bash'
-  #  volumes:
-  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-  #  deploy:
-  #    placement:
-  #      constraints:
-  #        - node.hostname == IA-16RaBbB-CO-IOCSrv
-  #    replicas: 1
-  #    restart_policy:
-  #      condition: any
-  #  logging:
-  #    driver: "json-file"
-  #    options:
-  #      max-file: "10"
-  #      max-size: "10m"
-  #  networks:
-  #    - ioc-network
+  corrs-ia08:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    depends_on:
+      - "dips"
+    command: bash -c '/ioc-apps/bo-ps-corrs-ia08.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ia-14radiag03-co-iocsrv
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
   #corrs-ia10:
   #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
