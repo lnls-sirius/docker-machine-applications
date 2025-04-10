@@ -2,45 +2,45 @@ version: "3.7"
 
 services:
 
-  spect-quads-lens:
-    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs-li-ps:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c '/ioc-apps/li-ps-spect-quads-lens.bash'
-    volumes:
-      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-    deploy:
-      placement:
-        constraints:
-          - node.hostname == IA-16RaBbB-CO-IOCSrv
-      replicas: 1
-      restart_policy:
-        condition: any
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "10"
-        max-size: "10m"
-    networks:
-      - ioc-network
+  #spect-quads-lens:
+  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs-li-ps:__FAC_IOC_TAG_TEMPLATE__
+  #  command: bash -c '/ioc-apps/li-ps-spect-quads-lens.bash'
+  #  volumes:
+  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+  #  deploy:
+  #    placement:
+  #      constraints:
+  #        - node.hostname == IA-16RaBbB-CO-IOCSrv
+  #    replicas: 1
+  #    restart_policy:
+  #      condition: any
+  #  logging:
+  #    driver: "json-file"
+  #    options:
+  #      max-file: "10"
+  #      max-size: "10m"
+  #  networks:
+  #    - ioc-network
 
-  corrs:
-    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs-li-ps:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c '/ioc-apps/li-ps-corrs.bash'
-    volumes:
-      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-    deploy:
-      placement:
-        constraints:
-          - node.hostname == IA-16RaBbB-CO-IOCSrv
-      replicas: 1
-      restart_policy:
-        condition: any
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "10"
-        max-size: "10m"
-    networks:
-      - ioc-network
+  #corrs:
+  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs-li-ps:__FAC_IOC_TAG_TEMPLATE__
+  #  command: bash -c '/ioc-apps/li-ps-corrs.bash'
+  #  volumes:
+  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+  #  deploy:
+  #    placement:
+  #      constraints:
+  #        - node.hostname == IA-16RaBbB-CO-IOCSrv
+  #    replicas: 1
+  #    restart_policy:
+  #      condition: any
+  #  logging:
+  #    driver: "json-file"
+  #    options:
+  #      max-file: "10"
+  #      max-size: "10m"
+  #  networks:
+  #    - ioc-network
 
   slnds:
     image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs-li-ps:__FAC_IOC_TAG_TEMPLATE__
@@ -50,7 +50,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-14RaDiag03-CO-IOCSrv
+          - node.hostname == ia-18radiag04-co-iocsrv
       replicas: 1
       restart_policy:
         condition: any
@@ -74,7 +74,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == IA-14RaDiag03-CO-IOCSrv
+          - node.hostname == ia-18radiag04-co-iocsrv
       replicas: 1
       restart_policy:
         condition: any
@@ -86,29 +86,29 @@ services:
     networks:
       - ioc-network
 
-  diag:
-    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    depends_on:
-      - "spect-quads-lens"
-      - "corrs"
-      - "slnds"
-    command: bash -c '/ioc-apps/li-ps-diag.bash'
-    volumes:
-      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-    deploy:
-      placement:
-        constraints:
-          - node.hostname == IA-16RaBbB-CO-IOCSrv
-      replicas: 1
-      restart_policy:
-        condition: any
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "10"
-        max-size: "10m"
-    networks:
-      - ioc-network
+  #diag:
+  #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+  #  depends_on:
+  #    - "spect-quads-lens"
+  #    - "corrs"
+  #    - "slnds"
+  #  command: bash -c '/ioc-apps/li-ps-diag.bash'
+  #  volumes:
+  #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+  #  deploy:
+  #    placement:
+  #      constraints:
+  #        - node.hostname == IA-16RaBbB-CO-IOCSrv
+  #    replicas: 1
+  #    restart_policy:
+  #      condition: any
+  #  logging:
+  #    driver: "json-file"
+  #    options:
+  #      max-file: "10"
+  #      max-size: "10m"
+  #  networks:
+  #    - ioc-network
 
 networks:
   ioc-network:
