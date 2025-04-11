@@ -142,7 +142,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag01-co-iocsrv-2
+          - node.hostname == ia-20radiag02-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -406,7 +406,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag01-co-iocsrv-2
+          - node.hostname == ia-20radiag02-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -692,7 +692,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag01-co-iocsrv-2
+          - node.hostname == ia-20radiag02-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1134,7 +1134,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag01-co-iocsrv-2
+          - node.hostname == ia-20radiag02-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1254,7 +1254,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag01-co-iocsrv-2
+          - node.hostname == ia-20radiag02-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1734,7 +1734,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag01-co-iocsrv-2
+          - node.hostname == ia-20radiag02-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1902,7 +1902,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag01-co-iocsrv-2
+          - node.hostname == ia-20radiag02-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
@@ -1998,7 +1998,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag01-co-iocsrv-2
+          - node.hostname == ia-20radiag02-co-iocsrv-1
       replicas: 1
       restart_policy:
         condition: any
