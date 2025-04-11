@@ -22,45 +22,45 @@ services:
     networks:
       - ioc-network
 
-        #ivu18-sb08:
-        #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-        #  command: bash -c '/ioc-apps/si-ap-idff-ivu18-sb08.bash'
-        #  volumes:
-        #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-        #  deploy:
-        #    placement:
-        #      constraints:
-        #        - node.hostname == ca-ratim-co-iocsrv-1
-        #    replicas: 1
-        #    restart_policy:
-        #      condition: any
-        #  logging:
-        #    driver: "json-file"
-        #    options:
-        #      max-file: "10"
-        #      max-size: "10m"
-        #  networks:
-        #    - ioc-network
+  ivu18-sb08:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ap-idff-ivu18-sb08.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ca-ratim-co-iocsrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
-        #ivu18-sb14:
-        #  image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-        #  command: bash -c '/ioc-apps/si-ap-idff-ivu18-sb14.bash'
-        #  volumes:
-        #    - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-        #  deploy:
-        #    placement:
-        #      constraints:
-        #        - node.hostname == ca-ratim-co-iocsrv-1
-        #    replicas: 1
-        #    restart_policy:
-        #      condition: any
-        #  logging:
-        #    driver: "json-file"
-        #    options:
-        #      max-file: "10"
-        #      max-size: "10m"
-        #  networks:
-        #    - ioc-network
+  ivu18-sb14:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/si-ap-idff-ivu18-sb14.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ca-ratim-co-iocsrv-1
+      replicas: 1
+      restart_policy:
+        condition: any
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
+    networks:
+      - ioc-network
 
 networks:
   ioc-network:
