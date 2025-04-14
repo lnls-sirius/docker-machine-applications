@@ -89,6 +89,7 @@ class ServiceConfig:
         'ts-ps-corrs': 'ia-20radiag02-co-iocsrv-1',
         'si-ap-fofb': 'ca-ratim-co-iocsrv-1',
         'si-ap-stabinfo': 'ia-20radiag02-co-iocsrv-1',
+        'si-di-fpmosc': 'ia-16rabbb-co-iocsrv',
         'si-id-conv': 'ca-ratim-co-iocsrv-1',
         'si-ap-sofb': 'ia-16rabbb-co-iocsrv',
         'si-ps-dips': 'ia-18radiag04-co-iocsrv',
