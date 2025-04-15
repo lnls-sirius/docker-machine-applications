@@ -237,6 +237,12 @@ service-start-si-ap-stabinfo:
 	docker stack deploy -c docker-stack-si-ap-stabinfo.yml facs-si-ap-stabinfo; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-ap-stabinfo.yml
 
+service-start-si-di-fpmosc:
+	cd services; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-si-di-fpmosc.yml; \
+	docker stack deploy -c docker-stack-si-di-fpmosc.yml facs-si-di-fpmosc; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-di-fpmosc.yml
+
 service-start-si-id:
 	cd services; \
 	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-si-id.yml; \
@@ -345,6 +351,10 @@ service-stop-si-ap-stabinfo:
 	cd services; \
 	docker stack rm facs-si-ap-stabinfo
 
+service-stop-si-di-fpmosc:
+	cd services; \
+	docker stack rm facs-si-di-fpmosc
+
 service-stop-si-id:
 	cd services; \
 	docker stack rm facs-si-id
@@ -394,6 +404,8 @@ service-start-all:
 	docker stack deploy -c docker-stack-as-ap-diag.yml facs-as-ap-diag; \
 	docker stack deploy -c docker-stack-li-ap-energy.yml facs-li-ap-energy; \
 	docker stack deploy -c docker-stack-si-ap-fofb.yml facs-si-ap-fofb; \
+	docker stack deploy -c docker-stack-si-ap-stabinfo.yml facs-si-ap-stabinfo; \
+	docker stack deploy -c docker-stack-si-di-fpmosc.yml facs-si-di-fpmosc; \
 	docker stack deploy -c docker-stack-si-id.yml facs-si-id; \
 	docker stack deploy -c docker-stack-si-ap-idff.yml facs-si-ap-idff; \
 	docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift; \
@@ -423,6 +435,8 @@ service-stop-all:
 	docker stack rm facs-as-ap-diag; \
 	docker stack rm facs-li-ap-energy; \
 	docker stack rm facs-si-ap-fofb; \
+	docker stack rm facs-si-ap-stabinfo; \
+	docker stack rm facs-si-di-fpmosc; \
 	docker stack rm facs-si-id; \
 	docker stack rm facs-si-ap-idff; \
 	docker stack rm facs-as-ap-machshift; \
