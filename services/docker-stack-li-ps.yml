@@ -17,8 +17,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: "10"
-        max-size: "10m"
+        max-file: "20"
+        max-size: "50m"
     networks:
       - ioc-network
 
@@ -37,8 +37,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: "10"
-        max-size: "10m"
+        max-file: "20"
+        max-size: "50m"
     networks:
       - ioc-network
 
@@ -57,8 +57,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: "10"
-        max-size: "10m"
+        max-file: "20"
+        max-size: "50m"
     networks:
       - ioc-network
 
@@ -81,8 +81,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: "10"
-        max-size: "10m"
+        max-file: "20"
+        max-size: "50m"
     networks:
       - ioc-network
 
@@ -105,8 +105,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: "10"
-        max-size: "10m"
+        max-file: "20"
+        max-size: "50m"
     networks:
       - ioc-network
 

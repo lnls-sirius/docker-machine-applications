@@ -589,8 +589,8 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + '    logging:'
         strf += '\n' + '      driver: ' + '"' + self.driver + '"'
         strf += '\n' + '      options:'
-        strf += '\n' + '        max-file: ' + '"10"'
-        strf += '\n' + '        max-size: ' + '"10m"'
+        strf += '\n' + '        max-file: ' + '"20"'
+        strf += '\n' + '        max-size: ' + '"50m"'
         strf += '\n' + '    networks:'
         for network in self.networks:
             strf += '\n' + '      - ' + network
