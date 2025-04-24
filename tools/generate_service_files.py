@@ -637,11 +637,13 @@ class DockerHighStackConfig(DockerStackConfig):
     """Docker high stack configuration."""
 
     def __init__(self, stack):
+        """."""
         super().__init__(DockerStackConfig.IMAGE_TAG_IOCS)
         self.stack = stack
         self.services = ServiceConfig.STACKS[stack]
 
     def __str__(self):
+        """."""
         strf = self.str_header()
         for service, app in self.services.items():
             if isinstance(app, (tuple, list)):
@@ -658,6 +660,7 @@ class DockerHighStackConfig(DockerStackConfig):
         return strf
 
     def save_config_file(self):
+        """."""
         fname = 'docker-stack-' + self.stack + '.yml'
         print(self, file=open(fname, 'w'))
 
@@ -666,11 +669,13 @@ class DockerCSConstsConfig(DockerStackConfig):
     """Docker control-system-constants configuration."""
 
     def __init__(self, app, node):
+        """."""
         super().__init__(DockerStackConfig.IMAGE_TAG_CSCONSTS)
         self.app = app
         self.node = node
 
     def __str__(self):
+        """."""
         strf = self.str_header()
         strf += '\n'
         strf += '\n' + '  facs-csconsts:'
@@ -680,10 +685,12 @@ class DockerCSConstsConfig(DockerStackConfig):
         return strf
 
     def save_config_file(self):
+        """."""
         fname = 'docker-stack-' + self.app + '.yml'
         print(self, file=open(fname, 'w'))
 
     def str_networks(self):
+        """."""
         strf = ''
         strf += '\n' + 'networks:'
         strf += '\n' + '  host_network' + ':'
@@ -694,6 +701,8 @@ class DockerCSConstsConfig(DockerStackConfig):
 
 def generate_service_files():
     """Generate docker service file."""
+    # NOTE: this will generate a service yml file to be used in
+    # another repo: docker-control-system-constants
     for app, node in ServiceConfig.SERVICES_CSCONSTS.items():
         config = DockerCSConstsConfig(app=app, node=node)
         config.save_config_file()
@@ -882,6 +891,8 @@ def generate_service_2_ioc_table():  # noqa: C901
     hmsg += '# and PREFIX_C, for IOC_Y, are prefixes of PVs that are\n'
     hmsg += '# provided by each of the IOCs.\n\n'
 
+    # NOTE: this will generate a facs.yml file to be moved to
+    # another repo: control-system-constants
     with open(fname, 'w') as file:
         file.write(hmsg)
         for container, iocs in data.items():
