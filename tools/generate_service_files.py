@@ -586,6 +586,8 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + '      replicas: ' + self.replicas
         strf += '\n' + '      restart_policy:'
         strf += '\n' + '        condition: ' + self.condition
+        strf += '\n' + '      labels:'
+        strf += '\n' + '        io.portainer.accesscontrol.public: ""'
         strf += '\n' + '    logging:'
         strf += '\n' + '      driver: ' + '"' + self.driver + '"'
         strf += '\n' + '      options:'
