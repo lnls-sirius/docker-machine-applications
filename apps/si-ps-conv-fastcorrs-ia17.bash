@@ -11,10 +11,7 @@ SI-17M2:PS-FCV \
 SI-17C2:PS-FCH \
 SI-17C2:PS-FCV \
 SI-17C3:PS-FCH \
-SI-17C3:PS-FCV | tee /ioc-logs/sirius-ioc-si-ps-conv-fastcorrs-ia17.log &
-
-# run cron for log rotation
-cron &
+SI-17C3:PS-FCV &
 
 # keep entry point running
 sleep infinity

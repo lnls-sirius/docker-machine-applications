@@ -2,10 +2,7 @@
 
 export PYTHONUNBUFFERED=yes
 
-/usr/local/bin/sirius-ioc-as-ti-control.py -s bo | tee /ioc-logs/sirius-ioc-bo-ti-trig & # 4.5%
-
-# run cron for log rotation
-cron &
+/usr/local/bin/sirius-ioc-as-ti-control.py -s bo & # 4.5%
 
 # keep entry point running
 sleep infinity

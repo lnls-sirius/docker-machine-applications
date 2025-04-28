@@ -19,10 +19,7 @@ SI-01SA:PU-InjNLKckr \
 SI-01SA:PU-InjNLKckr:CCoilH \
 SI-01SA:PU-InjNLKckr:CCoilV \
 SI-01SA:PU-PingH \
-SI-19C4:PU-PingV | tee /ioc-logs/sirius-ioc-as-pu-conv.log & # 25.7%
-
-# run cron for log rotation
-cron &
+SI-19C4:PU-PingV & # 25.7%
 
 # keep entry point running
 sleep infinity

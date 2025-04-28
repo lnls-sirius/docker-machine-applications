@@ -11,10 +11,7 @@ SI-07M2:PS-FCV \
 SI-07C2:PS-FCH \
 SI-07C2:PS-FCV \
 SI-07C3:PS-FCH \
-SI-07C3:PS-FCV | tee /ioc-logs/sirius-ioc-si-ps-conv-fastcorrs-ia07.log &
-
-# run cron for log rotation
-cron &
+SI-07C3:PS-FCV &
 
 # keep entry point running
 sleep infinity

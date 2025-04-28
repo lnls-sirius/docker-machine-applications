@@ -10,10 +10,7 @@ SI-06SB:ID-APU22 \
 SI-07SP:ID-APU22 \
 SI-08SB:ID-APU22 \
 SI-09SA:ID-APU22 \
-SI-11SP:ID-APU58 | tee /ioc-logs/sirius-ioc-si-id-conv.log & # 8.8%
-
-# run cron for log rotation
-cron &
+SI-11SP:ID-APU58 & # 8.8%
 
 # keep entry point running
 sleep infinity

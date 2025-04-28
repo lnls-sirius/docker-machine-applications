@@ -2,10 +2,7 @@
 
 export PYTHONUNBUFFERED=yes
 
-/usr/local/bin/sirius-ioc-si-ap-stabinfo.py | tee /ioc-logs/sirius-ioc-si-ap-stabinfo.log &
-
-# run cron for log rotation
-cron &
+/usr/local/bin/sirius-ioc-si-ap-stabinfo.py &
 
 # keep entry point running
 sleep infinity

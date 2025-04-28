@@ -4,13 +4,10 @@ export PYTHONUNBUFFERED=yes
 
 # CPU usage estimate (ps aux): 7.6%
 
-/usr/local/bin/sirius-ioc-as-ps.py IA-14RaCtrl:CO-PSCtrl-SI5 | tee /ioc-logs/sirius-ioc-si-ps-corrs-sb-ia14.log &
+/usr/local/bin/sirius-ioc-as-ps.py IA-14RaCtrl:CO-PSCtrl-SI5 &
 
 # Diag
-/usr/local/bin/sirius-ioc-as-ps-diag.py SI "14SB" "(CH|CV).*" | tee /ioc-logs/sirius-ioc-si-ps-diag-corrs-sb-ia14.log & # 7.6%
-
-# run cron for log rotation
-cron &
+/usr/local/bin/sirius-ioc-as-ps-diag.py SI "14SB" "(CH|CV).*" & # 7.6%
 
 # keep entry point running
 sleep infinity
