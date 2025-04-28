@@ -2,10 +2,7 @@
 
 export PYTHONUNBUFFERED=yes
 
-/usr/local/bin/sirius-ioc-si-ap-orbintlk.py | tee /ioc-logs/sirius-ioc-si-ap-orbintlk.log &
-
-# run cron for log rotation
-cron &
+/usr/local/bin/sirius-ioc-si-ap-orbintlk.py &
 
 # keep entry point running
 sleep infinity

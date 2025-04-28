@@ -591,8 +591,8 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + '    logging:'
         strf += '\n' + '      driver: ' + '"' + self.driver + '"'
         strf += '\n' + '      options:'
-        strf += '\n' + '        max-file: ' + '"10"'
-        strf += '\n' + '        max-size: ' + '"10m"'
+        strf += '\n' + '        max-file: ' + '"20"'
+        strf += '\n' + '        max-size: ' + '"50m"'
         strf += '\n' + '    networks:'
         for network in self.networks:
             strf += '\n' + '      - ' + network
@@ -736,15 +736,10 @@ def generate_service_2_ioc_table():  # noqa: C901
                 lin = lin.strip()
                 if not lin or lin[0] == '#':
                     continue  # empty line or comment
-                elif '/ioc-logs/sirius-ioc-' in lin:
-                    if ('-ps' in lin  or 'idff' in lin) and 'conv' not in lin:
-                        iocname = lin.split('/bin/sirius-ioc-')[1]
-                        iocname = iocname.split(' | tee ')[0]
-                        iocname = iocname.replace('.py', '').replace(' -n', '')
-                    else:
-                        iocname = lin.split('/ioc-logs/sirius-ioc-')[1]
-                        iocname = iocname.split(' &')[0]
-                        iocname = iocname.split('.log')[0]
+                elif 'sirius-ioc-' in lin:
+                    iocname = lin.split('/sirius-ioc-')[1]
+                    iocname = iocname.split(' &')[0]
+                    iocname = iocname.replace('.py', '').replace('\\', '')
                     iocs.append(iocname)
         cont2iocs[container] = iocs
 
@@ -759,7 +754,7 @@ def generate_service_2_ioc_table():  # noqa: C901
                 prs = prs.split(' ')
                 if prs[0] == 'as-ps':
                     psm = PSSearch.conv_bbbname_2_psnames(prs[1])
-                    prefixes.extend([p[0] for p in psm])
+                    prefixes.extend([p[0] for p in sorted(psm)])
                 elif 'diag' in prs[0]:
                     if 'ps' in ioc:
                         filt = {'sec': prs[1], 'sub': prs[2], 'dev': prs[3]}
@@ -768,9 +763,9 @@ def generate_service_2_ioc_table():  # noqa: C901
                             'dis': 'PU', 'dev': '.*(Kckr|Sept)',
                             'propty_name': '(?!:CCoil).*'}
                     devnames = PSSearch.get_psnames(filt)
-                    prefixes.extend([p+':Diag' for p in devnames])
+                    prefixes.extend([p+':Diag' for p in sorted(devnames)])
                 elif prs[0] == 'li-ps':
-                    prefixes.append(prs[1])
+                    prefixes.append(prs[-1])
             else:
                 prs = ioc.split('-')
                 if 'conv' in ioc:
@@ -783,7 +778,9 @@ def generate_service_2_ioc_table():  # noqa: C901
                         elif prs[1] == 'pu':
                             filt = {'dis': 'PU'}
                         elif 'fastcorr' in ioc:
-                            sub = prs[4][-2:] + '.*'
+                            subgroup = container.split('-')[4]
+                            ioc = ioc + '-' + subgroup
+                            sub = subgroup[-2:] + '.*'
                             filt = {'sec': 'SI', 'sub': sub, 'dev': 'FC.*'}
                         psnames = PSSearch.get_psnames(filt)
                         for psn in psnames:
@@ -840,12 +837,14 @@ def generate_service_2_ioc_table():  # noqa: C901
                         pref = prs[0].upper() + '-Glob:AP-' + devname
                         prefixes.append(pref)
                 elif prs[1] == 'ti':
-                    filt = {'sec': prs[0].upper()}
-                    if len(prs) == 4:
-                        if prs[3] == 'bpms':
+                    tiset = ioc.split(' -s ')[1]
+                    tigroups = tiset.split('-')
+                    filt = {'sec': tigroups[0].upper()}
+                    if len(tigroups) == 2:
+                        if tigroups[1] == 'bpms':
                             filt['dev'] = 'BPM(?!-.*).*'
                         else:
-                            idx = prs[3].capitalize().replace('trim', 'Trim')
+                            idx = tigroups[1].capitalize().replace('trim', 'Trim')
                             filt['idx'] = idx
                         devnames = HLTimeSearch.get_hl_triggers(filt)
                     else:
@@ -854,6 +853,11 @@ def generate_service_2_ioc_table():  # noqa: C901
                             t for t in HLTimeSearch.get_hl_triggers(filt)
                             if not t.endswith(indv)]
                     prefixes.extend([str(d) for d in devnames])
+                elif prs[1] == 'di':
+                    devname = prs[2]
+                    devname = devname.replace('fpmosc', 'FPMOsc')
+                    pref = prs[0].upper() + '-Glob:DI-' + devname
+                    prefixes.append(pref)
             data[container][ioc] = prefixes
 
     fname = 'facs.yml'

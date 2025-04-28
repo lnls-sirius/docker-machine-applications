@@ -25,7 +25,7 @@ LI-01:PS-CH-5 \
 LI-01:PS-CV-6 \
 LI-01:PS-CH-6 \
 LI-01:PS-CV-7 \
-LI-01:PS-CH-7 | tee /ioc-logs/sirius-ioc-li-ps-conv.log & # 14.5%
+LI-01:PS-CH-7 & # 14.5%
 # LI-01:PS-LensRev \
 # LI-01:PS-Lens-1 \
 # LI-01:PS-Lens-2 \
@@ -52,9 +52,6 @@ LI-01:PS-CH-7 | tee /ioc-logs/sirius-ioc-li-ps-conv.log & # 14.5%
 # LI-Fam:PS-Slnd-19 \
 # LI-Fam:PS-Slnd-20 \
 # LI-Fam:PS-Slnd-21 \
-
-# run cron for log rotation
-cron &
 
 # keep entry point running
 sleep infinity

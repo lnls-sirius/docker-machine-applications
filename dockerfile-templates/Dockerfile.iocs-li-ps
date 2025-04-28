@@ -6,16 +6,6 @@ WORKDIR /opt
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# Install apt packages
-
-RUN apt-get install -y \
-    logrotate \
-    cron
-
-# Remove apt list files
-
-# RUN rm -rf /var/lib/apt/lists/*
-
 # Create IOC-related directories
 
 RUN mkdir -p /ioc-apps && \
@@ -25,11 +15,6 @@ RUN mkdir -p /ioc-apps && \
 
 COPY apps/li-ps-*.bash /ioc-apps/
 
-# Define logrotate with cron
-
-COPY ./etc/crontab /etc/crontab
-COPY ./etc/logrotate.conf /etc/logrotate.conf
-
 # Install IOC-related lnls-sirius packages
 
 RUN cd repos && \
@@ -37,4 +22,3 @@ RUN cd repos && \
     cd linac-ioc-ps && \
     git checkout :pkg_version_linac_ioc_ps && \
     ./setup.py install --single-version-externally-managed --compile --force --record /dev/null
-

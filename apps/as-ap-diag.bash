@@ -5,16 +5,13 @@ export PYTHONUNBUFFERED=yes
 # CPU usage estimate (ps aux): 19.3%
 
 # sirius-ioc-as-pu-diag.service
-/usr/local/bin/sirius-ioc-as-pu-diag.py | tee /ioc-logs/sirius-ioc-as-pu-diag.log & # 8.2%
+/usr/local/bin/sirius-ioc-as-pu-diag.py & # 8.2%
 
 # sirius-ioc-as-rf-diag.service
-/usr/local/bin/sirius-ioc-as-rf-diag.py | tee /ioc-logs/sirius-ioc-as-rf-diag.log & # 4.9%
+/usr/local/bin/sirius-ioc-as-rf-diag.py & # 4.9%
 
 # sirius-ioc-li-ap-diag.service
-/usr/local/bin/sirius-ioc-li-ap-diag.py | tee /ioc-logs/sirius-ioc-li-ap-diag.log & # 6.2%
-
-# run cron for log rotation
-cron &
+/usr/local/bin/sirius-ioc-li-ap-diag.py & # 6.2%
 
 # keep entry point running
 sleep infinity

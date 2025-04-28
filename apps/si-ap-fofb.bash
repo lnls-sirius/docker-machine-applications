@@ -2,10 +2,7 @@
 
 export PYTHONUNBUFFERED=yes
 
-/usr/local/bin/sirius-ioc-si-ap-fofb.py | tee /ioc-logs/sirius-ioc-si-ap-fofb.log &
-
-# run cron for log rotation
-cron &
+/usr/local/bin/sirius-ioc-si-ap-fofb.py &
 
 # keep entry point running
 sleep infinity
