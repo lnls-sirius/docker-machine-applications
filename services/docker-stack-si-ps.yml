@@ -1316,6 +1316,34 @@ services:
     networks:
       - ioc-network
 
+  corrs-sp-ia07:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
+    depends_on:
+      - "dips"
+    command: bash -c '/ioc-apps/si-ps-corrs-sp-ia07.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == niede
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
+      replicas: 1
+      restart_policy:
+        condition: any
+      labels:
+        io.portainer.accesscontrol.public: ""
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "20"
+        max-size: "50m"
+    networks:
+      - ioc-network
+
   corrs-sb-ia08:
     image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     depends_on:
