@@ -206,7 +206,7 @@ class ServiceConfig:
         'si-ps-conv-fastcorrs-ia20': 'ca-ratim-co-iocsrv-1',
         'si-ps-diag-fastcorrs': 'ia-20radiag02-co-iocsrv-1',
         'it-ps-lens': 'ca-ratim-co-iocsrv-1',
-        'bl-ap-imgproc': 'CA-RaCtrl-CO-Srv-1',
+        'bl-ap-imgproc-caxdvf2': 'CA-RaCtrl-CO-Srv-1',
         'si-ap-idff-delta52': 'ca-ratim-co-iocsrv-1',
         'si-ap-idff-ivu18-sb08': 'ca-ratim-co-iocsrv-1',
         'si-ap-idff-ivu18-sb14': 'ca-ratim-co-iocsrv-1',
@@ -517,10 +517,10 @@ class ServiceConfig:
             'delta52': 'si-ap-idff-delta52',
             'ivu18-sb08': 'si-ap-idff-ivu18-sb08',
             'ivu18-sb14': 'si-ap-idff-ivu18-sb14',
-        }
-        # 'bl-ap-imgproc': {
-        #     'imgproc': 'bl-ap-imgproc',
-        #     },
+        },
+        'bl-ap-imgproc': {
+            'caxdvf2': 'bl-ap-imgproc-caxdvf2',
+            },
         }
 
 
