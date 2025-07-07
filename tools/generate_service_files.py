@@ -61,7 +61,7 @@ class ServiceConfig:
         'si-ti-trims-skews': 'ca-ratim-co-iocsrv-1',
         'li-ap-energy': 'ia-18radiag04-co-iocsrv',
         'li-ps-spect-quads-lens': 'ia-14radiag03-co-iocsrv',
-        'li-ps-corrs': 'ia-14radiag03-co-iocsrv',
+        'li-ps-corrs': 'elisa',
         'li-ps-slnds': 'ia-18radiag04-co-iocsrv',
         'li-ps-conv': 'ia-18radiag04-co-iocsrv',
         'li-ps-diag': 'ia-14radiag03-co-iocsrv',
