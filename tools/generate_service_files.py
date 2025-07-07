@@ -583,6 +583,10 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + '      placement:'
         strf += '\n' + '        constraints:'
         strf += '\n' + '          - node.hostname == ' + node
+        strf += '\n' + '      resources:'
+        strf += '\n' + '        limits:'
+        strf += '\n' + '          cpus: "8"'
+        strf += '\n' + '          memory: 16G'
         strf += '\n' + '      replicas: ' + self.replicas
         strf += '\n' + '      restart_policy:'
         strf += '\n' + '        condition: ' + self.condition
