@@ -11,6 +11,10 @@ services:
       placement:
         constraints:
           - node.hostname == CA-RaCtrl-CO-Srv-1
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any

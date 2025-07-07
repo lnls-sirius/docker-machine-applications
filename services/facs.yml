@@ -780,8 +780,8 @@ facs-bo-ps_corrs-ia20:
   as-ps-diag BO "4(7|9)(U|D)" "(CH|CV)":
   - BO-47U:PS-CH:Diag
   - BO-47U:PS-CV:Diag
-  - BO-49D:PS-CH:Diag
   - BO-49U:PS-CV:Diag
+  - BO-49D:PS-CH:Diag
 
 facs-ts-ps_dips:
   as-ps LA-RaPS02:CO-PSCtrl-TS1:
