@@ -206,7 +206,7 @@ class ServiceConfig:
         'si-ps-conv-fastcorrs-ia20': 'elisa',
         'si-ps-diag-fastcorrs': 'niede',
         'it-ps-lens': 'elisa',
-        'bl-ap-imgproc': 'CA-RaCtrl-CO-Srv-1',
+        'bl-ap-imgproc': 'elisa',
         'si-ap-idff-delta52': 'elisa',
         'si-ap-idff-ivu18-sb08': 'elisa',
         'si-ap-idff-ivu18-sb14': 'elisa',
