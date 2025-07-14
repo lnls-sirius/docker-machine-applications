@@ -4,7 +4,7 @@ services:
 
   delta52-sb10:
     image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c '/ioc-apps/si-ap-idff-delta52-sb10.bash'
+    command: bash -c '/ioc-apps/si-ap-idff-delta52.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
