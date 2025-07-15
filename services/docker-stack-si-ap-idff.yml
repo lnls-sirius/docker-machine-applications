@@ -2,61 +2,9 @@ version: "3.7"
 
 services:
 
-  delta52:
+  delta52-sb10:
     image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/si-ap-idff-delta52.bash'
-    volumes:
-      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-    deploy:
-      placement:
-        constraints:
-          - node.hostname == elisa
-      resources:
-        limits:
-          cpus: "8"
-          memory: 16G
-      replicas: 1
-      restart_policy:
-        condition: any
-      labels:
-        io.portainer.accesscontrol.public: ""
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "20"
-        max-size: "50m"
-    networks:
-      - ioc-network
-
-  ivu18-sb08:
-    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c '/ioc-apps/si-ap-idff-ivu18-sb08.bash'
-    volumes:
-      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
-    deploy:
-      placement:
-        constraints:
-          - node.hostname == elisa
-      resources:
-        limits:
-          cpus: "8"
-          memory: 16G
-      replicas: 1
-      restart_policy:
-        condition: any
-      labels:
-        io.portainer.accesscontrol.public: ""
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "20"
-        max-size: "50m"
-    networks:
-      - ioc-network
-
-  ivu18-sb14:
-    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c '/ioc-apps/si-ap-idff-ivu18-sb14.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
