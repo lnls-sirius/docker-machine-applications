@@ -139,6 +139,7 @@ class ServiceConfig:
         'si-ps-corrs-c134-ia19': 'elisa',
         'si-ps-corrs-c134-ia20': 'niede',
         'si-ps-corrs-sb-ia06': 'niede',
+        'si-ps-corrs-sp-ia07': 'niede',
         'si-ps-corrs-sb-ia08': 'elisa',
         'si-ps-corrlong-sb-ia08': 'elisa',
         'si-ps-corrs-qs-sb-ia10': 'elisa',
@@ -208,8 +209,8 @@ class ServiceConfig:
         'it-ps-lens': 'elisa',
         'bl-ap-imgproc': 'elisa',
         'si-ap-idff-delta52': 'elisa',
-        'si-ap-idff-ivu18-sb08': 'elisa',
-        'si-ap-idff-ivu18-sb14': 'elisa',
+        # 'si-ap-idff-ivu18-sb08': 'elisa',
+        # 'si-ap-idff-ivu18-sb14': 'elisa',
         'si-ap-orbintlk': 'elisa',
         }
 
@@ -358,6 +359,7 @@ class ServiceConfig:
             'corrs-c134-ia19': ('si-ps-corrs-c134-ia19', ('dips', )),
             'corrs-c134-ia20': ('si-ps-corrs-c134-ia20', ('dips', )),
             'corrs-sb-ia06': ('si-ps-corrs-sb-ia06', ('dips', )),
+            'corrs-sp-ia07': ('si-ps-corrs-sp-ia07', ('dips', )),
             'corrs-sb-ia08': ('si-ps-corrs-sb-ia08', ('dips', )),
             'corrlong-sb-ia08': ('si-ps-corrlong-sb-ia08', ('dips', )),
             'corrs-qs-sb-ia10': ('si-ps-corrs-qs-sb-ia10', ('dips', )),
@@ -514,9 +516,9 @@ class ServiceConfig:
             'diag': 'si-ps-diag-fastcorrs',
             },
         'si-ap-idff': {
-            'delta52': 'si-ap-idff-delta52',
-            'ivu18-sb08': 'si-ap-idff-ivu18-sb08',
-            'ivu18-sb14': 'si-ap-idff-ivu18-sb14',
+            'delta52-sb10': 'si-ap-idff-delta52',
+            # 'ivu18-sb08': 'si-ap-idff-ivu18-sb08',
+            # 'ivu18-sb14': 'si-ap-idff-ivu18-sb14',
         }
         # 'bl-ap-imgproc': {
         #     'imgproc': 'bl-ap-imgproc',
