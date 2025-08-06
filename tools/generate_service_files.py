@@ -212,6 +212,7 @@ class ServiceConfig:
         # 'si-ap-idff-ivu18-sb08': 'elisa',
         # 'si-ap-idff-ivu18-sb14': 'elisa',
         'si-ap-orbintlk': 'elisa',
+        'si-rf-monitor': 'elisa',
         }
 
     STACKS = {
@@ -519,7 +520,10 @@ class ServiceConfig:
             'delta52-sb10': 'si-ap-idff-delta52',
             # 'ivu18-sb08': 'si-ap-idff-ivu18-sb08',
             # 'ivu18-sb14': 'si-ap-idff-ivu18-sb14',
-        }
+        },
+        'si-rf-monitor': {
+            'si-rf-monitor': 'si-rf-monitor',
+        },
         # 'bl-ap-imgproc': {
         #     'imgproc': 'bl-ap-imgproc',
         #     },

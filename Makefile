@@ -278,6 +278,11 @@ service-start-si-ap-orbintlk:
 	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-si-ap-orbintlk.yml; \
 	docker stack deploy -c docker-stack-si-ap-orbintlk.yml facs-si-ap-orbintlk; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-ap-orbintlk.yml
+service-start-si-rf-monitor:
+	cd services; \
+	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-si-rf-monitor.yml; \
+	docker stack deploy -c docker-stack-si-rf-monitor.yml facs-si-rf-monitor; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-si-rf-monitor.yml
 
 service-stop-as-ps-dclinks:
 	cd services; \
@@ -378,6 +383,9 @@ service-stop-bl-ap-imgproc:
 service-stop-si-ap-orbintlk:
 	cd services; \
 	docker stack rm facs-si-ap-orbintlk
+service-stop-si-rf-monitor:
+	cd services; \
+	docker stack rm facs-si-rf-monitor
 
 
 # --- all services at once ---
@@ -412,6 +420,7 @@ service-start-all:
 	docker stack deploy -c docker-stack-as-ap-injctrl.yml facs-as-ap-injctrl; \
 	docker stack deploy -c docker-stack-bl-ap-imgproc.yml facs-bl-ap-imgproc; \
 	docker stack deploy -c docker-stack-si-ap-orbintlk.yml facs-si-ap-orbintlk; \
+	docker stack deploy -c docker-stack-si-rf-monitor.yml facs-si-rf-monitor; \
 	sed -i "s/fac-iocs-li-ps:.*/fac-iocs-li-ps:__FAC_IOC_LI_PS_TAG_TEMPLATE__/g" docker-stack-li-ps.yml && \
 	find ./ -name "docker-*.yml" -exec sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" {} \; && \
 
@@ -442,4 +451,5 @@ service-stop-all:
 	docker stack rm facs-as-ap-machshift; \
 	docker stack rm facs-as-ap-injctrl; \
 	docker stack rm facs-bl-ap-imgproc; \
-	docker stack rm facs-si-ap-orbintlk
+	docker stack rm facs-si-ap-orbintlk; \
+	docker stack rm facs-si-rf-monitor
