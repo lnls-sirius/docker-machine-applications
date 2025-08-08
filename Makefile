@@ -125,9 +125,6 @@ service-start-li-ps:
 	sed -i "s/fac-iocs-li-ps:.*/fac-iocs-li-ps:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-li-ps.yml && \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-li-ps.yml
 
-service-stop-li-ps:
-	cd services && \
-	docker stack rm facs-li-ps
 
 service-start-as-ps-dclinks:
 	cd services; \
@@ -282,6 +279,10 @@ service-start-si-ap-orbintlk:
 service-stop-as-ps-dclinks:
 	cd services; \
 	docker stack rm facs-as-ps-dclinks
+
+service-stop-li-ps:
+	cd services && \
+	docker stack rm facs-li-ps
 
 service-stop-tb-ps:
 	cd services; \
