@@ -10,7 +10,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag02-co-iocsrv-1
+          - node.hostname == niede
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any

@@ -10,7 +10,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-16rabbb-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -32,7 +36,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-16rabbb-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -54,7 +62,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-16rabbb-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -76,7 +88,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-16rabbb-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -98,7 +114,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-16rabbb-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -120,7 +140,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-16rabbb-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -142,7 +166,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-16rabbb-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -164,7 +192,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-16rabbb-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -186,7 +218,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-16rabbb-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -208,7 +244,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-16rabbb-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -230,7 +270,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag02-co-iocsrv-1
+          - node.hostname == niede
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -252,7 +296,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag02-co-iocsrv-1
+          - node.hostname == niede
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -274,7 +322,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag01-co-iocsrv-2
+          - node.hostname == niede
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -296,7 +348,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag01-co-iocsrv-2
+          - node.hostname == niede
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -318,7 +374,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-14radiag03-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -340,7 +400,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-14radiag03-co-iocsrv
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -362,7 +426,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ca-ratim-co-iocsrv-2
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -384,7 +452,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ca-ratim-co-iocsrv-2
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -406,7 +478,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ca-ratim-co-iocsrv-1
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -428,7 +504,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ca-ratim-co-iocsrv-1
+          - node.hostname == elisa
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
@@ -450,7 +530,11 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == ia-20radiag02-co-iocsrv-1
+          - node.hostname == niede
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
       replicas: 1
       restart_policy:
         condition: any
