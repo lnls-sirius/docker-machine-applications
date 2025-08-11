@@ -207,7 +207,7 @@ class ServiceConfig:
         'si-ps-conv-fastcorrs-ia20': 'elisa',
         'si-ps-diag-fastcorrs': 'niede',
         'it-ps-lens': 'elisa',
-        'bl-ap-imgproc': 'elisa',
+        'bl-ap-imgproc-cax': 'elisa',
         'si-ap-idff-delta52': 'elisa',
         # 'si-ap-idff-ivu18-sb08': 'elisa',
         # 'si-ap-idff-ivu18-sb14': 'elisa',
@@ -519,10 +519,10 @@ class ServiceConfig:
             'delta52-sb10': 'si-ap-idff-delta52',
             # 'ivu18-sb08': 'si-ap-idff-ivu18-sb08',
             # 'ivu18-sb14': 'si-ap-idff-ivu18-sb14',
-        }
-        # 'bl-ap-imgproc': {
-        #     'imgproc': 'bl-ap-imgproc',
-        #     },
+        },
+        'bl-ap-imgproc': {
+            'cax': 'bl-ap-imgproc-cax',
+            },
         }
 
 
