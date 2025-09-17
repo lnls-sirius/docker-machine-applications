@@ -142,6 +142,7 @@ class ServiceConfig:
         'si-ps-corrs-sp-ia07': 'niede',
         'si-ps-corrs-sb-ia08': 'elisa',
         'si-ps-corrlong-sb-ia08': 'elisa',
+        'si-ps-corrs-sp-ia11': 'niede',
         'si-ps-corrs-qs-sb-ia10': 'elisa',
         'si-ps-corrs-sb-ia14': 'niede',
         'si-ps-corrlong-sb-ia14': 'elisa',
