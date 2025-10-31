@@ -1,0 +1,65 @@
+ARG IMG_DEBIAN_MODELS_TAG
+FROM ghcr.io/lnls-sirius/docker-machine-applications/debian:${IMG_DEBIAN_MODELS_TAG}
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt/mamba_files
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ America/Sao_Paulo
+
+# Install generic apt packages
+
+RUN apt-get update && apt-get install -y \
+    apt-utils \
+    tzdata \
+    sudo \
+    procps \
+    wget \
+    iproute2 \
+    iputils-ping \
+    libreadline-dev \
+    git \
+    nano \
+    && \
+    ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
+    dpkg-reconfigure --frontend $DEBIAN_FRONTEND tzdata
+
+RUN wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && sh Miniforge3-Linux-x86_64.sh -b -p /opt/mamba_files/mamba && rm Miniforge3-Linux-x86_64.sh && \
+    groupadd mamba && \
+    adduser root mamba && \
+    chgrp -R mamba /opt/mamba_files/mamba && \
+    chmod 774 -R /opt/mamba_files/mamba && \
+    chown -R root:mamba ~/.conda
+
+RUN source /opt/mamba_files/mamba/etc/profile.d/conda.sh && \
+    export MAMBA_ROOT_PREFIX='/opt/mamba_files/mamba' && \
+    eval "$(mamba shell hook --shell bash)"
+
+RUN echo "" >> ~/.bashrc && \
+    echo "# add conda and mamba to path" >> ~/.bashrc && \
+    echo "CONDA_ADD=/opt/mamba_files/mamba/etc/profile.d/conda.sh" >> ~/.bashrc && \
+    echo "if [ -f \"\$CONDA_ADD\" ] ; then" >> ~/.bashrc && \
+    echo "    source \"\$CONDA_ADD\"" >> ~/.bashrc && \
+    echo "fi" >> ~/.bashrc && \
+    echo "export MAMBA_ROOT_PREFIX='/opt/mamba_files/mamba'" >> ~/.bashrc && \
+    echo "eval \"\$(mamba shell hook --shell bash)\"" >> ~/.bashrc
+
+RUN /opt/mamba_files/mamba/bin/mamba create --name sirius python=3.9.2 -y
+
+RUN source ~/.bashrc && \
+    mamba activate sirius && \
+    mamba install -y gxx make binutils swig=4.2.0 libxcrypt gsl libblas \
+    fftw pyparsing bottleneck aiohttp numpy=1.23 scipy matplotlib \
+    pytest mpmath entrypoints requests pandas \
+    numexpr tk sh pywavelets scikit-image \
+    scikit-learn pydocstyle pycodestyle pylama openpyxl gpy gpyopt fpdf sympy \
+    h5py scienceplots seaborn
+
+RUN source ~/.bashrc && \
+    mamba activate sirius && \
+    mamba install --freeze-installed -y \
+    -c conda-forge/label/cf202003 epics-base=3.15.6 \
+    pyepics=3.5.7 pcaspy==0.7.3
+
+RUN ln -s /opt/mamba_files/mamba/envs/sirius/bin/python3 /opt/mamba_files/mamba/envs/sirius/bin/python-sirius

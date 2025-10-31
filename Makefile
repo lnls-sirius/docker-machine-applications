@@ -34,7 +34,7 @@ image-pull-tag-push-debian:
 	docker tag  debian:$(IMG_DEBIAN_TAG) ghcr.io/lnls-sirius/docker-machine-applications/debian:$(IMG_DEBIAN_TAG) && \
 	docker push ghcr.io/lnls-sirius/docker-machine-applications/debian:$(IMG_DEBIAN_TAG)
 
-# time: 4m0s @ 10.0.38.42
+
 image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-debian
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python > ./deploy-files/Dockerfile.python
 	docker build -f ./deploy-files/Dockerfile.python \
@@ -44,7 +44,6 @@ image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-deb
 		. -t ghcr.io/lnls-sirius/docker-machine-applications/fac-python:$(DEPLOY_TAG) && \
 	docker push ghcr.io/lnls-sirius/docker-machine-applications/fac-python:$(DEPLOY_TAG)
 
-# time: 1m11s @ 10.0.38.42
 image-build-fac-epics: dockerfiles-create
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics > ./deploy-files/Dockerfile.epics
 	docker build -f ./deploy-files/Dockerfile.epics \
@@ -56,7 +55,7 @@ image-build-fac-epics: dockerfiles-create
 		. -t ghcr.io/lnls-sirius/docker-machine-applications/fac-epics:$(DEPLOY_TAG) && \
 	docker push ghcr.io/lnls-sirius/docker-machine-applications/fac-epics:$(DEPLOY_TAG)
 
-# time: 4m5s @ 10.0.38.42
+
 image-build-fac-deps: dockerfiles-create
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.deps > ./deploy-files/Dockerfile.deps
 	docker build -f ./deploy-files/Dockerfile.deps \
@@ -66,7 +65,7 @@ image-build-fac-deps: dockerfiles-create
 		. -t ghcr.io/lnls-sirius/docker-machine-applications/fac-deps:$(DEPLOY_TAG) && \
 	docker push ghcr.io/lnls-sirius/docker-machine-applications/fac-deps:$(DEPLOY_TAG)
 
-# time: 1m59s @ 10.0.38.42
+
 image-build-fac-iocs: image-cleanup dockerfiles-create
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.iocs > ./deploy-files/Dockerfile.iocs
 	docker build -f ./deploy-files/Dockerfile.iocs \
@@ -76,7 +75,29 @@ image-build-fac-iocs: image-cleanup dockerfiles-create
 		. -t ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:$(DEPLOY_TAG)
 	# docker push ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:$(DEPLOY_TAG)
 
-# time: 4m45s @ 10.0.38.42
+image-build-fac-models-deps: dockerfiles-create
+	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.models-deps > ./deploy-files/Dockerfile.models-deps
+	docker build -f ./deploy-files/Dockerfile.models-deps \
+		$(BUILD_CACHE) \
+		--build-arg IMG_DEBIAN_MODELS_TAG=$(IMG_DEBIAN_MODELS_TAG) \
+		--build-arg CACHE_BREAKER=$$(date +%s) \
+		--label "br.com.lnls-sirius.department=FAC" \
+		. -t ghcr.io/lnls-sirius/docker-machine-applications/fac-models-deps:$(DEPLOY_TAG)
+	# docker push ghcr.io/lnls-sirius/docker-machine-applications/fac-models-deps:$(DEPLOY_TAG)
+
+
+image-build-fac-models-iocs: dockerfiles-create
+	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.models-iocs > ./deploy-files/Dockerfile.models-iocs
+	docker build -f ./deploy-files/Dockerfile.models-iocs \
+		$(BUILD_CACHE) \
+		--build-arg IMG_DEPS_MODELS_TAG=$(IMG_DEPS_MODELS_TAG) \
+		--build-arg CACHE_BREAKER=$$(date +%s) \
+		--label "br.com.lnls-sirius.department=FAC" \
+		. -t ghcr.io/lnls-sirius/docker-machine-applications/fac-models-iocs:$(DEPLOY_TAG)
+	# docker push ghcr.io/lnls-sirius/docker-machine-applications/fac-models-iocs:$(DEPLOY_TAG)
+
+
+
 image-build-fac-iocs-li-ps: image-cleanup dockerfiles-create image-pull-tag-push-debian
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python2 > ./deploy-files/Dockerfile.python2
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics-python2 > ./deploy-files/Dockerfile.epics-python2
@@ -110,6 +131,8 @@ image-runbash-fac-deps:
 
 image-runbash-fac-iocs:
 	docker run -it --rm --network host ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:$(DEPLOY_TAG)
+image-runbash-fac-models-iocs:
+	docker run -it --rm --network host ghcr.io/lnls-sirius/docker-machine-applications/fac-models-iocs:$(DEPLOY_TAG)
 
 image-runbash-fac-iocs-li-ps:
 	docker run -it --rm --network host ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs-li-ps:$(DEPLOY_TAG)

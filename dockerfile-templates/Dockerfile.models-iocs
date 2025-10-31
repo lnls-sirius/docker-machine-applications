@@ -1,0 +1,36 @@
+ARG IMG_DEPS_MODELS_TAG
+
+FROM ghcr.io/lnls-sirius/docker-machine-applications/fac-deps-models:${IMG_DEPS_MODELS_TAG}
+
+SHELL ["bash", "-c"]
+
+
+WORKDIR /opt/repos
+
+RUN git clone https://github.com/lnls-fac/trackcpp.git && \
+    source ~/.bashrc && \
+    mamba activate sirius && \
+    cd trackcpp && make install
+
+RUN git clone https://github.com/lnls-fac/mathphys.git && \
+    cd mathphys && git checkout add-flatten && cd .. && \
+    git clone https://github.com/lnls-fac/pyaccel.git && \
+    git clone https://github.com/lnls-fac/pymodels.git && \
+    cd pymodels && git checkout substitute-flatten && cd .. && \
+    git clone https://github.com/lnls-sirius/dev-packages.git
+
+RUN source ~/.bashrc && \
+    mamba activate sirius && \
+    cd mathphys && make install && cd .. && \
+    cd dev-packages/siriuspy && make install && cd ../.. && \
+    cd pyaccel && make install && cd .. && \
+    cd pymodels && make install
+
+# # ARG CACHE_BREAKER=couter0
+
+RUN git clone https://github.com/lnls-sirius/machine-applications-models.git && \
+    cd machine-applications-models && git checkout add-si-ap-injbeamdiag
+
+RUN source ~/.bashrc && \
+    mamba activate sirius && \
+    cd machine-applications-models && make install && cd ..
