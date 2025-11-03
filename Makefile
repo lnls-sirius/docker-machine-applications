@@ -33,9 +33,14 @@ image-pull-tag-push-debian:
 	docker pull debian:$(IMG_DEBIAN_TAG)
 	docker tag  debian:$(IMG_DEBIAN_TAG) ghcr.io/lnls-sirius/docker-machine-applications/debian:$(IMG_DEBIAN_TAG) && \
 	docker push ghcr.io/lnls-sirius/docker-machine-applications/debian:$(IMG_DEBIAN_TAG)
+image-pull-tag-push-debian-models:
+	docker pull debian:$(IMG_DEBIAN_MODELS_TAG)
+	docker tag  debian:$(IMG_DEBIAN_MODELS_TAG) ghcr.io/lnls-sirius/docker-machine-applications/debian:$(IMG_DEBIAN_MODELS_TAG) && \
+	docker push ghcr.io/lnls-sirius/docker-machine-applications/debian:$(IMG_DEBIAN_MODELS_TAG)
 
 
-image-build-fac-python: image-cleanup dockerfiles-create image-pull-tag-push-debian
+image-build-fac-python: image-cleanup dockerfiles-create \
+	image-pull-tag-push-debian
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python > ./deploy-files/Dockerfile.python
 	docker build -f ./deploy-files/Dockerfile.python \
 		$(BUILD_CACHE) \
@@ -86,7 +91,7 @@ image-build-fac-models-deps: dockerfiles-create
 	# docker push ghcr.io/lnls-sirius/docker-machine-applications/fac-models-deps:$(DEPLOY_TAG)
 
 
-image-build-fac-models-iocs: dockerfiles-create
+image-build-fac-models-iocs: image-cleanup dockerfiles-create
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.models-iocs > ./deploy-files/Dockerfile.models-iocs
 	docker build -f ./deploy-files/Dockerfile.models-iocs \
 		$(BUILD_CACHE) \
@@ -98,7 +103,8 @@ image-build-fac-models-iocs: dockerfiles-create
 
 
 
-image-build-fac-iocs-li-ps: image-cleanup dockerfiles-create image-pull-tag-push-debian
+image-build-fac-iocs-li-ps: image-cleanup dockerfiles-create \
+	image-pull-tag-push-debian
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.python2 > ./deploy-files/Dockerfile.python2
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.epics-python2 > ./deploy-files/Dockerfile.epics-python2
 	python3 ./tools/replace_versions.py ./deploy-files/REPLACE-RULES dockerfile-templates/Dockerfile.iocs-li-ps > ./deploy-files/Dockerfile.iocs-li-ps

@@ -50,11 +50,11 @@ RUN /opt/mamba_files/mamba/bin/mamba create --name sirius python=3.9.2 -y
 RUN source ~/.bashrc && \
     mamba activate sirius && \
     mamba install -y gxx make binutils swig=4.2.0 libxcrypt gsl libblas \
-    fftw pyparsing bottleneck aiohttp numpy=1.23 scipy matplotlib \
+    fftw pyparsing bottleneck aiohttp numpy=1.23 scipy matplotlib-base \
     pytest mpmath entrypoints requests pandas \
-    numexpr tk sh pywavelets scikit-image \
+    numexpr sh pywavelets scikit-image \
     scikit-learn pydocstyle pycodestyle pylama openpyxl gpy gpyopt fpdf sympy \
-    h5py scienceplots seaborn
+    h5py scienceplots seaborn-base
 
 RUN source ~/.bashrc && \
     mamba activate sirius && \
