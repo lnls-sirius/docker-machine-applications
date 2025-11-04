@@ -27,6 +27,7 @@ class ServiceConfig:
         'as-ap-posang': 'elisa',
         'as-ap-sofb': 'elisa',
         'as-ap-injctrl': 'niede',
+        'as-ap-injbeamdiag': 'niede',
         'as-ps-dclinks-tbts-bodip': 'elisa',
         'as-ps-dclinks-ia01': 'elisa',
         'as-ps-dclinks-ia02': 'elisa',
