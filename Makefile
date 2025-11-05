@@ -264,6 +264,12 @@ service-start-as-ap-injctrl:
 	docker stack deploy -c docker-stack-as-ap-injctrl.yml facs-as-ap-injctrl; \
 	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-as-ap-injctrl.yml
 
+service-start-as-ap-injbeamdiag:
+	cd services; \
+	sed -i "s/fac-iocs:.*/fac-models-iocs:$(IMG_IOCS_TAG)/g" docker-stack-as-ap-injbeamdiag.yml; \
+	docker stack deploy -c docker-stack-as-ap-injbeamdiag.yml facs-as-ap-injbeamdiag; \
+	sed -i "s/fac-iocs:.*/fac-iocs:__FAC_IOC_TAG_TEMPLATE__/g" docker-stack-as-ap-injctrl.yml
+
 service-start-bl-ap-imgproc:
 	cd services; \
 	sed -i "s/fac-iocs:.*/fac-iocs:$(IMG_IOCS_TAG)/g" docker-stack-bl-ap-imgproc.yml; \
@@ -371,6 +377,9 @@ service-stop-as-ap-machshift:
 service-stop-as-ap-injctrl:
 	cd services; \
 	docker stack rm facs-as-ap-injctrl
+service-stop-as-ap-injbeamdiag:
+	cd services; \
+	docker stack rm facs-as-ap-injbeamdiag
 
 service-stop-bl-ap-imgproc:
 	cd services; \
@@ -379,7 +388,6 @@ service-stop-bl-ap-imgproc:
 service-stop-si-ap-orbintlk:
 	cd services; \
 	docker stack rm facs-si-ap-orbintlk
-
 
 # --- all services at once ---
 
@@ -411,6 +419,7 @@ service-start-all:
 	docker stack deploy -c docker-stack-si-ap-idff.yml facs-si-ap-idff; \
 	docker stack deploy -c docker-stack-as-ap-machshift.yml facs-as-ap-machshift; \
 	docker stack deploy -c docker-stack-as-ap-injctrl.yml facs-as-ap-injctrl; \
+	docker stack deploy -c docker-stack-as-ap-injbeamdiag.yml facs-as-ap-injbeamdiag; \
 	docker stack deploy -c docker-stack-bl-ap-imgproc.yml facs-bl-ap-imgproc; \
 	docker stack deploy -c docker-stack-si-ap-orbintlk.yml facs-si-ap-orbintlk; \
 	sed -i "s/fac-iocs-li-ps:.*/fac-iocs-li-ps:__FAC_IOC_LI_PS_TAG_TEMPLATE__/g" docker-stack-li-ps.yml && \
@@ -442,5 +451,6 @@ service-stop-all:
 	docker stack rm facs-si-ap-idff; \
 	docker stack rm facs-as-ap-machshift; \
 	docker stack rm facs-as-ap-injctrl; \
+	docker stack rm facs-as-ap-injbeamdiag; \
 	docker stack rm facs-bl-ap-imgproc; \
 	docker stack rm facs-si-ap-orbintlk
