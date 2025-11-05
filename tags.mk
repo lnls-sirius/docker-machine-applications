@@ -8,7 +8,7 @@ FILES_SERVER_URL ?= http://10.0.38.42/download/lnls-ansible
 # tag with EPICS base version
 EPICS_BASE_TAG ?= base-3.15.6
 
-DEPLOY_TAG ?= 2025-10-27
+DEPLOY_TAG ?= 2025-11-04
 
 # --- image for IOCs ---
 
@@ -22,5 +22,5 @@ IMG_IOCS_TAG ?= $(DEPLOY_TAG)
 # --- image for IOCs with models packages ---
 
 IMG_DEBIAN_MODELS_TAG ?= bookworm-20251020
-IMG_DEPS_MODELS_TAG ?= 2025-10-27
+IMG_DEPS_MODELS_TAG ?= 2025-11-04
 IMG_IOCS_MODELS_TAG ?= $(DEPLOY_TAG)

@@ -1,65 +1,87 @@
 ARG IMG_DEBIAN_MODELS_TAG
 FROM ghcr.io/lnls-sirius/docker-machine-applications/debian:${IMG_DEBIAN_MODELS_TAG}
+# --- size 117 MB
 
 SHELL ["bash", "-c"]
-
 WORKDIR /opt/mamba_files
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV TZ America/Sao_Paulo
+ENV DEBIAN_FRONTEND=noninteractive \
+    TZ=America/Sao_Paulo
 
-# Install generic apt packages
-
-RUN apt-get update && apt-get install -y \
-    apt-utils \
-    tzdata \
-    sudo \
-    procps \
-    wget \
-    iproute2 \
-    iputils-ping \
-    libreadline-dev \
-    git \
-    nano \
-    && \
+# -------------------------------------------------------------------
+# 1) Install apt packages (cleaned in the same layer)
+# -------------------------------------------------------------------
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        tzdata procps wget iproute2 iputils-ping \
+        libreadline-dev git nano bzip2 ca-certificates && \
     ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
-    dpkg-reconfigure --frontend $DEBIAN_FRONTEND tzdata
+    dpkg-reconfigure --frontend noninteractive tzdata && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /usr/share/doc/* /usr/share/man/*
+# --- size 256 MB
 
-RUN wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && sh Miniforge3-Linux-x86_64.sh -b -p /opt/mamba_files/mamba && rm Miniforge3-Linux-x86_64.sh && \
-    groupadd mamba && \
-    adduser root mamba && \
-    chgrp -R mamba /opt/mamba_files/mamba && \
-    chmod 774 -R /opt/mamba_files/mamba && \
-    chown -R root:mamba ~/.conda
+# -------------------------------------------------------------------
+# 2) Install micromamba (single static binary, very small)
+# -------------------------------------------------------------------
+RUN wget -qO- https://micro.mamba.pm/api/micromamba/linux-64/latest | \
+    tar -xvj bin/micromamba && \
+    mv bin/micromamba /usr/local/bin/ && \
+    rm -rf bin
 
-RUN source /opt/mamba_files/mamba/etc/profile.d/conda.sh && \
-    export MAMBA_ROOT_PREFIX='/opt/mamba_files/mamba' && \
-    eval "$(mamba shell hook --shell bash)"
+ENV MAMBA_ROOT_PREFIX=/opt/mamba_files/mamba
+RUN mkdir -p $MAMBA_ROOT_PREFIX
+# --- size 273 MB
 
-RUN echo "" >> ~/.bashrc && \
-    echo "# add conda and mamba to path" >> ~/.bashrc && \
-    echo "CONDA_ADD=/opt/mamba_files/mamba/etc/profile.d/conda.sh" >> ~/.bashrc && \
-    echo "if [ -f \"\$CONDA_ADD\" ] ; then" >> ~/.bashrc && \
-    echo "    source \"\$CONDA_ADD\"" >> ~/.bashrc && \
-    echo "fi" >> ~/.bashrc && \
-    echo "export MAMBA_ROOT_PREFIX='/opt/mamba_files/mamba'" >> ~/.bashrc && \
-    echo "eval \"\$(mamba shell hook --shell bash)\"" >> ~/.bashrc
 
-RUN /opt/mamba_files/mamba/bin/mamba create --name sirius python=3.9.2 -y
+# -------------------------------------------------------------------
+# 3) Create 'sirius' environment with Python 3.9
+# -------------------------------------------------------------------
+RUN micromamba create -y -n sirius -c conda-forge python=3.9
 
-RUN source ~/.bashrc && \
-    mamba activate sirius && \
-    mamba install -y gxx make binutils swig=4.2.0 libxcrypt gsl libblas \
-    fftw pyparsing bottleneck aiohttp numpy=1.23 scipy matplotlib-base \
+# Convenience link for python
+RUN ln -s /opt/mamba_files/mamba/envs/sirius/bin/python3 \
+    /opt/mamba_files/mamba/envs/sirius/bin/python-sirius
+# --- size 1.29 GB
+
+
+# -------------------------------------------------------------------
+# 4) Install packages into the 'sirius' environment
+#    No activation required — micromamba run does it automatically.
+# -------------------------------------------------------------------
+
+# First package block
+RUN micromamba install -y -n sirius -c conda-forge \
+    gxx make binutils swig=4.2.0 gsl libblas \
+    bottleneck aiohttp numpy=1.23 && \
+    micromamba clean --all --yes
+# --- size 2.34 GB
+
+# EPICS block
+RUN micromamba install -y -n sirius -c conda-forge \
+    epics-base=3.15.6 pyepics=3.5.7 pcaspy==0.7.3 && \
+    micromamba clean --all --yes
+# --- size 2.45 GB
+
+# Scientific Python packages block
+RUN micromamba install -y -n sirius -c conda-forge \
+    libxcrypt fftw pyparsing \
+    scipy matplotlib-base \
     pytest mpmath entrypoints requests pandas \
     numexpr sh pywavelets scikit-image \
-    scikit-learn pydocstyle pycodestyle pylama openpyxl gpy gpyopt fpdf sympy \
-    h5py scienceplots seaborn-base
+    scikit-learn pydocstyle pycodestyle pylama \
+    openpyxl gpy gpyopt fpdf sympy \
+    h5py scienceplots seaborn-base && \
+    micromamba clean --all --yes
+# --- size 3.12 GB
 
-RUN source ~/.bashrc && \
-    mamba activate sirius && \
-    mamba install --freeze-installed -y \
-    -c conda-forge/label/cf202003 epics-base=3.15.6 \
-    pyepics=3.5.7 pcaspy==0.7.3
+# # Scientific Python packages block (pycollef)
+# RUN micromamba install -y -n sirius -c conda-forge \
+#     fftw mpmath && \
+#     micromamba clean --all --yes
 
-RUN ln -s /opt/mamba_files/mamba/envs/sirius/bin/python3 /opt/mamba_files/mamba/envs/sirius/bin/python-sirius
+# -------------------------------------------------------------------
+# 5) Final system cleanup
+# -------------------------------------------------------------------
+RUN rm -rf /usr/share/doc/* /usr/share/man/* /usr/share/locale/*
+# --- size 3.12 GB
