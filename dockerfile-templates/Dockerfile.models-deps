@@ -71,7 +71,7 @@ RUN micromamba install -y -n sirius -c conda-forge \
     numexpr sh pywavelets scikit-image \
     scikit-learn pydocstyle pycodestyle pylama \
     openpyxl gpy gpyopt fpdf sympy \
-    h5py scienceplots seaborn-base && \
+    h5py scienceplots seaborn-base lzstring && \
     micromamba clean --all --yes
 # --- size 3.12 GB
 
