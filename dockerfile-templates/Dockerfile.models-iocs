@@ -1,0 +1,42 @@
+ARG IMG_DEPS_MODELS_TAG
+FROM ghcr.io/lnls-sirius/docker-machine-applications/fac-models-deps:${IMG_DEPS_MODELS_TAG}
+# --- size 3.12 GB
+
+SHELL ["bash", "-c"]
+
+WORKDIR /opt/repos
+
+# -------------------------------------------------------------------
+# 1) Clone trackcpp and install inside sirius env
+# -------------------------------------------------------------------
+RUN git clone https://github.com/lnls-fac/trackcpp.git && \
+    micromamba run -n sirius bash -c "cd trackcpp && make install && make clean"
+# --- size 3.13 GB
+
+# -------------------------------------------------------------------
+# 2) Clone repos (no build yet)
+# -------------------------------------------------------------------
+RUN git clone https://github.com/lnls-fac/mathphys.git && \
+    git clone https://github.com/lnls-fac/pyaccel.git && \
+    git clone https://github.com/lnls-fac/pymodels.git && \
+    git clone https://github.com/lnls-sirius/dev-packages.git && \
+    git clone https://github.com/lnls-sirius/machine-applications-models.git
+# --- size 3.17 GB
+
+# -------------------------------------------------------------------
+# 3) Build all packages inside micromamba environment
+# -------------------------------------------------------------------
+RUN micromamba run -n sirius bash -c "cd mathphys && \
+    git checkout add-flatten && \
+    make install" && \
+    micromamba run -n sirius bash -c "cd dev-packages/siriuspy && \
+    make install" && \
+    micromamba run -n sirius bash -c "cd pyaccel && \
+    make install" && \
+    micromamba run -n sirius bash -c "cd pymodels && \
+    git checkout substitute-flatten && \
+    make install" && \
+    micromamba run -n sirius bash -c "cd machine-applications-models && \
+    git checkout add-si-ap-injbeamdiag && \
+    make install"
+# --- size 3.17 GB
