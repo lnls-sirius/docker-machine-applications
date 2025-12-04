@@ -10,7 +10,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == elisa
+          - node.hostname == samba
       resources:
         limits:
           cpus: "8"
@@ -36,7 +36,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == elisa
+          - node.hostname == samba
       resources:
         limits:
           cpus: "8"
@@ -62,7 +62,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == niede
+          - node.hostname == bossanova
       resources:
         limits:
           cpus: "8"
@@ -92,7 +92,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == niede
+          - node.hostname == bossanova
       resources:
         limits:
           cpus: "8"
@@ -122,7 +122,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == elisa
+          - node.hostname == samba
       resources:
         limits:
           cpus: "8"
