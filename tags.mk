@@ -10,12 +10,11 @@ EPICS_BASE_TAG ?= base-3.15.6
 
 # tags used for creating docker images
 IMG_DEBIAN_TAG ?= bullseye-20211011
-#DEPLOY_TAG ?= 2025-04-23
-DEPLOY_TAG ?= 2025-04-28_16-00-00
+DEPLOY_TAG ?= 2025-12-05_18-30-00
 
 # image tags used for starting docker services
 IMG_IOCS_LI_PS_TAG ?= 2025-04-23
 IMG_PYTHON_TAG ?= 2025-04-23 # also used as base image for fac-epics
 IMG_EPICS_TAG ?= 2025-04-23
-IMG_DEPS_TAG ?= 2025-04-23
+IMG_DEPS_TAG ?= 2025-12-05
 IMG_IOCS_TAG ?= $(DEPLOY_TAG)
