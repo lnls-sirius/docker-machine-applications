@@ -15,204 +15,204 @@ from siriuspy.search import HLTimeSearch, IDSearch, PSSearch
 class ServiceConfig:
     """Services configuration."""
 
-    SERVICES_CSCONSTS = {
-        'csconsts': 'samba'
-        }
+    SERVICES_CSCONSTS = [
+        'csconsts',
+        ]
 
-    SERVICES = {
-        'as-ap-currinfo': 'bossanova',
-        'as-ap-machshift': 'samba',
-        'as-ap-diag': 'bossanova',
-        'as-ap-opticscorr': 'samba',
-        'as-ap-posang': 'samba',
-        'as-ap-sofb': 'samba',
-        'as-ap-injctrl': 'bossanova',
-        'as-ps-dclinks-tbts-bodip': 'samba',
-        'as-ps-dclinks-ia01': 'samba',
-        'as-ps-dclinks-ia02': 'samba',
-        'as-ps-dclinks-ia03': 'samba',
-        'as-ps-dclinks-ia04': 'samba',
-        'as-ps-dclinks-ia05': 'bossanova',
-        'as-ps-dclinks-ia06': 'samba',
-        'as-ps-dclinks-ia07': 'bossanova',
-        'as-ps-dclinks-ia08': 'samba',
-        'as-ps-dclinks-ia09': 'bossanova',
-        'as-ps-dclinks-ia10': 'samba',
-        'as-ps-dclinks-ia11': 'samba',
-        'as-ps-dclinks-ia12': 'samba',
-        'as-ps-dclinks-ia13': 'samba',
-        'as-ps-dclinks-ia14': 'samba',
-        'as-ps-dclinks-ia15': 'samba',
-        'as-ps-dclinks-ia16': 'bossanova',
-        'as-ps-dclinks-ia17': 'bossanova',
-        'as-ps-dclinks-ia18': 'samba',
-        'as-ps-dclinks-ia19': 'samba',
-        'as-ps-dclinks-ia20': 'bossanova',
-        'as-pu-conv': 'bossanova',
-        'as-ti-general': 'bossanova',
-        'li-ti-general': 'bossanova',
-        'tb-ti-general': 'bossanova',
-        'bo-ti-general': 'bossanova',
-        'ts-ti-general': 'bossanova',
-        'si-ti-general': 'bossanova',
-        'ba-ti-general': 'bossanova',
-        'bo-ti-bpms-corrs': 'samba',
-        'si-ti-bpms-corrs': 'bossanova',
-        'si-ti-trims-skews': 'samba',
-        'li-ap-energy': 'bossanova',
-        'li-ps-spect-quads-lens': 'samba',
-        'li-ps-corrs': 'samba',
-        'li-ps-slnds': 'bossanova',
-        'li-ps-conv': 'bossanova',
-        'li-ps-diag': 'samba',
-        'tb-ps-dips': 'samba',
-        'tb-ps-quads': 'samba',
-        'tb-ps-corrs': 'samba',
-        'bo-ps-dips': 'samba',
-        'bo-ps-quads': 'bossanova',
-        'bo-ps-sexts': 'samba',
-        'bo-ps-corrs-ia01': 'samba',
-        'bo-ps-corrs-ia02': 'samba',
-        'bo-ps-corrs-ia04': 'samba',
-        'bo-ps-corrs-ia05': 'samba',
-        'bo-ps-corrs-ia07': 'samba',
-        'bo-ps-corrs-ia08': 'samba',
-        'bo-ps-corrs-ia10': 'bossanova',
-        'bo-ps-corrs-ia11': 'samba',
-        'bo-ps-corrs-ia13': 'samba',
-        'bo-ps-corrs-ia14': 'samba',
-        'bo-ps-corrs-ia16': 'bossanova',
-        'bo-ps-corrs-ia17': 'bossanova',
-        'bo-ps-corrs-ia20': 'samba',
-        'ts-ps-dips': 'bossanova',
-        'ts-ps-quads': 'bossanova',
-        'ts-ps-corrs': 'bossanova',
-        'si-ap-fofb': 'samba',
-        'si-ap-stabinfo': 'bossanova',
-        'si-di-fpmosc': 'samba',
-        'si-id-conv': 'samba',
-        'si-ap-sofb': 'samba',
-        'si-ps-dips': 'bossanova',
-        'si-ps-quads-qfq': 'samba',
-        'si-ps-quads-qd': 'bossanova',
-        'si-ps-sexts-sda12b2-sfa0p0-sda0p0': 'bossanova',
-        'si-ps-sexts-sfa12-sda3p1-sfb0-sdb01': 'bossanova',
-        'si-ps-sexts-sfb12-sdb3-sfp12-sdp23': 'bossanova',
-        'si-ps-corrs-c2m12-ia01': 'bossanova',
-        'si-ps-corrs-c2m12-ia02': 'bossanova',
-        'si-ps-corrs-c2m12-ia03': 'bossanova',
-        'si-ps-corrs-c2m12-ia04': 'bossanova',
-        'si-ps-corrs-c2m12-ia05': 'samba',
-        'si-ps-corrs-c2m12-ia06': 'samba',
-        'si-ps-corrs-c2m12-ia07': 'samba',
-        'si-ps-corrs-c2m12-ia08': 'bossanova',
-        'si-ps-corrs-c2m12-ia09': 'bossanova',
-        'si-ps-corrs-c2m12-ia10': 'samba',
-        'si-ps-corrs-c2m12-ia11': 'samba',
-        'si-ps-corrs-c2m12-ia12': 'bossanova',
-        'si-ps-corrs-c2m12-ia13': 'bossanova',
-        'si-ps-corrs-c2m12-ia14': 'bossanova',
-        'si-ps-corrs-c2m12-ia15': 'samba',
-        'si-ps-corrs-c2m12-ia16': 'bossanova',
-        'si-ps-corrs-c2m12-ia17': 'samba',
-        'si-ps-corrs-c2m12-ia18': 'bossanova',
-        'si-ps-corrs-c2m12-ia19': 'samba',
-        'si-ps-corrs-c2m12-ia20': 'samba',
-        'si-ps-corrs-c134-ia01': 'bossanova',
-        'si-ps-corrs-c134-ia02': 'bossanova',
-        'si-ps-corrs-c134-ia03': 'bossanova',
-        'si-ps-corrs-c134-ia04': 'bossanova',
-        'si-ps-corrs-c134-ia05': 'bossanova',
-        'si-ps-corrs-c134-ia06': 'bossanova',
-        'si-ps-corrs-c134-ia07': 'bossanova',
-        'si-ps-corrs-c134-ia08': 'samba',
-        'si-ps-corrs-c134-ia09': 'bossanova',
-        'si-ps-corrs-c134-ia10': 'samba',
-        'si-ps-corrs-c134-ia11': 'samba',
-        'si-ps-corrs-c134-ia12': 'bossanova',
-        'si-ps-corrs-c134-ia13': 'bossanova',
-        'si-ps-corrs-c134-ia14': 'samba',
-        'si-ps-corrs-c134-ia15': 'bossanova',
-        'si-ps-corrs-c134-ia16': 'samba',
-        'si-ps-corrs-c134-ia17': 'samba',
-        'si-ps-corrs-c134-ia18': 'bossanova',
-        'si-ps-corrs-c134-ia19': 'samba',
-        'si-ps-corrs-c134-ia20': 'bossanova',
-        'si-ps-corrs-sb-ia06': 'bossanova',
-        'si-ps-corrs-sp-ia07': 'bossanova',
-        'si-ps-corrs-sb-ia08': 'samba',
-        'si-ps-corrlong-sb-ia08': 'samba',
-        'si-ps-corrs-qs-sb-ia10': 'samba',
-        'si-ps-corrs-sb-ia14': 'bossanova',
-        'si-ps-corrlong-sb-ia14': 'samba',
-        'si-ps-trims-qs-m12-ia01': 'samba',
-        'si-ps-trims-qs-m12-ia02': 'samba',
-        'si-ps-trims-qs-m12-ia03': 'samba',
-        'si-ps-trims-qs-m12-ia04': 'samba',
-        'si-ps-trims-qs-m12-ia05': 'samba',
-        'si-ps-trims-qs-m12-ia06': 'bossanova',
-        'si-ps-trims-qs-m12-ia07': 'bossanova',
-        'si-ps-trims-qs-m12-ia08': 'bossanova',
-        'si-ps-trims-qs-m12-ia09': 'samba',
-        'si-ps-trims-qs-m12-ia10': 'samba',
-        'si-ps-trims-qs-m12-ia11': 'bossanova',
-        'si-ps-trims-qs-m12-ia12': 'samba',
-        'si-ps-trims-qs-m12-ia13': 'bossanova',
-        'si-ps-trims-qs-m12-ia14': 'bossanova',
-        'si-ps-trims-qs-m12-ia15': 'bossanova',
-        'si-ps-trims-qs-m12-ia16': 'samba',
-        'si-ps-trims-qs-m12-ia17': 'bossanova',
-        'si-ps-trims-qs-m12-ia18': 'bossanova',
-        'si-ps-trims-qs-m12-ia19': 'samba',
-        'si-ps-trims-qs-m12-ia20': 'bossanova',
-        'si-ps-trims-qs-c1234-ia01': 'bossanova',
-        'si-ps-trims-qs-c1234-ia02': 'samba',
-        'si-ps-trims-qs-c1234-ia03': 'bossanova',
-        'si-ps-trims-qs-c1234-ia04': 'bossanova',
-        'si-ps-trims-qs-c1234-ia05': 'samba',
-        'si-ps-trims-qs-c1234-ia06': 'bossanova',
-        'si-ps-trims-qs-c1234-ia07': 'samba',
-        'si-ps-trims-qs-c1234-ia08': 'samba',
-        'si-ps-trims-qs-c1234-ia09': 'samba',
-        'si-ps-trims-qs-c1234-ia10': 'bossanova',
-        'si-ps-trims-qs-c1234-ia11': 'bossanova',
-        'si-ps-trims-qs-c1234-ia12': 'bossanova',
-        'si-ps-trims-qs-c1234-ia13': 'bossanova',
-        'si-ps-trims-qs-c1234-ia14': 'bossanova',
-        'si-ps-trims-qs-c1234-ia15': 'bossanova',
-        'si-ps-trims-qs-c1234-ia16': 'samba',
-        'si-ps-trims-qs-c1234-ia17': 'samba',
-        'si-ps-trims-qs-c1234-ia18': 'samba',
-        'si-ps-trims-qs-c1234-ia19': 'samba',
-        'si-ps-trims-qs-c1234-ia20': 'samba',
-        'si-ps-conv-fastcorrs-ia01': 'samba',
-        'si-ps-conv-fastcorrs-ia02': 'samba',
-        'si-ps-conv-fastcorrs-ia03': 'samba',
-        'si-ps-conv-fastcorrs-ia04': 'samba',
-        'si-ps-conv-fastcorrs-ia05': 'samba',
-        'si-ps-conv-fastcorrs-ia06': 'samba',
-        'si-ps-conv-fastcorrs-ia07': 'samba',
-        'si-ps-conv-fastcorrs-ia08': 'samba',
-        'si-ps-conv-fastcorrs-ia09': 'samba',
-        'si-ps-conv-fastcorrs-ia10': 'samba',
-        'si-ps-conv-fastcorrs-ia11': 'bossanova',
-        'si-ps-conv-fastcorrs-ia12': 'bossanova',
-        'si-ps-conv-fastcorrs-ia13': 'bossanova',
-        'si-ps-conv-fastcorrs-ia14': 'bossanova',
-        'si-ps-conv-fastcorrs-ia15': 'samba',
-        'si-ps-conv-fastcorrs-ia16': 'samba',
-        'si-ps-conv-fastcorrs-ia17': 'samba',
-        'si-ps-conv-fastcorrs-ia18': 'samba',
-        'si-ps-conv-fastcorrs-ia19': 'samba',
-        'si-ps-conv-fastcorrs-ia20': 'samba',
-        'si-ps-diag-fastcorrs': 'bossanova',
-        'it-ps-lens': 'samba',
-        'bl-ap-imgproc': 'samba',
-        'si-ap-idff-delta52': 'samba',
-        # 'si-ap-idff-ivu18-sb08': 'samba',
-        # 'si-ap-idff-ivu18-sb14': 'samba',
-        'si-ap-orbintlk': 'samba',
-        }
+    SERVICES = [
+        'as-ap-currinfo',
+        'as-ap-machshift',
+        'as-ap-diag',
+        'as-ap-opticscorr',
+        'as-ap-posang',
+        'as-ap-sofb',
+        'as-ap-injctrl',
+        'as-ps-dclinks-tbts-bodip',
+        'as-ps-dclinks-ia01',
+        'as-ps-dclinks-ia02',
+        'as-ps-dclinks-ia03',
+        'as-ps-dclinks-ia04',
+        'as-ps-dclinks-ia05',
+        'as-ps-dclinks-ia06',
+        'as-ps-dclinks-ia07',
+        'as-ps-dclinks-ia08',
+        'as-ps-dclinks-ia09',
+        'as-ps-dclinks-ia10',
+        'as-ps-dclinks-ia11',
+        'as-ps-dclinks-ia12',
+        'as-ps-dclinks-ia13',
+        'as-ps-dclinks-ia14',
+        'as-ps-dclinks-ia15',
+        'as-ps-dclinks-ia16',
+        'as-ps-dclinks-ia17',
+        'as-ps-dclinks-ia18',
+        'as-ps-dclinks-ia19',
+        'as-ps-dclinks-ia20',
+        'as-pu-conv',
+        'as-ti-general',
+        'li-ti-general',
+        'tb-ti-general',
+        'bo-ti-general',
+        'ts-ti-general',
+        'si-ti-general',
+        'ba-ti-general',
+        'bo-ti-bpms-corrs',
+        'si-ti-bpms-corrs',
+        'si-ti-trims-skews',
+        'li-ap-energy',
+        'li-ps-spect-quads-lens',
+        'li-ps-corrs',
+        'li-ps-slnds',
+        'li-ps-conv',
+        'li-ps-diag',
+        'tb-ps-dips',
+        'tb-ps-quads',
+        'tb-ps-corrs',
+        'bo-ps-dips',
+        'bo-ps-quads',
+        'bo-ps-sexts',
+        'bo-ps-corrs-ia01',
+        'bo-ps-corrs-ia02',
+        'bo-ps-corrs-ia04',
+        'bo-ps-corrs-ia05',
+        'bo-ps-corrs-ia07',
+        'bo-ps-corrs-ia08',
+        'bo-ps-corrs-ia10',
+        'bo-ps-corrs-ia11',
+        'bo-ps-corrs-ia13',
+        'bo-ps-corrs-ia14',
+        'bo-ps-corrs-ia16',
+        'bo-ps-corrs-ia17',
+        'bo-ps-corrs-ia20',
+        'ts-ps-dips',
+        'ts-ps-quads',
+        'ts-ps-corrs',
+        'si-ap-fofb',
+        'si-ap-stabinfo',
+        'si-di-fpmosc',
+        'si-id-conv',
+        'si-ap-sofb',
+        'si-ps-dips',
+        'si-ps-quads-qfq',
+        'si-ps-quads-qd',
+        'si-ps-sexts-sda12b2-sfa0p0-sda0p0',
+        'si-ps-sexts-sfa12-sda3p1-sfb0-sdb01',
+        'si-ps-sexts-sfb12-sdb3-sfp12-sdp23',
+        'si-ps-corrs-c2m12-ia01',
+        'si-ps-corrs-c2m12-ia02',
+        'si-ps-corrs-c2m12-ia03',
+        'si-ps-corrs-c2m12-ia04',
+        'si-ps-corrs-c2m12-ia05',
+        'si-ps-corrs-c2m12-ia06',
+        'si-ps-corrs-c2m12-ia07',
+        'si-ps-corrs-c2m12-ia08',
+        'si-ps-corrs-c2m12-ia09',
+        'si-ps-corrs-c2m12-ia10',
+        'si-ps-corrs-c2m12-ia11',
+        'si-ps-corrs-c2m12-ia12',
+        'si-ps-corrs-c2m12-ia13',
+        'si-ps-corrs-c2m12-ia14',
+        'si-ps-corrs-c2m12-ia15',
+        'si-ps-corrs-c2m12-ia16',
+        'si-ps-corrs-c2m12-ia17',
+        'si-ps-corrs-c2m12-ia18',
+        'si-ps-corrs-c2m12-ia19',
+        'si-ps-corrs-c2m12-ia20',
+        'si-ps-corrs-c134-ia01',
+        'si-ps-corrs-c134-ia02',
+        'si-ps-corrs-c134-ia03',
+        'si-ps-corrs-c134-ia04',
+        'si-ps-corrs-c134-ia05',
+        'si-ps-corrs-c134-ia06',
+        'si-ps-corrs-c134-ia07',
+        'si-ps-corrs-c134-ia08',
+        'si-ps-corrs-c134-ia09',
+        'si-ps-corrs-c134-ia10',
+        'si-ps-corrs-c134-ia11',
+        'si-ps-corrs-c134-ia12',
+        'si-ps-corrs-c134-ia13',
+        'si-ps-corrs-c134-ia14',
+        'si-ps-corrs-c134-ia15',
+        'si-ps-corrs-c134-ia16',
+        'si-ps-corrs-c134-ia17',
+        'si-ps-corrs-c134-ia18',
+        'si-ps-corrs-c134-ia19',
+        'si-ps-corrs-c134-ia20',
+        'si-ps-corrs-sb-ia06',
+        'si-ps-corrs-sp-ia07',
+        'si-ps-corrs-sb-ia08',
+        'si-ps-corrlong-sb-ia08',
+        'si-ps-corrs-qs-sb-ia10',
+        'si-ps-corrs-sb-ia14',
+        'si-ps-corrlong-sb-ia14',
+        'si-ps-trims-qs-m12-ia01',
+        'si-ps-trims-qs-m12-ia02',
+        'si-ps-trims-qs-m12-ia03',
+        'si-ps-trims-qs-m12-ia04',
+        'si-ps-trims-qs-m12-ia05',
+        'si-ps-trims-qs-m12-ia06',
+        'si-ps-trims-qs-m12-ia07',
+        'si-ps-trims-qs-m12-ia08',
+        'si-ps-trims-qs-m12-ia09',
+        'si-ps-trims-qs-m12-ia10',
+        'si-ps-trims-qs-m12-ia11',
+        'si-ps-trims-qs-m12-ia12',
+        'si-ps-trims-qs-m12-ia13',
+        'si-ps-trims-qs-m12-ia14',
+        'si-ps-trims-qs-m12-ia15',
+        'si-ps-trims-qs-m12-ia16',
+        'si-ps-trims-qs-m12-ia17',
+        'si-ps-trims-qs-m12-ia18',
+        'si-ps-trims-qs-m12-ia19',
+        'si-ps-trims-qs-m12-ia20',
+        'si-ps-trims-qs-c1234-ia01',
+        'si-ps-trims-qs-c1234-ia02',
+        'si-ps-trims-qs-c1234-ia03',
+        'si-ps-trims-qs-c1234-ia04',
+        'si-ps-trims-qs-c1234-ia05',
+        'si-ps-trims-qs-c1234-ia06',
+        'si-ps-trims-qs-c1234-ia07',
+        'si-ps-trims-qs-c1234-ia08',
+        'si-ps-trims-qs-c1234-ia09',
+        'si-ps-trims-qs-c1234-ia10',
+        'si-ps-trims-qs-c1234-ia11',
+        'si-ps-trims-qs-c1234-ia12',
+        'si-ps-trims-qs-c1234-ia13',
+        'si-ps-trims-qs-c1234-ia14',
+        'si-ps-trims-qs-c1234-ia15',
+        'si-ps-trims-qs-c1234-ia16',
+        'si-ps-trims-qs-c1234-ia17',
+        'si-ps-trims-qs-c1234-ia18',
+        'si-ps-trims-qs-c1234-ia19',
+        'si-ps-trims-qs-c1234-ia20',
+        'si-ps-conv-fastcorrs-ia01',
+        'si-ps-conv-fastcorrs-ia02',
+        'si-ps-conv-fastcorrs-ia03',
+        'si-ps-conv-fastcorrs-ia04',
+        'si-ps-conv-fastcorrs-ia05',
+        'si-ps-conv-fastcorrs-ia06',
+        'si-ps-conv-fastcorrs-ia07',
+        'si-ps-conv-fastcorrs-ia08',
+        'si-ps-conv-fastcorrs-ia09',
+        'si-ps-conv-fastcorrs-ia10',
+        'si-ps-conv-fastcorrs-ia11',
+        'si-ps-conv-fastcorrs-ia12',
+        'si-ps-conv-fastcorrs-ia13',
+        'si-ps-conv-fastcorrs-ia14',
+        'si-ps-conv-fastcorrs-ia15',
+        'si-ps-conv-fastcorrs-ia16',
+        'si-ps-conv-fastcorrs-ia17',
+        'si-ps-conv-fastcorrs-ia18',
+        'si-ps-conv-fastcorrs-ia19',
+        'si-ps-conv-fastcorrs-ia20',
+        'si-ps-diag-fastcorrs',
+        'it-ps-lens',
+        'bl-ap-imgproc',
+        'si-ap-idff-delta52',
+        # 'si-ap-idff-ivu18-sb08',
+        # 'si-ap-idff-ivu18-sb14',
+        'si-ap-orbintlk',
+        ]
 
     STACKS = {
         'as-ps-dclinks': {
@@ -548,7 +548,7 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + 'services:'
         return strf
 
-    def str_service(self, app, node, depends=None):
+    def str_service(self, app, depends=None):
         """."""
         strf = ''
         strf += '\n' + '    image: ' + self.get_image(app)
@@ -564,7 +564,7 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + '    deploy:'
         strf += '\n' + '      placement:'
         strf += '\n' + '        constraints:'
-        strf += '\n' + '          - node.hostname == ' + node
+        strf += '\n' + '          - node.hostname != comp-swarm'
         strf += '\n' + '      resources:'
         strf += '\n' + '        limits:'
         strf += '\n' + '          cpus: "8"'
@@ -597,18 +597,17 @@ class DockerStackConfig(ServiceConfig):
 class DockerLowStackConfig(DockerStackConfig):
     """Docker low stack configuration."""
 
-    def __init__(self, app, node):
+    def __init__(self, app):
         """."""
         super().__init__(DockerStackConfig.IMAGE_TAG_IOCS)
         self.app = app
-        self.node = node
 
     def __str__(self):
         """."""
         strf = self.str_header()
         strf += '\n'
         strf += '\n' + '  iocs:'
-        strf += self.str_service(self.app, self.node)
+        strf += self.str_service(self.app)
         strf += '\n'
         strf += self.str_networks()
         return strf
@@ -635,10 +634,9 @@ class DockerHighStackConfig(DockerStackConfig):
             else:
                 depends = None
             # print(service, app, depends)
-            node = ServiceConfig.SERVICES[app]
             strf += '\n'
             strf += '\n' + '  ' + service + ':'
-            strf += self.str_service(app, node, depends)
+            strf += self.str_service(app, depends)
         strf += '\n'
         strf += self.str_networks()
         return strf
@@ -651,16 +649,15 @@ class DockerHighStackConfig(DockerStackConfig):
 class DockerCSConstsConfig(DockerStackConfig):
     """Docker control-system-constants configuration."""
 
-    def __init__(self, app, node):
+    def __init__(self, app):
         super().__init__(DockerStackConfig.IMAGE_TAG_CSCONSTS)
         self.app = app
-        self.node = node
 
     def __str__(self):
         strf = self.str_header()
         strf += '\n'
         strf += '\n' + '  facs-csconsts:'
-        strf += self.str_service(self.app, self.node)
+        strf += self.str_service(self.app)
         strf += '\n'
         strf += self.str_networks()
         return strf
@@ -680,12 +677,12 @@ class DockerCSConstsConfig(DockerStackConfig):
 
 def generate_service_files():
     """Generate docker service file."""
-    for app, node in ServiceConfig.SERVICES_CSCONSTS.items():
-        config = DockerCSConstsConfig(app=app, node=node)
+    for app in ServiceConfig.SERVICES_CSCONSTS:
+        config = DockerCSConstsConfig(app=app)
         config.save_config_file()
 
-    for app, node in ServiceConfig.SERVICES.items():
-        config = DockerLowStackConfig(app=app, node=node)
+    for app in ServiceConfig.SERVICES:
+        config = DockerLowStackConfig(app=app)
         config.save_config_file()
 
     for stack in ServiceConfig.STACKS:
