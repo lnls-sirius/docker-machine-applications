@@ -10,7 +10,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
