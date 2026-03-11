@@ -501,8 +501,8 @@ class ServiceConfig:
             # 'ivu18-sb08': 'si-ap-idff-ivu18-sb08',
             # 'ivu18-sb14': 'si-ap-idff-ivu18-sb14',
         },
-        'si-rf-monitor': {
-            'si-rf-monitor': 'si-rf-monitor',
+        'si-rf': {
+            'monitor': 'si-rf-monitor',
         },
         # 'bl-ap-imgproc': {
         #     'imgproc': 'bl-ap-imgproc',
@@ -735,11 +735,18 @@ def generate_service_2_ioc_table():  # noqa: C901
 
     data = dict()
     for container, iocs in cont2iocs.items():
+        # print(container, iocs)
         data[container] = dict()
         for ioc in iocs:
             ioc = ioc.strip(' ')
+            # print(ioc + '.')
             prefixes = list()
-            if ('-ps' in ioc or '-pu' in ioc) and 'conv' not in ioc:
+            if ioc == 'si-rf-monitor':
+                prefixes = [
+                    'SI-03SP:RF-CryoMod-1',
+                    'SI-03SP:RF-CryoMod-2'
+                ]
+            elif ('-ps' in ioc or '-pu' in ioc) and 'conv' not in ioc:
                 prs = ioc.replace('"', '')
                 prs = prs.split(' ')
                 if prs[0] == 'as-ps':
@@ -768,10 +775,11 @@ def generate_service_2_ioc_table():  # noqa: C901
                         elif prs[1] == 'pu':
                             filt = {'dis': 'PU'}
                         elif 'fastcorr' in ioc:
-                            subgroup = container.split('-')[4]
+                            subgroup = container.split('-')[5]
                             ioc = ioc + '-' + subgroup
                             sub = subgroup[-2:] + '.*'
                             filt = {'sec': 'SI', 'sub': sub, 'dev': 'FC.*'}
+                            # print(container, ioc, filt)
                         psnames = PSSearch.get_psnames(filt)
                         for psn in psnames:
                             psn = _PVName(psn)
@@ -848,6 +856,8 @@ def generate_service_2_ioc_table():  # noqa: C901
                     devname = devname.replace('fpmosc', 'FPMOsc')
                     pref = prs[0].upper() + '-Glob:DI-' + devname
                     prefixes.append(pref)
+            # if 'facs-si-rf' in container:
+                # print(container, ioc, prefixes)
             data[container][ioc] = prefixes
 
     fname = 'facs.yml'
@@ -884,5 +894,5 @@ def generate_service_2_ioc_table():  # noqa: C901
 
 
 if __name__ == "__main__":
-    generate_service_files()
+    # generate_service_files()
     generate_service_2_ioc_table()
