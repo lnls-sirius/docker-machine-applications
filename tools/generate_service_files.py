@@ -735,11 +735,9 @@ def generate_service_2_ioc_table():  # noqa: C901
 
     data = dict()
     for container, iocs in cont2iocs.items():
-        # print(container, iocs)
         data[container] = dict()
         for ioc in iocs:
             ioc = ioc.strip(' ')
-            # print(ioc + '.')
             prefixes = list()
             if ioc == 'si-rf-monitor':
                 prefixes = [
@@ -779,7 +777,6 @@ def generate_service_2_ioc_table():  # noqa: C901
                             ioc = ioc + '-' + subgroup
                             sub = subgroup[-2:] + '.*'
                             filt = {'sec': 'SI', 'sub': sub, 'dev': 'FC.*'}
-                            # print(container, ioc, filt)
                         psnames = PSSearch.get_psnames(filt)
                         for psn in psnames:
                             psn = _PVName(psn)
@@ -856,8 +853,6 @@ def generate_service_2_ioc_table():  # noqa: C901
                     devname = devname.replace('fpmosc', 'FPMOsc')
                     pref = prs[0].upper() + '-Glob:DI-' + devname
                     prefixes.append(pref)
-            # if 'facs-si-rf' in container:
-                # print(container, ioc, prefixes)
             data[container][ioc] = prefixes
 
     fname = 'facs.yml'
@@ -894,5 +889,5 @@ def generate_service_2_ioc_table():  # noqa: C901
 
 
 if __name__ == "__main__":
-    # generate_service_files()
+    generate_service_files()
     generate_service_2_ioc_table()
