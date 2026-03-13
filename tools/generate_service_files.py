@@ -212,6 +212,7 @@ class ServiceConfig:
         # 'si-ap-idff-ivu18-sb08': 'samba',
         # 'si-ap-idff-ivu18-sb14': 'samba',
         'si-ap-orbintlk': 'samba',
+        'si-rf-monitor': 'samba',
         }
 
     STACKS = {
@@ -499,7 +500,10 @@ class ServiceConfig:
             'delta52-sb10': 'si-ap-idff-delta52',
             # 'ivu18-sb08': 'si-ap-idff-ivu18-sb08',
             # 'ivu18-sb14': 'si-ap-idff-ivu18-sb14',
-        }
+        },
+        'si-rf': {
+            'monitor': 'si-rf-monitor',
+        },
         # 'bl-ap-imgproc': {
         #     'imgproc': 'bl-ap-imgproc',
         #     },
@@ -735,7 +739,12 @@ def generate_service_2_ioc_table():  # noqa: C901
         for ioc in iocs:
             ioc = ioc.strip(' ')
             prefixes = list()
-            if ('-ps' in ioc or '-pu' in ioc) and 'conv' not in ioc:
+            if ioc == 'si-rf-monitor':
+                prefixes = [
+                    'SI-03SP:RF-CryoMod-1',
+                    'SI-03SP:RF-CryoMod-2'
+                ]
+            elif ('-ps' in ioc or '-pu' in ioc) and 'conv' not in ioc:
                 prs = ioc.replace('"', '')
                 prs = prs.split(' ')
                 if prs[0] == 'as-ps':
@@ -764,7 +773,7 @@ def generate_service_2_ioc_table():  # noqa: C901
                         elif prs[1] == 'pu':
                             filt = {'dis': 'PU'}
                         elif 'fastcorr' in ioc:
-                            subgroup = container.split('-')[4]
+                            subgroup = container.split('-')[5]
                             ioc = ioc + '-' + subgroup
                             sub = subgroup[-2:] + '.*'
                             filt = {'sec': 'SI', 'sub': sub, 'dev': 'FC.*'}
