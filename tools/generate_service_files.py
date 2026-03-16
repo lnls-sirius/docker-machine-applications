@@ -142,6 +142,7 @@ class ServiceConfig:
         'si-ps-corrs-sp-ia07': 'bossanova',
         'si-ps-corrs-sb-ia08': 'samba',
         'si-ps-corrlong-sb-ia08': 'samba',
+        'si-ps-corrs-sp-ia11': 'bossanova',
         'si-ps-corrs-qs-sb-ia10': 'samba',
         'si-ps-corrs-sb-ia14': 'bossanova',
         'si-ps-corrlong-sb-ia14': 'samba',
