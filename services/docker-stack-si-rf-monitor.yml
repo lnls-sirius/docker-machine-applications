@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
 
-  si-rf-monitor:
+  iocs:
     image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
     command: bash -c '/ioc-apps/si-rf-monitor.bash'
     volumes:
@@ -10,7 +10,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"

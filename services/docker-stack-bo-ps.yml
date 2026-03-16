@@ -10,7 +10,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -38,7 +38,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == bossanova
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -66,7 +66,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -94,7 +94,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -122,7 +122,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -150,7 +150,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -178,7 +178,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -206,7 +206,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -234,7 +234,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -262,7 +262,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == bossanova
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -290,7 +290,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -318,7 +318,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -346,7 +346,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -374,7 +374,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == bossanova
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -402,7 +402,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == bossanova
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
@@ -430,7 +430,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == samba
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"
