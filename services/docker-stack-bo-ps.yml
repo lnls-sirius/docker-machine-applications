@@ -20,6 +20,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -48,6 +50,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -76,6 +80,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -104,6 +110,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -132,6 +140,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -160,6 +170,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -188,6 +200,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -216,6 +230,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -244,6 +260,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -272,6 +290,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -300,6 +320,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -328,6 +350,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -356,6 +380,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -384,6 +410,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -412,6 +440,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
@@ -440,6 +470,8 @@ services:
         condition: any
       labels:
         io.portainer.accesscontrol.public: ""
+    labels:
+      br.lnls.logging: ""
     logging:
       driver: "json-file"
       options:
