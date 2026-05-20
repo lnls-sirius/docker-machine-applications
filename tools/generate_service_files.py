@@ -564,6 +564,8 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + '        condition: ' + self.condition
         strf += '\n' + '      labels:'
         strf += '\n' + '        io.portainer.accesscontrol.public: ""'
+        strf += '\n' + '    labels:'
+        strf += '\n' + '      br.lnls.logging: ""'
         strf += '\n' + '    logging:'
         strf += '\n' + '      driver: ' + '"' + self.driver + '"'
         strf += '\n' + '      options:'
