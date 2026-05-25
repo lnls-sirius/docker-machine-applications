@@ -20,4 +20,5 @@ RUN pip-sirius install \
     serial \
     toml \
     GPy:pkg_version_gpy \
-    h5py:pkg_version_h5py
+    h5py:pkg_version_h5py \
+    importlib-metadata
