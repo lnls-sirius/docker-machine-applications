@@ -2,15 +2,15 @@ version: "3.7"
 
 services:
 
-  iocs:
+  monitor:
     image: ghcr.io/lnls-sirius/docker-machine-applications/fac-iocs:__FAC_IOC_TAG_TEMPLATE__
-    command: bash -c '/ioc-apps/si-ps-conv-fastcorrs-ia02.bash'
+    command: bash -c '/ioc-apps/si-rf-monitor.bash'
     volumes:
       - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
     deploy:
       placement:
         constraints:
-          - node.hostname == elisa
+          - node.hostname != comp-swarm
       resources:
         limits:
           cpus: "8"

@@ -15,205 +15,189 @@ from siriuspy.search import HLTimeSearch, IDSearch, PSSearch
 class ServiceConfig:
     """Services configuration."""
 
-    SERVICES_CSCONSTS = {
-        'csconsts': 'elisa'
-        }
+    SERVICES_CSCONSTS = [
+        'csconsts',
+        ]
 
-    SERVICES = {
-        'as-ap-currinfo': 'niede',
-        'as-ap-machshift': 'elisa',
-        'as-ap-diag': 'niede',
-        'as-ap-opticscorr': 'elisa',
-        'as-ap-posang': 'elisa',
-        'as-ap-sofb': 'elisa',
-        'as-ap-injctrl': 'niede',
-        'as-ap-injbeamdiag': 'niede',
-        'as-ps-dclinks-tbts-bodip': 'elisa',
-        'as-ps-dclinks-ia01': 'elisa',
-        'as-ps-dclinks-ia02': 'elisa',
-        'as-ps-dclinks-ia03': 'elisa',
-        'as-ps-dclinks-ia04': 'elisa',
-        'as-ps-dclinks-ia05': 'niede',
-        'as-ps-dclinks-ia06': 'elisa',
-        'as-ps-dclinks-ia07': 'niede',
-        'as-ps-dclinks-ia08': 'elisa',
-        'as-ps-dclinks-ia09': 'niede',
-        'as-ps-dclinks-ia10': 'elisa',
-        'as-ps-dclinks-ia11': 'elisa',
-        'as-ps-dclinks-ia12': 'elisa',
-        'as-ps-dclinks-ia13': 'elisa',
-        'as-ps-dclinks-ia14': 'elisa',
-        'as-ps-dclinks-ia15': 'elisa',
-        'as-ps-dclinks-ia16': 'niede',
-        'as-ps-dclinks-ia17': 'niede',
-        'as-ps-dclinks-ia18': 'elisa',
-        'as-ps-dclinks-ia19': 'elisa',
-        'as-ps-dclinks-ia20': 'niede',
-        'as-pu-conv': 'niede',
-        'as-ti-general': 'niede',
-        'li-ti-general': 'niede',
-        'tb-ti-general': 'niede',
-        'bo-ti-general': 'niede',
-        'ts-ti-general': 'niede',
-        'si-ti-general': 'niede',
-        'ba-ti-general': 'niede',
-        'bo-ti-bpms-corrs': 'elisa',
-        'si-ti-bpms-corrs': 'niede',
-        'si-ti-trims-skews': 'elisa',
-        'li-ap-energy': 'niede',
-        'li-ps-spect-quads-lens': 'elisa',
-        'li-ps-corrs': 'elisa',
-        'li-ps-slnds': 'niede',
-        'li-ps-conv': 'niede',
-        'li-ps-diag': 'elisa',
-        'tb-ps-dips': 'elisa',
-        'tb-ps-quads': 'elisa',
-        'tb-ps-corrs': 'elisa',
-        'bo-ps-dips': 'elisa',
-        'bo-ps-quads': 'niede',
-        'bo-ps-sexts': 'elisa',
-        'bo-ps-corrs-ia01': 'elisa',
-        'bo-ps-corrs-ia02': 'elisa',
-        'bo-ps-corrs-ia04': 'elisa',
-        'bo-ps-corrs-ia05': 'elisa',
-        'bo-ps-corrs-ia07': 'elisa',
-        'bo-ps-corrs-ia08': 'elisa',
-        'bo-ps-corrs-ia10': 'niede',
-        'bo-ps-corrs-ia11': 'elisa',
-        'bo-ps-corrs-ia13': 'elisa',
-        'bo-ps-corrs-ia14': 'elisa',
-        'bo-ps-corrs-ia16': 'niede',
-        'bo-ps-corrs-ia17': 'niede',
-        'bo-ps-corrs-ia20': 'elisa',
-        'ts-ps-dips': 'niede',
-        'ts-ps-quads': 'niede',
-        'ts-ps-corrs': 'niede',
-        'si-ap-fofb': 'elisa',
-        'si-ap-stabinfo': 'niede',
-        'si-di-fpmosc': 'elisa',
-        'si-id-conv': 'elisa',
-        'si-ap-sofb': 'elisa',
-        'si-ps-dips': 'niede',
-        'si-ps-quads-qfq': 'elisa',
-        'si-ps-quads-qd': 'niede',
-        'si-ps-sexts-sda12b2-sfa0p0-sda0p0': 'niede',
-        'si-ps-sexts-sfa12-sda3p1-sfb0-sdb01': 'niede',
-        'si-ps-sexts-sfb12-sdb3-sfp12-sdp23': 'niede',
-        'si-ps-corrs-c2m12-ia01': 'niede',
-        'si-ps-corrs-c2m12-ia02': 'niede',
-        'si-ps-corrs-c2m12-ia03': 'niede',
-        'si-ps-corrs-c2m12-ia04': 'niede',
-        'si-ps-corrs-c2m12-ia05': 'elisa',
-        'si-ps-corrs-c2m12-ia06': 'elisa',
-        'si-ps-corrs-c2m12-ia07': 'elisa',
-        'si-ps-corrs-c2m12-ia08': 'niede',
-        'si-ps-corrs-c2m12-ia09': 'niede',
-        'si-ps-corrs-c2m12-ia10': 'elisa',
-        'si-ps-corrs-c2m12-ia11': 'elisa',
-        'si-ps-corrs-c2m12-ia12': 'niede',
-        'si-ps-corrs-c2m12-ia13': 'niede',
-        'si-ps-corrs-c2m12-ia14': 'niede',
-        'si-ps-corrs-c2m12-ia15': 'elisa',
-        'si-ps-corrs-c2m12-ia16': 'niede',
-        'si-ps-corrs-c2m12-ia17': 'elisa',
-        'si-ps-corrs-c2m12-ia18': 'niede',
-        'si-ps-corrs-c2m12-ia19': 'elisa',
-        'si-ps-corrs-c2m12-ia20': 'elisa',
-        'si-ps-corrs-c134-ia01': 'niede',
-        'si-ps-corrs-c134-ia02': 'niede',
-        'si-ps-corrs-c134-ia03': 'niede',
-        'si-ps-corrs-c134-ia04': 'niede',
-        'si-ps-corrs-c134-ia05': 'niede',
-        'si-ps-corrs-c134-ia06': 'niede',
-        'si-ps-corrs-c134-ia07': 'niede',
-        'si-ps-corrs-c134-ia08': 'elisa',
-        'si-ps-corrs-c134-ia09': 'niede',
-        'si-ps-corrs-c134-ia10': 'elisa',
-        'si-ps-corrs-c134-ia11': 'elisa',
-        'si-ps-corrs-c134-ia12': 'niede',
-        'si-ps-corrs-c134-ia13': 'niede',
-        'si-ps-corrs-c134-ia14': 'elisa',
-        'si-ps-corrs-c134-ia15': 'niede',
-        'si-ps-corrs-c134-ia16': 'elisa',
-        'si-ps-corrs-c134-ia17': 'elisa',
-        'si-ps-corrs-c134-ia18': 'niede',
-        'si-ps-corrs-c134-ia19': 'elisa',
-        'si-ps-corrs-c134-ia20': 'niede',
-        'si-ps-corrs-sb-ia06': 'niede',
-        'si-ps-corrs-sp-ia07': 'niede',
-        'si-ps-corrs-sb-ia08': 'elisa',
-        'si-ps-corrlong-sb-ia08': 'elisa',
-        'si-ps-corrs-qs-sb-ia10': 'elisa',
-        'si-ps-corrs-sb-ia14': 'niede',
-        'si-ps-corrlong-sb-ia14': 'elisa',
-        'si-ps-trims-qs-m12-ia01': 'elisa',
-        'si-ps-trims-qs-m12-ia02': 'elisa',
-        'si-ps-trims-qs-m12-ia03': 'elisa',
-        'si-ps-trims-qs-m12-ia04': 'elisa',
-        'si-ps-trims-qs-m12-ia05': 'elisa',
-        'si-ps-trims-qs-m12-ia06': 'niede',
-        'si-ps-trims-qs-m12-ia07': 'niede',
-        'si-ps-trims-qs-m12-ia08': 'niede',
-        'si-ps-trims-qs-m12-ia09': 'elisa',
-        'si-ps-trims-qs-m12-ia10': 'elisa',
-        'si-ps-trims-qs-m12-ia11': 'niede',
-        'si-ps-trims-qs-m12-ia12': 'elisa',
-        'si-ps-trims-qs-m12-ia13': 'niede',
-        'si-ps-trims-qs-m12-ia14': 'niede',
-        'si-ps-trims-qs-m12-ia15': 'niede',
-        'si-ps-trims-qs-m12-ia16': 'elisa',
-        'si-ps-trims-qs-m12-ia17': 'niede',
-        'si-ps-trims-qs-m12-ia18': 'niede',
-        'si-ps-trims-qs-m12-ia19': 'elisa',
-        'si-ps-trims-qs-m12-ia20': 'niede',
-        'si-ps-trims-qs-c1234-ia01': 'niede',
-        'si-ps-trims-qs-c1234-ia02': 'elisa',
-        'si-ps-trims-qs-c1234-ia03': 'niede',
-        'si-ps-trims-qs-c1234-ia04': 'niede',
-        'si-ps-trims-qs-c1234-ia05': 'elisa',
-        'si-ps-trims-qs-c1234-ia06': 'niede',
-        'si-ps-trims-qs-c1234-ia07': 'elisa',
-        'si-ps-trims-qs-c1234-ia08': 'elisa',
-        'si-ps-trims-qs-c1234-ia09': 'elisa',
-        'si-ps-trims-qs-c1234-ia10': 'niede',
-        'si-ps-trims-qs-c1234-ia11': 'niede',
-        'si-ps-trims-qs-c1234-ia12': 'niede',
-        'si-ps-trims-qs-c1234-ia13': 'niede',
-        'si-ps-trims-qs-c1234-ia14': 'niede',
-        'si-ps-trims-qs-c1234-ia15': 'niede',
-        'si-ps-trims-qs-c1234-ia16': 'elisa',
-        'si-ps-trims-qs-c1234-ia17': 'elisa',
-        'si-ps-trims-qs-c1234-ia18': 'elisa',
-        'si-ps-trims-qs-c1234-ia19': 'elisa',
-        'si-ps-trims-qs-c1234-ia20': 'elisa',
-        'si-ps-conv-fastcorrs-ia01': 'elisa',
-        'si-ps-conv-fastcorrs-ia02': 'elisa',
-        'si-ps-conv-fastcorrs-ia03': 'elisa',
-        'si-ps-conv-fastcorrs-ia04': 'elisa',
-        'si-ps-conv-fastcorrs-ia05': 'elisa',
-        'si-ps-conv-fastcorrs-ia06': 'elisa',
-        'si-ps-conv-fastcorrs-ia07': 'elisa',
-        'si-ps-conv-fastcorrs-ia08': 'elisa',
-        'si-ps-conv-fastcorrs-ia09': 'elisa',
-        'si-ps-conv-fastcorrs-ia10': 'elisa',
-        'si-ps-conv-fastcorrs-ia11': 'niede',
-        'si-ps-conv-fastcorrs-ia12': 'niede',
-        'si-ps-conv-fastcorrs-ia13': 'niede',
-        'si-ps-conv-fastcorrs-ia14': 'niede',
-        'si-ps-conv-fastcorrs-ia15': 'elisa',
-        'si-ps-conv-fastcorrs-ia16': 'elisa',
-        'si-ps-conv-fastcorrs-ia17': 'elisa',
-        'si-ps-conv-fastcorrs-ia18': 'elisa',
-        'si-ps-conv-fastcorrs-ia19': 'elisa',
-        'si-ps-conv-fastcorrs-ia20': 'elisa',
-        'si-ps-diag-fastcorrs': 'niede',
-        'it-ps-lens': 'elisa',
-        'bl-ap-imgproc': 'elisa',
-        'si-ap-idff-delta52': 'elisa',
-        # 'si-ap-idff-ivu18-sb08': 'elisa',
-        # 'si-ap-idff-ivu18-sb14': 'elisa',
-        'si-ap-orbintlk': 'elisa',
-        }
+    SERVICES = [
+        'as-ap-currinfo',
+        'as-ap-machshift',
+        'as-ap-diag',
+        'as-ap-opticscorr',
+        'as-ap-posang',
+        'as-ap-sofb',
+        'as-ap-injctrl',
+        'as-ap-injbeamdiag',
+        'as-ps-dclinks-tbts-bodip',
+        'as-ps-dclinks-ia01',
+        'as-ps-dclinks-ia02',
+        'as-ps-dclinks-ia03',
+        'as-ps-dclinks-ia04',
+        'as-ps-dclinks-ia05',
+        'as-ps-dclinks-ia06',
+        'as-ps-dclinks-ia07',
+        'as-ps-dclinks-ia08',
+        'as-ps-dclinks-ia09',
+        'as-ps-dclinks-ia10',
+        'as-ps-dclinks-ia11',
+        'as-ps-dclinks-ia12',
+        'as-ps-dclinks-ia13',
+        'as-ps-dclinks-ia14',
+        'as-ps-dclinks-ia15',
+        'as-ps-dclinks-ia16',
+        'as-ps-dclinks-ia17',
+        'as-ps-dclinks-ia18',
+        'as-ps-dclinks-ia19',
+        'as-ps-dclinks-ia20',
+        'as-pu-conv',
+        'as-ti-general',
+        'li-ti-general',
+        'tb-ti-general',
+        'bo-ti-general',
+        'ts-ti-general',
+        'si-ti-general',
+        'ba-ti-general',
+        'bo-ti-bpms-corrs',
+        'si-ti-bpms-corrs',
+        'si-ti-trims-skews',
+        'li-ap-energy',
+        'li-ps-spect-quads-lens',
+        'li-ps-corrs',
+        'li-ps-slnds',
+        'li-ps-conv',
+        'li-ps-diag',
+        'tb-ps-dips',
+        'tb-ps-quads',
+        'tb-ps-corrs',
+        'bo-ps-dips',
+        'bo-ps-quads',
+        'bo-ps-sexts',
+        'bo-ps-corrs-ia01',
+        'bo-ps-corrs-ia02',
+        'bo-ps-corrs-ia04',
+        'bo-ps-corrs-ia05',
+        'bo-ps-corrs-ia07',
+        'bo-ps-corrs-ia08',
+        'bo-ps-corrs-ia10',
+        'bo-ps-corrs-ia11',
+        'bo-ps-corrs-ia13',
+        'bo-ps-corrs-ia14',
+        'bo-ps-corrs-ia16',
+        'bo-ps-corrs-ia17',
+        'bo-ps-corrs-ia20',
+        'ts-ps-dips',
+        'ts-ps-quads',
+        'ts-ps-corrs',
+        'si-ap-fofb',
+        'si-ap-stabinfo',
+        'si-di-fpmosc',
+        'si-id-conv',
+        'si-ap-sofb',
+        'si-ps-dips',
+        'si-ps-quads-qfq',
+        'si-ps-quads-qd',
+        'si-ps-sexts-sda12b2-sfa0p0-sda0p0',
+        'si-ps-sexts-sfa12-sda3p1-sfb0-sdb01',
+        'si-ps-sexts-sfb12-sdb3-sfp12-sdp23',
+        'si-ps-corrs-c2m12-ia01',
+        'si-ps-corrs-c2m12-ia02',
+        'si-ps-corrs-c2m12-ia03',
+        'si-ps-corrs-c2m12-ia04',
+        'si-ps-corrs-c2m12-ia05',
+        'si-ps-corrs-c2m12-ia06',
+        'si-ps-corrs-c2m12-ia07',
+        'si-ps-corrs-c2m12-ia08',
+        'si-ps-corrs-c2m12-ia09',
+        'si-ps-corrs-c2m12-ia10',
+        'si-ps-corrs-c2m12-ia11',
+        'si-ps-corrs-c2m12-ia12',
+        'si-ps-corrs-c2m12-ia13',
+        'si-ps-corrs-c2m12-ia14',
+        'si-ps-corrs-c2m12-ia15',
+        'si-ps-corrs-c2m12-ia16',
+        'si-ps-corrs-c2m12-ia17',
+        'si-ps-corrs-c2m12-ia18',
+        'si-ps-corrs-c2m12-ia19',
+        'si-ps-corrs-c2m12-ia20',
+        'si-ps-corrs-c134-ia01',
+        'si-ps-corrs-c134-ia02',
+        'si-ps-corrs-c134-ia03',
+        'si-ps-corrs-c134-ia04',
+        'si-ps-corrs-c134-ia05',
+        'si-ps-corrs-c134-ia06',
+        'si-ps-corrs-c134-ia07',
+        'si-ps-corrs-c134-ia08',
+        'si-ps-corrs-c134-ia09',
+        'si-ps-corrs-c134-ia10',
+        'si-ps-corrs-c134-ia11',
+        'si-ps-corrs-c134-ia12',
+        'si-ps-corrs-c134-ia13',
+        'si-ps-corrs-c134-ia14',
+        'si-ps-corrs-c134-ia15',
+        'si-ps-corrs-c134-ia16',
+        'si-ps-corrs-c134-ia17',
+        'si-ps-corrs-c134-ia18',
+        'si-ps-corrs-c134-ia19',
+        'si-ps-corrs-c134-ia20',
+        'si-ps-corrs-sb-ia06',
+        'si-ps-corrs-sp-ia07',
+        'si-ps-corrs-sb-ia08',
+        'si-ps-corrlong-sb-ia08',
+        'si-ps-corrs-qs-sb-ia10',
+        'si-ps-corrs-sp-ia11',
+        'si-ps-corrlong-sp-ia11',
+        'si-ps-qs-sp-ia11',
+        'si-ps-corrs-sb-ia14',
+        'si-ps-corrlong-sb-ia14',
+        'si-ps-trims-qs-m12-ia01',
+        'si-ps-trims-qs-m12-ia02',
+        'si-ps-trims-qs-m12-ia03',
+        'si-ps-trims-qs-m12-ia04',
+        'si-ps-trims-qs-m12-ia05',
+        'si-ps-trims-qs-m12-ia06',
+        'si-ps-trims-qs-m12-ia07',
+        'si-ps-trims-qs-m12-ia08',
+        'si-ps-trims-qs-m12-ia09',
+        'si-ps-trims-qs-m12-ia10',
+        'si-ps-trims-qs-m12-ia11',
+        'si-ps-trims-qs-m12-ia12',
+        'si-ps-trims-qs-m12-ia13',
+        'si-ps-trims-qs-m12-ia14',
+        'si-ps-trims-qs-m12-ia15',
+        'si-ps-trims-qs-m12-ia16',
+        'si-ps-trims-qs-m12-ia17',
+        'si-ps-trims-qs-m12-ia18',
+        'si-ps-trims-qs-m12-ia19',
+        'si-ps-trims-qs-m12-ia20',
+        'si-ps-trims-qs-c1234-ia01',
+        'si-ps-trims-qs-c1234-ia02',
+        'si-ps-trims-qs-c1234-ia03',
+        'si-ps-trims-qs-c1234-ia04',
+        'si-ps-trims-qs-c1234-ia05',
+        'si-ps-trims-qs-c1234-ia06',
+        'si-ps-trims-qs-c1234-ia07',
+        'si-ps-trims-qs-c1234-ia08',
+        'si-ps-trims-qs-c1234-ia09',
+        'si-ps-trims-qs-c1234-ia10',
+        'si-ps-trims-qs-c1234-ia11',
+        'si-ps-trims-qs-c1234-ia12',
+        'si-ps-trims-qs-c1234-ia13',
+        'si-ps-trims-qs-c1234-ia14',
+        'si-ps-trims-qs-c1234-ia15',
+        'si-ps-trims-qs-c1234-ia16',
+        'si-ps-trims-qs-c1234-ia17',
+        'si-ps-trims-qs-c1234-ia18',
+        'si-ps-trims-qs-c1234-ia19',
+        'si-ps-trims-qs-c1234-ia20',
+        'si-ps-diag-fastcorrs',
+        'it-ps-lens',
+        'bl-ap-imgproc',
+        'si-ap-idff-delta52',
+        # 'si-ap-idff-ivu18-sb08',
+        # 'si-ap-idff-ivu18-sb14',
+        'si-ap-orbintlk',
+        'si-rf-monitor',
+        ]
 
     STACKS = {
         'as-ps-dclinks': {
@@ -364,6 +348,9 @@ class ServiceConfig:
             'corrs-sb-ia08': ('si-ps-corrs-sb-ia08', ('dips', )),
             'corrlong-sb-ia08': ('si-ps-corrlong-sb-ia08', ('dips', )),
             'corrs-qs-sb-ia10': ('si-ps-corrs-qs-sb-ia10', ('dips', )),
+            'corrs-sp-ia11': ('si-ps-corrs-sp-ia11', ('dips', )),
+            'corrlong-sp-ia11': ('si-ps-corrlong-sp-ia11', ('dips', )),
+            'qs-sp-ia11': ('si-ps-qs-sp-ia11', ('dips', )),
             'corrs-sb-ia14': ('si-ps-corrs-sb-ia14', ('dips', )),
             'corrlong-sb-ia14': ('si-ps-corrlong-sb-ia14', ('dips', )),
             'trims-qs-c1234-ia01': (
@@ -494,33 +481,16 @@ class ServiceConfig:
             'lens': 'it-ps-lens',
             },
         'si-ps-fastcorrs': {
-            'conv-ia01': 'si-ps-conv-fastcorrs-ia01',
-            'conv-ia02': 'si-ps-conv-fastcorrs-ia02',
-            'conv-ia03': 'si-ps-conv-fastcorrs-ia03',
-            'conv-ia04': 'si-ps-conv-fastcorrs-ia04',
-            'conv-ia05': 'si-ps-conv-fastcorrs-ia05',
-            'conv-ia06': 'si-ps-conv-fastcorrs-ia06',
-            'conv-ia07': 'si-ps-conv-fastcorrs-ia07',
-            'conv-ia08': 'si-ps-conv-fastcorrs-ia08',
-            'conv-ia09': 'si-ps-conv-fastcorrs-ia09',
-            'conv-ia10': 'si-ps-conv-fastcorrs-ia10',
-            'conv-ia11': 'si-ps-conv-fastcorrs-ia11',
-            'conv-ia12': 'si-ps-conv-fastcorrs-ia12',
-            'conv-ia13': 'si-ps-conv-fastcorrs-ia13',
-            'conv-ia14': 'si-ps-conv-fastcorrs-ia14',
-            'conv-ia15': 'si-ps-conv-fastcorrs-ia15',
-            'conv-ia16': 'si-ps-conv-fastcorrs-ia16',
-            'conv-ia17': 'si-ps-conv-fastcorrs-ia17',
-            'conv-ia18': 'si-ps-conv-fastcorrs-ia18',
-            'conv-ia19': 'si-ps-conv-fastcorrs-ia19',
-            'conv-ia20': 'si-ps-conv-fastcorrs-ia20',
             'diag': 'si-ps-diag-fastcorrs',
             },
         'si-ap-idff': {
             'delta52-sb10': 'si-ap-idff-delta52',
             # 'ivu18-sb08': 'si-ap-idff-ivu18-sb08',
             # 'ivu18-sb14': 'si-ap-idff-ivu18-sb14',
-        }
+        },
+        'si-rf': {
+            'monitor': 'si-rf-monitor',
+        },
         # 'bl-ap-imgproc': {
         #     'imgproc': 'bl-ap-imgproc',
         #     },
@@ -569,7 +539,7 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + 'services:'
         return strf
 
-    def str_service(self, app, node, depends=None):
+    def str_service(self, app, depends=None):
         """."""
         strf = ''
         strf += '\n' + '    image: ' + self.get_image(app)
@@ -585,7 +555,7 @@ class DockerStackConfig(ServiceConfig):
         strf += '\n' + '    deploy:'
         strf += '\n' + '      placement:'
         strf += '\n' + '        constraints:'
-        strf += '\n' + '          - node.hostname == ' + node
+        strf += '\n' + '          - node.hostname != comp-swarm'
         strf += '\n' + '      resources:'
         strf += '\n' + '        limits:'
         strf += '\n' + '          cpus: "8"'
@@ -618,18 +588,17 @@ class DockerStackConfig(ServiceConfig):
 class DockerLowStackConfig(DockerStackConfig):
     """Docker low stack configuration."""
 
-    def __init__(self, app, node):
+    def __init__(self, app):
         """."""
         super().__init__(DockerStackConfig.IMAGE_TAG_IOCS)
         self.app = app
-        self.node = node
 
     def __str__(self):
         """."""
         strf = self.str_header()
         strf += '\n'
         strf += '\n' + '  iocs:'
-        strf += self.str_service(self.app, self.node)
+        strf += self.str_service(self.app)
         strf += '\n'
         strf += self.str_networks()
         return strf
@@ -656,10 +625,9 @@ class DockerHighStackConfig(DockerStackConfig):
             else:
                 depends = None
             # print(service, app, depends)
-            node = ServiceConfig.SERVICES[app]
             strf += '\n'
             strf += '\n' + '  ' + service + ':'
-            strf += self.str_service(app, node, depends)
+            strf += self.str_service(app, depends)
         strf += '\n'
         strf += self.str_networks()
         return strf
@@ -672,16 +640,15 @@ class DockerHighStackConfig(DockerStackConfig):
 class DockerCSConstsConfig(DockerStackConfig):
     """Docker control-system-constants configuration."""
 
-    def __init__(self, app, node):
+    def __init__(self, app):
         super().__init__(DockerStackConfig.IMAGE_TAG_CSCONSTS)
         self.app = app
-        self.node = node
 
     def __str__(self):
         strf = self.str_header()
         strf += '\n'
         strf += '\n' + '  facs-csconsts:'
-        strf += self.str_service(self.app, self.node)
+        strf += self.str_service(self.app)
         strf += '\n'
         strf += self.str_networks()
         return strf
@@ -701,12 +668,12 @@ class DockerCSConstsConfig(DockerStackConfig):
 
 def generate_service_files():
     """Generate docker service file."""
-    for app, node in ServiceConfig.SERVICES_CSCONSTS.items():
-        config = DockerCSConstsConfig(app=app, node=node)
+    for app in ServiceConfig.SERVICES_CSCONSTS:
+        config = DockerCSConstsConfig(app=app)
         config.save_config_file()
 
-    for app, node in ServiceConfig.SERVICES.items():
-        config = DockerLowStackConfig(app=app, node=node)
+    for app in ServiceConfig.SERVICES:
+        config = DockerLowStackConfig(app=app)
         config.save_config_file()
 
     for stack in ServiceConfig.STACKS:
@@ -756,7 +723,12 @@ def generate_service_2_ioc_table():  # noqa: C901
         for ioc in iocs:
             ioc = ioc.strip(' ')
             prefixes = list()
-            if ('-ps' in ioc or '-pu' in ioc) and 'conv' not in ioc:
+            if ioc == 'si-rf-monitor':
+                prefixes = [
+                    'SI-03SP:RF-CryoMod-1',
+                    'SI-03SP:RF-CryoMod-2'
+                ]
+            elif ('-ps' in ioc or '-pu' in ioc) and 'conv' not in ioc:
                 prs = ioc.replace('"', '')
                 prs = prs.split(' ')
                 if prs[0] == 'as-ps':
@@ -785,7 +757,7 @@ def generate_service_2_ioc_table():  # noqa: C901
                         elif prs[1] == 'pu':
                             filt = {'dis': 'PU'}
                         elif 'fastcorr' in ioc:
-                            subgroup = container.split('-')[4]
+                            subgroup = container.split('-')[5]
                             ioc = ioc + '-' + subgroup
                             sub = subgroup[-2:] + '.*'
                             filt = {'sec': 'SI', 'sub': sub, 'dev': 'FC.*'}
