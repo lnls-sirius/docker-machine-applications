@@ -1,0 +1,125 @@
+ARG IMG_DEBIAN_MODELS_TAG
+FROM ghcr.io/lnls-sirius/docker-machine-applications/debian:${IMG_DEBIAN_MODELS_TAG}
+# --- size 117 MB
+
+SHELL ["bash", "-c"]
+WORKDIR /opt/mamba_files
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    TZ=America/Sao_Paulo
+
+# -------------------------------------------------------------------
+# 1) Install apt packages (cleaned in the same layer)
+# -------------------------------------------------------------------
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        tzdata procps wget iproute2 iputils-ping \
+        libreadline-dev git nano bzip2 ca-certificates && \
+    ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
+    dpkg-reconfigure --frontend noninteractive tzdata && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /usr/share/doc/* /usr/share/man/*
+# --- size 273 MB
+
+# -------------------------------------------------------------------
+# 2) Install micromamba (single static binary, very small)
+# -------------------------------------------------------------------
+# RUN wget -qO- https://micro.mamba.pm/api/micromamba/linux-64/latest | \
+ARG MICROMAMBA_VERSION=2.6.2
+# ARG MICROMAMBA_VERSION=latest
+RUN wget -qO- "https://micro.mamba.pm/api/micromamba/linux-64/${MICROMAMBA_VERSION}" | \
+    tar -xvj bin/micromamba && \
+    mv bin/micromamba /usr/local/bin/ && \
+    rm -rf bin
+ENV MAMBA_ROOT_PREFIX=/opt/mamba_files/mamba
+RUN mkdir -p $MAMBA_ROOT_PREFIX
+# --- size 291 MB
+
+# -------------------------------------------------------------------
+# 3) Create 'sirius' environment with Python 3.9
+# -------------------------------------------------------------------
+RUN micromamba create -y -n sirius -c conda-forge python=3.9 && \
+    ln -s /opt/mamba_files/mamba/envs/sirius/bin/python3 \
+    /opt/mamba_files/mamba/envs/sirius/bin/python-sirius
+# --- size 521 MB
+
+# -------------------------------------------------------------------
+# 4) Install packages into the 'sirius' environment
+#    No activation required — micromamba run does it automatically.
+# -------------------------------------------------------------------
+
+# block: C++, Swig and numerical libs
+# -------------------------------------------------------------------
+# TODO (future optimization - multi-stage build)
+#
+# Refactor to remove build toolchain from final image.
+#
+# Plan:
+#   - Use a builder stage with g++, make, swig, etc.
+#   - Compile C++ code and generate artifacts
+#   - Copy only final artifacts to a minimal runtime image
+#
+# Benefits:
+#   - Much smaller image
+#   - Faster deploy
+#
+# Minimal example:
+#
+#   FROM debian:bookworm AS builder
+#   RUN apt-get update && apt-get install -y g++ make
+#   WORKDIR /build
+#   COPY . .
+#   RUN make   # produces ./my_app
+#
+#   FROM debian:bookworm-slim
+#   COPY --from=builder /build/my_app /usr/local/bin/
+#   CMD ["my_app"]
+#
+# Notes:
+#   - For Python/SWIG: copy .so + minimal Python runtime instead
+#   - Use `ldd` to find required shared libraries
+#
+# -------------------------------------------------------------------
+
+RUN micromamba install -y -n sirius -c conda-forge \
+    gxx make binutils swig=4.2.0 gsl libblas \
+    bottleneck aiohttp numpy=1.23 && \
+    micromamba clean --all --yes
+# --- size 1.64 GB
+
+# block: epics
+ENV CONDA_PREFIX=/opt/mamba_files/mamba/envs/sirius
+ENV EPICS_BASE=$CONDA_PREFIX/epics
+ENV EPICS_HOST_ARCH=linux-x86_64
+ENV PATH="$CONDA_PREFIX/bin:$EPICS_BASE/bin/$EPICS_HOST_ARCH:$PATH"
+RUN micromamba install -y -n sirius -c conda-forge \
+    epics-base=3.15.6 pyepics=3.5.7 pcaspy==0.7.3 && \
+    micromamba clean --all --yes && \
+    echo 'eval "$(micromamba shell hook -s bash)"' >> /root/.bashrc && \
+    echo 'micromamba activate sirius' >> /root/.bashrc
+# --- size 1.76 GB
+
+
+# block: scientific python packages
+RUN micromamba install -y -n sirius -c conda-forge \
+    libxcrypt fftw pyparsing scipy matplotlib-base \
+    pytest mpmath entrypoints requests pandas \
+    numexpr sh pywavelets scikit-image \
+    scikit-learn pydocstyle pycodestyle pylama \
+    openpyxl gpy gpyopt fpdf sympy \
+    h5py scienceplots seaborn-base lzstring && \
+    micromamba clean --all --yes
+# --- size 2.43 GB
+
+
+# # Scientific Python packages block (pycollef)
+# RUN micromamba install -y -n sirius -c conda-forge \
+#     fftw mpmath && \RUN mkdir -p /opt/mamba_files/mamba/envs/sirius/etc/conda/activate.d && \
+#     micromamba clean --all --yes
+
+
+# -------------------------------------------------------------------
+# 5) Final system cleanup
+# -------------------------------------------------------------------
+RUN rm -rf /usr/share/doc/* /usr/share/man/* /usr/share/locale/*
+# --- size 2.43 GB
