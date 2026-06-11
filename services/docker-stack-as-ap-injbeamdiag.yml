@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+
+  iocs:
+    image: ghcr.io/lnls-sirius/docker-machine-applications/fac-models-iocs:__FAC_IOC_TAG_TEMPLATE__
+    command: bash -c '/ioc-apps/as-ap-injbeamdiag.bash'
+    volumes:
+      - "/storage/common/fac/iocs-log:/home/sirius/iocs-log"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == niede
+      resources:
+        limits:
+          cpus: "8"
+          memory: 16G
+      replicas: 1
+      restart_policy:
+        condition: any
+      labels:
+        io.portainer.accesscontrol.public: ""
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "20"
+        max-size: "50m"
+    networks:
+      - ioc-network
+
+networks:
+  ioc-network:
+    external: true
+    name: "host"

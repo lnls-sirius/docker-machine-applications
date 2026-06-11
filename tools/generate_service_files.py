@@ -27,6 +27,7 @@ class ServiceConfig:
         'as-ap-posang',
         'as-ap-sofb',
         'as-ap-injctrl',
+        'as-ap-injbeamdiag',
         'as-ps-dclinks-tbts-bodip',
         'as-ps-dclinks-ia01',
         'as-ps-dclinks-ia02',
