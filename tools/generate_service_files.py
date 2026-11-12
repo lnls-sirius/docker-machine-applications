@@ -195,6 +195,8 @@ class ServiceConfig:
         # 'si-ap-idff-ivu18-sb08',
         # 'si-ap-idff-ivu18-sb14',
         'si-ap-orbintlk',
+        'si-id-s3pw-cencoil',
+        'si-id-s3pw-latcoil',
         'si-rf-monitor',
         ]
 
@@ -490,6 +492,10 @@ class ServiceConfig:
         'si-rf': {
             'monitor': 'si-rf-monitor',
         },
+        'si-id-s3pw': {
+            'cencoil': 'si-id-s3pw-cencoil',
+            'latcoil': 'si-id-s3pw-latcoil',
+        }
         # 'bl-ap-imgproc': {
         #     'imgproc': 'bl-ap-imgproc',
         #     },
