@@ -148,6 +148,8 @@ class ServiceConfig:
         'si-ps-qs-sp-ia11',
         'si-ps-corrs-sb-ia14',
         'si-ps-corrlong-sb-ia14',
+        'si-ps-corrs-sp-ia15',
+        'si-ps-qs-sp-ia15',
         'si-ps-trims-qs-m12-ia01',
         'si-ps-trims-qs-m12-ia02',
         'si-ps-trims-qs-m12-ia03',
@@ -195,6 +197,8 @@ class ServiceConfig:
         # 'si-ap-idff-ivu18-sb08',
         # 'si-ap-idff-ivu18-sb14',
         'si-ap-orbintlk',
+        'si-id-s3pw-cencoil',
+        'si-id-s3pw-latcoil',
         'si-rf-monitor',
         ]
 
@@ -352,6 +356,8 @@ class ServiceConfig:
             'qs-sp-ia11': ('si-ps-qs-sp-ia11', ('dips', )),
             'corrs-sb-ia14': ('si-ps-corrs-sb-ia14', ('dips', )),
             'corrlong-sb-ia14': ('si-ps-corrlong-sb-ia14', ('dips', )),
+            'corrs-sp-ia15': ('si-ps-corrs-sp-ia15', ('dips', )),
+            'qs-sp-ia15': ('si-ps-qs-sp-ia15', ('dips', )),
             'trims-qs-c1234-ia01': (
                 'si-ps-trims-qs-c1234-ia01',
                 ('dips', 'quads-qd', 'quads-qfq')),
@@ -490,6 +496,10 @@ class ServiceConfig:
         'si-rf': {
             'monitor': 'si-rf-monitor',
         },
+        'si-id-s3pw': {
+            'cencoil': 'si-id-s3pw-cencoil',
+            'latcoil': 'si-id-s3pw-latcoil',
+        }
         # 'bl-ap-imgproc': {
         #     'imgproc': 'bl-ap-imgproc',
         #     },
