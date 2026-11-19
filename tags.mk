@@ -1,5 +1,5 @@
 # tag for lnls-ansible repo from which package versions are to be taken
-LNLS_ANSIBLE_TAG ?= master
+LNLS_ANSIBLE_TAG ?= new-deploy
 VERSION_FILE ?= https://raw.githubusercontent.com/lnls-sirius/lnls-ansible/$(LNLS_ANSIBLE_TAG)/inventories/sirius/group_vars/all
 
 # Local file server URL
@@ -10,7 +10,7 @@ EPICS_BASE_TAG ?= base-3.15.6
 
 # tags used for creating docker images
 IMG_DEBIAN_TAG ?= bullseye-20211011
-DEPLOY_TAG ?= 2026-03-16_19-00-00
+DEPLOY_TAG ?= 2026-11-19_16-30-00
 
 # image tags used for starting docker services
 IMG_IOCS_LI_PS_TAG ?= 2025-04-23
